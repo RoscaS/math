@@ -1,3 +1,0 @@
-### Todo:
-
-* Reference/links section
