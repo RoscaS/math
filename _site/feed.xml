@@ -4,11 +4,134 @@
     <title>RoscaS</title>
     <description>Just some notes. # this means to ignore newlines until &quot;baseurl:&quot;
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Sep 2017 23:14:49 +0200</pubDate>
-    <lastBuildDate>Sun, 17 Sep 2017 23:14:49 +0200</lastBuildDate>
+    <link>https://roscas.github.io/</link>
+    <atom:link href="https://roscas.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 17 Sep 2017 23:36:15 +0200</pubDate>
+    <lastBuildDate>Sun, 17 Sep 2017 23:36:15 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Math: Essence de l'algèbre</title>
+        <description>&lt;h1 id=&quot;abstraction&quot;&gt;Abstraction&lt;/h1&gt;
+
+&lt;h2 id=&quot;math-test&quot;&gt;math test:&lt;/h2&gt;
+
+&lt;p&gt;Ceci est un test: $ 2^2 $&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{2}{3} + 4x^2 = 0&lt;/script&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-puml&quot;&gt;A -&amp;gt; B
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+        <pubDate>Sun, 17 Sep 2017 00:00:00 +0200</pubDate>
+        <link>https://roscas.github.io/math/math-algebre-intro.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math-algebre-intro.html</guid>
+        
+        <category>Math,</category>
+        
+        <category>algèbre,</category>
+        
+        <category>fr</category>
+        
+        
+        <category>Math</category>
+        
+      </item>
+    
+      <item>
+        <title>Notes</title>
+        <description>&lt;h2 id=&quot;notes&quot;&gt;Notes&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/math/comments/38tcj3/would_it_be_beneficial_to_relearn_math_from_the/&quot;&gt;Reddit post 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Something that really helped me was learning basic group theory and ring theory, it gave me much needed knowledge of and understanding about how (for example) arithmetic actually works on a more fundamental level. I cannot recommend it enough.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;basic groupe theory&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ring theory&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.khanacademy.org/commoncore/map&quot;&gt;Common core standards&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.reddit.com/r/math/comments/38tcj3/would_it_be_beneficial_to_relearn_math_from_the/&quot;&gt;Reddit post 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;latex&quot;&gt;Latex&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikibooks.org/wiki/LaTeX/%C3%89crire_des_math%C3%A9matiques&quot;&gt;wikibooks&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{n!}{k!(n - k)!}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{n}{k}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x_{1,2} = \frac{- b \pm \sqrt{\Delta}}{2a}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sqrt[4]{x^4} = |x|&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\acute{a}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;a', a^\prime&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\grave{a}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{a}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\widehat{ABC}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\tilde{a}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;matrix : matrice sans délimiteur ;&lt;/li&gt;
+  &lt;li&gt;pmatrix : matrice entre parenthèses (…) ;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;vmatrix : matrice entre barres&lt;/td&gt;
+          &lt;td&gt;…&lt;/td&gt;
+          &lt;td&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Vmatrix : matrice entre doubles barres&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;…&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;;&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;bmatrix : matrice entre crochets […] ;&lt;/li&gt;
+  &lt;li&gt;Bmatrix : matrice entre accolades {…}.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{pmatrix}
+   a_1 &amp; b_1 \\
+   a_2 &amp; b_2 
+\end{pmatrix} %]]&gt;&lt;/script&gt;
+</description>
+        <pubDate>Thu, 01 Jun 2017 00:00:00 +0200</pubDate>
+        <link>https://roscas.github.io/math/math-notes.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math-notes.html</guid>
+        
+        
+        <category>Math</category>
+        
+      </item>
     
   </channel>
 </rss>
