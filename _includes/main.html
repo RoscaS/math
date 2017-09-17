@@ -1,0 +1,38 @@
+<footer class="site-footer">
+	<div class="wrapper">
+        <!--<AFFICHAGE DES NEWS INDEX> -->
+        {% for category in site.categories %}
+        {% capture cat %}{{ category | first }}{% endcapture %}
+
+        <h4>{{ cat | capitalize }}</h4>
+            <ul>
+            {% for post in site.categories[cat] %}
+            <li>
+            <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                <span class="date"> - {{ post.date | date_to_long_string }}</span></p>
+            </li>
+            {% endfor %}
+            </ul>
+
+        {% endfor %}
+        <!--</AFFICHAGE DES NEWS INDEX>  -->
+  	</div>
+</footer>
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <!--<p>
+                <a class="link" href="{{ site.baseurl }}/archive/">Archive</a> /
+                <a class="link" href="{{ site.baseurl }}/category/">Category</a> /
+                <a class="link" href="{{ site.baseurl }}/tags/">Tags</a> /
+                <a class="link" href="{{ site.baseurl }}/about/">About</a> /
+                <a class="link" href="{{ site.baseurl }}/contact/">Contact</a>
+            </p>-->
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:{{ site.email }}?subject=Hello&nbsp;{{ site.name }}"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>

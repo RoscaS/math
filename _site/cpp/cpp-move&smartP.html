@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cpp/cpp-move&smartP.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cpp: Sémantique de déplacement &amp; intro smart_ptr</title>
+  <meta name="description" content="Lecture utile avant de se lancer dans ce poste">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Cpp: Sémantique de déplacement & intro smart_ptr</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="21 Jun 2017" itemprop="datePublished">Jun 21 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">Cpp</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="/">Home</a> /
+			<a class="link" href="/archive/">Archive</a> /
+			<a class="link" href="/category/">Category</a> / 
+			<a class="link" href="/tags/">Tags</a> / 
+			<a class="link" href="/about/">About</a> /
+			<a class="link" href="/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p>Introduction aux smart_ptr et à la sémantique de déplacement</p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h2 id="lecture-utile-avant-de-se-lancer-dans-ce-poste">Lecture utile avant de se lancer dans ce poste</h2>
+
+<ul>
+  <li><a href="\cpp\cpp-R-value-L-value.html">L-value et R-value</a></li>
+  <li><a href="\cpp\cpp-semantiqueCopie.html">Sémantique de copie</a></li>
+  <li><a href="\divers\divers-definitions.html">définition de la sémantique (it)</a></li>
+</ul>
+
+<h2 id="sources">sources</h2>
+
+<ul>
+  <li><a href="http://www.learncpp.com/cpp-tutorial/15-1-intro-to-smart-pointers-move-semantics/">learncpp.com</a> (ch 15.1 à 15.7)</li>
+  <li><a href="https://stackoverflow.com/">stackoverflow</a></li>
+  <li><a href="https://fr.wikipedia.org/wiki/S%C3%A9mantique">wikipedia</a></li>
+</ul>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Dans la fonction suivante…</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">someFunction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Resource</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resource</span><span class="p">;</span> <span class="c1">// Resource is a struct or class
+</span> 
+    <span class="c1">// do stuff with ptr here
+</span> 
+    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>… de nombreuses choses peuvent arriver qui vont empécher la réallocation de la mémoire.</p>
+
+<p>Un <code class="highlighter-rouge">return</code>:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">someFunction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Resource</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resource</span><span class="p">;</span>
+ 
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter an integer: "</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span><span class="p">;</span> <span class="c1">// the function returns early, and ptr won’t be deleted!
+</span> 
+    <span class="c1">// do stuff with ptr here
+</span> 
+    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Un <code class="highlighter-rouge">throw</code>:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">someFunction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Resource</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Resource</span><span class="p">;</span>
+ 
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter an integer: "</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// the function returns early, and ptr won’t be deleted!
+</span> 
+    <span class="c1">// do stuff with ptr here
+</span> 
+    <span class="k">delete</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>De nombreux autres cas éxistent qui causent la fin de contexte prématuré de la fonction et l’empèche d’arriver au <code class="highlighter-rouge">delete</code>.</p>
+
+<p><strong>Conséquence</strong>: la mémoire allouée pour la variable <code class="highlighter-rouge">ptr</code> n’est pas désallouée et il s’en suit une fuite de mémoire.</p>
+
+<h2 id="god-bless-the-classes-">God bless the classes !</h2>
+
+<p>Comme nous le savons, un détail très pratique des classes et le fait qu’elles soient équipées d’un destructeur qui s’exécute automatiquement quand un objet de la classe se retrouve hors portée (out of scope). Si nous allouons de la mémoire dans le constructeur et la déallouons dans le destructeur, nous avons la certitude que la mémoire sera restituée à la destruction de l’objet (peu importe si il sort de portée, est explicitement delete,…). Ce concepte est au coeur du paradigme de programmation <a href="https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization">RAII</a> (Resource Acquisition Is Initialization).</p>
+
+<p>Considérons une classe dont le seul job est de “posséder” (own) un pointeur qu’on lui passe et de désallouer ce pointeur une fois que l’objet se retrouve hors context.</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Auto_ptr1</span> 
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_ptr</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="c1">// on passe un pointeur à "posséder" à la cstrction
+</span>    <span class="n">Auto_ptr1</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">)</span> <span class="o">:</span><span class="n">_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{}</span>
+
+    <span class="c1">// le dstr s'assure de la désallocation.
+</span>
+     <span class="o">~</span><span class="n">Auto_ptr1</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// access aux données pointées
+</span>    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span> <span class="o">*</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">*</span> <span class="k">operator</span> <span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// classe de test
+</span><span class="k">class</span> <span class="nc">Ressource</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource acquise</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource detruites</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// allocation de mémoire...
+</span>    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">{</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">};</span> 
+
+    <span class="c1">// ... mais pas de delte nécéssaire
+</span>
+    <span class="c1">// De plus, à noter que Ressource entre chevrons ne requiert pas
+</span>    <span class="c1">// de *     car c'est pris en charge par le template.
+</span>    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">// L'objet res se retrouve hors portée ici, est détruit
+</span>    <span class="c1">// et nous récupérons les ressources allouées.
+</span><span class="p">}</span>
+
+<span class="c1">// output:
+</span>
+<span class="c1">// Ressource acquise
+// Ressource détruites
+</span>
+</code></pre>
+</div>
+
+<ol>
+  <li>Création dynamique d’un objet de type <strong>Ressource</strong></li>
+  <li>Passage de cet objet en paramètre lors de la création d’un objet (<code class="highlighter-rouge">res</code>) de type <strong>Auto_ptr1</strong></li>
+</ol>
+
+<p><span style="color:red">À partir de ce moment la variable <code class="highlighter-rouge">res</code> <strong>possède</strong> (own) l’objet Ressource.</span></p>
+
+<p>Comme <code class="highlighter-rouge">res</code> est déclaré en tant que variable locale, sa portée est le bloc où elle est créé. Il se retrouvera hors de portée et <strong>sera détruit</strong> à la fin du bloc $ \large \Rightarrow $ pas à se soucier de sa désallocation.</p>
+
+<blockquote>
+  <p>Aussi longtemps que <strong>Auto_ptr1</strong> est définit localement (pas global…), la destruction des ressources qu’elle possède sont assurées de destruction (même en cas de fin de contexte prématurée).</p>
+</blockquote>
+
+<h2 id="définition-dun-smart-pointer">Définition d’un smart pointer</h2>
+
+<p>Une classe de ce genre est appellée <strong>smart_pointer</strong>. C’est une composition qui est faite pour gérer la mémoire allouée dynamiquement (simples pointeurs) et assurer que la mémoire est restituée quand le smart_pointer se retrouve hors contexte.</p>
+
+<h2 id="exemple-plus-pratique">Exemple plus pratique</h2>
+
+<p>Reprenons l’exemple de la fonction <code class="highlighter-rouge">doSomething()</code> et voyons comment notre nouvelle classe gère les problèmes posés:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">fonction</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// variable ptr possède l'objet Ressource
+</span>    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">ptr</span><span class="p">(</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Entrez un entier:"</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span><span class="p">;</span> <span class="c1">// fin prématurée de la fonction
+</span>    <span class="p">}</span>
+
+    <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">ditBonjour</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fonction</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>ouput avec une input != 0:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+Entrez un entier:4
+Salut
+Ressource detruites
+</code></pre>
+</div>
+
+<p>output avec un input = 0:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+Entrez un entier:0
+Ressource detruites
+</code></pre>
+</div>
+
+<p>Nous voyons donc ici que même dans le cas où la fonction est terminée de façon prématurée, les ressources sont quand même désallouées.</p>
+
+<h2 id="problèmes">Problèmes</h2>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">{</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">};</span>
+    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res2</span><span class="p">{</span><span class="n">res1</span><span class="p">};</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Ce programme va éventuellement afficher …</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+Ressource detruites
+Ressource detruites
+</code></pre>
+</div>
+
+<p>… avant de crasher</p>
+
+<p>Le programme suivant aura le même résultat:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">{</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">};</span>
+    <span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res2</span><span class="p">;</span>
+    <span class="n">res2</span> <span class="o">=</span> <span class="n">res1</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Comme nous ne fournissons pas de cstr de copies ou de srucharge de l’operateur d’affectation, C++ nous les génère par défaut. Ces versions de base ne font qu’une <strong>shallow copy</strong>.</p>
+
+<p>Quand nous initialisons <code class="highlighter-rouge">res</code>2 avec <code class="highlighter-rouge">res</code>1, les deux variables de type Auto_ptr1 pointent sur la même ressource et donc naturellement quand <code class="highlighter-rouge">res1</code> sort de portée, les ressources qu’il possède sont détruites et laisse <code class="highlighter-rouge">res2</code> avec un pointeur qui pointe dans le vide. Quand <code class="highlighter-rouge">res2</code> sort a son tour de portée il détruit des ressources déjà détruites et entraine un crash.</p>
+
+<p>Le programme suivant nous produirait un résultat similaire:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">passByValue</span><span class="p">(</span><span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+ 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">Auto_ptr1</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">(</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">);</span>
+	<span class="n">passByValue</span><span class="p">(</span><span class="n">res1</span><span class="p">);</span>
+ 
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">res1</code> est copié par valeur en paramètre (<code class="highlighter-rouge">res</code>) de <code class="highlighter-rouge">passByValue()</code> entrainant une duplication de l’objet Ressource… crash.</p>
+
+<ul>
+  <li>
+    <p>Une solution serait de <code class="highlighter-rouge">delete</code> le cstr de copies et la surcharge de l’operateur d’affectation. Cela aurait pour effet d’empécher les copies et donc de rêgler le problème des passages par valeur (ce qui d’un sens est une bonne chose, car il est évident qu’on ne passe pas ce genre de valeurs par valeur.)</p>
+
+    <ul>
+      <li>$ \large \Rightarrow $ on se retrouve avec un nouveau problème… 
+Sans le cstr de copie ou de surcharge de l’opérateur d’affectation, comment  retourner une valeur de type <strong>Auto_ptr1</strong> ?</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="o">???</span> <span class="n">generateurDeRessource</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Ressource</span> <span class="o">*</span><span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Ressource</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">Auto_ptr</span><span class="p">(</span><span class="n">r</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Le <strong>retour par référence</strong> n’est <strong>pas</strong> possible car la variable locales <strong>Auto_ptr1</strong> sera détruite à la fin du contexte de la fonction et la variable à l’autre bout de l’appel de la fonction se retrouvera avec une référence dans le vide.</p>
+  </li>
+  <li>
+    <p>Le passage par adrèsse est ce qu’on cherche à éviter dans cet article donc on oublie aussi.</p>
+  </li>
+  <li>
+    <p>L’option du passage par valeur comme vu plus haut, fait crasher le programme à cause des <strong>shallow copy</strong> et des pointeurs dupliqués.</p>
+  </li>
+  <li>
+    <p>Personnaliser le cstr de copies et la surcharge de l’opérateur d’affectation en s’assurant qu’ils facent des <strong>deep copy</strong> fonctionnerait mais <strong>les copies sont couteuses en ressources</strong> (et peuvent donc ne pas être désirable ou même possible en fonction de la complexité du problème) mais surtout nous ne voulons pas faire des copies <em>inutiles</em> uniquement pour retourner un objet <strong>Auto_ptr1</strong> d’une fonction. De plus assigner ou initialiser un <em>simple pointeur</em> ne copie pas l’objet pointé donc pourquoi un <em>smart pointer</em> agirait différament?</p>
+  </li>
+</ul>
+
+<p>Bon bah… On fait quoi alors?</p>
+
+<h2 id="move-semantics">Move semantics</h2>
+
+<p>À la place d’avoir notre cstr de copies ou notre oppérateur d’affectation qui copient le pointeur (“Sémantique de copie”), on peut à la place <strong>transférer/déplacer</strong> (move) la possession (ownership) du pointeur de la source à l’objet de destination.</p>
+
+<p>Le concepte de  <strong>sémentique de déplacement</strong> (Move semantics) exprime qu’une classe va transférer la possèssion d’un objet à la place d’en faire une copie.</p>
+
+<p>Faisons une mise à jour de notre classe <strong>Auto_ptr1</strong> pour illustrer ce concepte:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Auto_ptr2</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_ptr</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Auto_ptr2</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">Auto_ptr2</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// cstr de copie qui implémente la sémantique de déplacement
+</span>    <span class="n">Auto_ptr2</span><span class="p">(</span><span class="n">Auto_ptr2</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="c1">// a n'est PAS const !
+</span>    <span class="p">{</span>
+        <span class="n">_ptr</span>   <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>    <span class="c1">// Transfer le ptr classique de source à obj local
+</span>        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>   <span class="c1">// On s'assure que la source ne possède plus le ptr
+</span>    <span class="p">}</span>
+
+    <span class="c1">// OL de l'op d'affectation qui implémente la sémantique de déplacement
+</span>    <span class="n">Auto_ptr2</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Auto_ptr2</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="c1">// a n'est PAS const !
+</span>    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Self alloc check
+</span>            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="c1">// On assure de la désallocation d'un 
+</span>                     <span class="c1">// éventuel ptr possédé par la destination
+</span>        <span class="n">_ptr</span>   <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>  <span class="c1">// Transfer le ptr classique de source à obj local
+</span>        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="c1">// On s'assure que la source ne possède plus le ptr
+</span>        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>        
+    <span class="p">}</span>
+
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">*</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isNull</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+
+<span class="k">class</span> <span class="nc">Ressource</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource acquise</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource detruites</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr2</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res1</span><span class="p">(</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">);</span>
+    <span class="n">Auto_ptr2</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res2</span><span class="p">;</span> <span class="c1">// initialement nullptr
+</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"res1 est "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">res1</span><span class="p">.</span><span class="n">isNull</span><span class="p">()</span> <span class="o">?</span> <span class="s">"null</span><span class="se">\n</span><span class="s">"</span><span class="o">:</span> <span class="s">"non null</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"res2 est "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">res2</span><span class="p">.</span><span class="n">isNull</span><span class="p">()</span> <span class="o">?</span> <span class="s">"null</span><span class="se">\n</span><span class="s">"</span><span class="o">:</span> <span class="s">"non null</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="n">res2</span> <span class="o">=</span> <span class="n">res1</span><span class="p">;</span> <span class="c1">// res2 reprend la possession, res1 est set null
+</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Transfère de possession fait</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"res1 est "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">res1</span><span class="p">.</span><span class="n">isNull</span><span class="p">()</span> <span class="o">?</span> <span class="s">"null</span><span class="se">\n</span><span class="s">"</span><span class="o">:</span> <span class="s">"non null</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"res2 est "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">res2</span><span class="p">.</span><span class="n">isNull</span><span class="p">()</span> <span class="o">?</span> <span class="s">"null</span><span class="se">\n</span><span class="s">"</span><span class="o">:</span> <span class="s">"non null</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+res1 est non null
+res2 est null
+Transfère de possession fait
+res1 est null
+res2 est non null
+Ressource detruite
+</code></pre>
+</div>
+
+<p>Notre surcharge de l’opérateur d’affectation a eu le résultat attendu et a bien transféré la possession de <code class="highlighter-rouge">_ptr</code> de <code class="highlighter-rouge">res1</code> à <code class="highlighter-rouge">res2</code>. Par conséquant on ne se retrouve pas avec des copies dupliqués du pointeur et tout se retrouve proprement nettoyé à la fin du programme.</p>
+
+<h2 id="un-mot-sur-stdauto_ptr-et-pourquoi-léviter">Un mot sur std::auto_ptr et pourquoi l’éviter</h2>
+
+<p>Jusqu’ici nous avons grossomodo implémenté ce qui ressemble à l’implémentation de std::auto_ptr de la version 98 de C++.</p>
+
+<p>Même si c’est un bon cas d’école, cette implémentation est à éviter pour de nombreuses raisons. Plus d’info en bas de cette page: <a href="http://www.learncpp.com/cpp-tutorial/15-1-intro-to-smart-pointers-move-semantics/">learncpp.com</a></p>
+
+<blockquote>
+  <p>std::auto_ptr est obsolet et ne devrait pas être utilisé. Il est dailleurs prévu que cette fonction de la STL soit retirée à la révision 17 de C++.</p>
+</blockquote>
+
+<h2 id="références-sur-r-value-et-l-value">Références sur R-value et L-value</h2>
+
+<p>Avant d’aller plus loin il est interessant de vite fait voir ce qui se passe sur <a href="\cpp\cpp-R-value-L-value.html">cette</a> page un peu barbante mais utile pour la suite.</p>
+
+<h2 id="sémantique-de-copie">Sémantique de copie</h2>
+
+<p>Et puis sur <a href="\cpp\cpp-semantiqueCopie.html">celle-ci</a> aussi tant qu’à faire…</p>
+
+<h1 id="constructeur-de-copies-et-opérateur-daffectation">Constructeur de copies et opérateur d’affectation</h1>
+
+<ul>
+  <li>
+    <p>Le <strong>constructeur de copie</strong> est utilisé pour initialiser une classe en faisant une copie d’un objet de la même classe.</p>
+  </li>
+  <li>
+    <p>La <strong>surcharge de l’opérateur d’affectation</strong> est utilisée pour copier les membres d’un objet dans un autre objet déjà existant.</p>
+  </li>
+  <li>
+    <p>Par défaut, le compilateur génère un constructeur de copie et opérateur d’affectation si <strong>l’un des deux</strong> n’est explicitement fournit.</p>
+  </li>
+  <li>
+    <p>Ces fonctions fournies par le compilateur font des <strong>shallow copies</strong> ce qui peut causer des problèmes pour les classes qui allouent dynamiquement de la mémoire.</p>
+  </li>
+  <li>
+    <p><span style="color:red">Les classes qui allouent dynamiquement de la mémoire <strong>doivent</strong> fournir des fonctions qui font des <strong>deep copy</strong> à la place ! </span></p>
+  </li>
+</ul>
+
+<p>Reprenons l’exemple de la classe <code class="highlighter-rouge">Auto_ptr</code> et ajoutons y un constructeur de copie et une surcharge de l’opérateur d’affectation pour respecter le dernier point.</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Auto_ptr3</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_ptr</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Auto_ptr3</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">Auto_ptr3</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// cstr de copie, deep copie a._ptr dans _ptr
+</span>    <span class="n">Auto_ptr3</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr3</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_ptr</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// surcharge opérateur d'affectation, deep copie a._ptr dans _ptr
+</span>    <span class="n">Auto_ptr3</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr3</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// self assign-check
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// désalloue d'éventuelles ressources
+</span>        <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span>
+        <span class="c1">// copie les ressources
+</span>        <span class="n">_ptr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">T</span><span class="o">*</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>  <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isNull</span><span class="p">()</span>   <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>   
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Ressource</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource acquise</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource detruite</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">Auto_ptr3</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">generationRessource</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr3</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">(</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span> <span class="c1">// cette valeur de retour invoque le cstr de copie
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr3</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">mainRes</span><span class="p">;</span>
+    <span class="n">mainRes</span> <span class="o">=</span> <span class="n">generationRessource</span><span class="p">();</span> <span class="c1">// cette affectation invoque 
+</span>                                    <span class="c1">// la surcharge de l'op d'affectation
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Dans ce programme la fonction <code class="highlighter-rouge">generationRessource()</code> crée une ressource encapsulée dans un smart pointer qui est ensuite retourné à la fonction <code class="highlighter-rouge">main()</code> et affectée à un objet Auto_ptr3 préexistant.</p>
+
+<p>L’output est:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+Ressource acquise
+Ressource detruite
+Ressource acquise
+Ressource detruite
+Ressource detruite
+</code></pre>
+</div>
+<p>… beaucoup de ressources créées et détruites pour un si simple programme. Si nous décortiquons ce dernier, nous pouvons identifier 6 étapes clés (une par message printé).</p>
+
+<ol>
+  <li>
+    <p>Dans la fonction <code class="highlighter-rouge">generationRessource()</code>, la variable locale <code class="highlighter-rouge">res</code> est créée et initialisée avec des ressources allouées dynamiquement $\Rightarrow$ premier message $Ressource\;acquise$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">res</code> est retourné dans le <code class="highlighter-rouge">main()</code> par copie de valeur. On retourne de cette façon car <strong>res</strong> est une variable locale à la fonction et une référence à cette dernière pointerait dans le vide une fois la fonction finie. <code class="highlighter-rouge">Res</code> est donc construit par copie dans un <strong>objet temporaire</strong>. Comme notre cstr de copie fait une <strong>deep copie</strong>, une nouvelle Ressource est allouée d’où le second message $Ressource\;acquise$.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">res</code> sort de portée et donc la Ressource initiale est détruite ce qui cause le premièr message $Ressource\;detruite$.</p>
+  </li>
+  <li>
+    <p>L’objet temporaire est assigné à la variable <code class="highlighter-rouge">mainRes</code> par <strong>assignement par copie</strong>. Comme notre cstr de copies gère la <strong>deep copy</strong>, une nouvelle ressource est allouée et causant le 3e message $Ressource\;acquise$.</p>
+  </li>
+  <li>
+    <p>L’expression d’affectation finie, et l’<strong>objet temporaire</strong> se retrouve hors de portée et détruit d’où le second message $Ressource\;detruite$.</p>
+  </li>
+  <li>
+    <p>À la fin du <code class="highlighter-rouge">main()</code>, <code class="highlighter-rouge">mainRes</code> sors lui aussi de portée et génère notre dernier message $Ressource\;detruite$.</p>
+  </li>
+</ol>
+
+<p><span style="color:red"> bien comprendre les points 2 et 5 ! </span></p>
+
+<p>Résultat des courses, pour un appel du constructeur de copie pour copier <code class="highlighter-rouge">res</code> dans un temporaire et une affectation du temporaire dans le <code class="highlighter-rouge">main()</code> dans la variable <code class="highlighter-rouge">resMain</code> on se retrouve avec 3 objets différents au total.</p>
+
+<p>Pour le moins <strong>innéfficient</strong> mais au moins ça ne crash pas!</p>
+
+<h2 id="constructeur-de-déplacement-et-affectation-de-déplacement">Constructeur de déplacement et affectation de déplacement</h2>
+
+<p>C++ 11 définit deux nouvelles fonctions au service de la sémantique de déplacement:</p>
+
+<ul>
+  <li>Un constructeur de déplacement</li>
+  <li>Une surcharge de l’opérateur d’affectation pour le déplacement</li>
+</ul>
+
+<p>Leur définition fonctionne de façon analogue à celle du cstr de copie et la surcharge de l’opérateur d’affectation à la différence que les fonctions dédiées au déplacement prennent des références à des R-value <strong>non-constantes</strong> à la place des R-value constantes de leur homologues de copie.</p>
+
+<p>Voici notre fonction Auto_ptr améliorée de la capacité de déplacement (la paire de fonctions dédiées à la copie sont toujours là pour la comparaison).</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Auto_ptr4</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_ptr</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Auto_ptr4</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">Auto_ptr4</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// cstr de copie, deep copie a._ptr dans _ptr
+</span>    <span class="n">Auto_ptr4</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr4</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_ptr</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// cstr de déplacement, transfère la possèssion de a._ptr a _ptr
+</span>    <span class="n">Auto_ptr4</span><span class="p">(</span><span class="n">Auto_ptr4</span> <span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// surcharge opérateur d'affectation, deep copie a._ptr dans _ptr
+</span>    <span class="n">Auto_ptr4</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr4</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// self assign-check
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// désalloue d'éventuelles ressources
+</span>        <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span>
+        <span class="c1">// copie les ressources
+</span>        <span class="n">_ptr</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">_ptr</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Affectation de déplcement, transfère la possèssion de a._ptr a _ptr
+</span>    <span class="n">Auto_ptr4</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Auto_ptr4</span> <span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// self assign-check
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// désalloue d'éventuelles ressources
+</span>        <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span>
+        <span class="c1">// transfère la possèssion de a._ptr a _ptr
+</span>        <span class="n">_ptr</span>   <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+
+    <span class="n">T</span><span class="o">*</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>  <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isNull</span><span class="p">()</span>   <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>   
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Ressource</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource acquise</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">Ressource</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ressource detruite</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="n">Auto_ptr4</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">generationRessource</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr4</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">res</span><span class="p">(</span><span class="k">new</span> <span class="n">Ressource</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span> <span class="c1">// cette valeur de retour invoque le cstr de copie
+</span><span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Auto_ptr4</span><span class="o">&lt;</span><span class="n">Ressource</span><span class="o">&gt;</span> <span class="n">mainRes</span><span class="p">;</span>
+    <span class="n">mainRes</span> <span class="o">=</span> <span class="n">generationRessource</span><span class="p">();</span> <span class="c1">// cette affectation invoque 
+</span>                                    <span class="c1">// la surcharge de l'op d'affectation
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Ces nouvelles fonctions sont très simples. À la place de <strong>deep copy</strong> l’objet source (a) dans le nouvel objet, ils se contente de bouger (voler) les ressoues de l’objet source. Ceci implique une <strong>shallow copy</strong> du pointeur de la source dans l’objet et un set du pointeur de la source à <code class="highlighter-rouge">nullptr</code>.</p>
+
+<p>Le nouvel output ressemble à:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Ressource acquise
+Ressource detruite
+</code></pre>
+</div>
+
+<p>Beaucoup mieux !</p>
+
+<p>Le flow du programme reste le même que le précédent sauf qu’à la place d’appeler le constructeur de copie et l’opérateur d’affectation, ce programme appel les homologues dédiés au déplacement.</p>
+
+<ol>
+  <li>
+    <p>Dans la fonction <code class="highlighter-rouge">generationRessource()</code>, la variable locale <code class="highlighter-rouge">res</code> est créée et initialisée avec des ressources allouées dynamiquement $\Rightarrow$ premier message $Ressource\;acquise$</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">res</code> est retourné dans le <code class="highlighter-rouge">main()</code> par valeur: <code class="highlighter-rouge">res</code> via le cstr de déplacement est transféré dans un objet temporaire créé dynamiquement.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">res</code> sort de portée. Comme <code class="highlighter-rouge">res</code> ne possède plus de pointeur (car déplacé dans l’objet temporaire), nous n’avons pas de print.</p>
+  </li>
+  <li>
+    <p>L’objet temporaire est assigné à la variable <code class="highlighter-rouge">mainRes</code> ce qui transfère l’objet créé dynamiquement et contenu dans la variable temporaire à <code class="highlighter-rouge">mainRes</code>.</p>
+  </li>
+  <li>
+    <p>L’expression d’affectation finie, l’<strong>objet temporaire</strong> se retrouve hors de portée et est détruit mais comme cet objet temporaire à transféré son contenu, il ne possède plus de pointeur (il est maintenant dans <code class="highlighter-rouge">mainRes</code>) et lors de cette destruction, nous n’avons pas de print no plus.</p>
+  </li>
+  <li>
+    <p>À la fin du <code class="highlighter-rouge">main()</code>, <code class="highlighter-rouge">mainRes</code> sors de portée et génère le message $Ressource\;detruite$.</p>
+  </li>
+</ol>
+
+<p>Résultat des courses, à la place de copier notre ressource deux fois, nous la transfèrons deux fois. <span style="color:red">Ce qui est plus efficace au niveau ressources.</span></p>
+
+<p>La paire dédiée au déplacement n’est pas fournie par défaut.</p>
+
+<h2 id="règle">Règle</h2>
+
+<p><span style="color:red">Pour utiliser le constructeur de déplacement et l’affectation de déplacement nous devons les fournir nous même.</span></p>
+
+<h2 id="quand-est-la-paire-dédiée-au-déplacement-appelée-">Quand est la paire dédiée au déplacement appelée ?</h2>
+<p>Lorsque ces fonctions sont définies et que l’argument pour la construction ou l’affectation est une R-value. Cette R-value est typiquement un literal ou une valeur temporaire.</p>
+
+<h2 id="copie-vs-déplacement">Copie VS déplacement</h2>
+
+<h3 id="copie">Copie</h3>
+<p>Si nous construisons ou affectons un objet et que l’argument est une L-value, il est préférable de copier cette L-value. On ne peut assumer qu’il est safe de la modifier car on pourait en avoir besoin plus tard dans le programme.</p>
+
+<p>Dans le cas d’une exression comme <code class="highlighter-rouge">a = b</code>, il est impensable que <code class="highlighter-rouge">b</code> change de valeur.</p>
+
+<h3 id="déplacement">déplacement</h3>
+<p>Si nous construisons ou affectons un objet et que l’argument est une R-value, nous savons que cette R-value n’est d’une façon ou d’une autre qu’un objet temporaire. À la place de le copier (ce qui peut couter cher en ressources), on peut simplement transférer les ressources qu’il possède (bien moins couteux en ressources) à l’objet que nous construisons ou affectons.</p>
+
+<p>C’est safe car de toutes façons l’objet temporaire ser détruit à la fin de l’expression et que donc nous savons que nous n’allons pas la réutiliser.</p>
+
+<blockquote>
+  <p>C++11, grâce au références R-value nous permet de donner des comportements différents si l’argument est une R-value ou une L-value. Cela nous permet d’avoir plus de liberté et d’être plus intéligent dans le choix des comportement de nos objets.</p>
+</blockquote>
+
+<h2 id="empécher-la-copie">Empécher la copie</h2>
+<p>Dans notre version de la class Auto_ptr précédent, nous avons laissé la paire de copie pour pouvoir visuellement comparer les deux paires.</p>
+
+<p>Dans les classes qui sont capable de faire des déplacements, il parfois désirable de <strong>delete</strong>  la paire de copie pour s’assurer qu’aucune copie ne sera faite.</p>
+
+<p>Dans le cas de notre exemple, nous ne voulons pas que notre objet générique <code class="highlighter-rouge">T</code> soit copié. D’une part car c’est couteux en ressources et d’autre part car en fonction du type (classe) <code class="highlighter-rouge">T</code> utilisé, il se peut que cette dernière ne supporte pas la copie.</p>
+
+<p>Voici une version de la classe Auto_ptr qui gère la sémantique de déplacement mais pas celle de copie:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Auto_ptr5</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_ptr</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Auto_ptr5</span><span class="p">(</span><span class="n">T</span><span class="o">*</span> <span class="n">ptr</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">Auto_ptr5</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c1">// cstr de copie, copies non supportées !
+</span>    <span class="n">Auto_ptr5</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr5</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+    <span class="c1">// cstr de déplacement, transfère la possèssion de a._ptr a _ptr
+</span>    <span class="n">Auto_ptr5</span><span class="p">(</span><span class="n">Auto_ptr5</span> <span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">)</span><span class="o">:</span> <span class="n">_ptr</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// surcharge opérateur d'affectation, copies non supportées !
+</span>    <span class="n">Auto_ptr5</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Auto_ptr5</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+    <span class="c1">// Affectation de déplcement, transfère la possèssion de a._ptr a _ptr
+</span>    <span class="n">Auto_ptr5</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Auto_ptr5</span> <span class="o">&amp;&amp;</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// self assign-check
+</span>        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">a</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="c1">// désalloue d'éventuelles ressources
+</span>        <span class="k">delete</span> <span class="n">_ptr</span><span class="p">;</span>
+        <span class="c1">// transfère la possèssion de a._ptr a _ptr
+</span>        <span class="n">_ptr</span>   <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span><span class="p">;</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">_ptr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+
+    <span class="n">T</span><span class="o">*</span> <span class="k">operator</span><span class="o">-&gt;</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">*</span><span class="p">()</span>  <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="n">_ptr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">bool</span> <span class="n">isNull</span><span class="p">()</span>   <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_ptr</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="p">}</span>   
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>Si nous tentons de passer une L-value de type Auto_ptr5 à une fonction, le compilateur se pleindrait que le constructeur de copie requis pour l’initialisation de copies a été delete. C’est une bonne chose car nous ne devrions pas passer Auto_ptr5 par référence L-value constante de toutes façon !</p>
+
+<p>Auto_ptr5 est (finalement) une bonne classe smart pointer. En réalité celle que contient la STL (std::unique_ptr) lui ressemble beaucoup.</p>
+
+<h1 id="teste-de-performance">Teste de performance</h1>
+
+<p>Le code suivant va nous permetre de tester et comparer les performances de la copie vs déplacement.
+Nous allons allouer 1 million  d’int sur le heap et à l’aide d’une nouvelle classe (<code class="highlighter-rouge">Timer</code>) nous allons mesurer la vitesse d’excution de notre programme.</p>
+
+<p>version copie: (deep copy)</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;chrono&gt; // for std::chrono functions
+</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">DynamicArray</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_arr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">_len</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">DynamicArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span><span class="o">:</span> <span class="n">_len</span><span class="p">(</span><span class="n">len</span><span class="p">),</span> <span class="n">_arr</span><span class="p">(</span><span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">len</span><span class="p">])</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">DynamicArray</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="p">[]</span> <span class="n">_arr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="c1">// cstr de copie
+</span>    <span class="n">DynamicArray</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">_len</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">_len</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">_len</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_len</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">_arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// opérateur d'affectation
+</span>    <span class="n">DynamicArray</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">s</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">delete</span> <span class="p">[]</span> <span class="n">_arr</span><span class="p">;</span>
+
+        <span class="n">_len</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">_len</span><span class="p">;</span>
+        <span class="n">_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">_len</span><span class="p">];</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">_len</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">_arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">int</span> <span class="n">getLen</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_len</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">idx</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_arr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
+    <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_arr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Timer</span>
+<span class="p">{</span>
+    <span class="c1">// type alias pour rendre l'acces plus facile
+</span>    <span class="k">using</span> <span class="kt">clock_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">second_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ratio</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">time_point</span><span class="o">&lt;</span><span class="kt">clock_t</span><span class="o">&gt;</span> <span class="n">_beg</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Timer</span><span class="p">()</span><span class="o">:</span> <span class="n">_beg</span><span class="p">(</span><span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">())</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">reset</span><span class="p">()</span> <span class="p">{</span> <span class="n">_beg</span> <span class="o">=</span> <span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">();</span> <span class="p">}</span>
+    <span class="kt">double</span> <span class="n">elapsed</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">second_t</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">_beg</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Retourne une copie de l'array avec toutes le variables doublées
+</span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">cloneArrayAndDouble</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">){</span>
+    <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dbl</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">());</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dbl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">dbl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Timer</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">cloneArrayAndDouble</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="p">.</span><span class="n">elapsed</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Output sur ma machine (i7 @ 2.9ghz):</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>0.0200022
+</code></pre>
+</div>
+
+<p>Maintenant modifions la paire de copie par une paire de  déplacement:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;chrono&gt; // for std::chrono functions
+</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">DynamicArray</span>
+<span class="p">{</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">_arr</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">_len</span><span class="p">;</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">DynamicArray</span><span class="p">(</span><span class="kt">int</span> <span class="n">len</span><span class="p">)</span><span class="o">:</span> <span class="n">_len</span><span class="p">(</span><span class="n">len</span><span class="p">),</span> <span class="n">_arr</span><span class="p">(</span><span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">len</span><span class="p">])</span> <span class="p">{}</span>
+    <span class="o">~</span><span class="n">DynamicArray</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span> <span class="p">[]</span> <span class="n">_arr</span><span class="p">;</span> <span class="p">}</span>
+    <span class="c1">// cstr de copie disabled
+</span>    <span class="n">DynamicArray</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+    <span class="c1">// opérateur d'affectation disabled
+</span>    <span class="n">DynamicArray</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+
+    <span class="c1">// move cstr
+</span>    <span class="n">DynamicArray</span><span class="p">(</span><span class="n">DynamicArray</span> <span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span><span class="o">:</span> <span class="n">_len</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">_len</span><span class="p">),</span> <span class="n">_arr</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">_arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">_arr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// affectation de copies
+</span>    <span class="n">DynamicArray</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">DynamicArray</span> <span class="o">&amp;&amp;</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">s</span> <span class="o">==</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+        <span class="k">delete</span> <span class="p">[]</span> <span class="n">_arr</span><span class="p">;</span>
+
+        <span class="n">_len</span>   <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">_len</span><span class="p">;</span>
+        <span class="n">_arr</span>   <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">_arr</span><span class="p">;</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">_len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">_arr</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+
+    <span class="kt">int</span> <span class="n">getLen</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_len</span><span class="p">;</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">idx</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_arr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
+    <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_arr</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">Timer</span>
+<span class="p">{</span>
+    <span class="c1">// type alias pour rendre l'acces plus facile
+</span>    <span class="k">using</span> <span class="kt">clock_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">high_resolution_clock</span><span class="p">;</span>
+    <span class="k">using</span> <span class="n">second_t</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ratio</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;&gt;</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">time_point</span><span class="o">&lt;</span><span class="kt">clock_t</span><span class="o">&gt;</span> <span class="n">_beg</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">Timer</span><span class="p">()</span><span class="o">:</span> <span class="n">_beg</span><span class="p">(</span><span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">())</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">reset</span><span class="p">()</span> <span class="p">{</span> <span class="n">_beg</span> <span class="o">=</span> <span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">();</span> <span class="p">}</span>
+    <span class="kt">double</span> <span class="n">elapsed</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">duration_cast</span><span class="o">&lt;</span><span class="n">second_t</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">clock_t</span><span class="o">::</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">_beg</span><span class="p">).</span><span class="n">count</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Retourne une copie de l'array avec toutes le variables doublées
+</span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">cloneArrayAndDouble</span><span class="p">(</span><span class="k">const</span> <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">){</span>
+    <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">dbl</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">());</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dbl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">dbl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Timer</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">DynamicArray</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">(</span><span class="mi">1000000</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">getLen</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">cloneArrayAndDouble</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t</span><span class="p">.</span><span class="n">elapsed</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Sur la même machine l’output est:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>0.010002
+</code></pre>
+</div>
+<p>Si nous comparons le temps d’éxecution des deux programmes:<br />
+<script type="math/tex">\frac{0.010002}{0.0200022} \approx 0.5</script> 
+$\Rightarrow 50\% $ plus rapide !</p>
+
+<h1 id="stdmove">std::move</h1>
+
+<p>Une fois convaincu par l’utilité de la sémantique de déplacement, il n’est pas étonnant qu’on veuille l’utiliser à toutes les sauces. Cependant, on risque de tomber sur des situations où les objets qu’on travaille sont des L-value et non pas des R-value.</p>
+
+<p>Considérons cet exemple:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">tmp</span> <span class="p">{</span><span class="n">a</span><span class="p">};</span> <span class="c1">// invoque le cstr de copie
+</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>     <span class="c1">// invoque la surcharge affectation(copie)
+</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>   <span class="c1">// invoque la surcharge affectation(copie)
+</span><span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">x</span><span class="p">{</span><span class="s">"abc"</span><span class="p">};</span>
+    <span class="n">string</span> <span class="n">y</span><span class="p">{</span><span class="s">"de"</span><span class="p">};</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x: "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y: "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x: "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y: "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>La fonction  swap les deux strings en faisant 3 copies et le programme nous retourne:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>x: abc
+y: de
+x: de
+y: abc
+</code></pre>
+</div>
+
+<p>Comme vu dans les précédents exemples, ces copies sont couteuses et dans ce cas inutiles.
+Au vue de ce que nous avons appris jusque maintenant, il peut être interessant d’utiliser la sémantique de déplacement à la place de faire des copies.</p>
+
+<p>Le problème est que les paramètres <code class="highlighter-rouge">A</code> et <code class="highlighter-rouge">B</code> sont des références de L-value et que donc même si nous avions un cstr de déplacement et une surcharge de l’opérateur d’affectation (déplacement) le compilateur choisirait la paire de copie.</p>
+
+<p>C’est là qu’est utile la fonction <code class="highlighter-rouge">std::move</code> de la libairie standard.
+<strong>Cette fonction ne sert qu’à une chose: convertir ses arguments en R-value.</strong> Cette fonction vit dans le header <code class="highlighter-rouge">#utility</code></p>
+
+<p>Voici le même programme mais avec une conversion via <code class="highlighter-rouge">std::move</code> de nos L-value en R-value.</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">swap</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">T</span> <span class="n">tmp</span> <span class="p">{</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">a</span><span class="p">)};</span> <span class="c1">// invoque le cstr de déplacement
+</span>    <span class="n">a</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>     <span class="c1">// invoque la surcharge affectation(déplacement)
+</span>    <span class="n">b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>   <span class="c1">// invoque la surcharge affectation(déplacement)
+</span><span class="p">}</span>
+
+
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">x</span><span class="p">{</span><span class="s">"abc"</span><span class="p">};</span>
+    <span class="n">string</span> <span class="n">y</span><span class="p">{</span><span class="s">"de"</span><span class="p">};</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x: "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y: "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="n">swap</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x: "</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"y: "</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Mêmes résultats…</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>x: abc
+y: de
+x: de
+y: abc
+</code></pre>
+</div>
+
+<p>Mais beaucoup plus performant.</p>
+
+<h2 id="autre-exemple">Autre exemple</h2>
+
+<p>Nous pouvons utiliser <code class="highlighter-rouge">std::move</code> pour remplire un élément d’un conteneur comme un vecteur qui prend des L-value.</p>
+
+<p>Dans l’exemple suivant, premièrement nous ajoutons un élément à un vecteur en le copiant et ensuite nous ajoutons un autre élément en utilisant la sémantique de déplacement.</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;vector&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"poule"</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Copie de la str</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">str</span><span class="p">);</span> <span class="c1">// appelle la version L-value de push_back =&gt; copie
+</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"str: "</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"vector: "</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">Déplacement de str</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">str</span><span class="p">));</span> <span class="c1">// appelle la version R-value de 
+</span>                                 <span class="c1">// push_back =&gt; déplacement
+</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"str: "</span> <span class="o">&lt;&lt;</span> <span class="n">str</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"vector: "</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>   
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copie de la str
+str: poule
+vector: poule
+
+Déplacement de str
+str: 
+vector: poule poule
+</code></pre>
+</div>
+
+<p>Le code et l’output parlent pour eux même.</p>
+
+<h2 id="autres-cas-où-utiliser-stdmove">Autres cas où utiliser std::move</h2>
+
+<ul>
+  <li>
+    <p><strong>Pendant le try d’un tableau</strong>. Beaucoup d’<a href="\algo\Algo-tri.html">algorithme de try</a> utilisent l’échange de paires d’éléments (select, bulle, …). L’utilisation de la sémentique de déplacement peut aussi augmenter les performance de ces algorithmes.</p>
+  </li>
+  <li>
+    <p>Peut églement être utile si nous voulons déplacer le contenu d’un smart ptr à un autre smart ptr.</p>
+  </li>
+</ul>
+
+<h2 id="conclusion-sur-stdmove">Conclusion sur std::move</h2>
+
+<p>Cette fonction peut-être utilisée dans les cas où nous voulons traiter une L-value comme une R-value pour forcer l’utilisation de la sémantique de déplacement sur celle de copie.</p>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Cpp: Sémantique de déplacement & intro smart_ptr@&amp;url=http://localhost:4000/cpp/cpp-move&smartP.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cpp/cpp-move&smartP.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/cpp/cpp-move&smartP.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="/%20/">Home</a> /
+                <a class="link" href="/archive/">Archive</a> /
+                <a class="link" href="/category/">Category</a> /
+                <a class="link" href="/tags/">Tags</a> /
+                <a class="link" href="/about/">About</a> /
+                <a class="link" href="/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

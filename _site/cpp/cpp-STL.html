@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/cpp/cpp-STL.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cpp: STL</title>
+  <meta name="description" content="">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Cpp: STL</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="23 Jun 2017" itemprop="datePublished">Jun 23 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">cpp</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="/">Home</a> /
+			<a class="link" href="/archive/">Archive</a> /
+			<a class="link" href="/category/">Category</a> / 
+			<a class="link" href="/tags/">Tags</a> / 
+			<a class="link" href="/about/">About</a> /
+			<a class="link" href="/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p>Librairie standard</p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <p><img src="/00illustrations/flux/exam.png" alt="alt" /></p>
+
+<h2 id="sources">Sources</h2>
+
+<p>Slide du cours C++ He-arc: 1240.2.09 Bibliothèque Standard
+<a href="http://en.cppreference.com/w/">cppref</a></p>
+
+<h2 id="1-flux">1. Flux</h2>
+
+<ul>
+  <li>Un flux est une <strong>séquence d’octets transférée</strong> entre la mémoire et les périphériques.</li>
+  <li>C’est le programme qui donne une <strong>signification</strong> aux octets d’un flux.</li>
+  <li>Les flux fournissent une <strong>méthode unifiée</strong> de traiter les E/S quel que soient les périphériques et les types de données à échanger.</li>
+  <li>Hiérarchie basée sur <strong>ios</strong>(in/out… <span style="color:red">a compléter</span>)</li>
+</ul>
+
+<p>Classes implémentant des flux:</p>
+<ul>
+  <li><code class="highlighter-rouge">iostream</code> $ \Rightarrow $ E/S standard (clavier/écran)</li>
+  <li><code class="highlighter-rouge">fstream</code> $ \Rightarrow $ E/S dans les fichiers</li>
+  <li><code class="highlighter-rouge">sstream</code> $ \Rightarrow $ E/S dans la mémoire (string)<br />
+<br />
+Toutes ces classes redéfinissent les opérateurs  <code class="highlighter-rouge">&lt;&lt;</code> et <code class="highlighter-rouge">&gt;&gt;</code></li>
+</ul>
+
+<h2 id="2-fichiers">2. Fichiers</h2>
+
+<p>Deux types de fichiers:</p>
+<ul>
+  <li>texte (par défaut)</li>
+  <li>binaire</li>
+</ul>
+
+<p>Deux modes d’accès:</p>
+<ul>
+  <li>séquentiel</li>
+  <li>direct (random acces)</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;fstream&gt;
+</span></code></pre>
+</div>
+<p>Trois classes:</p>
+<ul>
+  <li><code class="highlighter-rouge">ifstream</code> $ \Rightarrow $ lecture</li>
+  <li><code class="highlighter-rouge">ofstream</code> $ \Rightarrow $ ecriture</li>
+  <li><code class="highlighter-rouge">fstream</code> $ \Rightarrow $ les deux</li>
+</ul>
+
+<h3 id="ouverture">Ouverture</h3>
+
+<p>Deux choix:</p>
+
+<ul>
+  <li>constructeur
+    <div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">ifstream</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">nom</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">ofstream</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">nom</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>méthode <code class="highlighter-rouge">open()</code>
+    <div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">open</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">nom</span><span class="p">,</span> <span class="kt">int</span> <span class="n">mode</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>Même signature, seules les valeurs par défaut changent.</p>
+
+<h3 id="paramètres-douverture">Paramètres d’ouverture</h3>
+
+<p>Le paramètre <strong>mode</strong> est un champ de bits. On le combine avec l’opérateur bit à bit <code class="highlighter-rouge">|</code>.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">ios::binary</code> $ \Rightarrow $ Mode binaire (mode texte par défaut)</li>
+  <li><code class="highlighter-rouge">ios::in</code> $ \Rightarrow $ Lecture (défaut pour <code class="highlighter-rouge">ifstream</code>)</li>
+  <li><code class="highlighter-rouge">ios::out</code> $ \Rightarrow $ Ecriture (défaut pour <code class="highlighter-rouge">ofstream</code>)</li>
+  <li><code class="highlighter-rouge">ios::app</code> $ \Rightarrow $ Ajout à la fin (append)</li>
+  <li><code class="highlighter-rouge">ios::trunc</code> $ \Rightarrow $ Écrase le contenu précédent (truncate)</li>
+  <li><code class="highlighter-rouge">ios::ate</code> $ \Rightarrow $ position à la fin dés l’ouverture</li>
+</ul>
+
+<h4 id="exemple">exemple</h4>
+
+<p>Ouverture d’un fichier texte en écriture par ajout (append)</p>
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">fstream</span><span class="p">(</span><span class="s">"Log.txt"</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">app</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h3 id="fermeture">Fermeture</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">close</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<h3 id="exemples">Exemples</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;fstream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ofstream</span> <span class="n">fOut</span><span class="p">(</span><span class="s">"monfichier.txt"</span><span class="p">);</span>
+    <span class="n">fOut</span> <span class="o">&lt;&lt;</span> <span class="s">"PI= 3"</span> <span class="o">&lt;&lt;</span> <span class="mf">3.14159</span> <span class="o">&lt;&lt;</span> <span class="sc">'.'</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">fOut</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+    <span class="n">ifstream</span> <span class="n">fIn</span><span class="p">(</span><span class="s">"monfichier.txt"</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span> <span class="kt">double</span> <span class="n">n</span><span class="p">;</span> <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">fIn</span> <span class="o">&gt;&gt;</span> <span class="n">s</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">fIn</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s">"--"</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">"--"</span> <span class="o">&lt;&lt;</span> <span class="n">c</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<ul>
+  <li>L’utilisation des flux pour accéder aux fichiers soulève les mêmes problèmes que pour la console. Les caractères blancs sont concidérés comme des séparateurs. On peut utiliser la fonction <code class="highlighter-rouge">getline()</code> pour les lire en entier.</li>
+  <li>La méthode utilisée est la même, seuls les périphériques changent.</li>
+</ul>
+
+<h4 id="ecriture">Ecriture</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">t1</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">9.87</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'W'</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">+</span><span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ofstream f("toto.txt", ios::out | ios::binary);
+</span>    <span class="n">ofstream</span> <span class="n">f</span><span class="p">(</span><span class="s">"poule.xyz"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">.</span><span class="n">is_open</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Impossible d'ouvrir le fichier en ecriture</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ecrire dans le fichier binaire avec write
+</span>    <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+    <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">));</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">write</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// get size of file
+</span>    <span class="n">f</span><span class="p">.</span><span class="n">seekp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">end</span><span class="p">);</span> <span class="c1">// aller à la fin
+</span>    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">tellp</span><span class="p">();</span> <span class="c1">// obtenir la position et la retourner
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"la taille du fichier est: "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Termine</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>la taille du fichier est: 38
+Termine
+</code></pre>
+</div>
+<h4 id="ecriture-avec-">Ecriture avec «</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">78</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">t1</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">9.87</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">'W'</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span><span class="o">+</span><span class="n">i</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ofstream f("poule.xyz", ios::out | ios::binary);
+</span>    <span class="n">ofstream</span> <span class="n">f</span><span class="p">(</span><span class="s">"poule.xyz"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">.</span><span class="n">is_open</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Impossible d'ouvrir le fichier en ecriture</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// .write((char *)&amp;a, sizeof(int)); 
+</span>    <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// .write((char *)&amp;b, sizeof(double));
+</span>    <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// .write((char *)&amp;c, sizeof(char));
+</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// .write ((char *)&amp;t1[i], sizeof(int));
+</span>    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="lecture">Lecture</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">t1</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+    <span class="c1">// ifstream f("poule.xyz", ios::in | ios::binary);
+</span>    <span class="n">ifstream</span> <span class="n">f</span><span class="p">(</span><span class="s">"poule.xyz"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">.</span><span class="n">is_open</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Impossible d'ouvrir le fichier en lecture</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// lecture avec read
+</span>    <span class="n">f</span><span class="p">.</span><span class="n">read</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="n">f</span><span class="p">.</span><span class="n">read</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+    <span class="n">f</span><span class="p">.</span><span class="n">read</span> <span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">));</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">// get size of file
+</span>
+    <span class="n">f</span><span class="p">.</span><span class="n">seekg</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">end</span><span class="p">);</span> <span class="c1">// aller à la fin
+</span>    <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">tellg</span><span class="p">();</span> <span class="c1">// obtenir la pos et la retourner
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"La taille du fichier est: "</span> <span class="o">&lt;&lt;</span> <span class="n">size</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"a = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"b = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"c = "</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>La taille du fichier est: 38
+a = 1
+b = 1
+c = 1
+256087
+256256
+256512
+256768
+257024
+257280
+</code></pre>
+</div>
+
+<h4 id="lecture-1">Lecture</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">line</span><span class="p">;</span>
+    <span class="n">ifstream</span> <span class="n">f</span><span class="p">(</span><span class="s">"poeme.txt"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">.</span><span class="n">is_open</span><span class="p">()){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Impossible d'ouvrir le fichier en lecture</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>        
+    <span class="p">}</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">line</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>demain dès l'aube à l'heure où blanchit la campagne
+
+je partirai vois-tu je sais que tu m'attends 
+ 
+j'irai par la forêt j'irai par la montagne 
+ 
+je ne puis demeurer loin de toi plus longtemps 
+</code></pre>
+</div>
+
+<h3 id="traitements-derreurs">Traitements d’erreurs</h3>
+
+<p>Pour tous les flux (fichier, écran/clavier, mémoire), le traitement d’erreurs est similaire. Il se base sur l’état du flux (ios_base::iostate) codé par 4 bits (flags):</p>
+
+<ul>
+  <li>goodbit</li>
+  <li>badbit</li>
+  <li>failbit</li>
+  <li>eofbit</li>
+</ul>
+
+<p>On peut <strong>tester et manipuler</strong> l’état du flux avec les méthodes</p>
+
+<ul>
+  <li>good() $ \Rightarrow $ Aucune erreur</li>
+  <li>bad() $ \Rightarrow $ Impossible d’extraire des données du flux</li>
+  <li>fail() $ \Rightarrow $ Echec de l’opération</li>
+  <li>eof() $ \Rightarrow $ Fin de fichier</li>
+  <li>clear() $ \Rightarrow $ Réinitialisation des bits d’état</li>
+</ul>
+
+<h3 id="méthodes-de-lecture-distream">Méthodes de lecture d’istream</h3>
+
+<h4 id="lecture-formatée">Lecture formatée</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">istream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
+
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">var</span> <span class="o">&gt;&gt;</span> <span class="n">var2</span><span class="p">;</span>
+
+</code></pre>
+</div>
+<h4 id="lecture-non-formatée">Lecture non formatée</h4>
+
+<ul>
+  <li>get()  $ \Rightarrow $ lecture d’un seul char</li>
+  <li>getline() $ \Rightarrow $ lecture d’une suite de char</li>
+  <li>ignore() $ \Rightarrow $ ?</li>
+  <li>peek() $ \Rightarrow $ donne le prochain char sans l’extraire</li>
+  <li>seekg() $ \Rightarrow $ positionnement sur un flux</li>
+  <li>read() $ \Rightarrow $ lecture de n char</li>
+</ul>
+
+<h3 id="méthodes-décriture-dostream">Méthodes d’écriture d’ostream</h3>
+
+<h4 id="lecture-formatée-1">Lecture formatée</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">()</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"PI="</span> <span class="o">&lt;&lt;</span> <span class="mf">3.14</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h4 id="Écriture-non-formatée">Écriture non formatée</h4>
+
+<ul>
+  <li>put() $ \Rightarrow $ écriture d’un seul char</li>
+  <li>wirte() $ \Rightarrow $ écriture du contenu d’un tampon</li>
+  <li>flush() $ \Rightarrow $ vidage de tampon</li>
+  <li>tellp() $ \Rightarrow $ positionnement courant sur le flux</li>
+  <li>seekp() $ \Rightarrow $ positionnement sur un flux</li>
+</ul>
+
+<h2 id="3-le-flux-string">3. Le flux string</h2>
+
+<ul>
+  <li>La source ou la destination d’un flux peut être une string</li>
+  <li>Point commun: les deux sont constitués d’octets</li>
+  <li>Intérêt: Conversion, transferts en mémoire (buffers)</li>
+</ul>
+
+<p><code class="highlighter-rouge">#include &lt;sstream&gt;</code> $ \Rightarrow $ 3 classes:</p>
+
+<ul>
+  <li>istringstream $ \Rightarrow $ Entrée</li>
+  <li>ostringstream $ \Rightarrow $ Sortie</li>
+  <li>stringstream $ \Rightarrow $ Les deux</li>
+</ul>
+
+<h3 id="la-classe-string">La classe string</h3>
+
+<p>La STL impémente une classe string:</p>
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;string&gt; // permet d'utiliser la classe std::string
+</span></code></pre>
+</div>
+
+<p>Il s’agit en fait d’une classe qui est la <strong>spécialisation d’un template</strong> dont la définition (dans <code class="highlighter-rouge">&lt;string&gt;</code>) est:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="n">basic_string</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">string</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Avantages:</p>
+<ul>
+  <li>plus simple et plus sûr que <code class="highlighter-rouge">char*</code></li>
+  <li>Définition de meethodes et opérateurs utiles</li>
+</ul>
+
+<h4 id="méthodes-usuelles-de-string">Méthodes usuelles de string</h4>
+
+<p>Opérateurs:</p>
+
+<ul>
+  <li>Affectation <code class="highlighter-rouge">=</code></li>
+  <li>Concaténation <code class="highlighter-rouge">+=</code>,<code class="highlighter-rouge">+</code></li>
+  <li>Comparaisons <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;=</code></li>
+</ul>
+
+<p>Méthodes:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">int size ()</code> $ \Rightarrow $ Renvoie le nombre de caractères</li>
+  <li><code class="highlighter-rouge">int lenght ()</code> $ \Rightarrow $ Renvoie le nombre de caractères</li>
+  <li><code class="highlighter-rouge">int capacity ()</code> $ \Rightarrow $ taille possible sans la réallocation</li>
+  <li><code class="highlighter-rouge">bool empty ()</code> $ \Rightarrow $ <code class="highlighter-rouge">true</code> si la string est vide <code class="highlighter-rouge">faux</code> sinon.</li>
+  <li><code class="highlighter-rouge">int find ()</code> $ \Rightarrow $ position de la string <code class="highlighter-rouge">s</code> dans la string courante à partir de <code class="highlighter-rouge">pos</code></li>
+  <li><code class="highlighter-rouge">string substr(int start, int lenght)</code> $ \Rightarrow $ Sous string de longueur <code class="highlighter-rouge">lenght</code> à partir de <code class="highlighter-rouge">start</code></li>
+</ul>
+
+<blockquote>
+  <p>Les comparaisons de strings sont faites dans l’odre lexicographique (comme un dictionnaire) et sont sensibles à la casse.</p>
+</blockquote>
+
+<h4 id="conversion-de-string-sans-flux">Conversion de string (sans flux)</h4>
+
+<p><img src="/00illustrations/flux/conversionSTR1.png" align="" height="auto" float="right" /></p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;string&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s2</span><span class="p">(</span><span class="s">"--"</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s3</span> <span class="o">=</span> <span class="s">"World"</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">s2</span> <span class="o">&lt;&lt;</span> <span class="n">s3</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p2</span><span class="p">;</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">s3</span><span class="p">.</span><span class="n">c_str</span><span class="p">();</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s %s!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="conversions-en-type-numériques">Conversions en type numériques</h3>
+
+<p><span style="color:red"> COMPLÉTER </span><br />
+Voir cheatSheet sur la <a href="/reseau/reseau-Sockets-CheatSheet.html">programmation sockets</a></p>
+
+<ul>
+  <li><code class="highlighter-rouge">atoi()</code></li>
+  <li><code class="highlighter-rouge">atol()</code></li>
+  <li><code class="highlighter-rouge">atod()</code></li>
+  <li><code class="highlighter-rouge">itoa()</code></li>
+</ul>
+
+<h4 id="conversion-avec-les-flux-de-string">Conversion avec les flux de string</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;sstream&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">ostringstream</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
+    <span class="c1">// Type =&gt; string
+</span>    <span class="c1">//   - envoyer dans le flux
+</span>    <span class="c1">//   - méthode str()
+</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">istringstream</span> <span class="n">c</span><span class="p">(</span><span class="s">"10"</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">nb</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">nb</span><span class="p">;</span>
+
+    <span class="c1">// string =&gt; type
+</span>    <span class="c1">//  - créer flux de la chaîne 
+</span>    <span class="c1">//  - extraire du flux vers la var
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<h2 id="4-vue-densemble">4. vue d’ensemble</h2>
+
+<p><a href="/00illustrations/flux/headers.png"><img src="/00illustrations/flux/headers.png" align="" height="auto" float="right" /></a></p>
+
+<blockquote>
+  <p>Les classes du bus sont probablement <code class="highlighter-rouge">fstream</code> et <code class="highlighter-rouge">stringstream</code> car à la fois input et output (erreur sur la figure)</p>
+</blockquote>
+
+<h2 id="5-standard-template-library-stl">5. Standard Template Library (STL)</h2>
+
+<p><strong>Bibliothèque</strong> de structures de données classiques et les <strong>algorithmes</strong> associés intégrée à la procédure de <strong>standardisation</strong> de C++. Basée sur des <strong>templates de classes</strong>, elle contient:</p>
+
+<ul>
+  <li>Conteneurs
+    <ul>
+      <li>Séquentiels</li>
+      <li>Associatifs</li>
+    </ul>
+  </li>
+  <li>Itérateurs</li>
+  <li>Algorithmes</li>
+  <li>Objets fonctions (foncteurs <span style="color:red"> à creuser </span>)</li>
+  <li>Adaptateurs</li>
+  <li>Allocateurs</li>
+</ul>
+
+<p>Un foncteur est une entité qui peut être appelée comme un fonction. <strong>Un objet d’uneclasse dans laquelle on a défini une surcharge de l’opérateur <code class="highlighter-rouge">()</code> est également un foncteur.</strong></p>
+
+<p>Un conteneur (container) est, comme son nom l’indique, un objet qui contient d’autres objets. Il fournit un moyen de gérer les objets contenus (au minimum ajout / supression, parfois insertion, tri, recherche,…) ainsi qu’un accès à ces objets qui dans le cas de la <strong>STL</strong> consiste très souvent en un iteerateur.</p>
+
+<p>Les <strong>itérateurs</strong> permettent de parcourir une collection d’objets sans avoir à se préoccuper de la manière dont ils sont stockés. Ceci permet aussi d’avoir une interface de manipulation commune, et c’est ainsi que la STL fournit des algorithmes génériques qui s’appliquent à la majorité de ses conteneurs (tri,recherche, …).</p>
+
+<p>Parmi les conteneurs disponibles dans la STL on retrouve les tableaux (<code class="highlighter-rouge">vector</code>), les listes (<code class="highlighter-rouge">list</code>), les ensembles (<code class="highlighter-rouge">set</code>), les piles (<code class="highlighter-rouge">stack</code>) et beaucoup d’autres.</p>
+
+<h3 id="les-classes-conteneurs">Les classes conteneurs</h3>
+
+<p>Un conteneur est un objet qui permet de stocker d’autres objets.</p>
+
+<ul>
+  <li>
+    <p>Permet de gérer les objets contenus: ajout, supression (éventuellement insertion, tri, recherche)</p>
+  </li>
+  <li>
+    <p>Permet d’accéder aux objets contenus grâce aux <strong>itérateurs</strong></p>
+  </li>
+  <li>
+    <p>Les <strong>itérateurs</strong> permettent de <strong>parcourir</strong> une collection d’objets sans avoir à se préoccuper de l’implémentation*. Ceci permet d’avoir une <strong>interface de manipulation commune</strong>, pour les algorithmes génériques de la STL (tri, recherche, remplacement,…)</p>
+  </li>
+</ul>
+
+<p>Il existe deux types de conteurs:</p>
+
+<h4 id="séquentiels">séquentiels</h4>
+<p>Les éléments sont <strong>ordonnés</strong>. On peut parcourir le conteneur suivant cet ordre et insérer ou supprimer un élément en un endroit explicitement choisi;</p>
+
+<blockquote>
+  <p>Vecteur, liste, pile, file</p>
+</blockquote>
+
+<h4 id="associatifs">Associatifs</h4>
+<p>Ce sont des conteneurs dont les éléments sont identifiés par une <strong>clé</strong> et ordonnés suivant celle-ci. Pour insérer un élément, il n’est en théorie plus utile de préciser un emplacement</p>
+
+<blockquote>
+  <p>dictionnaire, map</p>
+</blockquote>
+
+<h3 id="conteneurs-de-séquences">Conteneurs de séquences</h3>
+
+<p>*<code class="highlighter-rouge">&lt;vector&gt;</code> $ \Rightarrow $ tableau dynamique contigu
+*<code class="highlighter-rouge">&lt;array&gt;</code> $ \Rightarrow $ tableau statique contigu
+*<code class="highlighter-rouge">&lt;deque&gt;</code> $ \Rightarrow $ File à double entrée
+*<code class="highlighter-rouge">&lt;list&gt;</code> $ \Rightarrow $ Liste doublement chainée
+*<code class="highlighter-rouge">&lt;forward_list&gt;</code> $ \Rightarrow $ Liste simplement chainée
+*<code class="highlighter-rouge">&lt;queue&gt;</code> $ \Rightarrow $ File
+*<code class="highlighter-rouge">&lt;priority_queue&gt;</code> $ \Rightarrow $  File
+*<code class="highlighter-rouge">&lt;stack&gt;</code> $ \Rightarrow $ Pile</p>
+
+<h3 id="méthodes-courantes-des-conteneurs">Méthodes courantes des conteneurs</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">clear()</code> $ \Rightarrow $ Vide le conteneur</li>
+  <li><code class="highlighter-rouge">size()</code> $ \Rightarrow $ Retourne le nombre d’éléments</li>
+  <li><code class="highlighter-rouge">empty()</code> $ \Rightarrow $ Teste si le conteneur est vide</li>
+  <li><code class="highlighter-rouge">push_back()</code> $ \Rightarrow $ Ajoute un élément à la fin</li>
+  <li><code class="highlighter-rouge">push_front()</code> $ \Rightarrow $ Ajoute un élément au début</li>
+  <li><code class="highlighter-rouge">front()</code> $ \Rightarrow $ Renvoie le 1er élément</li>
+  <li><code class="highlighter-rouge">pop_front()</code> $ \Rightarrow $ Supprime le premier élément</li>
+  <li><code class="highlighter-rouge">insert()</code> $ \Rightarrow $ Insère un élément quelconque</li>
+  <li><code class="highlighter-rouge">erase()</code> $ \Rightarrow $ Supprime un élément</li>
+</ul>
+
+<h4 id="exemple-de-conteneur-séquentiel-vector">Exemple de conteneur séquentiel: vector</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vect</span><span class="p">;</span>
+    <span class="n">vect</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"introduction"</span><span class="p">);</span>
+    <span class="n">vect</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"une phrase"</span><span class="p">);</span>
+    <span class="n">vect</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">"conclusion"</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">vect</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">vect</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="exemple-de-conteneur-séquentiel-list">Exemple de conteneur séquentiel: list</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;list&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">lst</span><span class="p">;</span>
+    <span class="n">lst</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 1
+</span>    <span class="n">lst</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 0 1
+</span>    <span class="n">lst</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">lst</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 2 0 1
+</span>    <span class="n">lst</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">lst</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="mi">3</span><span class="p">);</span> <span class="c1">//2 0 1 3
+</span>    <span class="n">lst</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span> <span class="c1">// 0 1 3
+</span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="exemple-de-conteneur-séquentiel-array">Exemple de conteneur séquentiel: array</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;array&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">a1</span> <span class="p">{</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span> <span class="p">};</span> <span class="c1">// uniform init
+</span>    <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">a2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">};</span>  <span class="c1">// cstr de copie ou cstr
+</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>      <span class="c1">// deux accesseurs
+</span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a1</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>   <span class="c1">// PAS equivalents
+</span>    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;array&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="mi">3</span><span class="o">&gt;</span> <span class="n">a1</span><span class="p">{</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span> <span class="p">};</span>
+
+    <span class="c1">// accès sans test. Affiche une 
+</span>    <span class="c1">// valeur quelconque
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// Lève une exception: out_of_range
+</span>    <span class="c1">// what() -&gt; array:at
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a1</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>La lasse <code class="highlighter-rouge">array</code> a des méthodes:</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">size()</code> $ \Rightarrow $ plus besoin de passer un paramètre de taille aux fonctions ou utiliser <code class="highlighter-rouge">sizeof(tab)</code>/<code class="highlighter-rouge">sizeof(int)</code> par exemple.</p>
+  </li>
+  <li>
+    <p>Les accès par la méthode <code class="highlighter-rouge">at(indice)</code> sont sécurisés par des Exceptions.</p>
+  </li>
+</ul>
+
+<h3 id="destruction-dun-objet-conteneur">Destruction d’un objet conteneur</h3>
+
+<blockquote>
+  <p>Quand est il nécéssaire d’éffacer ce qui est stocké dans un vecteur?</p>
+</blockquote>
+
+<p>La réponse dépend de la nature de ce qui est stocké:</p>
+
+<ul>
+  <li>
+    <p>Si il s’agit d’un objet, il n’est pas utile de le détruire, il le sera lors de son retrait (pop), ou lorsque le vecteur sera détruit.</p>
+  </li>
+  <li>
+    <p>Par contre, si il s’git d’un pointeur sur un objet, il faut le détruire sinon le programme présentera une fuite de mémoire.</p>
+  </li>
+</ul>
+
+<h3 id="imbrication-de-conteneurs">Imbrication de conteneurs</h3>
+
+<p>Il est possible d’imbriquer les conteneurs de la STL. On peut ainsi, par exemple créer un vecteur de listes de strings par exemple (une chanson mémorisée dans un vecteur de couplets. Chaque couplet étant une liste de phrases):</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span> <span class="n">list</span><span class="o">&lt;</span> <span class="n">string</span><span class="o">&gt;&gt;</span> <span class="n">maChanson</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>La définition d’un type intermédiaire peut augmenter la lisibilité:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="n">list</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">Couplet</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">Couplet</span><span class="o">&gt;</span> <span class="n">maChanson</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>Des objets <code class="highlighter-rouge">vector</code> imbriqué simulent des tableux multidimentionnels. On peut initialiser une matrice identité $m_{5 \time 5}$ avec le code suivant:</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">Ligne</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">Ligne</span><span class="o">&gt;</span> <span class="n">Matrice</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Matrice</span> <span class="n">m</span><span class="p">{</span><span class="mi">5</span><span class="p">};</span> <span class="c1">// 5 lignes de largeur 0
+</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">resize</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c1">// fixe la longueur des lignes à 5
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="6-les-itérateurs">6. Les itérateurs</h2>
+
+<ul>
+  <li>Les itérateurs sont une <strong>généralisation des pointeurs</strong></li>
+  <li>ils permettent d’utiliser de <strong>façon uniforme</strong> divers conteneurs</li>
+  <li>ils permettent de spécifier une position à l’intérieur d’un conteneur. Ils peuvent être <strong>incrémentés</strong> et <strong>déréférencés</strong> (avec <code class="highlighter-rouge">*</code>) et deux itérateurs peuvent être comparés.</li>
+  <li>Tous les conteneurs disposent des méthodes:
+    <ul>
+      <li><code class="highlighter-rouge">begin()</code> $ \Rightarrow $ Renvoie un itérateur pointant sur le premier élément.</li>
+      <li><code class="highlighter-rouge">end()</code> $ \Rightarrow $ renvoie un itérateur pointant <strong>arpès</strong> le dernier élément</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>On ne peut pas déréférencecr l’itérateur renvoyé par la méthode <code class="highlighter-rouge">end()</code></p>
+</blockquote>
+
+<p><img src="/00illustrations/flux/iter.png" align="" height="auto" float="right" /></p>
+
+<p>Ancienne syntaxe de déclaration:</p>
+
+<p><code class="highlighter-rouge">container&lt;type&gt;::iterator nom;</code></p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span>
+</code></pre>
+</div>
+<p>Un itérateur peut s’initialiser grâce aux méthodes <code class="highlighter-rouge">begin</code>, <code class="highlighter-rouge">end</code> ou <code class="highlighter-rouge">find</code> (containers non-séquentiels)</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">(</span><span class="n">vect</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+</code></pre>
+</div>
+
+<h4 id="syntaxe-c11">Syntaxe C++11</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="k">auto</span> <span class="n">itr</span> <span class="o">=</span> <span class="n">vect</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<h4 id="exemple-ditérateur-sur-une-liste">Exemple d’itérateur sur une liste</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;list&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+
+    <span class="c1">// ancienne syntaxe déclaration uniforme
+</span>    <span class="k">for</span> <span class="p">(</span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">{</span><span class="n">lst</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">lst</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// nouvelle syntaxe 
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">lst</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">lst</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// nouvelle syntaxe déclaration uniforme
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span><span class="p">{</span><span class="n">lst</span><span class="p">.</span><span class="n">begin</span><span class="p">()};</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">lst</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="range-based-for-loop">Range based for loop</h4>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span><span class="p">;</span>
+<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="k">const</span> <span class="o">&amp;</span><span class="n">x</span><span class="o">:</span> <span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="7-conteneurs-associatifs">7. Conteneurs associatifs</h2>
+
+<ul>
+  <li>dictionnaire $ \Rightarrow $ <code class="highlighter-rouge">map</code>, <code class="highlighter-rouge">multimap</code></li>
+  <li>ensembles (listes ordonnée) $ \Rightarrow $ <code class="highlighter-rouge">set</code>, <code class="highlighter-rouge">multiset</code></li>
+  <li>tableau de  booléens (bitArray?) $ \Rightarrow $ <code class="highlighter-rouge">bitset</code></li>
+</ul>
+
+<p>Les tables associatives sont une <strong>généralisation des tableux</strong>: Les <strong>indices</strong> peuvent être <strong>non-entier</strong>.</p>
+
+<ul>
+  <li>Tableau que l’on pourrait indicer par des chaînes de caractères et écrire par exemple <code class="highlighter-rouge">moyenne["informatique"]</code></li>
+  <li>On parle d’association <strong>clé-valeur</strong></li>
+  <li>Les tables associatives sont définies dans la bibliothèque <code class="highlighter-rouge">&lt;map&gt;</code></li>
+  <li>Elles nécessitent <strong>deux types</strong> pour leur déclaration: le type des <strong>clés</strong> (les index) et le type des <strong>éléments indéxés</strong></li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="c1">//      clé        valeur
+</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">moyenneParBranche</span><span class="p">;</span> <span class="c1">// clé unique
+</span>
+<span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">noteS_parBranche</span><span class="p">;</span> <span class="c1">// clé dupliquée
+</span></code></pre>
+</div>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">moyenne</span><span class="p">;</span>
+    <span class="n">moyenne</span><span class="p">[</span><span class="s">"informatique"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">5.5</span><span class="p">;</span>
+    <span class="n">moyenne</span><span class="p">[</span><span class="s">"physique"</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.5</span><span class="p">;</span>
+
+    <span class="c1">// parcours de tous les éléments
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"En "</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">", j'ai "</span> 
+             <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">" de moyenne.</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// recherche
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Ma moyenne en informatique est de "</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"informatique"</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> 
+
+
+    <span class="c1">// accès
+</span>    <span class="k">auto</span> <span class="n">it1</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="c1">// 5.5
+</span>    <span class="k">auto</span> <span class="n">it2</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">"Physique"</span><span class="p">);</span> <span class="c1">// 4.5
+</span>    <span class="k">auto</span> <span class="n">it3</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="c1">// ou moyenne.find("inexistant") =&gt; empty
+</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li><code class="highlighter-rouge">it.first</code> $ \Rightarrow $ Donne accès à la clé</li>
+  <li><code class="highlighter-rouge">it.second</code> $ \Rightarrow $ Donne accès à la valeur</li>
+</ul>
+
+<p><img src="/00illustrations/flux/map.png" align="" height="auto" float="right" /></p>
+
+<p><span style="color:red"> <strong>Attention!</strong></span></p>
+
+<ul>
+  <li>Le simple fait d’accéder à une clé via l’opérateur <code class="highlighter-rouge">[ ]</code> insère cette clé (avec la donnée <code class="highlighter-rouge">T()</code>) dans le conteneur map.</li>
+  <li>L’opérateur  <code class="highlighter-rouge">[ ]</code> n’est donc pas adapté pour vérifier si une clé est présente dans un conteneur de type map.</li>
+</ul>
+
+<p><span style="color:green"> Il faut utiliser la méthode <code class="highlighter-rouge">find()</code> </span></p>
+
+<h3 id="stdpairt1-t2">std::pair&lt;T1, T2&gt;</h3>
+<p>Dans l’éxemple précédent, <code class="highlighter-rouge">it</code> est un itérateur. Si on déréférence <code class="highlighter-rouge">it</code> (<code class="highlighter-rouge">*it</code>) on accède à un élément qui est de type <code class="highlighter-rouge">pair&lt;const Key, T&gt;</code></p>
+
+<p>Une paire est une structure contenant <strong>deux éléments</strong> éventuellement de types différents. Certains algorithmes de la STP (<code class="highlighter-rouge">find()</code> par exemple) retournent des paires (position de l’élément trouvee et un booléen indiquant si il a été trouvé).</p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_pair</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">"poule"</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="exemple-avec-multimap">Exemple avec multimap</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">moyenne</span><span class="p">;</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="o">::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+
+    <span class="c1">// les indices classiques ne fonctionnent pas avec les multimap !
+</span>    <span class="c1">// ils servent à l'affectation.
+</span>
+    <span class="n">moyenne</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"Informatique"</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">));</span>
+    <span class="n">moyenne</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"Physique"</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">));</span>
+
+	<span class="c1">// parcours de tous les éléments
+</span>	<span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span>
+		 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"En "</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">", j'ai "</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span>
+			   <span class="s">" de moyenne."</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="p">;</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>En Informatique, j'ai 5.5 de moyenne.
+En Physique, j'ai 4.5 de moyenne.
+</code></pre>
+</div>
+
+<h3 id="afficher-toutes-les-valeurs-dune-même-clé">Afficher toutes les valeurs d’une même clé</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">moyenne</span><span class="p">;</span>
+
+    <span class="n">moyenne</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"Informatique"</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">));</span>
+    <span class="n">moyenne</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"Physique"</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">));</span>
+
+
+    <span class="n">string</span> <span class="n">recherche</span> <span class="o">=</span> <span class="s">"Physique"</span><span class="p">;</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">itlow</span><span class="p">;</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">itup</span><span class="p">;</span>
+
+    <span class="n">itlow</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">recherche</span><span class="p">);</span>
+    <span class="n">itup</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">recherche</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">recherche</span> <span class="o">&lt;&lt;</span> <span class="s">"===&gt;"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">itlow</span><span class="p">;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">itup</span><span class="p">;</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Physique===&gt; 4.5
+</code></pre>
+</div>
+
+<h3 id="solution-problème-day-6-hackerrank-map">Solution problème day 6 hackerRank (map)</h3>
+
+<p><a href="https://www.hackerrank.com/challenges/30-dictionaries-and-maps/problem">lien</a></p>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num</span><span class="p">;</span>
+    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+    <span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">();</span>
+    <span class="n">map</span> <span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">pBook</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">num</span><span class="p">;</span>
+        <span class="n">pBook</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pBook</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">!=</span> <span class="n">pBook</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">name</span> <span class="o">&lt;&lt;</span> <span class="s">"="</span> <span class="o">&lt;&lt;</span> <span class="n">pBook</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Not found"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="8-choix-dun-conteneur-stl">8. Choix d’un conteneur STL</h2>
+
+<p><img src="/00illustrations/flux/choix.png" align="" height="auto" float="right" /></p>
+
+<h2 id="9-algorithmes-de-la-stl">9. Algorithmes de la STL</h2>
+
+<p>La plupart des traitements courants sur des structures de données sont implémentés de façon <strong>optimale</strong> c’est à dire que dans la grande majorité des cas il est préférable de les utiliser.</p>
+
+<ul>
+  <li>ajouts, suppression, copies, déplacements, remplacements</li>
+  <li>traitements sur chaque élément</li>
+  <li>recherches</li>
+  <li>comptages</li>
+  <li>tris</li>
+</ul>
+
+<h2 id="10-forme-canonique-dune-classe">10. Forme canonique d’une classe</h2>
+
+<p>La forme canonique (de <strong>Coplien</strong>) fournit un cadre à respecter pour les classes ayant <strong>des attributs alloués dynamiquement</strong>. Une classe <code class="highlighter-rouge">T</code> est dite sous forme canonique (ou fome normale, forme standard) si elle possède:</p>
+
+<ul>
+  <li>un constructeur par défaut</li>
+  <li>un constructeur de copie</li>
+  <li>un destructeur</li>
+  <li>un opérateur d’affectation surchargé</li>
+</ul>
+
+<p><strong>Pour utiliser les conteneurs ou algorithmes</strong>, la classe doit être canonique et implémenter l’opérateur de comparaison <code class="highlighter-rouge">==</code></p>
+
+<p>Si la notion d’ordre est nécessaire, la clsse devra également implémenter l’opérateur <code class="highlighter-rouge">&lt;</code></p>
+
+<h2 id="11-exemples-pratiques">11 Exemples pratiques</h2>
+
+<h3 id="vector">Vector</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">Tableau</span><span class="p">;</span>
+
+
+<span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="n">Tableau</span> <span class="o">&amp;</span><span class="n">tab1</span><span class="p">,</span> <span class="n">Tableau</span> <span class="o">&amp;</span><span class="n">tab2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tab1</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">tab2</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tab1</span><span class="p">.</span><span class="n">front</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// a)
+</span>    <span class="p">{</span> 
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"exercice a)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">Tableau</span> <span class="n">tab</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">tab</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="n">size</span><span class="p">());</span> 
+        <span class="p">}</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">x</span><span class="o">:</span> <span class="n">tab</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">// tab1 {0,1,2,3,4,5,6,7,8,9}
+</span>    <span class="p">}</span>
+
+    <span class="c1">// b)
+</span>    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">exercice b)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+        <span class="n">Tableau</span> <span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span><span class="p">;</span>
+        <span class="n">tab1</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="n">f</span><span class="p">(</span><span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">x</span><span class="o">:</span> <span class="n">tab2</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span> <span class="p">}</span>
+        <span class="c1">// tab2 {0,0,0,0,0,0,0,0,0,0}
+</span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// c)
+</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">exercice c)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">Tableau</span> <span class="n">tab</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">loop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">tab</span><span class="p">.</span><span class="n">max_size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 4 611 686 018 427 387 903
+</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="c1">// for (unsigned int i = 0; i &lt; tab.max_size()/8 + 1; ++i) {
+</span>            <span class="c1">//     tab.push_back(i);
+</span>            <span class="c1">//     ++ loop;
+</span>            <span class="c1">// }
+</span>        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">bad_alloc</span> <span class="o">&amp;</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Erreur: "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Loop: "</span> <span class="o">&lt;&lt;</span> <span class="n">loop</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>        
+
+        <span class="c1">// sous reserve d'avoir assez de mémoire une exception de type 
+</span>        <span class="c1">// bad_alloc est levée
+</span>    <span class="p">}</span>
+
+    <span class="c1">// d)
+</span>    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">exercice d)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">Tableau</span> <span class="n">tab</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">);</span>  <span class="c1">// =&gt; {11,11,11}
+</span>        <span class="n">Tableau</span> <span class="n">tab2</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">};</span> <span class="c1">// =&gt; {3,11}
+</span>        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">x</span><span class="o">:</span> <span class="n">tab</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="n">tab</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// rien ne se passe, même pas d'erreur pourtant 
+</span>        <span class="c1">// il y a débordement =&gt; DANGEREUX
+</span>        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="n">x</span><span class="o">:</span> <span class="n">tab</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// 3 éléments affiché
+</span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// sous reserve que ça ne crache pas, retourne 3
+</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s"> exercice e)</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">try</span>
+        <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"tab.at(tab.size()) : "</span> <span class="o">&lt;&lt;</span> <span class="n">tab</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">tab</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">catch</span> <span class="p">(</span><span class="n">out_of_range</span> <span class="o">&amp;</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s"> Erreur : "</span> <span class="o">&lt;&lt;</span> <span class="n">e</span><span class="p">.</span><span class="n">what</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>   <span class="c1">// Erreur : vector::_M_range_check: __n (which is 3) &gt;= this-&gt;size() (which is 3)
+</span>    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>exercice a)
+0 1 2 3 4 5 6 7 8 9 
+exercice b)
+0 
+
+exercice c)
+4611686018427387903
+Loop: 0
+
+exercice d)
+11 11 11 
+11 11 11 
+3
+
+ exercice e)
+tab.at(tab.size()) : 
+ Erreur : vector::_M_range_check: __n (which is 3) &gt;= this-&gt;size() (which is 3)
+</code></pre>
+</div>
+
+<h3 id="size-capacity-et-max_size">size, capacity et max_size</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt; 
+#include&lt;vector&gt; 
+#include&lt;windows.h&gt; // Sleep
+#include&lt;stdlib.h&gt;  // system
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span> 
+
+
+ <span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span> <span class="p">{</span>   
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">myvector</span><span class="p">;</span> 
+    <span class="c1">// set some content in the vector:   
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Sleep</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+        <span class="n">system</span><span class="p">(</span><span class="s">"cls"</span><span class="p">);</span>
+        <span class="n">myvector</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> 
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"i: "</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>   
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size: "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">myvector</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>   
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"capacity: "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">myvector</span><span class="p">.</span><span class="n">capacity</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>   
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"max_size: "</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">myvector</span><span class="p">.</span><span class="n">max_size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n\n</span><span class="s">"</span><span class="p">;</span>   
+    <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>output:</p>
+
+<p><img src="/00illustrations/flux/sizeCapa.gif" align="" height="auto" float="right" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">size</code> est le nombre d’éléments dans le tableau</li>
+  <li><code class="highlighter-rouge">capacity</code> est le nombre total d’éléments qu’il est possible d’introduire dans le tableau sans faire une nouvelle réallocation de mémoire</li>
+  <li><code class="highlighter-rouge">max_size</code> est le nombre maximal d’éléments que peut avoir un conteneur</li>
+</ul>
+
+<h3 id="multimap">multimap</h3>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;string&gt;
+#include&lt;map&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">// affiche tous les éléments du dico
+</span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">showMultimap</span><span class="p">(</span><span class="k">const</span> <span class="n">multimap</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span> <span class="n">Val</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//typename multimap&lt;Key, Val&gt;::const_iterator it;
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">m</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\t</span><span class="s">"</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// affiche les éléments du dico dont la clé est "find"
+</span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">Key</span><span class="p">,</span> <span class="k">typename</span> <span class="n">Val</span><span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">showMultimapRange</span><span class="p">(</span><span class="k">const</span> <span class="n">multimap</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span> <span class="n">Val</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="k">const</span> <span class="n">Key</span> <span class="o">&amp;</span><span class="n">find</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="k">auto</span> <span class="n">itlow</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">find</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">itup</span>  <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">find</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">find</span> <span class="o">&lt;&lt;</span> <span class="s">" ==&gt;"</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">itlow</span><span class="p">;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">itup</span><span class="p">;</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">" | "</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">pays</span><span class="p">;</span>
+
+    <span class="n">pays</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"CH"</span><span class="p">,</span> <span class="s">"Berne"</span><span class="p">));</span>
+    <span class="n">pays</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"BE"</span><span class="p">,</span> <span class="s">"Nivelles"</span><span class="p">));</span>
+    <span class="n">pays</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"BE"</span><span class="p">,</span> <span class="s">"Liege"</span><span class="p">));</span>
+    <span class="n">pays</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"BE"</span><span class="p">,</span> <span class="s">"Mons"</span><span class="p">));</span>
+
+    <span class="n">showMultimap</span><span class="p">(</span><span class="n">pays</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">"BE"</span><span class="p">;</span> 
+    <span class="n">showMultimapRange</span><span class="p">(</span><span class="n">pays</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span> <span class="c1">// showMultimapRange(pays, "BE")
+</span>                                <span class="c1">// ne fonctionne pas !
+</span>    <span class="n">showMultimapRange</span><span class="p">(</span><span class="n">pays</span><span class="p">,</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="s">"BE"</span><span class="p">);</span> <span class="c1">// on doit cast !
+</span>                                
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>BE	Nivelles
+BE	Liege
+BE	Mons
+CH	Berne
+
+BE==&gt; | Nivelles | Liege | Mons
+BE==&gt; | Nivelles | Liege | Mons
+</code></pre>
+</div>
+
+<p>Ecrire un programme qui lise un fichier de texte donné en paramètre, complètement, mot par mot. Le programme créera une table associative (dictionnaire clé-valeur) avec comme clés les mots, et comme valeur le nombre d’occurrences. A la fin de l’exécution, le programme affichera le nombre total de mots contenu dans le texte, le nombre de mots différents, ainsi que le nombre d’occurrences de chaque mot.</p>
+
+<p>poeme.txt:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>demain des l'aube a l'heure ou blanchit la campagne
+
+je partirai vois-tu je sais que tu m'attends
+
+j'irai par la foret j'irai par la montagne
+
+je ne puis demeurer loin de toi plus longtemps
+
+</code></pre>
+</div>
+
+<div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include&lt;iostream&gt;
+#include&lt;fstream&gt;
+#include&lt;string&gt;
+#include&lt;vector&gt;
+#include&lt;map&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="n">string</span> <span class="n">file</span> <span class="o">=</span> <span class="s">"poeme.txt"</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">fillWordVec</span><span class="p">(</span><span class="n">ifstream</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">factor</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">fillDict</span><span class="p">(</span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span><span class="o">&amp;</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ifstream</span> <span class="n">f</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">all</span><span class="p">;</span>
+    <span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dict</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">f</span><span class="p">.</span><span class="n">is_open</span><span class="p">()){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Impossible d'ouvrir le fichier en ecriture</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>        
+    <span class="p">}</span>
+
+    <span class="c1">// split le fichiers en vecteur de mots
+</span>    <span class="n">fillWordVec</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">all</span><span class="p">);</span>
+
+    <span class="c1">// remplit le dictionnaire
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">x</span><span class="o">:</span> <span class="n">all</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fillDict</span><span class="p">(</span><span class="n">dict</span><span class="p">,</span> <span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="n">x</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">dict</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">((</span><span class="n">string</span><span class="p">)</span> <span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// display
+</span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Le fichier contient "</span> <span class="o">&lt;&lt;</span> <span class="n">all</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">" mots</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"il y a "</span> <span class="o">&lt;&lt;</span> <span class="n">dict</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="s">" mots différents</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"nombre d'occurences de chaque mot:</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+
+    <span class="c1">// affiche occurences de chaque mot:
+</span>    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">x</span><span class="o">:</span> <span class="n">dict</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">"x </span><span class="se">\"</span><span class="s">"</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\"\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// idem 
+</span>    <span class="c1">// for (auto it = dict.begin(); it != dict.end(); ++it) {
+</span>    <span class="c1">//     cout &lt;&lt; it-&gt;second &lt;&lt; "x \"" &lt;&lt; it-&gt;first &lt;&lt; "\"\n";
+</span>    <span class="c1">// }
+</span>    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">fillWordVec</span><span class="p">(</span><span class="n">ifstream</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">vec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">word</span><span class="p">,</span> <span class="n">line</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">line</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">line</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">' '</span> <span class="o">||</span> <span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'\''</span> <span class="o">||</span> <span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'-'</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+                    <span class="n">factor</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="n">word</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="n">word</span> <span class="o">+=</span> <span class="n">line</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="n">factor</span><span class="p">(</span><span class="n">vec</span><span class="p">,</span> <span class="n">word</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">factor</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">vec</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">vec</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+    <span class="n">word</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>  
+<span class="p">}</span>
+
+
+<span class="kt">bool</span> <span class="nf">fillDict</span><span class="p">(</span><span class="n">multimap</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">,</span> <span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">find</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">bool</span> <span class="n">flag</span>  <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="n">itlow</span> <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">find</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">itup</span>  <span class="o">=</span> <span class="n">m</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="n">find</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">itlow</span><span class="p">;</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">itup</span><span class="p">;</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="o">++</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>output:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Le fichier contient 40 mots
+il y a 31 mots différents
+nombre d'occurences de chaque mot:
+1x "a"
+1x "attends"
+1x "aube"
+1x "blanchit"
+1x "campagne"
+1x "de"
+1x "demain"
+1x "demeurer"
+1x "des"
+1x "foret"
+1x "heure"
+2x "irai"
+2x "j"
+3x "je"
+2x "l"
+3x "la"
+1x "loin"
+1x "longtemps"
+1x "m"
+1x "montagne"
+1x "ne"
+1x "ou"
+2x "par"
+1x "partirai"
+1x "plus"
+1x "puis"
+1x "que"
+1x "sais"
+1x "toi"
+2x "tu"
+1x "vois"
+</code></pre>
+</div>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Cpp: STL@&amp;url=http://localhost:4000/cpp/cpp-STL.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/cpp/cpp-STL.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/cpp/cpp-STL.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="/%20/">Home</a> /
+                <a class="link" href="/archive/">Archive</a> /
+                <a class="link" href="/category/">Category</a> /
+                <a class="link" href="/tags/">Tags</a> /
+                <a class="link" href="/about/">About</a> /
+                <a class="link" href="/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/algo/Algo-tri.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Algo: Tri (fr)</title>
+  <meta name="description" content="Liens">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Algo: Tri (fr)</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="20 May 2017" itemprop="datePublished">May 20 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">algo</a>
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">tri</a>
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">fr</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="/">Home</a> /
+			<a class="link" href="/archive/">Archive</a> /
+			<a class="link" href="/category/">Category</a> / 
+			<a class="link" href="/tags/">Tags</a> / 
+			<a class="link" href="/about/">About</a> /
+			<a class="link" href="/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p>Algorithmes de tri</p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h2 id="liens">Liens</h2>
+
+<p><a href="https://github.com/RoscaS/algo_sort">repo</a>
+<a href="https://visualgo.net/en">VisuAlgo</a></p>
+
+<h2 id="1-tri-bulle-bubble-sort">1 Tri-Bulle (Bubble-sort)</h2>
+
+<div class="image">
+    <a href="https://visualgo.net/en/sorting"><img src="/00illustrations/algo-tri/bubble.gif" /></a>
+</div>
+
+<h3 id="simple">Simple</h3>
+
+<ul>
+  <li>
+    <p>Tous les parcours commencent à la fin du tableau <code class="highlighter-rouge">n-1</code>.</p>
+  </li>
+  <li>
+    <p>Lors de chaque parcours, l’élément actuelement pointé par la variable d’itération <code class="highlighter-rouge">j</code>, si il est plus petit que l’élément à sa gauche <code class="highlighter-rouge">j-1</code> est échangé avec ce dernier.</p>
+  </li>
+</ul>
+
+<p><img src="/00illustrations/Echanger.png" align="" height="150" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">echange</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>   <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>
+    <p>Si l’élément à sa gauche <code class="highlighter-rouge">j-1</code> est plus petit, il n’y a pas d’échange.</p>
+  </li>
+  <li>
+    <p>L’élément le plus petit se retrouve au début du tableau à la fin du premier parcours.</p>
+  </li>
+  <li>
+    <p>Tant que l’élément pointé par la variable d’itération est plus petit que <code class="highlighter-rouge">j-1</code>, il se déplace vers le début du tableau.</p>
+  </li>
+  <li>
+    <p>Au second parcours, le second élément le plus petit se retrouvera trié à droite de l’élément le plus petit et ainsi de suite jusqu’au tri complet du tableau.</p>
+  </li>
+</ul>
+
+<p><img src="/00illustrations/Tri_Bulle.png" align="" height="200" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triBulle</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="o">-</span><span class="n">g</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span> <span class="n">echange</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">j</span><span class="p">);</span> <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<h3 id="complexité">Complexité</h3>
+<p>La boucle extérieur qui est responsable du nombre
+de parcours du tableau a sa variable d’itération qui est égale au nombre de cases du tableau <code class="highlighter-rouge">-1</code>.</p>
+
+<p>La boucle intérieur qui est responsable du nombre de comparaisons par parcours a sa variable d’itération
+que est également égale au nombre de cases du tableau <code class="highlighter-rouge">-1</code>.</p>
+
+<p>$ (n-1) \cdot (n-1)^2 $  comparaisons La complexité de cet version de l’algorithme 
+est de:</p>
+
+<script type="math/tex; mode=display">\bbox[20px,border:2px solid red]
+{
+    O(n^2) 
+}</script>
+
+<p><img src="/00illustrations/algo-tri/OnC.png" height="300" /></p>
+
+<h3 id="itératif">Itératif</h3>
+
+<p>Nous pouvons dire qu’après i parcours du tableau, les i plus petits éléments seront triés. Il n’est donc plus nécéssaire que les parcours itèrent sur ces cases ce qui suggère une première amélioration:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triBulle</span><span class="p">(</span><span class="kt">int</span> <span class="n">tab</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">debut</span><span class="p">,</span> <span class="kt">int</span> <span class="n">fin</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">fin</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">fin</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">debut</span><span class="o">+</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">display</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Plusieurs éléments peuvent remonter lors d’un même parcours. Avant que l’élément le plus petit restant ne remonte jusqu’à sa place définitive, tous les éléments qui ont à leur gauche (j-1) un élément plus petit remontent au moins d’une case.</p>
+
+<h3 id="flag">Flag</h3>
+
+<p>Le tableau est donc suceptible d’être trié avant les $N-1$ parcours. Il serait donc profitable de cesser les parcours dés que le tableau est trié surtout dans le cas d’un tableau qui est totalement trié dés le début. C’est ce que nous permet la prochaine amélioration qui stop la fonction si un parcours entier a été fait sans aucun échange:</p>
+
+<p><a href="00illustrations/triBulle_Flag.png"><img src="/00illustrations/triBulle_Flag.png" align="" height="300" float="right" /></a></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triBulle</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">g</span><span class="o">+</span><span class="n">j</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">echange</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">j</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="complexité-1">Complexité</h3>
+
+<p>Le nombre maximum d’échanges reste le même: $\frac{n(n-1)}{2}$</p>
+
+<p>Mais la complexité de l’algorithme a augmenté, ainsi
+que sa durée d’execution.
+Cette version n’est donc interessante que pour des
+tableaux très proche d’un tableau ordonné
+dés le début.</p>
+
+<script type="math/tex; mode=display">\bbox[20px,border:2px solid red]
+{
+    O(n^2) 
+}</script>
+
+<p><img src="/00illustrations/algo-tri/OnC.png" height="300" /></p>
+
+<h3 id="Étude-de-la-stabilité">Étude de la stabilité</h3>
+<p>Si deux éléments d’indice <code class="highlighter-rouge">i</code> et <code class="highlighter-rouge">j</code> avec <code class="highlighter-rouge">i &lt; j</code>.
+tout élément de clé strictement inférieur se
+placera à leur gauche. Ils se trouveront donc
+dans des cases d’indice <code class="highlighter-rouge">k</code> et <code class="highlighter-rouge">k+1</code>. Lors de la
+comparaison des clés des ces deux éléments,
+<strong>ils ne seront donc pas échangés</strong> et donc l’ordre
+de leurs emplacements d’origine est respecté.
+L’élément d’indice <code class="highlighter-rouge">i</code> se trouvera dans la case
+<code class="highlighter-rouge">k</code> et celui d’indice <code class="highlighter-rouge">j &gt; i</code> dans la case d’indice
+<code class="highlighter-rouge">k + 1</code>.  <strong>La métode est donc stable</strong>.</p>
+
+<p>Cet algorithme possède une assymétrie particulière:
+Un seul élément de petite clé mal classé du côté
+des éléments de grande clé, d’un tableau presque
+trié prend sa place (début) après un seul parcours du
+tableau. Par contre un élément de grande clé, mal
+classé du coté des petites clés descend (vers la fin)
+à sa place à raison d’une case par parcours.
+Le tableau suivant:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="p">[</span><span class="mi">44</span><span class="p">]</span> <span class="p">[</span><span class="mi">55</span><span class="p">]</span> <span class="p">[</span><span class="mi">67</span><span class="p">]</span> <span class="p">[</span><span class="mi">94</span><span class="p">]</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">Debut</span>                               <span class="n">Fin</span>
+</code></pre>
+</div>
+
+<p>…est trié en deux parcours en utilisant la fonction
+triBulle itératif + flag. Un parcours pour faire
+monter (vers le début) le clé 6 dans sa case
+définitive et un autre parcours pour constater que
+le tableau est trié.
+Le tableau suivant quant à lui…</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="p">[</span><span class="mi">94</span><span class="p">]</span> <span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="p">[</span><span class="mi">42</span><span class="p">]</span> <span class="p">[</span><span class="mi">44</span><span class="p">]</span> <span class="p">[</span><span class="mi">55</span><span class="p">]</span> <span class="p">[</span><span class="mi">67</span><span class="p">]</span>
+<span class="n">Debut</span>                              <span class="n">Fin</span>
+</code></pre>
+</div>
+
+<p>… nécessite sept parcours pour obtenir un tri
+complet: Les sept valeurs de clé plus petites
+montent à leur place à raison d’une case par
+parcours.</p>
+
+<p>Cette asymétrie suggère une troisième
+amélioration de l’algorithme. Pour compenser
+l’asymétrie décrite, le sens de deux parcours
+consécutifs du tableau est alterné.</p>
+
+<h2 id="2-tri-shaker">2 Tri-Shaker</h2>
+
+<p>Pour compenser
+l’asymétrie décrite, le sens de deux parcours
+consécutifs du tableau est alterné.</p>
+
+<p><img src="/00illustrations/triShaker.png" align="" height="500" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="n">tab</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
+    <span class="n">tab</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>   <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+    <span class="n">tab</span><span class="p">[</span><span class="n">b</span><span class="p">]</span>   <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">triShaker</span><span class="p">(</span><span class="kt">int</span> <span class="n">tab</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">ptrG</span> <span class="o">=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">ptrD</span>   <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">derEch</span>   <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"derEch start: "</span> <span class="o">&lt;&lt;</span> <span class="n">derEch</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">ptrG</span> <span class="o">&lt;=</span> <span class="n">ptrD</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"ptrG: "</span> <span class="o">&lt;&lt;</span> <span class="n">ptrG</span>
+             <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\t</span><span class="s">ptrD: "</span> <span class="o">&lt;&lt;</span> <span class="n">ptrD</span>
+             <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\t</span><span class="s">derEch: "</span> <span class="o">&lt;&lt;</span> <span class="n">derEch</span>
+             <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">ptrD</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">ptrG</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">derEch</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"derEch aller: "</span> <span class="o">&lt;&lt;</span> <span class="n">derEch</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+        <span class="n">ptrG</span> <span class="o">=</span> <span class="n">derEch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">ptrG</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">ptrD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">{</span>
+                <span class="n">swap</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                <span class="n">derEch</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">ptrD</span> <span class="o">=</span> <span class="n">derEch</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"derEch retour: "</span> <span class="o">&lt;&lt;</span> <span class="n">derEch</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>A la fin d’un parcours, les “pointeurs” <code class="highlighter-rouge">ptrDebut</code> et <code class="highlighter-rouge">ptrFin</code> contiennent les niveaux entre lesquels le prochain parcours sera effectué. Ces pointeurs sont maj en tenant compte du niveau du dernier échange <code class="highlighter-rouge">derEch</code> effectué lors d’un parcours.
+Ce tri prend fin quand les deux variables <code class="highlighter-rouge">ptrDebut</code> et <code class="highlighter-rouge">ptrFin</code> sont égales.</p>
+
+<h3 id="conclusion-sur-les-améliorations">Conclusion sur les améliorations</h3>
+
+<p>Toutes les améliorations n’ont pas modifié le nombre d’échanges à faire (<em>logique</em>) et réduisent uniquement le nombre de comparaisons redondantes. Un échange (permutation) est généralement une opération <strong>plus couteuse</strong> qu’une comparaison de de clé. Ce qui fait que si on ne concidère que le pire des cas pour évaluer la complexité des différentes améliorations on se retrouve toujours avec du $\color{red}{O(n^2)}$.</p>
+
+<h2 id="3-tri-par-extraction-selection-sort">3. Tri par extraction (Selection-sort)</h2>
+
+<div class="image">
+    <a href="https://visualgo.net/en/sorting"><img src="/00illustrations/algo-tri/extract.gif" /></a>
+</div>
+
+<p>A chaque tour, l’algorithme trouve la valeur la plus petite et la place à sa position définitive.</p>
+
+<h4 id="initial">initial</h4>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="n">G</span>                                 <span class="n">D</span>
+<span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+</code></pre>
+</div>
+<h4 id="tour-1">tour 1</h4>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code> <span class="n">G</span>                                 <span class="n">D</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="c1">// valeur la plus petite: 1 change de 
+// place avec t[G]
+</span></code></pre>
+</div>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code>     <span class="n">G</span>                             <span class="n">D</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+<span class="c1">// la premiere case est maintenant definitive
+// G se deplace d'une case a droite.
+</span></code></pre>
+</div>
+
+<h4 id="tour-2">tour 2</h4>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code>     <span class="n">G</span>                             <span class="n">D</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="c1">// valeur la plus petite: 8 change 
+// de place avec t[G]
+</span></code></pre>
+</div>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code>          <span class="n">G</span>                        <span class="n">D</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="p">[</span><span class="mi">53</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="p">[</span><span class="mi">46</span><span class="p">]</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="c1">// les deux premieres cases sont maintenant 
+// definitives, G se deplace d'une case vers
+// la droite.
+</span></code></pre>
+</div>
+
+<blockquote>
+  <p>Il ne sert à rien d’itérer sur tout le tableau à chaque tour,
+les valeurs de gauche, une fois placées le sont définitivement.
+Gauche est incrémenté de 1 à chaque nouveau tour.</p>
+</blockquote>
+
+<p>On peut donc diviser ce problème en 3 parties distinctes:</p>
+<ol>
+  <li>une fonction échange()</li>
+  <li>une fonction placerMinimumAGauche()</li>
+  <li>triExtraction()</li>
+</ol>
+
+<p><img src="/00illustrations/Echanger.png" align="" height="150" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">echanger</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">a</span><span class="p">];</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">b</span><span class="p">];</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><img src="/00illustrations/placerMinimumAGauche.png" align="" height="250" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">placerMinGauche</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">idxMin</span>  <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">[</span><span class="n">idxMin</span><span class="p">])</span>
+        <span class="p">{</span>
+            <span class="n">idxMin</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">echanger</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">idxMin</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><img src="/00illustrations/triExtraction.png" align="" height="150" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triExtract</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">placerMinGauche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="o">+</span><span class="n">i</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<blockquote>
+  <p>Lorsque les N-1 éléments ayant les clés les plus petites sont à leur place, le dernier élément qui a la plus grande clé l’est aussi.</p>
+</blockquote>
+
+<h3 id="complexité-2">Complexité:</h3>
+<p>L’algorithme <code class="highlighter-rouge">placerMinimumAGauche()</code> est exécuté $n-1$ fois pour un tableau de $n$ éléments et ceci indépendamment de l’ordre initial des clés. A chaque exécution, cet algorithme effectue $Droite - Gauche$ comparaisons.</p>
+
+<p>$ n-1 + n-2 +  …  + 3 + 2 + 1 = \bbox[20px,border:2px solid red] {\frac{(n(n-1))}{2}}$</p>
+
+<p>Le tri par extraction est aussi lent que le tri bulle dans le cas d’un tableau à clés aléatoirement dispersées. Des différences en plus ou en moins peuvent apparaître dans des cas particuliers. Le tri par extraction est innefficace sur un tableau déjà ordonné puisqu’il n’est ps capable de s’en appercevoir.</p>
+
+<h3 id="stabilité">Stabilité</h3>
+
+<div class="image">
+    <a href="https://visualgo.net/en/sorting"><img src="/00illustrations/algo-tri/triExtractStab.gif" /></a>
+</div>
+
+<p>Le tableau suivant comporte deux clés identiques:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">37</span><span class="p">]</span> <span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="p">[</span><span class="mi">45</span><span class="p">]</span>  <span class="c1">// Clé
+</span><span class="p">[</span> <span class="n">A</span><span class="p">]</span> <span class="p">[</span> <span class="n">B</span><span class="p">]</span> <span class="p">[</span> <span class="n">C</span><span class="p">]</span> <span class="p">[</span> <span class="n">D</span><span class="p">]</span> <span class="p">[</span> <span class="n">E</span><span class="p">]</span> <span class="p">[</span> <span class="n">F</span><span class="p">]</span> <span class="p">[</span> <span class="n">G</span><span class="p">]</span>  <span class="c1">// Information
+</span>  <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>    <span class="mi">4</span>    <span class="mi">5</span>    <span class="mi">6</span>    <span class="mi">7</span>   <span class="c1">// Indice
+</span></code></pre>
+</div>
+
+<p>L’extraction du premier minimum donne:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">37</span><span class="p">]</span> <span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="p">[</span><span class="mi">45</span><span class="p">]</span>  <span class="c1">// Clé
+</span><span class="p">[</span> <span class="n">E</span><span class="p">]</span> <span class="p">[</span> <span class="n">B</span><span class="p">]</span> <span class="p">[</span> <span class="n">C</span><span class="p">]</span> <span class="p">[</span> <span class="n">D</span><span class="p">]</span> <span class="p">[</span> <span class="n">A</span><span class="p">]</span> <span class="p">[</span> <span class="n">F</span><span class="p">]</span> <span class="p">[</span> <span class="n">G</span><span class="p">]</span>  <span class="c1">// Information
+</span>  <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>    <span class="mi">4</span>    <span class="mi">5</span>    <span class="mi">6</span>    <span class="mi">7</span>   <span class="c1">// Indice
+</span></code></pre>
+</div>
+
+<p>Les deux éléments de même clé 15 ont été échangés l’un par rapport à l’autre. Après exécution de l’algorithme, le tableau ordonné devient:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="p">[</span><span class="mi">21</span><span class="p">]</span> <span class="p">[</span><span class="mi">37</span><span class="p">]</span> <span class="p">[</span><span class="mi">45</span><span class="p">]</span>  <span class="c1">// Clé
+</span><span class="p">[</span> <span class="n">E</span><span class="p">]</span> <span class="p">[</span> <span class="n">B</span><span class="p">]</span> <span class="p">[</span> <span class="n">A</span><span class="p">]</span> <span class="p">[</span> <span class="n">F</span><span class="p">]</span> <span class="p">[</span> <span class="n">D</span><span class="p">]</span> <span class="p">[</span> <span class="n">C</span><span class="p">]</span> <span class="p">[</span> <span class="n">G</span><span class="p">]</span>  <span class="c1">// Information
+</span>  <span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>    <span class="mi">4</span>    <span class="mi">5</span>    <span class="mi">6</span>    <span class="mi">7</span>   <span class="c1">// Indice
+</span></code></pre>
+</div>
+
+<p>Cet exemple montre que le tri par extraction n’est <strong>pas stable</strong>.</p>
+
+<h2 id="4-tri-par-insertion-insert-sort">4. Tri par insertion (Insert Sort)</h2>
+
+<div class="image">
+    <a href="https://visualgo.net/en/sorting"><img src="/00illustrations/algo-tri/insert.gif" /></a>
+</div>
+
+<p>Cette méthode de tri consiste à insérer un élément du tableau qui n’est pas encore à sa place dans une partie déjà ordonnée, puis à recommencer avec les éléments suivant. La première étape montre comment insérer un élément dans la partie déjà triée.</p>
+
+<p>Dans le tableau <em>T</em> suivant, les éléments d’indices $Gauche$ $à$ $i-1$ sont déjà dans l’ordre croissant. L’élément d’indice <em>i</em> doit être inséré.</p>
+
+<p><img src="/00illustrations/algo-tri/insert1.png" align="" height="150" float="right" /></p>
+
+<p>Pour insérer l’élément d’indice <em>i</em> dans la partie du tableau déjà trié, il faut le sauvegarder puis décaler vers la droite tous les éléments dont la clef est supérieure à l’élément à insérer. Ainsi, l’emplacement de l’élément à insérer est trouvé et une case libre est préparée au bon emplacement.</p>
+
+<p><img src="/00illustrations/algo-tri/insert2.png" align="" height="150" float="right" /></p>
+
+<h4 id="insertion">insertion:</h4>
+
+<p><img src="/00illustrations/algo-tri/insertion-struct1.png" align="" height="250" float="right" /></p>
+
+<p>A la sortie de la boucle <em>tant que</em> qui permet de reculer en créant une case libre, l’indice <em>j</em> correspond à la case contenant la plus grande clef inférieure ou égale à la clef de l’élément à insérer qui se trouve dans la Sauvegarde (temp).</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertion</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">idx</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">idx</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+    <span class="k">while</span> <span class="p">((</span><span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">temp</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">g</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Pour trier complètement le tableau il suffit d’insérer successivement ses éléments en commençant par le deuxième élément (indice $Gauche+1$) et en terminant par le dernier élément du tableau (indice $Droite$).</p>
+
+<p><img src="/00illustrations/algo-tri/insert3.png" align="" height="150" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triInsert</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">insertion</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>   
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="complexité-3">Complexité</h3>
+<p>La boucle <code class="highlighter-rouge">for</code> s’exécute au moins $n-1$ fois et le nombre d’executions de la boucle <code class="highlighter-rouge">while</code> dépend du tableau à trier:</p>
+
+<ol>
+  <li>
+    <p>Dans le meilleur cas, le tableau est déja trié <code class="highlighter-rouge">t[j] &gt; temp</code> est toujours <em>faux</em> et aucun échange de données n’est nécéssaire ce qui fait que la boucle <code class="highlighter-rouge">for</code> s’executera $n-1$ fois. La complexité sera donc de $O(n)$</p>
+  </li>
+  <li>
+    <p>Dans le pire cas, le tableau est trié à l’envers et <code class="highlighter-rouge">t[j] &gt; temp</code> est toujours <em>vrai</em>, dans ce cas la boucle <code class="highlighter-rouge">while</code> s’executera à chaque fois. La complexité sera donc de $ O(n \cdot n) = O(n^2) $</p>
+  </li>
+</ol>
+
+<script type="math/tex; mode=display">\bbox[20px,border:2px solid red]
+{
+    O(n^2) 
+}</script>
+
+<p><img src="/00illustrations/algo-tri/OnC.png" height="300" /></p>
+
+<h3 id="stabilité-1">Stabilité</h3>
+
+<p>Considérons deux éléments du tableau, ayant la même clef, et d’indices <em>i</em> et <em>j</em> avec $ i &lt; j $.  Le parcours de la partie non triée du tableau s’effectuant de $Gauche+1$ vers $Droite$, l’élément d’indice <em>i</em> sera inséré le premier dans la partie déjà triée du tableau, à l’indice <em>i’</em>. Lorsque l’élément d’indice <em>j</em> devra être inséré, il le sera juste après le premier élément qui ne lui est pas strictement supérieur (car l’algorithme décrit ici effectue une comparaison stricte), c’est-à-dire à l’indice $i’+1$. Après le tri, l’élément qui avait pour indice <em>i</em> se retrouve bien avant celui qui avait pour indice <em>j</em> : <strong>le tri par insertion est donc stable.</strong></p>
+
+<h2 id="4-tri-par-base-radix-sort">4. Tri par base (radix-sort)</h2>
+
+<div class="image" style="width: 100%">
+    <a href="https://visualgo.net/en/sorting"><img src="/00illustrations/algo-tri/radix.gif" /></a>
+</div>
+
+<p>Le principe de ce tri est totalement différent des précédents. Il ne se base pas sur des comparaisons entre les différentes valeurs mais sur un classement successif des valeurs en fonction des chiffres qui la compose en commençant par la valeur des unités, ensuite celle de l’unité des dizaines, puis de l’unité des centaines, … jusqu’au chiffre le plus à gauche.</p>
+
+<p>Pour faire le classement nous avons donc besoin de 10 tableau: un pour chaque chiffre (0 à 9) une fois nos valeurs classées, nous les remettons dans le tableau initial en commançant par les valeurs dans le tableau des 0 en respectant le principe du <strong>fifo</strong>. Ensuite le tableau des 1, puis des 2 …
+Comme le principe du <strong>fifo</strong> est requis, nous pouvons utiliser des <em>files</em> (<em>queue</em>) à la place de simple tableaux. Cela rend le tout plus simple à gérer, il suffit d’utiliser l’équivalent de la fonction <code class="highlighter-rouge">push</code> pour insérer et de <code class="highlighter-rouge">pull</code> pour extraire la bonne valeur.</p>
+
+<blockquote>
+  <p>Le nom de ces deux fonctions dépendent de l’implémentation de la <em>file</em>.</p>
+</blockquote>
+
+<p>Le second parcours fera la même chose mais en classant les nombres par la valeur du chiffre qui représente l’unité des dizaines. Le 3e parcours l’unité des centaines…</p>
+
+<p>Dans les exemples qui suivent, je vais utiliser une classe <code class="highlighter-rouge">Queue</code> dont l’imlémentation est spécifiées <a href="/algo/Algo-Structures-de-donnees.html">ici</a></p>
+
+<p>Le tableau d’éléments à ordonner dans l’ordre croissant de cet exemple contient $n$ éléments et ses indices vont de $Gauche$ à $Droite$ ($0$ à $n-1$)</p>
+
+<p>L’algorithme de <strong>tri par base</strong> peut facilement être divisé en deux fonctions. Dans un soucis de clarté je vais le diviser en 4 parties qui correspondes aux grandes étapes de l’algorithme.</p>
+
+<h4 id="1-fonction-maximum">1. fonction maximum</h4>
+
+<p>Simple fonction pour itérer sur un tableau et retourner la clé ayant la plus grande valeur.</p>
+
+<p>Nous avons besoin de cette valeur car <strong>c’est le nombre de chiffres qui compose le plus grand nombre</strong> (ou un autre nombre ayant le même nombre de chiffres) <strong>qui va déterminer le nombre de parcours</strong> nécéssaire pour trier le tableau.</p>
+
+<p><img src="/00illustrations/algo-tri/radixMax.png" align="" height="250" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">maximum</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">g</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">g</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">max</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">max</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h4 id="2-fonction-nombredeparcours">2. fonction nombreDeParcours</h4>
+
+<p>Nous avons besoin d’une fonction capable de nous retourner le <strong>nombre de chiffres qui compose un nombre</strong>.
+l’entier renvoyé par un cast <code class="highlighter-rouge">entier</code> du log en base 10 d’un nombre sera égal au nombre de chiffre qui le compose -1. Nous ajoutons donc +1.</p>
+
+<p><img src="/00illustrations/algo-tri/radixNombreDeParcours.png" align="" height="100" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">nbParcours</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">log10</span><span class="p">(</span><span class="n">maximum</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">d</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p><em>Le cast est fait automatiquement par le type de la valeur de retour</em></p>
+
+<h4 id="3-fonction-extraireunite">3. fonction extraireUnite</h4>
+
+<p>Il nous faut également une fonction capable de <strong>retourner une unité spécifique d’un nombre</strong> afin de pouvoir faire le classement en fonction de cette dernière.</p>
+
+<p><img src="/00illustrations/algo-tri/radixExtraireUnite.png" align="" height="100" float="right" /></p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">extraireUnite</span><span class="p">(</span><span class="kt">int</span> <span class="n">nb</span><span class="p">,</span> <span class="kt">int</span> <span class="n">pos</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">nb</span><span class="o">/</span><span class="n">pow</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">pos</span><span class="p">))</span><span class="o">%</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Ici, le cast est nécessaire pour éviter l’erreur:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>invalid operands of types <span class="s1">'__gnu_cxx::__promote_2&lt;int, int, double,
+double&gt;::__type {aka double}'</span> and <span class="s1">'int'</span> to binary <span class="s1">'operator%'</span>
+     <span class="k">return</span> <span class="o">((</span>nb/pow<span class="o">(</span>10,pos<span class="o">))</span>%10<span class="o">)</span>;
+                              ^
+</code></pre>
+</div>
+
+<h4 id="4-tribase">4 triBase</h4>
+
+<p>Après autant de parcours que le nombre de chiffres de la plus grande des clé, le tableau est trié. Cette méthode peut s’appliquer à des clés non numériques (ex : chaines de caractères), pourvu qu’on ait une relation d’ordre entre les symboles utilisés (ex : ordre alphabétique pour une chaîne de caractères).</p>
+
+<p><img src="/00illustrations/algo-tri/radixTribase.png" align="" height="350" float="right" /></p>
+
+<p>Dans ce structogramme, <code class="highlighter-rouge">fileS</code> est un tableau de files permettant d’ordonner <code class="highlighter-rouge">t</code> suivant son nième chiffre : fileS[x] contiendra les nombres dont le nième chiffre est x . L’idée est de commencer par distribuer dans ces files les valeurs de <code class="highlighter-rouge">t</code> , puis dans un second temps, de mettre à jour le tableau en vidant les files par ordre croissant.</p>
+
+<p>Il y a plusieurs façons de déterminer le nième chiffre d’un nombre. Parmi les plus répandues :</p>
+
+<ul>
+  <li>
+    <p>Convertir le nombre en chaine de caractère, puis extraire le caractère désiré</p>
+  </li>
+  <li>
+    <p>Arithmétique : $1984 = 1 \cdot 103 + 9 \cdot 102 + 8 \cdot 101 + 4 \cdot 100$ on peut donc aisément retrouver la valeur de chaque chiffre grâce à des divisions par des puissances de 10 et l’opérateur modulo.</p>
+  </li>
+</ul>
+
+<p>Pour compléter le tri il suffit de faire autant de passes que de nombre de chiffres dans la valeur maximale.</p>
+
+<p>La <code class="highlighter-rouge">file</code> que j’utilise est issu la classe générique <code class="highlighter-rouge">Queue</code> qui hérite de la classe <code class="highlighter-rouge">List</code> (liste chainée) toutes deux détaillées <a href="/algo/Algo-Structures-de-donnees.html">ici</a>.</p>
+
+<h5 id="a-sans-gestion-de-la-mémoire">a. sans gestion de la mémoire</h5>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triBase</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">fileS</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>  
+
+    <span class="c1">// tri
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">unite</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">unite</span> <span class="o">&lt;</span> <span class="n">nbParcours</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">d</span><span class="p">);</span> <span class="o">++</span><span class="n">unite</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">fileS</span><span class="p">[</span><span class="n">extraireUnite</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">unite</span><span class="p">)].</span><span class="n">enqueue</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">file</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">file</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">].</span><span class="n">isEmpty</span><span class="p">()</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">].</span><span class="n">dequeue</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>    
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h5 id="b-avec-gestion-de-la-mémoire">b. avec gestion de la mémoire</h5>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">triBase</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="kt">int</span> <span class="n">g</span><span class="p">,</span> <span class="kt">int</span> <span class="n">d</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// initialisation
+</span>    <span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">**</span><span class="n">fileS</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;*</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">file</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">file</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+    <span class="p">}</span>    
+    <span class="c1">// tri
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">unite</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">unite</span> <span class="o">&lt;</span> <span class="n">nbParcours</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="n">d</span><span class="p">);</span> <span class="o">++</span><span class="n">unite</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span> <span class="n">index</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">;</span> <span class="o">++</span><span class="n">index</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">fileS</span><span class="p">[</span><span class="n">extraireUnite</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">unite</span><span class="p">)]</span><span class="o">-&gt;</span><span class="n">enqueue</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="n">debug</span><span class="p">(</span><span class="n">fileS</span><span class="p">,</span> <span class="n">unite</span><span class="p">);</span> <span class="c1">// visualisation
+</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">g</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">file</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">file</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">isEmpty</span><span class="p">()</span> <span class="o">==</span> <span class="nb">false</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">dequeue</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>    
+    <span class="p">}</span>
+    <span class="c1">// nettoyage
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">file</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="o">++</span><span class="n">file</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">delete</span> <span class="n">fileS</span><span class="p">[</span><span class="n">file</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="k">delete</span> <span class="p">[]</span> <span class="n">fileS</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="complexité-4">Complexité</h3>
+<p>Contrairement aux autres algorithmes de tri simples, le tri par base n’utilise pas de comparaisons : il fait partie des tris par distribution.</p>
+
+<p>C’est la copie des valeurs dans des files qui va permettre le tri, on peut donc décider de choisir la copie d’une valeur (affectation) comme opération élémentaire de cet algorithme.</p>
+
+<p>Pour trier un tableau de taille <em>n</em> on doit effectuer <em>k</em> passes, avec  <em>k</em> le nombre de chiffres de la plus grande clé.</p>
+
+<p>Lors de chaque parcours, on va recopier les <em>n</em> valeurs dans les files temporaires fileS[x] (<strong><em>n</em> affectations</strong>), puis les recopier dans le tableau initial. On aura donc 2 x <em>n</em> opérations élémentaires.</p>
+
+<p>Pour <em>k</em> passes, la fonction de complexité sera donc: $ f(n)=2kn$
+Si <em>k</em> est constant, notre algorithne est donc linéaire:</p>
+
+<script type="math/tex; mode=display">\bbox[20px,border:2px solid red]
+{
+    O(n) 
+}</script>
+
+<p><img src="/00illustrations/algo-tri/On.png" height="300" /></p>
+
+<h3 id="stabilité-2">Stabilité</h3>
+
+<p>Cette méthode de tri est stable, les valeurs rentrent dans les filles dans un certain ordre et en ressortent dans le même ordre.</p>
+
+<h2 id="5-comparaison-des-algorithmes-de-tri-simples">5. Comparaison des algorithmes de tri simples</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Algorithme</th>
+      <th>Complexité au pire</th>
+      <th>Stabilité</th>
+      <th>Famille*</th>
+      <th>Remarques</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Bulles et améliorations</td>
+      <td>$ O(n^2) $</td>
+      <td>oui</td>
+      <td>Echange</td>
+      <td>Sait détecter un tableau trié</td>
+    </tr>
+    <tr>
+      <td>Extraction</td>
+      <td>$ O(n^2) $</td>
+      <td>non</td>
+      <td>Sélection</td>
+      <td>Inefficace sur un tableau déja trié (le pire)</td>
+    </tr>
+    <tr>
+      <td>Insertion</td>
+      <td>$ O(n^2) $</td>
+      <td>oui</td>
+      <td>Insertion</td>
+      <td>Intéressant pour insérer des vleurs dans un tableau déjà trié*</td>
+    </tr>
+    <tr>
+      <td>Base</td>
+      <td>$ O(n) $</td>
+      <td>oui</td>
+      <td>Distribution</td>
+      <td>Intéressant pour les petites valeurs (“petit” nombre de chiffres)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<blockquote>
+  <ul>
+    <li>On peut trier les valeurs au fur et à mesure. Pour les autres, il est nécéssaire de les avoir toutes avant de commencer. En  <em>O(n)</em>  dans le meilleur cas.</li>
+  </ul>
+</blockquote>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Algo: Tri (fr)@&amp;url=http://localhost:4000/algo/Algo-tri.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/algo/Algo-tri.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/algo/Algo-tri.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="/%20/">Home</a> /
+                <a class="link" href="/archive/">Archive</a> /
+                <a class="link" href="/category/">Category</a> /
+                <a class="link" href="/tags/">Tags</a> /
+                <a class="link" href="/about/">About</a> /
+                <a class="link" href="/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

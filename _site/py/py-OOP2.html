@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/py/py-OOP2.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Py: OOP 2 En pratique</title>
+  <meta name="description" content="serie">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Py: OOP 2 En pratique</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="29 Jul 2017" itemprop="datePublished">Jul 29 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">divers,</a>
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">fr,</a>
+        	
+			<a class="post-tags-item" href="http://localhost:4000/tags/">en</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="/">Home</a> /
+			<a class="link" href="/archive/">Archive</a> /
+			<a class="link" href="/category/">Category</a> / 
+			<a class="link" href="/tags/">Tags</a> / 
+			<a class="link" href="/about/">About</a> /
+			<a class="link" href="/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p>Programmation orienté objet</p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h4 id="serie">serie</h4>
+
+<ul>
+  <li><a href="/py/py-OOP1.html">partie 1: Introduction </a></li>
+  <li><a href="/py/py-OOP2.html">partie 2: En pratique</a>$ \Leftarrow $</li>
+  <li><a href="/py/py-OOP3.html">partie 3: Attributs</a></li>
+  <li><a href="/py/py-OOP4.html">partie 4: Héritage</a></li>
+  <li><a href="/py/py-OOP5.html">partie 5: Héritage multiple et composition</a></li>
+  <li><a href="/py/py-OOP6.html">partie 6: Méthodes magiques</a></li>
+</ul>
+
+<h4 id="sources">sources</h4>
+
+<ul>
+  <li><a href="http://sametmax.com/le-guide-ultime-et-definitif-sur-la-programmation-orientee-objet-en-python-a-lusage-des-debutants-qui-sont-rassures-par-les-textes-detailles-qui-prennent-le-temps-de-tout-expliquer-partie-1/">sam&amp;max</a></li>
+</ul>
+
+<h1 id="recapitulatif">Recapitulatif</h1>
+
+<ul>
+  <li>Un <strong>attribut de classe</strong> est accessible sans avoir à créer d’instance (<code class="highlighter-rouge">NomClasse.attribut_de_classe = "poule"</code>) et est partagé entre tous les objets de cette classe.</li>
+  <li>Un <strong>attribut d’objet</strong> est uniquement accessible à travers une instance et est propre à l’instance.</li>
+  <li>Une instance peut accéder aux attributs de classe et d’objet.</li>
+  <li>Une <strong>méthode de classe</strong> est accessible sans avoir à créer d’instance. On utilise le décorateur <code class="highlighter-rouge">@classmethod</code> avant la définition de la méthode. <span style="color:red"> <strong>Le premier argument n’est plus <code class="highlighter-rouge">self</code> mais <code class="highlighter-rouge">cls</code></strong> </span></li>
+  <li>Les méthodes sans autres paramètres que <code class="highlighter-rouge">self</code> peuvent être décorées par <code class="highlighter-rouge"><span class="k">@property</span></code> pour ne plus avoir à les flanquer de parenthèses lors de l’appel.</li>
+</ul>
+
+<h1 id="tp-1">TP-1</h1>
+
+<h2 id="façon-procédurale">Façon procédurale</h2>
+
+<p>Imaginons que nous voulons proposer une <em>bibliothèque</em> permettant de récupérer les 100 dernières questions concernant Python sur <a href="https://stackoverflow.com/">Stackoverflow</a>.</p>
+
+<p>Pour lire les données et les récupérer, pas besoin de POO, un scripte procédural fait l’affaire:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="c"># URL du CSV</span>
+<span class="n">URL</span> <span class="o">=</span> <span class="s">"http://data.stackexchange.com/StackOverflow/csv/109782"</span>
+
+<span class="c"># On télécharge les données, on les décode et on les enrobe dans </span>
+<span class="c"># StringIO pour qu'elles soient lisible de la même façon qu'un</span>
+<span class="c"># fichier malgré le fait qu'elles soient juste en mémoire.</span>
+<span class="n">csv_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+<span class="c"># On utilise le module CSV pour lire notre "fichier" CSV.</span>
+<span class="c"># DictReader retourne une liste de dictionnaires, un par</span>
+<span class="c"># entrée du "fichier".</span>
+<span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_data</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">])</span> <span class="c"># date de création</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>    <span class="c"># id question</span>
+</code></pre>
+</div>
+
+<p>Extrais de l’<strong>output</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+2017-07-22 22:17:54
+45259736
+2017-07-22 22:16:27
+45259726
+...
+</code></pre>
+</div>
+
+<p>Le fichier <em>CSV</em> issu de data.stackexchange.com n’est pas facile à parser. À la place de bourriner à coup de <code class="highlighter-rouge">split()</code>, nous utilisons le module <code class="highlighter-rouge">csv</code> qui comme expliqué en commentaire du code, récupère chaque entrée du fichier comme un dictionnaire qui aura la structure:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="s">'nom_decolonne'</span><span class="p">:</span> <span class="s">'valeur_pour_cette_ligne'</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Cette façon de faire n’est vraiment pas pratique (réutilisable). On peut en faire une fonction réutilisable qui sera utilisable de l’extérieur.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">urllib</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+
+<span class="n">DATA_SOURCE_URL</span> <span class="o">=</span>   <span class="s">"http://data.stackexchange.com/StackOverflow/csv/109782"</span>
+<span class="n">QUESTION_URL</span> <span class="o">=</span> <span class="s">"http://stackoverflow.com/question/{id}"</span>
+
+<span class="k">def</span> <span class="nf">download_question</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">DATA_SOURCE_URL</span><span class="p">):</span>
+    <span class="n">csv_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_data</span><span class="p">):</span>
+        <span class="c"># On transforme la string date en objet datetime</span>
+        <span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span>
+            <span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">],</span>
+            <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span>
+        <span class="p">)</span>
+
+        <span class="c"># Le second champ est au format JSON. On le</span>
+        <span class="c"># transforme donc en objet Python</span>
+        <span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">]</span> <span class="o">=</span> <span class="n">QUESTION_URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+
+        <span class="k">yield</span> <span class="n">question</span>
+</code></pre>
+</div>
+
+<p>On pourrait l’importer et faire:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">download_question</span><span class="p">():</span>
+    <span class="c"># affiche le titre et l'url</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{CreationDate} : {Post Link}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">question</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>Extrais de l’<strong>output</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+2017-07-22 22:09:35 : http://stackoverflow.com/question/45259674
+2017-07-22 22:07:42 : http://stackoverflow.com/question/45259663
+2017-07-22 21:58:30 : http://stackoverflow.com/question/45259595
+2017-07-22 21:56:16 : http://stackoverflow.com/question/45259582
+...
+</code></pre>
+</div>
+
+<p>Ce n’est pas un mauvaise façon de faire, <strong>On peut égallement faire des interfaces en programmation fonctionnelle</strong>.</p>
+
+<h2 id="façon-poo">Façon POO</h2>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">urllib</span>
+
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">DATA_SOURCE_URL</span> <span class="o">=</span> <span class="s">"http://data.stackexchange.com/StackOverflow/csv/109782"</span>
+<span class="n">QUESTION_URL</span> <span class="o">=</span> <span class="s">"http://stackoverflow.com/question/{id}"</span>
+
+<span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">creation_date</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="nb">id</span>            <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span> <span class="o">=</span> <span class="n">creation_date</span>
+    
+    <span class="c"># On génère ces valeurs à la lecture:</span>
+    <span class="k">def</span> <span class="nf">get_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span>
+                                 <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">get_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">QUESTION_URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="nb">id</span><span class="p">)</span>
+
+<span class="c"># Maintenant, notre fonction retourne des objets Question</span>
+<span class="k">def</span> <span class="nf">download_question</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">DATA_SOURCE_URL</span><span class="p">):</span>
+    <span class="n">csv_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_data</span><span class="p">):</span>
+        <span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+
+        <span class="c"># à la place de retourner des dictionnaires, on</span>
+        <span class="c"># retourne des objets Question</span>
+        <span class="k">yield</span> <span class="n">Question</span><span class="p">(</span><span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">],</span>
+                       <span class="nb">id</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>A première vue, ça ne semble pas très interessant, Ça fait la même chose mais c’est plus long.</p>
+
+<p>Par contre on a un petit changement côté utilisation et c’est ça qu’on vise:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">download_questions</span><span class="p">():</span>
+    <span class="c"># affiche le titre et l'url</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{}: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span>
+                          <span class="n">question</span><span class="o">.</span><span class="n">get_url</span><span class="p">()))</span>
+</code></pre>
+</div>
+
+<p>À la place d’avoir un dictionnaire qui pourrait contenir n’importe quoi, on a un objet <code class="highlighter-rouge">question</code>, avec un titre et la possibilité de construire l’URL.</p>
+
+<h2 id="attributs-et-méthodes-de-classe">Attributs et méthodes de classe</h2>
+
+<p>La POO, ce n’est pas juste faire des objets, c’est aussi les habiller. Un attribut de classe est un attribut qui appartient, <strong>non pas à l’objet mais à l classe.</strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RandomObjet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">attribut_de_classe</span> <span class="o">=</span> <span class="s">"meme val pour tous"</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribut_d_objet</span> <span class="o">=</span> <span class="s">"valable pour objet en cours"</span>
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">attribut_de_classe</code> est accessible depuis <code class="highlighter-rouge">RandomObjet</code> sans créer d’instance, donc sans avoir à faire <code class="highlighter-rouge">RandomObjet()</code>. Parcontre <code class="highlighter-rouge">attribut_d_objet</code> n’est pas accessible si on a pas d’instance.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">RandomObjet</span><span class="o">.</span><span class="n">attribut_de_classe</span><span class="p">)</span>
+<span class="n">meme</span> <span class="n">val</span> <span class="n">pour</span> <span class="n">tous</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">RandomObjet</span><span class="o">.</span><span class="n">attribut_d_objet</span><span class="p">)</span>
+<span class="nb">AttributeError</span><span class="p">:</span> <span class="nb">type</span> <span class="nb">object</span> <span class="s">'RandomObjet'</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s">'attribut_d_objet'</span>
+</code></pre>
+</div>
+
+<p>Une instance a donc accès aux deux:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">RandomObjet</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">attribut_de_classe</span><span class="p">)</span>
+<span class="n">meme</span> <span class="n">val</span> <span class="n">pour</span> <span class="n">tous</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">attribut_d_objet</span><span class="p">)</span>
+<span class="n">valable</span> <span class="n">pour</span> <span class="n">objet</span> <span class="n">en</span> <span class="n">cours</span>
+</code></pre>
+</div>
+
+<p>Les attributs de classe sont donc partagés par toutes les instances d’une classe. Cela permet par exemple de faire des compteurs d’objets…</p>
+
+<p>De la même façon on peut faire des méthodes de classe:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RandomObjet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">methode_de_classe</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"poule"</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">RandomObjet</span><span class="o">.</span><span class="n">methode_de_classe</span><span class="p">()</span>
+<span class="n">poule</span>
+</code></pre>
+</div>
+
+<p>On utilise ici un <strong>décorateur</strong> qui dit que la méthode est une éthode de classe $ \Rightarrow $ <strong>accessible sans créer aucune instance</strong></p>
+
+<p><span style="color:red"> A noter que la convention de nommage change. Le premier argument n’est plus nommé <code class="highlighter-rouge">self</code> mais <code class="highlighter-rouge">cls</code>. </span> Le premier argument sera “la classe en cours” et no plus l’objet en cours.</p>
+
+<h2 id="encapsulation">Encapsulation</h2>
+
+<p>Maintenant nous pouvons regrouper tout ce qui a un rapport avec notre objet <code class="highlighter-rouge">Question</code> dans la classe:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">urllib</span>
+
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="c">#Les constantes sont maintenant des attributs de classe</span>
+    <span class="n">DATA_SOURCE_URL</span> <span class="o">=</span> <span class="s">"http://data.stackexchange.com/StackOverflow/csv/109782"</span>
+    <span class="n">QUESTION_URL</span> <span class="o">=</span> <span class="s">"http://stackoverflow.com/question/{id}"</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">creation_date</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="nb">id</span>            <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span> <span class="o">=</span> <span class="n">creation_date</span>
+    
+    <span class="k">def</span> <span class="nf">get_creation_date</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span> 
+                                 <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">get_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">QUESTION_URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="nb">id</span><span class="p">)</span>
+
+    <span class="c"># la fonction qui fabrique tous les objets Question est maintenant</span>
+    <span class="c"># dans la classe Question, en tant que méthode de classe</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">DATA_SOURCE_URL</span><span class="p">):</span>
+        <span class="n">csv_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">quetion</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_data</span><span class="p">):</span>
+            <span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+
+            <span class="k">yield</span> <span class="n">Question</span><span class="p">(</span><span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">],</span>
+                           <span class="nb">id</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>C’est ce qu’on appelle l’<strong>encapsulation</strong>. On met tout les <em>trucs</em> qui ont un rapport entre eux dans la même boîte et on laisse la boîte s’occuper de comment ça fonctionne en interne.</p>
+
+<p>Et là, on commence à avoir une API très chou:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Questions from: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Question</span><span class="o">.</span><span class="n">DATA_SOURCE_URL</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">Question</span><span class="o">.</span><span class="n">query</span><span class="p">():</span>
+    <span class="c"># affiche titre et url</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{creation_date}: {url}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">get_url</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>Tout part de l’objet <code class="highlighter-rouge">Question</code>. Si on cherche quelque chose liée à l’objet <code class="highlighter-rouge">Question</code>, on doit faire <code class="highlighter-rouge">Question.&lt;un_truc&gt;</code>. On peut expérimenter dans le shell avec la complétion du code. En regardant ce boutde code pas besoin de savoir comment <code class="highlighter-rouge">Question</code> marche pour savoir ce que ça fait. C’est assez explicite.</p>
+
+<p>On peut encore faire un peu mieux…</p>
+
+<h2 id="les-propriétés">Les propriétés</h2>
+
+<p>Ce sont des outils qui déguisent des méthodes pour les faire passer pour des attributs. Voici un simple exemple:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RandomObjet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
+
+    <span class="k">def</span> <span class="nf">get_sq_val</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">objet</span> <span class="o">=</span> <span class="n">RandomObjet</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">objet</span><span class="o">.</span><span class="n">get_sq_val</span><span class="p">())</span>
+<span class="mi">4</span>
+</code></pre>
+</div>
+
+<p>La méthode <code class="highlighter-rouge">get_sq_val()</code> ne prend aucun paramètre (autre que <code class="highlighter-rouge">self</code>), pour éviter de devoir la flanquer de parenthèses à chaque appel, on peut la convertir en propery en ajoutant <code class="highlighter-rouge"><span class="k">@property</span></code> avant sa définition. Avec une property, on dit à Python “fait comme si cette méthode était un banal attribut”:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RandomObjet</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">sq_val</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">**</span> <span class="mi">2</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">objet</span> <span class="o">=</span> <span class="n">RandomObjet</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">objet</span><span class="o">.</span><span class="n">get_sq_val</span><span class="p">)</span>
+<span class="mi">4</span>
+</code></pre>
+</div>
+
+<p>Si nous appliquons ça à notre classe Question, ça donne:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span> <span class="kn">as</span> <span class="nn">urllib</span>
+
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">StringIO</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="c">#Les constantes sont maintenant des attributs de classe</span>
+    <span class="n">DATA_SOURCE_URL</span> <span class="o">=</span> <span class="s">"http://data.stackexchange.com/StackOverflow/csv/109782"</span>
+    <span class="n">QUESTION_URL</span> <span class="o">=</span> <span class="s">"http://stackoverflow.com/question/{id}"</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">creation_date</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="nb">id</span>            <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span> <span class="o">=</span> <span class="n">creation_date</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">created</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span> 
+                                 <span class="s">'</span><span class="si">%</span><span class="s">Y-</span><span class="si">%</span><span class="s">m-</span><span class="si">%</span><span class="s">d </span><span class="si">%</span><span class="s">H:</span><span class="si">%</span><span class="s">M:</span><span class="si">%</span><span class="s">S'</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">QUESTION_URL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="nb">id</span><span class="p">)</span>
+
+    <span class="c"># la fonction qui fabrique tous les objets Question est maintenant</span>
+    <span class="c"># dans la classe Question, en tant que méthode de classe</span>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">DATA_SOURCE_URL</span><span class="p">):</span>
+        <span class="n">csv_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csv_data</span><span class="p">):</span>
+            <span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">]</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+
+            <span class="k">yield</span> <span class="n">Question</span><span class="p">(</span><span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'CreationDate'</span><span class="p">],</span>
+                           <span class="nb">id</span><span class="o">=</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>Ce qui clean un peu le code et l’interface également:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Questions from: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Question</span><span class="o">.</span><span class="n">DATA_SOURCE_URL</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">Question</span><span class="o">.</span><span class="n">query</span><span class="p">():</span>
+    <span class="c"># affiche titre et url</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{creation_date}: {url}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">url</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<h2 id="conclusion-pour-le-moment">Conclusion (Pour le moment)</h2>
+
+<p>Ceci était un premier aperçu de l’usage de la POO dans le monde réel. Le code s’est complexifié côté bibliothèque mais du côté utilisateur, on pass de ça:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">question_lib</span> <span class="kn">import</span> <span class="n">download_questions</span><span class="p">,</span> <span class="n">DATA_SOURCE_URL</span>
+ 
+<span class="k">print</span> <span class="s">"Questions from : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">DATA_SOURCE_URL</span><span class="p">)</span>
+ 
+<span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">download_questions</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">"{creationDate} : {url}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">question</span><span class="p">[</span><span class="s">'Post Link'</span><span class="p">])</span>
+</code></pre>
+</div>
+
+<p>À ça:</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">question_lib</span> <span class="kn">import</span> <span class="n">Question</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Questions from: {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Question</span><span class="o">.</span><span class="n">DATA_SOURCE_URL</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">Question</span><span class="o">.</span><span class="n">query</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"{creation_date}: {url}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">creation_date</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">creation_date</span><span class="p">,</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">question</span><span class="o">.</span><span class="n">url</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>Le style change, la façon dont sont exposées les données n’est pas la même non plus. Sur cette exemple simple, la complexité ajoutée pour le resultat fait que le jeu peut ne pas en valoir la chandelle <strong>mais sur des plus gros codes, c’est un game changer</strong>.</p>
+
+<p>Un autre gros avantage de l’encapsulation, c’est que même si Stackoverflow change son format de données (de CSV à XML, par exemple), on a juste à adapter la classe. <strong>Le code qui utilise la classe, lui, n’aura pas besoin de changer</strong>.</p>
+
+<h1 id="suite">Suite</h1>
+
+<ul>
+  <li><a href="/py/py-OOP3.html">partie 3</a></li>
+</ul>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Py: OOP 2 En pratique@&amp;url=http://localhost:4000/py/py-OOP2.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/py/py-OOP2.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/py/py-OOP2.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="/%20/">Home</a> /
+                <a class="link" href="/archive/">Archive</a> /
+                <a class="link" href="/category/">Category</a> /
+                <a class="link" href="/tags/">Tags</a> /
+                <a class="link" href="/about/">About</a> /
+                <a class="link" href="/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>
