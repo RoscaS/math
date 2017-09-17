@@ -4,7 +4,7 @@ title: "Notes"
 subtitle: "back to basics"
 date: 2017-06-01
 author: Sol
-category: Math/math
+category: Math
 tags: 
 finished: false
 mathjax: true
