@@ -1,3 +1,16 @@
+---
+layout: post
+title: "Histoire: Nombres complexes"
+subtitle: ""
+date: 2017-09-18
+author: Sol
+category: Histoire
+tags: ""
+finished: false
+mathjax: true
+---
+
+
 # Imaginary numbers are real
 * [playlist youtbe](https://www.youtube.com/watch?v=T647CGsuOVU&list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF&index=1)
 
