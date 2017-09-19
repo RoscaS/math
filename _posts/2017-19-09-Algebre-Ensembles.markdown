@@ -23,7 +23,7 @@ $$\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \{0\}$$
 Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d'une droite graduée toutes les unités.
 
 ### (Décimaux $\pmb{\mathbb{D}}$)
-Un nombre décimal est le quotient d'un entier relatif par une puissance de 10: $a/10^n$, par exemple $32/100$ mais aussi $3/5=6/10$. Les nombres décimaux sont ceux qui ont une écriture décimale **finie**.
+Un nombre décimal est le quotient d'un entier relatif par une puissance de 10: $a/10^n$, par exemple $32/100$ mais aussi $3/5=6/10$. Les nombres décimaux sont ceux qui ont une écriture décimale **finie** (non-periodique).
 
 ### Rationnels $\pmb{\mathbb{Q}}$
 $$\pmb{\mathbb{Q}} = \{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\}$$
