@@ -11,7 +11,8 @@ mathjax: true
 ---
 
 ## Théorie élémentaire
-On travail en mathématique avec différents ensembles de nombres:
+On travail en mathématique avec différents ensembles de nombres. 
+>Un ensemble est une collection d'éléments.
 
 ### Entiers naturels $\pmb{\mathbb{N}}$
 $$\pmb{\mathbb{N}} = \{0,1,2,3,...\}$$
@@ -48,6 +49,17 @@ Ces différents ensembles de nombres sont inclus les uns dans les autres suivant
 ![alt](http://www.bibmath.net/dico/e/images/ensemblesnombres1.png)
 
 -----
+### Opérations possibles sur ces ensembles
+* ($\cup$) union (ou réunion)
+* ($\cap$) intersection
+* Complémentaires
+* Différence
+* ($\times$) Produit cartésien
+* Cardinal d'un ensemble
+* ($\subset$) inclusion
+* ensemble des parties
+
+
 #### Exemple
 ![alt](/01illustrations/00EnsemblesNb/ensembles.png)
 
@@ -70,7 +82,7 @@ Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\p
 
 ![alt](/01illustrations/00EnsemblesNb/plan.png)
 
-### Les intervales
+### Intervales
 
 
 $$\begin{align}
