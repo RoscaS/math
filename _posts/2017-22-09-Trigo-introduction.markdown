@@ -43,3 +43,22 @@ Quand on mesure les ngles en degrés, on peut augmenter la précision de 2 faço
 * En subdivisant chque degré en **60 minutes** et en subdivisant chaque minute en **60 secondes**
 
 ### Degré $\rightarrow$ DMS
+>Un degré équivaut à 60 minutes qui sont égales à 3600 secondes:
+>$1 ^\circ = 60' = 360''$
+
+$$\begin{align}
+dd & = \text{angle initial} \\
+D & = int(dd) \\
+M & = int((dd - D) * 60) \\
+S & = (dd-D-M/60) \cdot 3600 \\
+     & \Rightarrow angle\;initial = DMS  \\ 
+\end{align}$$
+
+**Exemple:**
+
+$$\begin{align}
+    dd & = 36,25 ^\circ \\ 
+    D & = int(dd) & = 36 ^\circ \\
+    M & = int((36,25-36)\cdot60) & = 15' \\
+    S & = (36,25-36-15/60)\cdot 3600 & =
+\end{align}$$
