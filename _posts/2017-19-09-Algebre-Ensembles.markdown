@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Algèbre: Ensembles de nombres"
+title: "Algèbre(1): Introduction"
 subtitle: ""
 date: 2017-09-19
 author: Sol
@@ -63,28 +63,28 @@ On peut aussi utiliser ces notations pour des ensembles ayants "beaucoup" d'él�
 
 On peut aussi combiner ces symboles: $\pmb{\mathbb{R}^*_+}$
 
-# Types de nombres
+## Types de nombres
 
-## Entiers naturels $\pmb{\mathbb{N}}$
+### Entiers naturels $\pmb{\mathbb{N}}$
 >Les nombres les plus familiers sont les entiers naturels: $0,1,2,3,...$ éléments de l'ensembre $\pmb{\mathbb{N}}$, et utilisés pour le dénombrement.
 
 $$\pmb{\mathbb{N}} = \{0,1,2,3,...\}$$
 $$\pmb{\mathbb{N}}^* = \pmb{\mathbb{N} \setminus \{0\} = \{1,2,3,...\}}$$
 
-## Entiers relatifs $\pmb{\mathbb{Z}}$
+### Entiers relatifs $\pmb{\mathbb{Z}}$
 >Si les entiers négatifs sont inclus, on obtient l'ensemble des nombres entiers relatifs $\pmb{\mathbb{Z}}$.
 
 $$\pmb{\mathbb{Z}} = \{...,-3,-2,-1,0,1,2,3,...\}$$
 $$\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \{0\}$$
 Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d'une droite graduée toutes les unités.
 
-## Rationnels $\pmb{\mathbb{Q}}$
+### Rationnels $\pmb{\mathbb{Q}}$
 >La division d'un entier relatif par un entier relatif non nul forme un nombre rationnel. L'ensemble de tous les nombres rationnels est noté $\pmb{\mathbb{Q}}$.
 
 $$\pmb{\mathbb{Q}} = \{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\}$$
 Un nombre rationnel est le quotient $a/b$ d'un entier relatif $a$ par un entier naturel non nul $b$. Les nombres rationnels sont ceux qui ont une écriture décimale **periodique**.
 
-## Réels $\pmb{\mathbb{R}}$
+### Réels $\pmb{\mathbb{R}}$
 >Si, dans l'ensemble, outre les éléments de $\pmb{\mathbb{Q}}$, on inclut tous les développements décimaux infinis et non périodiques, on obtient l'ensenble des nombres réels, noté $\pmb{\mathbb{R}}$.
 
 $$\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\{...,\pi,e,\sqrt[2]{2},...\}$$
@@ -93,12 +93,10 @@ $$\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\{...,\pi,e,\sqrt[2]{2},...\}$$
 
 $\{...,\pi,e,\sqrt[]{2},...\} =$ **irrationnels**: Les nombres qui ne peuvent pas être mis sous forme de fraction
 
-
 C'est l'ensemble de tous les nombres usuels. Les réels correspondent aux abscisses possibles d'un point sur une droite graduée. Les nombres réels qui ne sont pas rationnels sont appelés **irrationnels**. Parmi eux, on trouve $\pi$ ou $\sqrt{2}$.
 
-## Ensemble vide $\emptyset$
+### Ensemble vide $\emptyset$
 Cet ensemble est inclus dans tous les autres ensembles
-
 
 ## Relations
 
@@ -109,46 +107,60 @@ $$\emptyset \subset \pmb{\mathbb{N}}\subset \pmb{\mathbb{Z}} \subset \pmb{\mathb
 Ces différents ensembles de nombres sont inclus les uns dans les autres suivant le schéma suivant :
 ![alt](http://www.bibmath.net/dico/e/images/ensemblesnombres1.png)
 
------
-## Opérations possibles sur ces ensembles
-Soit E et F deux sous-ensembles de $\pmb{\mathbb{R}}$
-* ($\cup$) union (ou réunion)
-* ($\cap$) intersection
-* Complémentaires
-* Différence
-* ($\times$) Produit cartésien $ \Rightarrow {\{(x,y)\text{ avec } x \in E \text{ et } y \in F}\}$
-* Cardinal d'un ensemble
-* ($\subset$) inclusion
-* ensemble des parties
+
+## Opérations sur les ensembles
+Soit $A$ et $B$ deux sous-ensembles d'un ensemble $E$.
+>* $E$ est une classe
+>* $A$ est l'ensemble des filles
+>* $B$ l'ensemble des élèves portant des lunettes
 
 
-### Exemple
-![alt](/01illustrations/00EnsemblesNb/ensembles.png)
+* **Union ( $\cup$ )** correspond à "ou" (fille **ou** avec lunettes): $ A \cup B = \{e \in E | e \in A \text{ ou } e \in B\} $
 
-$x_1 \in A$
-$x_2 \in B$
-$x_3 \in A \cap B$
-### Produit cartésien de deux ensembles
-$$A \times B = \{(x, y) | x \in A, y \in B \}$$
+<img src="/01illustrations/00EnsemblesNb/operations1.png" align="" height="200">
 
-C'est à dire l'ensemble de tous les **couples** possible obtenu en prenant un élément dand $A$ suivi d'un élément dans $B$, **dans cet ordre**. $ \Rightarrow $ donc $ \color{red}{A \times B \neq B \times A} $ !!
-#### Exemple:
+* **intersection ( $\cap$ )** correspond à "et" (pour remplire la condition, "ceci" doit être respecté **et** "celà" aussi): $A\cap B=\{e\in E|e\in A \text{ et }e \in B\}$
+
+<img src="/01illustrations/00EnsemblesNb/operations2.png" align="" height="200">
+
+* **complémentaire ($C_{Ensemble}$)** correspond à "non" (**non** fille): $C_E A = \{e \in E|e \notin A\}$
+
+<img src="/01illustrations/00EnsemblesNb/operations3.png" align="" height="200">
+
+> Quand il n'y a pas d'équivique possible, on écrit aussi $\bar{A}$.
+
+* **différence ( $\setminus$ )** correspond à "moins" (filles **moins** avec lunettes) $A \setminus B = \{e \in E|e\in A \text{ et } e \notin B\}$
+
+<img src="/01illustrations/00EnsemblesNb/operations4.png" align="" height="200">
+
+* **différencesymétrique** (correspond à **ou exclusif**: ceci ou celà mais pas les deux) $A\Delta B=\{e\in E| e\in A \text{ou (exclusif) } e\in B\}$
+
+<img src="/01illustrations/00EnsemblesNb/operations5.png" align="" height="200">
+
+* **produit cartésien ( $\times$ )**: $A \times B = \{(x;y)|x \in A \text{ et } y \in B\} = \{(x, y) | x \in A, y \in B \}$
+
+
+C'est à dire l'ensemble de tous les **couples** possible obtenu en prenant un élément dand $A$ suivi d'un élément dans $B$, **dans cet ordre**.
+> $ \Rightarrow $ donc $ \color{red}{A \times B \neq B \times A} $ !
+
+**Exemple**:
 Soit les ensembles $A = \{1, 2\}$ et $B = \{a, b, c\}$
 
-$Z = A \times B = \{1a, 1b, 1c, 2a, 2b, 2c\}$
+$C = A \times B = \{1a, 1b, 1c, 2a, 2b, 2c\}$
 
-### Plan cartésien
+>Plan cartésien
 Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\pmb{\mathbb{R}}^2 = \pmb{\mathbb{R}} \times \pmb{\mathbb{R}}$ (tous les couples de 2 nombres réels). Il est alors mis en relation avec un plan.
+>![alt](/01illustrations/00EnsemblesNb/plan.png)
 
-![alt](/01illustrations/00EnsemblesNb/plan.png)
 
 ## Intervales
 
+Dans $\pmb{\mathbb{R}}$: 
 
-$$\begin{align}
-    \text{Sur }\pmb{\mathbb{R}} & : x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \\ 
+$\begin{align}
+    & x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \\ 
     & x \in [a,b[ \color{blue}{\text{ si }} a \le x < b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \\ 
     & x \in ]a,b[ \color{blue}{\text{ si }} a < x < b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \\ 
-\end{align}$$
+\end{align}$
 
 >Comme $+ \infty $ et $-\infty$ n'appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$
