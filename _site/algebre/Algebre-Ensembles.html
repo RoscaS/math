@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/math/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/math/algebre/Algebre-Ensembles.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/math/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/math/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Algèbre(1): Introduction</title>
+  <meta name="description" content="EnsemblesOn travail en mathématique avec différents ensembles de nombres.  Un ensemble est une collection d’éléments. Ces éléments peuvent être de n’importe ...">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Algèbre(1): Introduction</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="19 Sep 2017" itemprop="datePublished">Sep 19 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="https://roscas.github.io">IT</a> /
+			<a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+			<a class="link" href="https://roscas.github.io/category/">Category</a> / 
+			<a class="link" href="https://roscas.github.io/tags/">Tags</a> / 
+			<a class="link" href="https://roscas.github.io/about/">About</a> /
+			<a class="link" href="https://roscas.github.io/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h1 id="ensembles">Ensembles</h1>
+<p>On travail en mathématique avec différents ensembles de nombres.</p>
+<blockquote>
+  <p>Un ensemble est une collection d’éléments. Ces éléments peuvent être de n’importe quelle nature (nombres, points géométriques, droites, fonctions, autres ensembles, jours de la semaine…)</p>
+</blockquote>
+
+<h2 id="appartenance">Appartenance</h2>
+<ul>
+  <li>Un élément $x$ appartenant à un ensemble $A$ se note: $x \in A$</li>
+  <li>La négation se note $x \notin A$</li>
+</ul>
+
+<h2 id="sous-ensemble">Sous-ensemble</h2>
+<p>C’est un ensemble dont chaque élément est aussi contenu dans un autre ensemble. Si $A$ est un sous-ensemble de $B$, on note $A\subset B$</p>
+
+<blockquote>
+  <p>si jours = ${lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche}$ et week-end = ${samedi, dimanche}$, alors week–end $\subset$ jours . Par contre, le <strong>singleton</strong> ${mardi}$ $\not\subset$ week – end .</p>
+</blockquote>
+
+<h2 id="ensemble-finis">Ensemble finis</h2>
+<p>Un ensemble est fini quand on peut compter ses éléments à l’aide d’entiers tous plus petits qu’un entier donné.</p>
+
+<p>Ils peuvent être définis <strong>en extension</strong>, par la liste de leurs éléments, et décrits comme tels; on place la liste des éléments d’un ensemble entre accolades, par exemple ${1,3,5}$.</p>
+
+<p>La notation d’un ensemble n’est pas unique, un même ensemble peut être noté de en extension de façons différentes **car l’ordre des éléments est sans importance ${1,2} = {2,1}$.</p>
+
+<h2 id="définition-dun-ensemble-en-comprehension">Définition d’un ensemble en comprehension</h2>
+<blockquote>
+  <p>Explication de la <code class="highlighter-rouge">list comprehension</code> en Python !!!</p>
+</blockquote>
+
+<p>Un ensemble peut être défini en <strong>comprehension</strong>, c’est à dire qu’on définit par une propriété caractéristique parmi les éléments d’un ensemble donné.</p>
+
+<p>L’ensemble des entiers naturels pairs est clairement défini par comprehension par la propriété “être pair” parmi les entiers naturels. On écrira:</p>
+
+<script type="math/tex; mode=display">\{x \in \pmb{\mathbb{N}}| x\;\text{pairs}\}\text{ ou } \{2x|x \in \pmb{\mathbb{N}}\}</script>
+
+<p>Pour décrire l’ensemble des nombres entiers plus grands que 10, on écrira:</p>
+
+<script type="math/tex; mode=display">\{x \in \pmb{\mathbb{N}}|x>10\}</script>
+
+<h2 id="autres-notations">Autres notations</h2>
+<p>On peut utiliser des points de suspension pour des ensembles de cardinalité infinie, ou finie mais non déterminée.</p>
+<ul>
+  <li>Ensemble des entiers naturels peut se noter: $\pmb{\mathbb{N}}={0,1,2,3,…}$</li>
+</ul>
+
+<p>Si il est clair que $n$ désigne un entier naturel, ${1,2,…,n}$, voir ${1,…,n}$ désigne en général l’ensemble des entiers supérieurs ou égaux à $1$ et inférieurs ou égaux à $n$.</p>
+
+<ul>
+  <li>On peut écrire $\pmb{\mathbb{Z}}={…,-3,-2,-1,0,1,2,3,…}$ ou encore ${-n,-n+1,…,n-1,n}$</li>
+</ul>
+
+<p>Quand il y a un procédé itératif simple pour engendrer les éléments de l’ensemble, on peut se risquer à des notations comme ${0,2,4,6,…}$ pour l’ensemble des entiers naturels paris, etc…</p>
+
+<p>On peut aussi utiliser ces notations pour des ensembles ayants “beaucoup” d’éléments: ${1,2,…,1000}$ ou encore ${3,5,…,21}$ à la place de ${3,5,7,9,11,13,15,17,19,21}$.</p>
+
+<h2 id="notations-spéciales">Notations spéciales</h2>
+
+<ul>
+  <li>$ * $ signifie “sans $0$”, par exemple $\pmb{\mathbb{R}^*}$</li>
+  <li>$+$ signifie “plus grand que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_+}$</li>
+  <li>$-$ signifie “plus petit que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_-}$</li>
+</ul>
+
+<p>On peut aussi combiner ces symboles: $\pmb{\mathbb{R}^*_+}$</p>
+
+<h2 id="types-de-nombres">Types de nombres</h2>
+
+<h3 id="entiers-naturels-pmbmathbbn">Entiers naturels $\pmb{\mathbb{N}}$</h3>
+<blockquote>
+  <p>Les nombres les plus familiers sont les entiers naturels: $0,1,2,3,…$ éléments de l’ensembre $\pmb{\mathbb{N}}$, et utilisés pour le dénombrement.</p>
+</blockquote>
+
+<p><script type="math/tex">\pmb{\mathbb{N}} = \{0,1,2,3,...\}</script>
+<script type="math/tex">\pmb{\mathbb{N}}^* = \pmb{\mathbb{N} \setminus \{0\} = \{1,2,3,...\}}</script></p>
+
+<h3 id="entiers-relatifs-pmbmathbbz">Entiers relatifs $\pmb{\mathbb{Z}}$</h3>
+<blockquote>
+  <p>Si les entiers négatifs sont inclus, on obtient l’ensemble des nombres entiers relatifs $\pmb{\mathbb{Z}}$.</p>
+</blockquote>
+
+<p><script type="math/tex">\pmb{\mathbb{Z}} = \{...,-3,-2,-1,0,1,2,3,...\}</script>
+<script type="math/tex">\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \{0\}</script>
+Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d’une droite graduée toutes les unités.</p>
+
+<h3 id="rationnels-pmbmathbbq">Rationnels $\pmb{\mathbb{Q}}$</h3>
+<blockquote>
+  <p>La division d’un entier relatif par un entier relatif non nul forme un nombre rationnel. L’ensemble de tous les nombres rationnels est noté $\pmb{\mathbb{Q}}$.</p>
+</blockquote>
+
+<p><script type="math/tex">\pmb{\mathbb{Q}} = \{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\}</script>
+Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entier naturel non nul $b$. Les nombres rationnels sont ceux qui ont une écriture décimale <strong>periodique</strong>.</p>
+
+<h3 id="réels-pmbmathbbr">Réels $\pmb{\mathbb{R}}$</h3>
+<blockquote>
+  <p>Si, dans l’ensemble, outre les éléments de $\pmb{\mathbb{Q}}$, on inclut tous les développements décimaux infinis et non périodiques, on obtient l’ensenble des nombres réels, noté $\pmb{\mathbb{R}}$.</p>
+</blockquote>
+
+<script type="math/tex; mode=display">\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\{...,\pi,e,\sqrt[2]{2},...\}</script>
+
+<blockquote>
+  <p>Tous les nombres réels qui ne sont pas rationnels sont appelés nombres irrationnels.</p>
+</blockquote>
+
+<p>${…,\pi,e,\sqrt[]{2},…} =$ <strong>irrationnels</strong>: Les nombres qui ne peuvent pas être mis sous forme de fraction</p>
+
+<p>C’est l’ensemble de tous les nombres usuels. Les réels correspondent aux abscisses possibles d’un point sur une droite graduée. Les nombres réels qui ne sont pas rationnels sont appelés <strong>irrationnels</strong>. Parmi eux, on trouve $\pi$ ou $\sqrt{2}$.</p>
+
+<h3 id="ensemble-vide-emptyset">Ensemble vide $\emptyset$</h3>
+<p>Cet ensemble est inclus dans tous les autres ensembles</p>
+
+<h2 id="relations">Relations</h2>
+
+<p>Nous avons donc une hiérarchie d’ensembles:</p>
+
+<script type="math/tex; mode=display">\emptyset \subset \pmb{\mathbb{N}}\subset \pmb{\mathbb{Z}} \subset \pmb{\mathbb{Q}} \subset \pmb{\mathbb{R}}</script>
+
+<p>Ces différents ensembles de nombres sont inclus les uns dans les autres suivant le schéma suivant :
+<img src="http://www.bibmath.net/dico/e/images/ensemblesnombres1.png" alt="alt" /></p>
+
+<h2 id="opérations-sur-les-ensembles">Opérations sur les ensembles</h2>
+
+<p>Soit $A$ et $B$ deux sous-ensembles d’un ensemble $E$.</p>
+<blockquote>
+  <ul>
+    <li>$E$ est une classe</li>
+    <li>$A$ est l’ensemble des filles</li>
+    <li>$B$ l’ensemble des élèves portant des lunettes</li>
+  </ul>
+</blockquote>
+
+<ul>
+  <li><strong>Union ( $\cup$ )</strong> correspond à “ou” (fille <strong>ou</strong> avec lunettes): $ A \cup B = {e \in E | e \in A \text{ ou } e \in B} $</li>
+</ul>
+
+<p><img src="/01illustrations/00EnsemblesNb/operations1.png" height="200" /></p>
+
+<ul>
+  <li><strong>intersection ( $\cap$ )</strong> correspond à “et” (pour remplire la condition, “ceci” doit être respecté <strong>et</strong> “celà” aussi): $A\cap B={e\in E | e\in A \text{ et }e \in B}$</li>
+</ul>
+
+<p><img src="/01illustrations/00EnsemblesNb/operations2.png" height="200" /></p>
+
+<ul>
+  <li><strong>complémentaire ($C_{Ensemble}$)</strong> correspond à “non” (<strong>non</strong> fille): $C_E A = {e \in E | e \notin A}$</li>
+</ul>
+
+<p><img src="/01illustrations/00EnsemblesNb/operations3.png" height="200" /></p>
+
+<blockquote>
+  <p>Quand il n’y a pas d’équivique possible, on écrit aussi $\bar{A}$.</p>
+</blockquote>
+
+<ul>
+  <li><strong>différence ( $\setminus$ )</strong> correspond à “moins” (filles <strong>moins</strong> avec lunettes) $A \setminus B = {e \in E | e\in A \text{ et } e \notin B}$</li>
+</ul>
+
+<p><img src="/01illustrations/00EnsemblesNb/operations4.png" height="200" /></p>
+
+<ul>
+  <li><strong>différencesymétrique</strong> (correspond à <strong>ou exclusif</strong>: ceci ou celà mais pas les deux) $A\Delta B={e\in E |  e\in A \text{ou (exclusif) } e\in B}$</li>
+</ul>
+
+<p><img src="/01illustrations/00EnsemblesNb/operations5.png" height="200" /></p>
+
+<ul>
+  <li><strong>produit cartésien ( $\times$ )</strong>: $A \times B = {(x;y) | x \in A \text{ et } y \in B} = {(x, y) | x \in A, y \in B }$</li>
+</ul>
+
+<p>C’est à dire l’ensemble de tous les <strong>couples</strong> possible obtenu en prenant un élément dand $A$ suivi d’un élément dans $B$, <strong>dans cet ordre</strong>.</p>
+<blockquote>
+  <p>$ \Rightarrow $ donc $ \color{red}{A \times B \neq B \times A} $ !</p>
+</blockquote>
+
+<p><strong>Exemple</strong>:
+Soit les ensembles $A = {1, 2}$ et $B = {a, b, c}$</p>
+
+<p>$C = A \times B = {1a, 1b, 1c, 2a, 2b, 2c}$</p>
+
+<blockquote>
+  <p>Plan cartésien
+Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\pmb{\mathbb{R}}^2 = \pmb{\mathbb{R}} \times \pmb{\mathbb{R}}$ (tous les couples de 2 nombres réels). Il est alors mis en relation avec un plan.
+<img src="/01illustrations/00EnsemblesNb/plan.png" alt="alt" /></p>
+</blockquote>
+
+<h2 id="intervales">Intervales</h2>
+
+<p>Dans $\pmb{\mathbb{R}}$:</p>
+
+<p>$\begin{align}
+    &amp; x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \ 
+    &amp; x \in [a,b[ \color{blue}{\text{ si }} a \le x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \ 
+    &amp; x \in ]a,b[ \color{blue}{\text{ si }} a &lt; x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \ 
+\end{align}$</p>
+
+<blockquote>
+  <p>Comme $+ \infty $ et $-\infty$ n’appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$</p>
+</blockquote>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Algèbre(1): Introduction@&amp;url=http://localhost:4000/math/algebre/Algebre-Ensembles.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/math/algebre/Algebre-Ensembles.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/math/algebre/Algebre-Ensembles.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="https://roscas.github.io">IT</a> /
+                <a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+                <a class="link" href="https://roscas.github.io/archive/">Archive</a> /
+                <a class="link" href="https://roscas.github.io/category/">Category</a> /
+                <a class="link" href="https://roscas.github.io/tags/">Tags</a> /
+                <a class="link" href="https://roscas.github.io/about/">About</a> /
+                <a class="link" href="https://roscas.github.io/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/math/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

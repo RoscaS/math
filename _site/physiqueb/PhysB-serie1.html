@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/math/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/math/physiqueb/PhysB-serie1.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/math/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/math/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Physique B: Electrostatique: notion de charge et loi de Coulomb (1)</title>
+  <meta name="description" content="Charge">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Physique B: Electrostatique: notion de charge et loi de Coulomb (1)</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="20 Sep 2017" itemprop="datePublished">Sep 20 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="http://localhost:4000/math/tags/">physique</a>
+        	
+			<a class="post-tags-item" href="http://localhost:4000/math/tags/">electrostatique</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="https://roscas.github.io">IT</a> /
+			<a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+			<a class="link" href="https://roscas.github.io/category/">Category</a> / 
+			<a class="link" href="https://roscas.github.io/tags/">Tags</a> / 
+			<a class="link" href="https://roscas.github.io/about/">About</a> /
+			<a class="link" href="https://roscas.github.io/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p>Notion de charge et loi de Coulomb</p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h2 id="charge">Charge</h2>
+
+<p>Il existe une caractéristique appelée <strong>charge</strong> qui sont de deux types:</p>
+<ul>
+  <li>Positives</li>
+  <li>Negatives</li>
+</ul>
+
+<p>Deux charges de <strong>même signe se repoussent</strong>, deux charges de <strong>signe opposé s’attirent</strong>.</p>
+
+<h3 id="provenance">Provenance</h3>
+<p><strong>Atome</strong>: Noyau central contenant:</p>
+<ul>
+  <li>Protons: Chargé positivement</li>
+  <li>Neutrons: Non-chargés</li>
+  <li>Electrons: Charge positive</li>
+</ul>
+
+<blockquote>
+  <p>Un atome est dit <strong>neutre</strong> si il possède autant de protons que d’électrons</p>
+</blockquote>
+
+<blockquote>
+  <p>On Appelle <strong>ion</strong> tout atome (ou molécule) qui a plus (ou moins) d’électrons que de protons.</p>
+</blockquote>
+
+<p>Par frottement, des électrons passent d’un corp à l’autre produisant ainsi des ions.</p>
+<ul>
+  <li>Un corp chargé positivement a un déficite d’électrons</li>
+  <li>Un corp chargé négativement a un excédent d’électrons</li>
+</ul>
+
+<h3 id="charge-élémentaire-et-quantification">Charge élémentaire et Quantification</h3>
+<p>La charge élémentaire qui permet la quantification d’une charge se note $\pmb{e}$</p>
+
+<script type="math/tex; mode=display">\bbox[5px,border:1px solid red]
+    {e = 1,602\cdot10^{-19}C}</script>
+
+<p>Où $C$ est l’abréviation de <em>coulomb</em>, l’unité SI de la charge électrique.</p>
+
+<ul>
+  <li>Charge du proton: $\bbox[5px,border:1px solid red] {q_p = +e}$</li>
+  <li>Charge de l’électron: $\bbox[5px,border:1px solid red] {q_e = -e}$</li>
+</ul>
+
+<h3 id="conservation-de-la-charge">Conservation de la charge</h3>
+
+<blockquote>
+  <p>La charge électrique n’est ni créée, ni détruite, elle se transmet simplement d’un corp à l’autre.
+Benjamin Franklin</p>
+</blockquote>
+
+<p>Autrement dit, la charge totale d’un système isolé reste constante.</p>
+
+<p><strong>Exemple</strong>: Les réactions chimiques; dans le cas suivant, deux molécules d’eau se transforment en un ion positif et un ion négatif:$\quad 2H_2 O \Rightarrow H_3 O^+ + HO^-$</p>
+
+<h3 id="loi-de-coulomb">Loi de Coulomb</h3>
+
+<p>Soit deux charges bonctuelles $q_1 \text{ et } q_2$ séparées par une distance $d$.</p>
+
+<p>L’intensité de la force électrique s’exerçant entre ces deux charges est donnée par:</p>
+
+<script type="math/tex; mode=display">\bbox[5px,border:1px solid red]
+    {F = \frac{1}{4\pi\epsilon_0} \frac{|q_1\;q_2|}{d^2}}</script>
+
+<p>Où $\epsilon_0 = 8,8542\cdot10^{-12}C^2 N^{-1} m^{-2}$ qui est la <strong>constante de permitivité du vide</strong></p>
+
+<blockquote>
+  <p>Loi établie en 1785 par le physicien français Charles de Coulomb</p>
+</blockquote>
+
+<p>Cette formule peut être remplacée par:</p>
+
+<script type="math/tex; mode=display">\bbox[5px,border:1px solid red] {F = k_C \frac{|q_1\;q_2|}{d^2}}</script>
+
+<p>Où $K_c$ est la constante de Coulomb et vaut approximtivement $ 9\cdot10^{9}$</p>
+
+<hr />
+
+<h2 id="série-associée">Série associée</h2>
+
+<h3 id="11">1.1</h3>
+<blockquote>
+  <p>Lors d’un orage, la foudre peut transporter une charge de $20C$ d’un nuage à la terre. À combien d’électrons environ correspond cette charge?</p>
+</blockquote>
+
+<script type="math/tex; mode=display">n_e = \frac{Q}{e} \approx 1,248 \cdot10^{20}</script>
+
+<h3 id="12">1.2</h3>
+<blockquote>
+  <p>À l’extérieur du noyau atomique, le neutron n est une particule instable et se désintègre en un proton p, un électron e− et un antineutrino:$\quad n \rightarrow p + e^- + \overline{v}$
+Déterminer la charge électrique de l’antineutrino.</p>
+</blockquote>
+
+<p>Comme la particule est maintenant dans un état d’équilibre et que nous savons que le proton possède une charge positive, l’electron une charge négative et que le neutron a une charge nulle, l’antineutrino possède forcément une <strong>charge nulle</strong> également.</p>
+
+<h3 id="13">1.3</h3>
+<blockquote>
+  <p>Dans un cumulonimbus se trouvent deux charges, l’une de +40 C et l’autre de −40 C, distantes de 5 km environ. En supposant que ces charges sont ponctuelles, calculer l’intensité de la force électrique FE qu’elles exercent l’une sur l’autre.</p>
+</blockquote>
+
+<script type="math/tex; mode=display">F_e = k \frac{|Q_1 Q_2|}{d^2} \approx 5,76 \cdot 10^5 N</script>
+
+<h3 id="14">1.4</h3>
+<blockquote>
+  <p>Dans un atome d’hydrogène, l’électron et le proton sont distants de $d = 0,53 \cdot 10^{−10}$ m. Déterminer le rapport de $F_G$ sur $F_E$, où $F_G$ et $F_E$ sont respectivement la force graviﬁque et la force électrique agissant entre les deux particules. Les masses du proton et de l’électron sont respectivement $m_p = 1,6726 \cdot 10^{−27} \text{kg}$ et $m_e = 9,1095·10^{−31} kg$.</p>
+</blockquote>
+
+<p>$q_{proton} = e$
+$q_{electron} = -e$</p>
+
+<script type="math/tex; mode=display">\frac{F_G}{F_E} = \frac{G\;m_1\;m_2}{d^2} \cdot \frac{d^2}{k\;e^2} = \frac{G\;m_1\;m_2}{k\;e^2} \approx 4,401 \cdot 10^{-40}</script>
+
+<h3 id="15">1.5</h3>
+<blockquote>
+  <p>Supposons que l’on donne une charge Q à la Terre et une même charge Q à la Lune. Quelle devrait être la valeur de Q pour que la force de répulsion électrique entre la Terre et la Lune soit égale à la force d’attraction gravitationnelle qui s’exerce entre les deux astres? Les masses de la Terre et de la Lune sont respectivement $mT = 5,9742 \cdot 10^{24} kg$ et   $mL = 7,350 \cdot 10^{22} kg$.</p>
+</blockquote>
+
+<p>$Q_T = Q_L = Q$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    \frac{kQ^2}{d^2} &= \frac{Gm_1m_2}{d^2} \\ 
+    kQ^2 & = G m_1 m_2\\
+    Q &= \sqrt{\frac{G m_T, m_L}{k}}{} \\
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">\Rightarrow Q \approx 5,706 \cdot 10^{13}C</script>
+
+</div>
+
+<div>
+	
+	<div class="eof"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Physique B: Electrostatique: notion de charge et loi de Coulomb (1)@&amp;url=http://localhost:4000/math/physiqueb/PhysB-serie1.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/math/physiqueb/PhysB-serie1.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/math/physiqueb/PhysB-serie1.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="https://roscas.github.io">IT</a> /
+                <a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+                <a class="link" href="https://roscas.github.io/archive/">Archive</a> /
+                <a class="link" href="https://roscas.github.io/category/">Category</a> /
+                <a class="link" href="https://roscas.github.io/tags/">Tags</a> /
+                <a class="link" href="https://roscas.github.io/about/">About</a> /
+                <a class="link" href="https://roscas.github.io/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/math/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

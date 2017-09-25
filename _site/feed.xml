@@ -6,9 +6,631 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Sep 2017 15:19:13 +0200</pubDate>
-    <lastBuildDate>Tue, 19 Sep 2017 15:19:13 +0200</lastBuildDate>
+    <pubDate>Tue, 26 Sep 2017 00:03:47 +0200</pubDate>
+    <lastBuildDate>Tue, 26 Sep 2017 00:03:47 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Trigo: Introduction</title>
+        <description>&lt;h2 id=&quot;conventions&quot;&gt;Conventions&lt;/h2&gt;
+
+&lt;h3 id=&quot;notations&quot;&gt;Notations&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/01-trigo/01-intro/fig1.png&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;$A,B,C:$ &lt;strong&gt;sommets&lt;/strong&gt; du triangle
+$a,b,c: $ &lt;strong&gt;longueurs&lt;/strong&gt; des cotés ($a$ opposé $A$)
+$\alpha,\beta,\delta:$ &lt;strong&gt;amplitude&lt;/strong&gt; des angles ($\alpha$, angle de somment $A$)&lt;/p&gt;
+
+&lt;h3 id=&quot;sens-dun-angle&quot;&gt;Sens d’un angle&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Une rotation dans les &lt;strong&gt;sens inverse&lt;/strong&gt; des aiguilles d’une montre sera liée à un &lt;strong&gt;angle positif&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Une rotation dans le &lt;strong&gt;sens des aiguilles&lt;/strong&gt; d’une montre sera liée à un &lt;strong&gt;angle négatif&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mesure-dun-angle&quot;&gt;Mesure d’un angle&lt;/h2&gt;
+&lt;p&gt;La mesure d’un angle consiste à &lt;em&gt;préciser&lt;/em&gt; de &lt;strong&gt;combien&lt;/strong&gt; on &lt;em&gt;tourne&lt;/em&gt; pour amener le coté initial sur le coté final:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/01-trigo/01-intro/fig2.png&quot; align=&quot;&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\LARGE \theta = ?&lt;/script&gt;
+
+&lt;p&gt;On décrète que:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Un &lt;strong&gt;tour complet&lt;/strong&gt; (qui ramène le segment $OA$ sur lui-même) vaut $360$ unités d’angle.&lt;/li&gt;
+  &lt;li&gt;Une unité d’angle est appelée &lt;strong&gt;degré&lt;/strong&gt; et est notée ($^\circ$)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;minute-darc&quot;&gt;Minute d’arc&lt;/h2&gt;
+
+&lt;p&gt;Quand on mesure les ngles en degrés, on peut augmenter la précision de 2 façons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;En exprimant les drés à l’ide de &lt;strong&gt;nombres réels&lt;/strong&gt;: $\theta = 1.635 ^\circ, \theta = 1.33 ^\circ, \theta = \frac{1}{7}^\circ, \theta = \sqrt[]{2}^\circ,$ …&lt;/li&gt;
+  &lt;li&gt;En subdivisant chque degré en &lt;strong&gt;60 minutes&lt;/strong&gt; et en subdivisant chaque minute en &lt;strong&gt;60 secondes&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;degré-rightarrow-dms&quot;&gt;Degré $\rightarrow$ DMS&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Un degré équivaut à 60 minutes qui sont égales à 3600 secondes:
+$1 ^\circ = 60’ = 360’’$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+dd &amp; = \text{angle initial} \\
+D &amp; = int(dd) \\
+M &amp; = int((dd - D) * 60) \\
+S &amp; = (dd-D-M/60) \cdot 3600 \\
+     &amp; \Rightarrow angle\;initial = DMS  \\ 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    dd &amp; = 36,25 ^\circ \\ 
+    D &amp; = int(dd) &amp; = 36 ^\circ \\
+    M &amp; = int((36,25-36)\cdot60) &amp; = 15' \\
+    S &amp; = (36,25-36-15/60)\cdot 3600 &amp; = 0
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;dms--rightarrow--degré&quot;&gt;DMS $ \rightarrow $ Degré&lt;/h3&gt;
+</description>
+        <pubDate>Fri, 22 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/trigo/Trigo-introduction.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-introduction.html</guid>
+        
+        <category>Trigo</category>
+        
+        
+        <category>Trigo</category>
+        
+      </item>
+    
+      <item>
+        <title>Physique A: Phénomènes ondulatoires: Optique géométrique (1)</title>
+        <description>
+</description>
+        <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/physiquea/PhysA-serie2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie2.html</guid>
+        
+        <category>physique</category>
+        
+        <category>optique</category>
+        
+        
+        <category>PhysiqueA</category>
+        
+      </item>
+    
+      <item>
+        <title>Physique A: Phénomènes ondulatoires: Optique géométrique (1)</title>
+        <description>&lt;h1 id=&quot;notion-donde&quot;&gt;Notion d’onde&lt;/h1&gt;
+
+&lt;p&gt;On appelle &lt;strong&gt;onde&lt;/strong&gt; toute propagation d’une perturbation &lt;strong&gt;sans transport de matière&lt;/strong&gt;. Elle peut avoir un support, par exemple:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La surface de l’eau (les vagues)&lt;/li&gt;
+  &lt;li&gt;Une corde (les ondes dans une corde)
+*L’air (ondes sonores)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ou non, comme par exemple les ondes électromagnetiques qui existent dans le vide.&lt;/p&gt;
+
+&lt;h1 id=&quot;optique&quot;&gt;Optique&lt;/h1&gt;
+&lt;p&gt;C’est la partie de la physique qui a pour objet l’étude des phénomènes liés au rayonnement électromagnetique.
+&lt;strong&gt;On désigne par &lt;em&gt;lumière visible&lt;/em&gt; toute onde électromagnétique perçue par l’oeil.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/02physA/spectre.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pour l’étude des effets des miroirs et des lentilles, on postule que la lumière se propoage sous forme de rayons et on fait appel aux lois fondamentales de la géometrie.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;postulats&quot;&gt;Postulats&lt;/h1&gt;
+
+&lt;h2 id=&quot;premier-postulat&quot;&gt;Premier postulat&lt;/h2&gt;
+&lt;p&gt;La lumière se propage selon des rayons lumineux. Ces rayons lumineux n’interagissent pas entre eux (Un rayon lumineux ne peut pas être dvié par un autre ryon lumineux).&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;On appelle rayon lumineux toute courble suivant laquelle se propage la lumière&lt;/li&gt;
+  &lt;li&gt;Un rayon lumineux n’a pas d’existance réelle&lt;/li&gt;
+  &lt;li&gt;En Optique géométrique, la notion de rayon lumineux ne peut être concidérée que lorsque la longueur d’onde $ \lambda $ de la lumière est beaucoup plus petite que les dimensions $d$ des objets qu’elle éclaire: $\lambda « d$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;deuxième-postulat&quot;&gt;Deuxième postulat&lt;/h2&gt;
+&lt;p&gt;Dans un milieu &lt;strong&gt;transparant, homogène&lt;/strong&gt; et &lt;strong&gt;isotrope&lt;/strong&gt;, les ryons lumineux sont des lignes droites. Ces lignes sont perpendiculaires aux fronts d’onde.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’ensemble de ces rayons, issus d’un mêeme endroit ou allant vers le mêeme endroit, est appelé faisceau lumineux. Il peut être &lt;strong&gt;divergent, convergent&lt;/strong&gt; ou &lt;strong&gt;parallèle&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/02physA/02postulat2.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Faisceau parallèle&lt;/strong&gt;: le point associé se trouve à l’infini.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Divergente&lt;/strong&gt;: représente le cas de rayons émis par une source ponctuelle.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Source ponctuelle&lt;/strong&gt;: lorsque son étendue
+est très petite par rapport à sa distance au point d’observation. Elle émet de la lumière également dans toutes les directions. C’est le cas, par exemple, d’une étoile.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;isotrope&lt;/strong&gt;: C’est un milieu dont les propriétés sont identiques quelle que soit la direction d’boservation. Par exemple les liquides ou les solides amorphes sont (statistiquement) isotropes alors que les cristaux, dont la structure est ordonnée et dépend donc de la direction, sont anistropes.
+&lt;strong&gt;anistropes&lt;/strong&gt;:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;troisième-postulat&quot;&gt;Troisième postulat&lt;/h2&gt;
+&lt;p&gt;À la surface de séparation de deux millieux, les rayons lumineux obéissent aux lois de &lt;strong&gt;Snell Descartes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Lorsqu’un rayon lumineux change de milieu, il en résulte la plupart du temps un rayon dit &lt;strong&gt;réfléchi&lt;/strong&gt; et un ryon dit &lt;strong&gt;réfracté&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Les lois de Snell-Descartes décrivent les comportements tels que la direction de propagation de ces rayons.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/02physA/03reflexion-refraction.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Une partie du &lt;strong&gt;rayon incident&lt;/strong&gt; est réfléchi par la surface de l’eau (elle revient dans le premier milieu). L’autre partie est transmise dans le second milieu. L’onde transmise dans le second milieu est deviée à la surface sépratrice: elle est &lt;strong&gt;refractée&lt;/strong&gt; (il subit une fracture).&lt;/p&gt;
+
+&lt;h1 id=&quot;réflexion&quot;&gt;Réflexion&lt;/h1&gt;
+
+&lt;h2 id=&quot;spéculaire&quot;&gt;Spéculaire&lt;/h2&gt;
+&lt;p&gt;Réflexion de la lumière sur les objets lisses. Les rayons réfléchis sont parallèles.&lt;/p&gt;
+
+&lt;h2 id=&quot;diffuse&quot;&gt;Diffuse&lt;/h2&gt;
+&lt;p&gt;Si la surface réfléchissante est rugeuse, chaque rayon réfléchi peut avoir une autre direction.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le caractère spéculaire ou diffus dépend de la longueur d’onde de la lumière incidente par rapport  la rugosité de la surface.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Tout corps se comporte comme une surface lisse pourvu que les variations de sa surface soient petites en comparaison de la longueur d’onde de la lumière incidente.&lt;/p&gt;
+
+&lt;p&gt;Une même surface peut donc être source de reflexion diffuse &lt;strong&gt;et&lt;/strong&gt; spéculaire pour une partie du spectre lumineux différente.&lt;/p&gt;
+
+&lt;h1 id=&quot;première-loi-de-snell-descartes&quot;&gt;Première loi de Snell-Descartes&lt;/h1&gt;
+
+&lt;p&gt;Considérons un rayon lumineux tombant sur un miroir.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Loi de la réflexion&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Le rayon &lt;strong&gt;réfléchi&lt;/strong&gt; est dans le plan d’incidence (le plan défini par le rayon incident et la normale $n$)&lt;/li&gt;
+      &lt;li&gt;L’angle d’incidence est égal  l’angle de réflexion
+  &lt;script type=&quot;math/tex&quot;&gt;\bbox[5px,border:1px solid red] {\alpha_1 = \alpha_2}&lt;/script&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;point d’incidence $I$: point du miroir sur lequel arrive le rayon lumineux&lt;/li&gt;
+    &lt;li&gt;normal $n$ au miroir: perpendiculaire au plan du miroir passant par $I$&lt;/li&gt;
+    &lt;li&gt;angle d’incidence $\alpha_1$: angle déterminé par le rayon incident et la normale $n$ au miroir&lt;/li&gt;
+    &lt;li&gt;angle de réflexion $\alpha_2$: angle déterminé par le rayon réfléchi et la normale $n$ au miroir&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;réfraction&quot;&gt;Réfraction&lt;/h1&gt;
+&lt;p&gt;Considérons un rayon lumineux se propageant d’abord dans l’air puis dans l’eau. Si le rayon n’est pas perpendiculaire à l’interface des deux milieux, il subit un &lt;strong&gt;brusque changement de direction à cette interface&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;La réfraction résulte du fait que **la lumière ne se propage pas à la même vitesse dans tous les milieux transparents.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;indice-de-réfraction&quot;&gt;Indice de réfraction&lt;/h1&gt;
+
+&lt;p&gt;On appelle indice de refraction $n$ d’un milieu matériel le rapport:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n=\frac{c}{v}=\frac{\text{vitesse de la lumière dans le vide}}{\text{vitesse de la lumière dans le milieu}}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$n$ est un nombre sans unité&lt;/li&gt;
+  &lt;li&gt;$n \gt 1$ (car $v \le c$)&lt;/li&gt;
+  &lt;li&gt;$n$ dépend (légérement) de la longueur d’onde de la lumière ($n = n(\lambda)$; phénomène de dispertion)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/physiquea/PhysA-serie1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie1.html</guid>
+        
+        <category>physique</category>
+        
+        <category>optique</category>
+        
+        
+        <category>PhysiqueA</category>
+        
+      </item>
+    
+      <item>
+        <title>Physique B: Electrostatique: notion de charge et loi de Coulomb (1)</title>
+        <description>&lt;h2 id=&quot;charge&quot;&gt;Charge&lt;/h2&gt;
+
+&lt;p&gt;Il existe une caractéristique appelée &lt;strong&gt;charge&lt;/strong&gt; qui sont de deux types:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Positives&lt;/li&gt;
+  &lt;li&gt;Negatives&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deux charges de &lt;strong&gt;même signe se repoussent&lt;/strong&gt;, deux charges de &lt;strong&gt;signe opposé s’attirent&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;provenance&quot;&gt;Provenance&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Atome&lt;/strong&gt;: Noyau central contenant:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Protons: Chargé positivement&lt;/li&gt;
+  &lt;li&gt;Neutrons: Non-chargés&lt;/li&gt;
+  &lt;li&gt;Electrons: Charge positive&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Un atome est dit &lt;strong&gt;neutre&lt;/strong&gt; si il possède autant de protons que d’électrons&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On Appelle &lt;strong&gt;ion&lt;/strong&gt; tout atome (ou molécule) qui a plus (ou moins) d’électrons que de protons.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Par frottement, des électrons passent d’un corp à l’autre produisant ainsi des ions.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Un corp chargé positivement a un déficite d’électrons&lt;/li&gt;
+  &lt;li&gt;Un corp chargé négativement a un excédent d’électrons&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;charge-élémentaire-et-quantification&quot;&gt;Charge élémentaire et Quantification&lt;/h3&gt;
+&lt;p&gt;La charge élémentaire qui permet la quantification d’une charge se note $\pmb{e}$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red]
+    {e = 1,602\cdot10^{-19}C}&lt;/script&gt;
+
+&lt;p&gt;Où $C$ est l’abréviation de &lt;em&gt;coulomb&lt;/em&gt;, l’unité SI de la charge électrique.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Charge du proton: $\bbox[5px,border:1px solid red] {q_p = +e}$&lt;/li&gt;
+  &lt;li&gt;Charge de l’électron: $\bbox[5px,border:1px solid red] {q_e = -e}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;conservation-de-la-charge&quot;&gt;Conservation de la charge&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;La charge électrique n’est ni créée, ni détruite, elle se transmet simplement d’un corp à l’autre.
+Benjamin Franklin&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Autrement dit, la charge totale d’un système isolé reste constante.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;: Les réactions chimiques; dans le cas suivant, deux molécules d’eau se transforment en un ion positif et un ion négatif:$\quad 2H_2 O \Rightarrow H_3 O^+ + HO^-$&lt;/p&gt;
+
+&lt;h3 id=&quot;loi-de-coulomb&quot;&gt;Loi de Coulomb&lt;/h3&gt;
+
+&lt;p&gt;Soit deux charges bonctuelles $q_1 \text{ et } q_2$ séparées par une distance $d$.&lt;/p&gt;
+
+&lt;p&gt;L’intensité de la force électrique s’exerçant entre ces deux charges est donnée par:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red]
+    {F = \frac{1}{4\pi\epsilon_0} \frac{|q_1\;q_2|}{d^2}}&lt;/script&gt;
+
+&lt;p&gt;Où $\epsilon_0 = 8,8542\cdot10^{-12}C^2 N^{-1} m^{-2}$ qui est la &lt;strong&gt;constante de permitivité du vide&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Loi établie en 1785 par le physicien français Charles de Coulomb&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Cette formule peut être remplacée par:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red] {F = k_C \frac{|q_1\;q_2|}{d^2}}&lt;/script&gt;
+
+&lt;p&gt;Où $K_c$ est la constante de Coulomb et vaut approximtivement $ 9\cdot10^{9}$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;série-associée&quot;&gt;Série associée&lt;/h2&gt;
+
+&lt;h3 id=&quot;11&quot;&gt;1.1&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Lors d’un orage, la foudre peut transporter une charge de $20C$ d’un nuage à la terre. À combien d’électrons environ correspond cette charge?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;n_e = \frac{Q}{e} \approx 1,248 \cdot10^{20}&lt;/script&gt;
+
+&lt;h3 id=&quot;12&quot;&gt;1.2&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;À l’extérieur du noyau atomique, le neutron n est une particule instable et se désintègre en un proton p, un électron e− et un antineutrino:$\quad n \rightarrow p + e^- + \overline{v}$
+Déterminer la charge électrique de l’antineutrino.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Comme la particule est maintenant dans un état d’équilibre et que nous savons que le proton possède une charge positive, l’electron une charge négative et que le neutron a une charge nulle, l’antineutrino possède forcément une &lt;strong&gt;charge nulle&lt;/strong&gt; également.&lt;/p&gt;
+
+&lt;h3 id=&quot;13&quot;&gt;1.3&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dans un cumulonimbus se trouvent deux charges, l’une de +40 C et l’autre de −40 C, distantes de 5 km environ. En supposant que ces charges sont ponctuelles, calculer l’intensité de la force électrique FE qu’elles exercent l’une sur l’autre.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_e = k \frac{|Q_1 Q_2|}{d^2} \approx 5,76 \cdot 10^5 N&lt;/script&gt;
+
+&lt;h3 id=&quot;14&quot;&gt;1.4&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Dans un atome d’hydrogène, l’électron et le proton sont distants de $d = 0,53 \cdot 10^{−10}$ m. Déterminer le rapport de $F_G$ sur $F_E$, où $F_G$ et $F_E$ sont respectivement la force graviﬁque et la force électrique agissant entre les deux particules. Les masses du proton et de l’électron sont respectivement $m_p = 1,6726 \cdot 10^{−27} \text{kg}$ et $m_e = 9,1095·10^{−31} kg$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$q_{proton} = e$
+$q_{electron} = -e$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{F_G}{F_E} = \frac{G\;m_1\;m_2}{d^2} \cdot \frac{d^2}{k\;e^2} = \frac{G\;m_1\;m_2}{k\;e^2} \approx 4,401 \cdot 10^{-40}&lt;/script&gt;
+
+&lt;h3 id=&quot;15&quot;&gt;1.5&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Supposons que l’on donne une charge Q à la Terre et une même charge Q à la Lune. Quelle devrait être la valeur de Q pour que la force de répulsion électrique entre la Terre et la Lune soit égale à la force d’attraction gravitationnelle qui s’exerce entre les deux astres? Les masses de la Terre et de la Lune sont respectivement $mT = 5,9742 \cdot 10^{24} kg$ et   $mL = 7,350 \cdot 10^{22} kg$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;$Q_T = Q_L = Q$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    \frac{kQ^2}{d^2} &amp;= \frac{Gm_1m_2}{d^2} \\ 
+    kQ^2 &amp; = G m_1 m_2\\
+    Q &amp;= \sqrt{\frac{G m_T, m_L}{k}}{} \\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Rightarrow Q \approx 5,706 \cdot 10^{13}C&lt;/script&gt;
+</description>
+        <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/physiqueb/PhysB-serie1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiqueb/PhysB-serie1.html</guid>
+        
+        <category>physique</category>
+        
+        <category>electrostatique</category>
+        
+        
+        <category>PhysiqueB</category>
+        
+      </item>
+    
+      <item>
+        <title>Divers: De tout</title>
+        <description>&lt;h1 id=&quot;nombres-premiers-et-nombres-composés&quot;&gt;Nombres premiers et nombres composés&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un nombre premier est un entier naturel ($\pmb{\mathbb{N}}$) qui admed exactement deux diviseurs distincts entiers et positifs qui sont $1$ et lui même.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$1$ n’est pas premier car il n’a qu’un seul diviseur entier positif; $0$ no plus car il est divisible par tous les entiers positifs.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Par opposition, un nombre non nul produit de deux nombres entiers différents de $1$ est dit &lt;strong&gt;composé&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$0$ et $1$ ne sont ni premiers ni composés.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/divers/Divers-de-tout.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-de-tout.html</guid>
+        
+        
+        <category>divers</category>
+        
+      </item>
+    
+      <item>
+        <title>Algèbre(1): Introduction</title>
+        <description>&lt;h1 id=&quot;ensembles&quot;&gt;Ensembles&lt;/h1&gt;
+&lt;p&gt;On travail en mathématique avec différents ensembles de nombres.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Un ensemble est une collection d’éléments. Ces éléments peuvent être de n’importe quelle nature (nombres, points géométriques, droites, fonctions, autres ensembles, jours de la semaine…)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;appartenance&quot;&gt;Appartenance&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Un élément $x$ appartenant à un ensemble $A$ se note: $x \in A$&lt;/li&gt;
+  &lt;li&gt;La négation se note $x \notin A$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sous-ensemble&quot;&gt;Sous-ensemble&lt;/h2&gt;
+&lt;p&gt;C’est un ensemble dont chaque élément est aussi contenu dans un autre ensemble. Si $A$ est un sous-ensemble de $B$, on note $A\subset B$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;si jours = ${lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche}$ et week-end = ${samedi, dimanche}$, alors week–end $\subset$ jours . Par contre, le &lt;strong&gt;singleton&lt;/strong&gt; ${mardi}$ $\not\subset$ week – end .&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;ensemble-finis&quot;&gt;Ensemble finis&lt;/h2&gt;
+&lt;p&gt;Un ensemble est fini quand on peut compter ses éléments à l’aide d’entiers tous plus petits qu’un entier donné.&lt;/p&gt;
+
+&lt;p&gt;Ils peuvent être définis &lt;strong&gt;en extension&lt;/strong&gt;, par la liste de leurs éléments, et décrits comme tels; on place la liste des éléments d’un ensemble entre accolades, par exemple ${1,3,5}$.&lt;/p&gt;
+
+&lt;p&gt;La notation d’un ensemble n’est pas unique, un même ensemble peut être noté de en extension de façons différentes **car l’ordre des éléments est sans importance ${1,2} = {2,1}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;définition-dun-ensemble-en-comprehension&quot;&gt;Définition d’un ensemble en comprehension&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Explication de la &lt;code class=&quot;highlighter-rouge&quot;&gt;list comprehension&lt;/code&gt; en Python !!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Un ensemble peut être défini en &lt;strong&gt;comprehension&lt;/strong&gt;, c’est à dire qu’on définit par une propriété caractéristique parmi les éléments d’un ensemble donné.&lt;/p&gt;
+
+&lt;p&gt;L’ensemble des entiers naturels pairs est clairement défini par comprehension par la propriété “être pair” parmi les entiers naturels. On écrira:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\{x \in \pmb{\mathbb{N}}| x\;\text{pairs}\}\text{ ou } \{2x|x \in \pmb{\mathbb{N}}\}&lt;/script&gt;
+
+&lt;p&gt;Pour décrire l’ensemble des nombres entiers plus grands que 10, on écrira:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\{x \in \pmb{\mathbb{N}}|x&gt;10\}&lt;/script&gt;
+
+&lt;h2 id=&quot;autres-notations&quot;&gt;Autres notations&lt;/h2&gt;
+&lt;p&gt;On peut utiliser des points de suspension pour des ensembles de cardinalité infinie, ou finie mais non déterminée.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ensemble des entiers naturels peut se noter: $\pmb{\mathbb{N}}={0,1,2,3,…}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si il est clair que $n$ désigne un entier naturel, ${1,2,…,n}$, voir ${1,…,n}$ désigne en général l’ensemble des entiers supérieurs ou égaux à $1$ et inférieurs ou égaux à $n$.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On peut écrire $\pmb{\mathbb{Z}}={…,-3,-2,-1,0,1,2,3,…}$ ou encore ${-n,-n+1,…,n-1,n}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Quand il y a un procédé itératif simple pour engendrer les éléments de l’ensemble, on peut se risquer à des notations comme ${0,2,4,6,…}$ pour l’ensemble des entiers naturels paris, etc…&lt;/p&gt;
+
+&lt;p&gt;On peut aussi utiliser ces notations pour des ensembles ayants “beaucoup” d’éléments: ${1,2,…,1000}$ ou encore ${3,5,…,21}$ à la place de ${3,5,7,9,11,13,15,17,19,21}$.&lt;/p&gt;
+
+&lt;h2 id=&quot;notations-spéciales&quot;&gt;Notations spéciales&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$ * $ signifie “sans $0$”, par exemple $\pmb{\mathbb{R}^*}$&lt;/li&gt;
+  &lt;li&gt;$+$ signifie “plus grand que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_+}$&lt;/li&gt;
+  &lt;li&gt;$-$ signifie “plus petit que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_-}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On peut aussi combiner ces symboles: $\pmb{\mathbb{R}^*_+}$&lt;/p&gt;
+
+&lt;h2 id=&quot;types-de-nombres&quot;&gt;Types de nombres&lt;/h2&gt;
+
+&lt;h3 id=&quot;entiers-naturels-pmbmathbbn&quot;&gt;Entiers naturels $\pmb{\mathbb{N}}$&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Les nombres les plus familiers sont les entiers naturels: $0,1,2,3,…$ éléments de l’ensembre $\pmb{\mathbb{N}}$, et utilisés pour le dénombrement.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}} = \{0,1,2,3,...\}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}}^* = \pmb{\mathbb{N} \setminus \{0\} = \{1,2,3,...\}}&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;entiers-relatifs-pmbmathbbz&quot;&gt;Entiers relatifs $\pmb{\mathbb{Z}}$&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Si les entiers négatifs sont inclus, on obtient l’ensemble des nombres entiers relatifs $\pmb{\mathbb{Z}}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}} = \{...,-3,-2,-1,0,1,2,3,...\}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \{0\}&lt;/script&gt;
+Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d’une droite graduée toutes les unités.&lt;/p&gt;
+
+&lt;h3 id=&quot;rationnels-pmbmathbbq&quot;&gt;Rationnels $\pmb{\mathbb{Q}}$&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;La division d’un entier relatif par un entier relatif non nul forme un nombre rationnel. L’ensemble de tous les nombres rationnels est noté $\pmb{\mathbb{Q}}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Q}} = \{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\}&lt;/script&gt;
+Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entier naturel non nul $b$. Les nombres rationnels sont ceux qui ont une écriture décimale &lt;strong&gt;periodique&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;réels-pmbmathbbr&quot;&gt;Réels $\pmb{\mathbb{R}}$&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Si, dans l’ensemble, outre les éléments de $\pmb{\mathbb{Q}}$, on inclut tous les développements décimaux infinis et non périodiques, on obtient l’ensenble des nombres réels, noté $\pmb{\mathbb{R}}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\{...,\pi,e,\sqrt[2]{2},...\}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Tous les nombres réels qui ne sont pas rationnels sont appelés nombres irrationnels.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;${…,\pi,e,\sqrt[]{2},…} =$ &lt;strong&gt;irrationnels&lt;/strong&gt;: Les nombres qui ne peuvent pas être mis sous forme de fraction&lt;/p&gt;
+
+&lt;p&gt;C’est l’ensemble de tous les nombres usuels. Les réels correspondent aux abscisses possibles d’un point sur une droite graduée. Les nombres réels qui ne sont pas rationnels sont appelés &lt;strong&gt;irrationnels&lt;/strong&gt;. Parmi eux, on trouve $\pi$ ou $\sqrt{2}$.&lt;/p&gt;
+
+&lt;h3 id=&quot;ensemble-vide-emptyset&quot;&gt;Ensemble vide $\emptyset$&lt;/h3&gt;
+&lt;p&gt;Cet ensemble est inclus dans tous les autres ensembles&lt;/p&gt;
+
+&lt;h2 id=&quot;relations&quot;&gt;Relations&lt;/h2&gt;
+
+&lt;p&gt;Nous avons donc une hiérarchie d’ensembles:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\emptyset \subset \pmb{\mathbb{N}}\subset \pmb{\mathbb{Z}} \subset \pmb{\mathbb{Q}} \subset \pmb{\mathbb{R}}&lt;/script&gt;
+
+&lt;p&gt;Ces différents ensembles de nombres sont inclus les uns dans les autres suivant le schéma suivant :
+&lt;img src=&quot;http://www.bibmath.net/dico/e/images/ensemblesnombres1.png&quot; alt=&quot;alt&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;opérations-sur-les-ensembles&quot;&gt;Opérations sur les ensembles&lt;/h2&gt;
+
+&lt;p&gt;Soit $A$ et $B$ deux sous-ensembles d’un ensemble $E$.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;$E$ est une classe&lt;/li&gt;
+    &lt;li&gt;$A$ est l’ensemble des filles&lt;/li&gt;
+    &lt;li&gt;$B$ l’ensemble des élèves portant des lunettes&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Union ( $\cup$ )&lt;/strong&gt; correspond à “ou” (fille &lt;strong&gt;ou&lt;/strong&gt; avec lunettes): $ A \cup B = {e \in E | e \in A \text{ ou } e \in B} $&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/00EnsemblesNb/operations1.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;intersection ( $\cap$ )&lt;/strong&gt; correspond à “et” (pour remplire la condition, “ceci” doit être respecté &lt;strong&gt;et&lt;/strong&gt; “celà” aussi): $A\cap B={e\in E | e\in A \text{ et }e \in B}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/00EnsemblesNb/operations2.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;complémentaire ($C_{Ensemble}$)&lt;/strong&gt; correspond à “non” (&lt;strong&gt;non&lt;/strong&gt; fille): $C_E A = {e \in E | e \notin A}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/00EnsemblesNb/operations3.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Quand il n’y a pas d’équivique possible, on écrit aussi $\bar{A}$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;différence ( $\setminus$ )&lt;/strong&gt; correspond à “moins” (filles &lt;strong&gt;moins&lt;/strong&gt; avec lunettes) $A \setminus B = {e \in E | e\in A \text{ et } e \notin B}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/00EnsemblesNb/operations4.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;différencesymétrique&lt;/strong&gt; (correspond à &lt;strong&gt;ou exclusif&lt;/strong&gt;: ceci ou celà mais pas les deux) $A\Delta B={e\in E |  e\in A \text{ou (exclusif) } e\in B}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/00EnsemblesNb/operations5.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;produit cartésien ( $\times$ )&lt;/strong&gt;: $A \times B = {(x;y) | x \in A \text{ et } y \in B} = {(x, y) | x \in A, y \in B }$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;C’est à dire l’ensemble de tous les &lt;strong&gt;couples&lt;/strong&gt; possible obtenu en prenant un élément dand $A$ suivi d’un élément dans $B$, &lt;strong&gt;dans cet ordre&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;$ \Rightarrow $ donc $ \color{red}{A \times B \neq B \times A} $ !&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;:
+Soit les ensembles $A = {1, 2}$ et $B = {a, b, c}$&lt;/p&gt;
+
+&lt;p&gt;$C = A \times B = {1a, 1b, 1c, 2a, 2b, 2c}$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Plan cartésien
+Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\pmb{\mathbb{R}}^2 = \pmb{\mathbb{R}} \times \pmb{\mathbb{R}}$ (tous les couples de 2 nombres réels). Il est alors mis en relation avec un plan.
+&lt;img src=&quot;/01illustrations/00EnsemblesNb/plan.png&quot; alt=&quot;alt&quot; /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;intervales&quot;&gt;Intervales&lt;/h2&gt;
+
+&lt;p&gt;Dans $\pmb{\mathbb{R}}$:&lt;/p&gt;
+
+&lt;p&gt;$\begin{align}
+    &amp;amp; x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \ 
+    &amp;amp; x \in [a,b[ \color{blue}{\text{ si }} a \le x &amp;lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \ 
+    &amp;amp; x \in ]a,b[ \color{blue}{\text{ si }} a &amp;lt; x &amp;lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \ 
+\end{align}$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Comme $+ \infty $ et $-\infty$ n’appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/algebre/Algebre-Ensembles.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-Ensembles.html</guid>
+        
+        
+        <category>Algebre</category>
+        
+      </item>
     
       <item>
         <title>Histoire: Nombres complexes</title>
