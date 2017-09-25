@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Sep 2017 00:03:47 +0200</pubDate>
-    <lastBuildDate>Tue, 26 Sep 2017 00:03:47 +0200</lastBuildDate>
+    <pubDate>Tue, 26 Sep 2017 00:11:14 +0200</pubDate>
+    <lastBuildDate>Tue, 26 Sep 2017 00:11:14 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -613,11 +613,12 @@ Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\p
 
 &lt;p&gt;Dans $\pmb{\mathbb{R}}$:&lt;/p&gt;
 
-&lt;p&gt;$\begin{align}
-    &amp;amp; x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \ 
-    &amp;amp; x \in [a,b[ \color{blue}{\text{ si }} a \le x &amp;lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \ 
-    &amp;amp; x \in ]a,b[ \color{blue}{\text{ si }} a &amp;lt; x &amp;lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \ 
-\end{align}$&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    &amp; x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \\ 
+    &amp; x \in [a,b[ \color{blue}{\text{ si }} a \le x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \\ 
+    &amp; x \in ]a,b[ \color{blue}{\text{ si }} a &lt; x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \\ 
+\end{align} %]]&gt;&lt;/script&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Comme $+ \infty $ et $-\infty$ n’appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$&lt;/p&gt;

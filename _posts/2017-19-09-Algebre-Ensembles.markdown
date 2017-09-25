@@ -158,10 +158,10 @@ Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\p
 
 Dans $\pmb{\mathbb{R}}$: 
 
-$\begin{align}
+$$\begin{align}
     & x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \\ 
     & x \in [a,b[ \color{blue}{\text{ si }} a \le x < b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \\ 
     & x \in ]a,b[ \color{blue}{\text{ si }} a < x < b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \\ 
-\end{align}$
+\end{align}$$
 
 >Comme $+ \infty $ et $-\infty$ n'appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$
