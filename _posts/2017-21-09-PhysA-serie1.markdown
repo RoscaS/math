@@ -102,3 +102,7 @@ Considérons un rayon lumineux se propageant d'abord dans l'air puis dans l'eau.
 On appelle indice de refraction $n$ d'un milieu matériel le rapport:
 
 $$ n=\frac{c}{v}=\frac{\text{vitesse de la lumière dans le vide}}{\text{vitesse de la lumière dans le milieu}}$$
+
+* $n$ est un nombre sans unité
+* $n \gt 1$ (car $v \le c$)
+* $n$ dépend (légérement) de la longueur d'onde de la lumière ($n = n(\lambda)$; phénomène de dispertion)
