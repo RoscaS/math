@@ -57,7 +57,7 @@ On peut aussi utiliser ces notations pour des ensembles ayants "beaucoup" d'él�
 
 ## Notations spéciales
 
-* $*$ signifie "sans le $0$", par exemple $\pmb{\mathbb{R}^*}$
+* $ * $ signifie "sans $0$", par exemple $\pmb{\mathbb{R}^*}$
 * $+$ signifie "plus grand que$0$,($0$ compris)", par exemple $\pmb{\mathbb{R}_+}$
 * $-$ signifie "plus petit que$0$,($0$ compris)", par exemple $\pmb{\mathbb{R}_-}$
 
