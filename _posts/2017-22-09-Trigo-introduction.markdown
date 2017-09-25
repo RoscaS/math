@@ -60,5 +60,7 @@ $$\begin{align}
     dd & = 36,25 ^\circ \\ 
     D & = int(dd) & = 36 ^\circ \\
     M & = int((36,25-36)\cdot60) & = 15' \\
-    S & = (36,25-36-15/60)\cdot 3600 & =
+    S & = (36,25-36-15/60)\cdot 3600 & = 0
 \end{align}$$
+
+### DMS $ \rightarrow $ Degré
