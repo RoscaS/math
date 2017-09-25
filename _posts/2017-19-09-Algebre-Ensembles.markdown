@@ -109,6 +109,7 @@ Ces différents ensembles de nombres sont inclus les uns dans les autres suivant
 
 
 ## Opérations sur les ensembles
+
 Soit $A$ et $B$ deux sous-ensembles d'un ensemble $E$.
 >* $E$ est une classe
 >* $A$ est l'ensemble des filles
@@ -117,25 +118,25 @@ Soit $A$ et $B$ deux sous-ensembles d'un ensemble $E$.
 
 * **Union ( $\cup$ )** correspond à "ou" (fille **ou** avec lunettes): $ A \cup B = \{e \in E | e \in A \text{ ou } e \in B\} $
 
-<img src="/01illustrations/00EnsemblesNb/operations1.png" align="" height="200">
+<img src="/01illustrations/00EnsemblesNb/operations1.png" height="200">
 
 * **intersection ( $\cap$ )** correspond à "et" (pour remplire la condition, "ceci" doit être respecté **et** "celà" aussi): $A\cap B=\{e\in E|e\in A \text{ et }e \in B\}$
 
-<img src="/01illustrations/00EnsemblesNb/operations2.png" align="" height="200">
+<img src="/01illustrations/00EnsemblesNb/operations2.png" height="200">
 
 * **complémentaire ($C_{Ensemble}$)** correspond à "non" (**non** fille): $C_E A = \{e \in E|e \notin A\}$
 
-<img src="/01illustrations/00EnsemblesNb/operations3.png" align="" height="200">
+<img src="/01illustrations/00EnsemblesNb/operations3.png" height="200">
 
 > Quand il n'y a pas d'équivique possible, on écrit aussi $\bar{A}$.
 
 * **différence ( $\setminus$ )** correspond à "moins" (filles **moins** avec lunettes) $A \setminus B = \{e \in E|e\in A \text{ et } e \notin B\}$
 
-<img src="/01illustrations/00EnsemblesNb/operations4.png" align="" height="200">
+<img src="/01illustrations/00EnsemblesNb/operations4.png" height="200">
 
 * **différencesymétrique** (correspond à **ou exclusif**: ceci ou celà mais pas les deux) $A\Delta B=\{e\in E| e\in A \text{ou (exclusif) } e\in B\}$
 
-<img src="/01illustrations/00EnsemblesNb/operations5.png" align="" height="200">
+<img src="/01illustrations/00EnsemblesNb/operations5.png" height="200">
 
 * **produit cartésien ( $\times$ )**: $A \times B = \{(x;y)|x \in A \text{ et } y \in B\} = \{(x, y) | x \in A, y \in B \}$
 
