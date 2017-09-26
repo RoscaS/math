@@ -4,28 +4,37 @@
     <title>RoscaS</title>
     <description>Just some notes. # this means to ignore newlines until &quot;baseurl:&quot;
 </description>
-    <link>https://roscas.github.io/math/math/</link>
-    <atom:link href="https://roscas.github.io/math/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Sep 2017 20:14:30 +0200</pubDate>
-    <lastBuildDate>Tue, 26 Sep 2017 20:14:30 +0200</lastBuildDate>
+    <link>http://localhost:4000/math/</link>
+    <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 26 Sep 2017 21:29:50 +0200</pubDate>
+    <lastBuildDate>Tue, 26 Sep 2017 21:29:50 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
         <title>lala</title>
-        <description>&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon à ce que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.22\bar{2}=\frac{?}{?}$
-Posons $n = 0.22\bar{2}$ Prenons $10n=2.22\bar{2}$ On a donc $10n-n=9n$ mais aussi, $2.22\bar{2}-0.22\bar{2}=2$.
-Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.22\bar{2}=\frac{?}{?}$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$
-$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$
-$10\;000n-100n = 9900n = 17\;775$
-$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
+&lt;p&gt;Posons $n = 0.22\bar{2}$&lt;/p&gt;
+
+&lt;p&gt;Prenons $10n=2.22\bar{2}$&lt;/p&gt;
+
+&lt;p&gt;On a donc $10n-n=9n$ mais aussi, $2.22\bar{2}-0.22\bar{2}=2$.&lt;/p&gt;
+
+&lt;p&gt;Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$&lt;/p&gt;
+
+&lt;p&gt;$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$&lt;/p&gt;
+
+&lt;p&gt;$10\;000n-100n = 9900n = 17\;775$&lt;/p&gt;
+
+&lt;p&gt;$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/prive/prive.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/prive/prive.html</guid>
+        <link>http://localhost:4000/math/prive/prive.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/prive/prive.html</guid>
         
         <category>none</category>
         
@@ -102,8 +111,8 @@ S &amp; = (dd-D-M/60) \cdot 3600 \\
 &lt;h3 id=&quot;dms--rightarrow--degré&quot;&gt;DMS $ \rightarrow $ Degré&lt;/h3&gt;
 </description>
         <pubDate>Fri, 22 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/trigo/Trigo-introduction.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/trigo/Trigo-introduction.html</guid>
+        <link>http://localhost:4000/math/trigo/Trigo-introduction.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-introduction.html</guid>
         
         <category>Trigo</category>
         
@@ -117,8 +126,8 @@ S &amp; = (dd-D-M/60) \cdot 3600 \\
         <description>
 </description>
         <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/physiquea/PhysA-serie2.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/physiquea/PhysA-serie2.html</guid>
+        <link>http://localhost:4000/math/physiquea/PhysA-serie2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie2.html</guid>
         
         <category>physique</category>
         
@@ -260,8 +269,8 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/physiquea/PhysA-serie1.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/physiquea/PhysA-serie1.html</guid>
+        <link>http://localhost:4000/math/physiquea/PhysA-serie1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie1.html</guid>
         
         <category>physique</category>
         
@@ -404,8 +413,8 @@ $q_{electron} = -e$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Rightarrow Q \approx 5,706 \cdot 10^{13}C&lt;/script&gt;
 </description>
         <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/physiqueb/PhysB-serie1.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/physiqueb/PhysB-serie1.html</guid>
+        <link>http://localhost:4000/math/physiqueb/PhysB-serie1.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/physiqueb/PhysB-serie1.html</guid>
         
         <category>physique</category>
         
@@ -437,8 +446,8 @@ $q_{electron} = -e$&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/divers/Divers-de-tout.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/divers/Divers-de-tout.html</guid>
+        <link>http://localhost:4000/math/divers/Divers-de-tout.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-de-tout.html</guid>
         
         
         <category>divers</category>
@@ -665,28 +674,41 @@ $\begin{align}
     &amp;amp; \frac{115}{74} =1.5540540…= 0.5\overline{540}&lt;br /&gt;
 \end{align}$&lt;/p&gt;
 
-&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon a ce que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.222…=\frac{?}{?}$
-Posons $n = 0.222…$ Prenons $10n=2.222…$ On a donc $10n-n=9n$, mais aussi, $2.222…-0.222…=2$.
-Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.222…=\frac{?}{?}$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$
-$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$
-$10\;000n-100n = 9900n = 17\;775$
-$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
+&lt;p&gt;Posons $n = 0.222…$&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Exemple aha:&lt;/strong&gt; $0,\bar{9}=\frac{?}{?}$
-$n=0,\bar{9} \Rightarrow 10n=9,\bar{9}$
-$10n - n = 9n = 9,\bar{9}-0,\bar{9}=9$
-$\Rightarrow 0,\bar{9} = \frac{9}{9}=1$&lt;/p&gt;
+&lt;p&gt;Prenons $10n=2.222…$&lt;/p&gt;
+
+&lt;p&gt;On a donc $10n-n=9n$, mais aussi, $2.222…-0.222…=2$.&lt;/p&gt;
+
+&lt;p&gt;Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$&lt;/p&gt;
+
+&lt;p&gt;$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$&lt;/p&gt;
+
+&lt;p&gt;$10\;000n-100n = 9900n = 17\;775$&lt;/p&gt;
+
+&lt;p&gt;$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple aha:&lt;/strong&gt; $0,\bar{9}=\frac{?}{?}$&lt;/p&gt;
+
+&lt;p&gt;$n=0,\bar{9} \Rightarrow 10n=9,\bar{9}$&lt;/p&gt;
+
+&lt;p&gt;$10n - n = 9n = 9,\bar{9}-0,\bar{9}=9$&lt;/p&gt;
+
+&lt;p&gt;$\Rightarrow 0,\bar{9} = \frac{9}{9}=1$&lt;/p&gt;
 
 &lt;h3 id=&quot;nombres-irrationnels&quot;&gt;Nombres irrationnels&lt;/h3&gt;
 &lt;p&gt;Certains nombres réels ne peuvent pas s’écrire comme quotient de deux entiers. Ces nombres sont dits &lt;strong&gt;irrationnels&lt;/strong&gt; et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.&lt;/p&gt;
+
 </description>
         <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/algebre/Algebre-cours1-intro.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/algebre/Algebre-cours1-intro.html</guid>
+        <link>http://localhost:4000/math/algebre/Algebre-cours1-intro.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-cours1-intro.html</guid>
         
         
         <category>Algebre</category>
@@ -775,8 +797,8 @@ x &amp; = \sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} \\
 &lt;p&gt;Bombelli se dit que si il étend le système numérique &lt;strong&gt;comme cela avait été fait plusieurs fois&lt;/strong&gt; auparavant (décimaux, entiers relatifs… A chaque nouvel ensemble de nombre vient d’une nécessité à résoudre a nouveau problème) il pourrait résoudre le problème des racines négatives.&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
-        <link>https://roscas.github.io/math/math/histoire/Histoire-Complexes.html</link>
-        <guid isPermaLink="true">https://roscas.github.io/math/math/histoire/Histoire-Complexes.html</guid>
+        <link>http://localhost:4000/math/histoire/Histoire-Complexes.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/histoire/Histoire-Complexes.html</guid>
         
         
         <category>Histoire</category>

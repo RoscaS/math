@@ -187,18 +187,32 @@ $\begin{align}
 Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon a ce que la période disparaisse**.
 
 **Exemple 1:** $0.222...=\frac{?}{?}$
-Posons $n = 0.222...$ Prenons $10n=2.222...$ On a donc $10n-n=9n$, mais aussi, $2.222...-0.222...=2$.
+
+Posons $n = 0.222...$ 
+
+Prenons $10n=2.222...$ 
+
+On a donc $10n-n=9n$, mais aussi, $2.222...-0.222...=2$.
+
 Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.
 
+
 **Exemple 2:** $1.7954\overline{54} = \frac{?}{?}$
+
 $n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$
+
 $10\;000n-100n = 9900n = 17\;775$
+
 $\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$
 
 **Exemple aha:** $0,\bar{9}=\frac{?}{?}$
+
 $n=0,\bar{9} \Rightarrow 10n=9,\bar{9}$
+
 $10n - n = 9n = 9,\bar{9}-0,\bar{9}=9$
+
 $\Rightarrow 0,\bar{9} = \frac{9}{9}=1$
+
 
 ### Nombres irrationnels
 Certains nombres réels ne peuvent pas s'écrire comme quotient de deux entiers. Ces nombres sont dits **irrationnels** et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.
