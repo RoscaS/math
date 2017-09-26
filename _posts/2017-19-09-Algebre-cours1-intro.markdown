@@ -184,7 +184,7 @@ $\begin{align}
     & \frac{115}{74} =1.5540540...= 0.5\overline{540}\\
 \end{align}$
 
-Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon que la période disparaisse**.
+Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon a ce que la période disparaisse**.
 
 **Exemple 1:** $0.222...=\frac{?}{?}$
 Posons $n = 0.222...$ Prenons $10n=2.222...$ On a donc $10n-n=9n$, mais aussi, $2.222...-0.222...=2$.
@@ -202,3 +202,4 @@ $\Rightarrow 0,\bar{9} = \frac{9}{9}=1$
 
 ### Nombres irrationnels
 Certains nombres réels ne peuvent pas s'écrire comme quotient de deux entiers. Ces nombres sont dits **irrationnels** et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.
+

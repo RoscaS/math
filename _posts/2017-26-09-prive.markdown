@@ -10,7 +10,7 @@ finished: false
 mathjax: true
 ---
 
-Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon a ce que la période disparaisse**.
+Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon à ce que la période disparaisse**.
 
 **Exemple 1:** $0.22\bar{2}=\frac{?}{?}$
 Posons $n = 0.22\bar{2}$ Prenons $10n=2.22\bar{2}$ 
