@@ -165,3 +165,40 @@ $$\begin{align}
 \end{align}$$
 
 >Comme $+ \infty $ et $-\infty$ n'appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$
+
+
+# Fractions
+## Notation décimale vers la notation fractionnaire
+### Nombres rationnels
+
+Un nombre **rationnel** est un nombre réel exprimable par le quotient de deux entiers relatifs (appartenant à $\pmb{\mathbb{Z}}$), avec le dénominateur non nul. 
+
+Le développement décimal des nombres rationnels a la particularité d'être **périodique**,c'est à dire qu'il existe un suffixe constitué d'une séquence finie de chiffres se répétant continuellement. Cette séquence est appelée "période du développement décimal illimité".
+
+Par convention, on trace une barre horizontale au-dessus de la séquence périodique.
+
+**Exemples:**
+$\begin{align}
+    & \frac{1}{3} =0.333333...= 0.\overline{3}\\
+    & \frac{2}{37} =0.054054...= 0.\overline{054}\\
+    & \frac{115}{74} =1.5540540...= 0.5\overline{540}\\
+\end{align}$
+
+Pour trouver la fraction correspondant à un nombre rationnel, il faut **soustraire deux multiples de ce nombre de telle façon que la période disparaisse**.
+
+**Exemple 1:** $0.222...=\frac{?}{?}$
+Posons $n = 0.222...$ Prenons $10n=2.222...$ On a donc $10n-n=9n$, mais aussi, $2.222...-0.222...=2$.
+Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.
+
+**Exemple 2:** $1.7954\overline{54} = \frac{?}{?}$
+$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$
+$10\;000n-100n = 9900n = 17\;775$
+$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$
+
+**Exemple aha:** $0,\bar{9}=\frac{?}{?}$
+$n=0,\bar{9} \Rightarrow 10n=9,\bar{9}$
+$10n - n = 9n = 9,\bar{9}-0,\bar{9}=9$
+$\Rightarrow 0,\bar{9} = \frac{9}{9}=1$
+
+### Nombres irrationnels
+Certains nombres réels ne peuvent pas s'écrire comme quotient de deux entiers. Ces nombres sont dits **irrationnels** et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.
