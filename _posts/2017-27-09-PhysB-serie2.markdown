@@ -31,7 +31,7 @@ $$\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}$$
 
 <img src="/01illustrations/03physB/02/vector2.png" align="" height="300">
 
-Un vecteur $\vec{v} est complètement carctérisé par la donnée de ses composantes $v_x$ et $v_y$ par rapport à une base de $\pmb{\mathbb{R}}^2$. 
+Un vecteur $\vec{v}$ est complètement carctérisé par la donnée de ses composantes $v_x$ et $v_y$ par rapport à une base de $\pmb{\mathbb{R}}^2$. 
 
 Opérations sur les vecteurs, donnés en composantes:
 
@@ -102,3 +102,28 @@ Soit $n$ charges (ponctuelles) $1_1,q_2,...q_n$. Pour trouver la force électriq
 $$\vec{F}_0^{tot} = \vec{F}_{01} + \vec{F}_{02} + ... + \vec{F}_{0n}$$
 
 Où $\vec{F}_{0i}$ est la force exercée sur $q_0$ par la i-ème charge, $q_i$
+
+----
+# Série associée
+
+<img src="/01illustrations/03physB/02/ex1.png">
+
+
+
+<img src="/01illustrations/03physB/02/ex2.png">
+
+
+
+
+
+<img src="/01illustrations/03physB/02/ex3.png">
+
+
+
+
+
+<img src="/01illustrations/03physB/02/ex4.png">
+
+
+
+

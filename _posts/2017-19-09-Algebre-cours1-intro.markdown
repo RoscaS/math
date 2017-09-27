@@ -217,3 +217,8 @@ $\Rightarrow 0,\bar{9} = \frac{9}{9}=1$
 ### Nombres irrationnels
 Certains nombres réels ne peuvent pas s'écrire comme quotient de deux entiers. Ces nombres sont dits **irrationnels** et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.
 
+--------
+
+# Notes pour plus tard
+
+$\Delta = delta = disciminant $ 
