@@ -4,7 +4,7 @@ title: "Physique B(2): Loi de Coulomb et principe de superposition"
 subtitle: ""
 date: 2017-09-27
 author: Sol
-category: PhysiqueB
+category: Physique-B
 tags: "physique electrostatique"
 finished: true
 mathjax: true

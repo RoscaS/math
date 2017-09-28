@@ -4,7 +4,7 @@ title: "Physique B(1): Electrostatique: notion de charge et loi de Coulomb"
 subtitle: "Notion de charge et loi de Coulomb"
 date: 2017-09-20
 author: Sol
-category: PhysiqueB
+category: Physique-B
 tags: "physique electrostatique"
 finished: true
 mathjax: true

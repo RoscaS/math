@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/math/css/main.css">
+  <link rel="canonical" href="https://roscas.github.io/math/math/physique-b/PhysB-serie2.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="https://roscas.github.io/math/math/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/math/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Physique B(2): Loi de Coulomb et principe de superposition</title>
+  <meta name="description" content="Rappel: vecteurs du plan euclidien">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Physique B(2): Loi de Coulomb et principe de superposition</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="27 Sep 2017" itemprop="datePublished">Sep 27 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			<a class="post-tags-item" href="https://roscas.github.io/math/math/tags/">physique</a>
+        	
+			<a class="post-tags-item" href="https://roscas.github.io/math/math/tags/">electrostatique</a>
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="https://roscas.github.io">IT</a> /
+			<a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+			<a class="link" href="https://roscas.github.io/category/">Category</a> / 
+			<a class="link" href="https://roscas.github.io/tags/">Tags</a> / 
+			<a class="link" href="https://roscas.github.io/about/">About</a> /
+			<a class="link" href="https://roscas.github.io/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h1 id="rappel-vecteurs-du-plan-euclidien">Rappel: vecteurs du plan euclidien</h1>
+
+<p>Un vecteur est complètement caractérisé lorsque l’on connait la longueur, la direction et le sens de la flèche qui le représente.</p>
+
+<p>Opérations sur les vecteurs:</p>
+<ul>
+  <li>
+    <p>Somme de deux vecteurs $\vec{v}_1$ et $\vec{v}_2$: La fléche représentant $\vec{v}_1 + \vec{v}_2$ s’obtient en mettant bout à bout les deux fleches représentant $\vec{v}_1$ et $\vec{v}_2$.</p>
+  </li>
+  <li>
+    <p>Multiplication d’un vecteur $\vec{v}$ par un nombre réel $\lambda$: La fleche représentant $\lambda \vec{v}$ a la direction de $\vec{v}$; sa longueur vaut $\lambda$ fois celle de $\vec{v}$ et son sens est celui de $\vec{v}$ (contraire à $\vec{v}$) si $\lambda &gt; 0$ ($\lambda &lt; 0$).</p>
+  </li>
+</ul>
+
+<p><img src="/01illustrations/03physB/02/vector.png" align="" height="300" /></p>
+
+<p>Dans le plan euclidien $\pmb{\mathbb{R}}^2$, considérons une base orthonormée (un ensemble de deux vecteurs $\vec{u}_x$, et $\vec{u}_y$ <strong>unitaires</strong> 9de longueur unité chacun) et perpendiculaires entre eux. Appelons $x$ et $y$ les axess que supportent $\vec{u}_x$, et $\vec{u}_y$ respectivement.</p>
+
+<p>Tout vecteur $\vec{c} \in \pmb{\mathbb{R}}^2$ s’écrit de manière unique:
+<script type="math/tex">\vec{v}=v_x\cdot \vec{u}_x + v_y \cdot \vec{u}_y</script>
+Où $v_x$ et $v_y$ sont des nombres réels appelés <strong>composantes</strong> $x$ et $y$, respectivement, de $\vec{v}$. De manière equivalente, on peut écrire:</p>
+
+<script type="math/tex; mode=display">\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}</script>
+
+<p><img src="/01illustrations/03physB/02/vector2.png" align="" height="300" /></p>
+
+<p>Un vecteur $\vec{v}$ est complètement carctérisé par la donnée de ses composantes $v_x$ et $v_y$ par rapport à une base de $\pmb{\mathbb{R}}^2$.</p>
+
+<p>Opérations sur les vecteurs, donnés en composantes:</p>
+
+<script type="math/tex; mode=display">\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}, \vec{w} = \begin{pmatrix} w_x \\ w_y \\ \end{pmatrix}</script>
+
+<ul>
+  <li>Somme de deux vecteurs:</li>
+</ul>
+
+<script type="math/tex; mode=display">\vec{v}+ \vec{w}=\begin{pmatrix}
+    v_x \\ 
+    v_y \\ 
+\end{pmatrix} + \begin{pmatrix}
+    w_x \\ 
+    w_y \\ 
+\end{pmatrix} = \begin{pmatrix}
+    v_x + w_x \\ 
+    v_y + w_y \\ 
+\end{pmatrix}</script>
+
+<ul>
+  <li>Multiplication par un nombre réel $\lambda$:</li>
+</ul>
+
+<script type="math/tex; mode=display">\lambda \vec{v} = \begin{pmatrix}
+    v_x \\ 
+    v_y \\ 
+\end{pmatrix} = \begin{pmatrix}
+    \lambda v_x \\ 
+    \lambda v_y \\ 
+\end{pmatrix}</script>
+
+<h2 id="normes-longueur-ou-intensité-dun-vecteur-vecv">Normes (longueur ou intensité) d’un vecteur $\vec{v}$</h2>
+
+<script type="math/tex; mode=display">||\vec{v}|| = v = \sqrt[]{v_x^2 + v_y^2}</script>
+
+<p><img src="/01illustrations/03physB/02/vector3.png" align="" height="100" /></p>
+
+<p>Si $\theta$ est l’angle entre $\vec{v}$ et l’axe $x$ alors:</p>
+
+<script type="math/tex; mode=display">\vec{v}=\begin{pmatrix}
+    v_x \\
+    v_y \\
+\end{pmatrix} = \begin{pmatrix}
+    ||\vec{v}|| \cdot cos\; \theta \\
+    ||\vec{v}|| \cdot sin\; \theta \\
+\end{pmatrix} = ||\vec{v}||\begin{pmatrix}
+     cos\; \theta \\
+     sin\; \theta \\
+\end{pmatrix} = ||\vec{v}|| \cdot \vec{u}</script>
+
+<p>Où \vect{u} est un vecteur unitaire ayant la direction (et le sens) de $\vec{v}$.</p>
+
+<h1 id="application-à-la-force-de-coulomb">Application à la force de Coulomb</h1>
+<p>Soit deux charges $q_1$ et $q_2$ et $\vec{F}_{AB}$ la force exercée sur $A$ par $B$:</p>
+
+<ul>
+  <li>$\vec{F}<em>{12} = +F\cdot \vec{u}</em>{12} = - \vec{F}_{21}$ (si $q_1$ et $q_2$ sont de signe <strong>opposé</strong>)</li>
+  <li>$\vec{F}<em>{12} = -F\cdot \vec{u}</em>{12} = - \vec{F}_{21}$ (si $q_1$ et $q_2$ sont <strong>de même signe</strong>)</li>
+</ul>
+
+<p>Où 
+<script type="math/tex">F = \frac{1}{4 \pi \epsilon_0} \frac{|q_1\;q_2|}{d^2}</script>
+et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$</p>
+
+<p><img src="/01illustrations/03physB/02/vector4.png" align="" height="100" /></p>
+
+<h1 id="principe-de-superposition">Principe de superposition</h1>
+<p>Soit $n$ charges (ponctuelles) $1_1,q_2,…q_n$. Pour trouver la force électrique totale que ces $n$ charges produisent sur une charge $Q$ donnée, on applique le principe suivant:</p>
+
+<ol>
+  <li>La force entre deux charges ne dépend pas des aurtes charges en présences.</li>
+  <li>La force résultante sur $q_0$ est la somme vectorielle des forces exercées par chacune des $n$ charges $q_1,…,q_n$ sur $q_0$, calculées l’une après l’autre:</li>
+</ol>
+
+<script type="math/tex; mode=display">\vec{F}_0^{tot} = \vec{F}_{01} + \vec{F}_{02} + ... + \vec{F}_{0n}</script>
+
+<p>Où $\vec{F}_{0i}$ est la force exercée sur $q_0$ par la i-ème charge, $q_i$</p>
+
+<hr />
+<h1 id="série-associée">Série associée</h1>
+
+<p><img src="/01illustrations/03physB/02/ex1.png" /></p>
+
+<p><img src="/01illustrations/03physB/02/ex2.png" /></p>
+
+<p><img src="/01illustrations/03physB/02/ex3.png" /></p>
+
+<p><img src="/01illustrations/03physB/02/ex4.png" /></p>
+
+
+</div>
+
+<div>
+	
+	<div class="eof"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Physique B(2): Loi de Coulomb et principe de superposition@&amp;url=https://roscas.github.io/math/math/physique-b/PhysB-serie2.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://roscas.github.io/math/math/physique-b/PhysB-serie2.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=https://roscas.github.io/math/math/physique-b/PhysB-serie2.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="https://roscas.github.io">IT</a> /
+                <a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+                <a class="link" href="https://roscas.github.io/archive/">Archive</a> /
+                <a class="link" href="https://roscas.github.io/category/">Category</a> /
+                <a class="link" href="https://roscas.github.io/tags/">Tags</a> /
+                <a class="link" href="https://roscas.github.io/about/">About</a> /
+                <a class="link" href="https://roscas.github.io/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/math/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

@@ -4,11 +4,144 @@
     <title>RoscaS</title>
     <description>Just some notes. # this means to ignore newlines until &quot;baseurl:&quot;
 </description>
-    <link>http://localhost:4000/math/</link>
-    <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Sep 2017 21:29:50 +0200</pubDate>
-    <lastBuildDate>Tue, 26 Sep 2017 21:29:50 +0200</lastBuildDate>
+    <link>https://roscas.github.io/math/math/</link>
+    <atom:link href="https://roscas.github.io/math/math/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 28 Sep 2017 12:45:16 +0200</pubDate>
+    <lastBuildDate>Thu, 28 Sep 2017 12:45:16 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Physique B(2): Loi de Coulomb et principe de superposition</title>
+        <description>&lt;h1 id=&quot;rappel-vecteurs-du-plan-euclidien&quot;&gt;Rappel: vecteurs du plan euclidien&lt;/h1&gt;
+
+&lt;p&gt;Un vecteur est complètement caractérisé lorsque l’on connait la longueur, la direction et le sens de la flèche qui le représente.&lt;/p&gt;
+
+&lt;p&gt;Opérations sur les vecteurs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Somme de deux vecteurs $\vec{v}_1$ et $\vec{v}_2$: La fléche représentant $\vec{v}_1 + \vec{v}_2$ s’obtient en mettant bout à bout les deux fleches représentant $\vec{v}_1$ et $\vec{v}_2$.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Multiplication d’un vecteur $\vec{v}$ par un nombre réel $\lambda$: La fleche représentant $\lambda \vec{v}$ a la direction de $\vec{v}$; sa longueur vaut $\lambda$ fois celle de $\vec{v}$ et son sens est celui de $\vec{v}$ (contraire à $\vec{v}$) si $\lambda &amp;gt; 0$ ($\lambda &amp;lt; 0$).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/vector.png&quot; align=&quot;&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans le plan euclidien $\pmb{\mathbb{R}}^2$, considérons une base orthonormée (un ensemble de deux vecteurs $\vec{u}_x$, et $\vec{u}_y$ &lt;strong&gt;unitaires&lt;/strong&gt; 9de longueur unité chacun) et perpendiculaires entre eux. Appelons $x$ et $y$ les axess que supportent $\vec{u}_x$, et $\vec{u}_y$ respectivement.&lt;/p&gt;
+
+&lt;p&gt;Tout vecteur $\vec{c} \in \pmb{\mathbb{R}}^2$ s’écrit de manière unique:
+&lt;script type=&quot;math/tex&quot;&gt;\vec{v}=v_x\cdot \vec{u}_x + v_y \cdot \vec{u}_y&lt;/script&gt;
+Où $v_x$ et $v_y$ sont des nombres réels appelés &lt;strong&gt;composantes&lt;/strong&gt; $x$ et $y$, respectivement, de $\vec{v}$. De manière equivalente, on peut écrire:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/vector2.png&quot; align=&quot;&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Un vecteur $\vec{v}$ est complètement carctérisé par la donnée de ses composantes $v_x$ et $v_y$ par rapport à une base de $\pmb{\mathbb{R}}^2$.&lt;/p&gt;
+
+&lt;p&gt;Opérations sur les vecteurs, donnés en composantes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}, \vec{w} = \begin{pmatrix} w_x \\ w_y \\ \end{pmatrix}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Somme de deux vecteurs:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{v}+ \vec{w}=\begin{pmatrix}
+    v_x \\ 
+    v_y \\ 
+\end{pmatrix} + \begin{pmatrix}
+    w_x \\ 
+    w_y \\ 
+\end{pmatrix} = \begin{pmatrix}
+    v_x + w_x \\ 
+    v_y + w_y \\ 
+\end{pmatrix}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Multiplication par un nombre réel $\lambda$:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\lambda \vec{v} = \begin{pmatrix}
+    v_x \\ 
+    v_y \\ 
+\end{pmatrix} = \begin{pmatrix}
+    \lambda v_x \\ 
+    \lambda v_y \\ 
+\end{pmatrix}&lt;/script&gt;
+
+&lt;h2 id=&quot;normes-longueur-ou-intensité-dun-vecteur-vecv&quot;&gt;Normes (longueur ou intensité) d’un vecteur $\vec{v}$&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;||\vec{v}|| = v = \sqrt[]{v_x^2 + v_y^2}&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/vector3.png&quot; align=&quot;&quot; height=&quot;100&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si $\theta$ est l’angle entre $\vec{v}$ et l’axe $x$ alors:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{v}=\begin{pmatrix}
+    v_x \\
+    v_y \\
+\end{pmatrix} = \begin{pmatrix}
+    ||\vec{v}|| \cdot cos\; \theta \\
+    ||\vec{v}|| \cdot sin\; \theta \\
+\end{pmatrix} = ||\vec{v}||\begin{pmatrix}
+     cos\; \theta \\
+     sin\; \theta \\
+\end{pmatrix} = ||\vec{v}|| \cdot \vec{u}&lt;/script&gt;
+
+&lt;p&gt;Où \vect{u} est un vecteur unitaire ayant la direction (et le sens) de $\vec{v}$.&lt;/p&gt;
+
+&lt;h1 id=&quot;application-à-la-force-de-coulomb&quot;&gt;Application à la force de Coulomb&lt;/h1&gt;
+&lt;p&gt;Soit deux charges $q_1$ et $q_2$ et $\vec{F}_{AB}$ la force exercée sur $A$ par $B$:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\vec{F}&lt;em&gt;{12} = +F\cdot \vec{u}&lt;/em&gt;{12} = - \vec{F}_{21}$ (si $q_1$ et $q_2$ sont de signe &lt;strong&gt;opposé&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;$\vec{F}&lt;em&gt;{12} = -F\cdot \vec{u}&lt;/em&gt;{12} = - \vec{F}_{21}$ (si $q_1$ et $q_2$ sont &lt;strong&gt;de même signe&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Où 
+&lt;script type=&quot;math/tex&quot;&gt;F = \frac{1}{4 \pi \epsilon_0} \frac{|q_1\;q_2|}{d^2}&lt;/script&gt;
+et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/vector4.png&quot; align=&quot;&quot; height=&quot;100&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;principe-de-superposition&quot;&gt;Principe de superposition&lt;/h1&gt;
+&lt;p&gt;Soit $n$ charges (ponctuelles) $1_1,q_2,…q_n$. Pour trouver la force électrique totale que ces $n$ charges produisent sur une charge $Q$ donnée, on applique le principe suivant:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;La force entre deux charges ne dépend pas des aurtes charges en présences.&lt;/li&gt;
+  &lt;li&gt;La force résultante sur $q_0$ est la somme vectorielle des forces exercées par chacune des $n$ charges $q_1,…,q_n$ sur $q_0$, calculées l’une après l’autre:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\vec{F}_0^{tot} = \vec{F}_{01} + \vec{F}_{02} + ... + \vec{F}_{0n}&lt;/script&gt;
+
+&lt;p&gt;Où $\vec{F}_{0i}$ est la force exercée sur $q_0$ par la i-ème charge, $q_i$&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;série-associée&quot;&gt;Série associée&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/ex1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/ex2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/ex3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/01illustrations/03physB/02/ex4.png&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 27 Sep 2017 00:00:00 +0200</pubDate>
+        <link>https://roscas.github.io/math/math/physique-b/PhysB-serie2.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-b/PhysB-serie2.html</guid>
+        
+        <category>physique</category>
+        
+        <category>electrostatique</category>
+        
+        
+        <category>Physique-B</category>
+        
+      </item>
     
       <item>
         <title>lala</title>
@@ -33,8 +166,8 @@
 &lt;p&gt;$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
 </description>
         <pubDate>Tue, 26 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/prive/prive.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/prive/prive.html</guid>
+        <link>https://roscas.github.io/math/math/prive/prive.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/prive/prive.html</guid>
         
         <category>none</category>
         
@@ -111,8 +244,8 @@ S &amp; = (dd-D-M/60) \cdot 3600 \\
 &lt;h3 id=&quot;dms--rightarrow--degré&quot;&gt;DMS $ \rightarrow $ Degré&lt;/h3&gt;
 </description>
         <pubDate>Fri, 22 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/trigo/Trigo-introduction.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-introduction.html</guid>
+        <link>https://roscas.github.io/math/math/trigo/Trigo-introduction.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/trigo/Trigo-introduction.html</guid>
         
         <category>Trigo</category>
         
@@ -126,15 +259,15 @@ S &amp; = (dd-D-M/60) \cdot 3600 \\
         <description>
 </description>
         <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physiquea/PhysA-serie2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie2.html</guid>
+        <link>https://roscas.github.io/math/math/physique-a/PhysA-serie2.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-a/PhysA-serie2.html</guid>
         
         <category>physique</category>
         
         <category>optique</category>
         
         
-        <category>PhysiqueA</category>
+        <category>Physique-A</category>
         
       </item>
     
@@ -269,21 +402,21 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physiquea/PhysA-serie1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physiquea/PhysA-serie1.html</guid>
+        <link>https://roscas.github.io/math/math/physique-a/PhysA-serie1.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-a/PhysA-serie1.html</guid>
         
         <category>physique</category>
         
         <category>optique</category>
         
         
-        <category>PhysiqueA</category>
+        <category>Physique-A</category>
         
       </item>
     
       <item>
-        <title>Physique B: Electrostatique: notion de charge et loi de Coulomb (1)</title>
-        <description>&lt;h2 id=&quot;charge&quot;&gt;Charge&lt;/h2&gt;
+        <title>Physique B(1): Electrostatique: notion de charge et loi de Coulomb</title>
+        <description>&lt;h1 id=&quot;notion-charge&quot;&gt;Notion Charge&lt;/h1&gt;
 
 &lt;p&gt;Il existe une caractéristique appelée &lt;strong&gt;charge&lt;/strong&gt; qui sont de deux types:&lt;/p&gt;
 &lt;ul&gt;
@@ -293,7 +426,7 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
 
 &lt;p&gt;Deux charges de &lt;strong&gt;même signe se repoussent&lt;/strong&gt;, deux charges de &lt;strong&gt;signe opposé s’attirent&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;h3 id=&quot;provenance&quot;&gt;Provenance&lt;/h3&gt;
+&lt;h2 id=&quot;provenance&quot;&gt;Provenance&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Atome&lt;/strong&gt;: Noyau central contenant:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;Protons: Chargé positivement&lt;/li&gt;
@@ -315,7 +448,7 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
   &lt;li&gt;Un corp chargé négativement a un excédent d’électrons&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;charge-élémentaire-et-quantification&quot;&gt;Charge élémentaire et Quantification&lt;/h3&gt;
+&lt;h2 id=&quot;charge-élémentaire-et-quantification&quot;&gt;Charge élémentaire et Quantification&lt;/h2&gt;
 &lt;p&gt;La charge élémentaire qui permet la quantification d’une charge se note $\pmb{e}$&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red]
@@ -328,7 +461,7 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
   &lt;li&gt;Charge de l’électron: $\bbox[5px,border:1px solid red] {q_e = -e}$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;conservation-de-la-charge&quot;&gt;Conservation de la charge&lt;/h3&gt;
+&lt;h2 id=&quot;conservation-de-la-charge&quot;&gt;Conservation de la charge&lt;/h2&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;La charge électrique n’est ni créée, ni détruite, elle se transmet simplement d’un corp à l’autre.
@@ -339,7 +472,7 @@ Benjamin Franklin&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;: Les réactions chimiques; dans le cas suivant, deux molécules d’eau se transforment en un ion positif et un ion négatif:$\quad 2H_2 O \Rightarrow H_3 O^+ + HO^-$&lt;/p&gt;
 
-&lt;h3 id=&quot;loi-de-coulomb&quot;&gt;Loi de Coulomb&lt;/h3&gt;
+&lt;h2 id=&quot;loi-de-coulomb&quot;&gt;Loi de Coulomb&lt;/h2&gt;
 
 &lt;p&gt;Soit deux charges bonctuelles $q_1 \text{ et } q_2$ séparées par une distance $d$.&lt;/p&gt;
 
@@ -360,18 +493,32 @@ Benjamin Franklin&lt;/p&gt;
 
 &lt;p&gt;Où $K_c$ est la constante de Coulomb et vaut approximtivement $ 9\cdot10^{9}$&lt;/p&gt;
 
+&lt;h3 id=&quot;remarques&quot;&gt;Remarques&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Les deux charges subissent des forces de même intensité (3e loi de Newton: Action-réaction)&lt;/li&gt;
+  &lt;li&gt;La direction des forces est donnée par la droite reliant les (&lt;strong&gt;centre des&lt;/strong&gt;) deux charges ponctuelles (forces &lt;strong&gt;radiales&lt;/strong&gt;, de symetrie &lt;strong&gt;sphérique&lt;/strong&gt;).&lt;/li&gt;
+  &lt;li&gt;Les forces sont attractives (répulsives) si les deux charges sont de signe opposé (ont le même signe).&lt;/li&gt;
+  &lt;li&gt;La loi de Coulomb reste valable pour des objets dont la charge est répartie uniformément sur une surface sphérique ($d$ est la distance entre les centres des sphères).&lt;/li&gt;
+  &lt;li&gt;Si la taille des deux charges est petite par rapport à la distance qui les séparem la loi de Coulonb est une bonne approximation de la force entre ces charges.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Si la taille des deux charges est petite par rapport à la distance qui les sépare, la loi de Coulomb est une bonne approximation de la force entre ces charges, sinon intégration nécessaire, donc division de l’objet en segments ponctuels, puis addition des forces que ces segments produisent individuellement&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;série-associée&quot;&gt;Série associée&lt;/h2&gt;
+&lt;h1 id=&quot;série-associée&quot;&gt;Série associée&lt;/h1&gt;
 
-&lt;h3 id=&quot;11&quot;&gt;1.1&lt;/h3&gt;
+&lt;h2 id=&quot;11&quot;&gt;1.1&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Lors d’un orage, la foudre peut transporter une charge de $20C$ d’un nuage à la terre. À combien d’électrons environ correspond cette charge?&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;n_e = \frac{Q}{e} \approx 1,248 \cdot10^{20}&lt;/script&gt;
 
-&lt;h3 id=&quot;12&quot;&gt;1.2&lt;/h3&gt;
+&lt;h2 id=&quot;12&quot;&gt;1.2&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;À l’extérieur du noyau atomique, le neutron n est une particule instable et se désintègre en un proton p, un électron e− et un antineutrino:$\quad n \rightarrow p + e^- + \overline{v}$
 Déterminer la charge électrique de l’antineutrino.&lt;/p&gt;
@@ -379,14 +526,14 @@ Déterminer la charge électrique de l’antineutrino.&lt;/p&gt;
 
 &lt;p&gt;Comme la particule est maintenant dans un état d’équilibre et que nous savons que le proton possède une charge positive, l’electron une charge négative et que le neutron a une charge nulle, l’antineutrino possède forcément une &lt;strong&gt;charge nulle&lt;/strong&gt; également.&lt;/p&gt;
 
-&lt;h3 id=&quot;13&quot;&gt;1.3&lt;/h3&gt;
+&lt;h2 id=&quot;13&quot;&gt;1.3&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Dans un cumulonimbus se trouvent deux charges, l’une de +40 C et l’autre de −40 C, distantes de 5 km environ. En supposant que ces charges sont ponctuelles, calculer l’intensité de la force électrique FE qu’elles exercent l’une sur l’autre.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;F_e = k \frac{|Q_1 Q_2|}{d^2} \approx 5,76 \cdot 10^5 N&lt;/script&gt;
 
-&lt;h3 id=&quot;14&quot;&gt;1.4&lt;/h3&gt;
+&lt;h2 id=&quot;14&quot;&gt;1.4&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Dans un atome d’hydrogène, l’électron et le proton sont distants de $d = 0,53 \cdot 10^{−10}$ m. Déterminer le rapport de $F_G$ sur $F_E$, où $F_G$ et $F_E$ sont respectivement la force graviﬁque et la force électrique agissant entre les deux particules. Les masses du proton et de l’électron sont respectivement $m_p = 1,6726 \cdot 10^{−27} \text{kg}$ et $m_e = 9,1095·10^{−31} kg$.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -396,7 +543,7 @@ $q_{electron} = -e$&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{F_G}{F_E} = \frac{G\;m_1\;m_2}{d^2} \cdot \frac{d^2}{k\;e^2} = \frac{G\;m_1\;m_2}{k\;e^2} \approx 4,401 \cdot 10^{-40}&lt;/script&gt;
 
-&lt;h3 id=&quot;15&quot;&gt;1.5&lt;/h3&gt;
+&lt;h2 id=&quot;15&quot;&gt;1.5&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;Supposons que l’on donne une charge Q à la Terre et une même charge Q à la Lune. Quelle devrait être la valeur de Q pour que la force de répulsion électrique entre la Terre et la Lune soit égale à la force d’attraction gravitationnelle qui s’exerce entre les deux astres? Les masses de la Terre et de la Lune sont respectivement $mT = 5,9742 \cdot 10^{24} kg$ et   $mL = 7,350 \cdot 10^{22} kg$.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -413,15 +560,15 @@ $q_{electron} = -e$&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\Rightarrow Q \approx 5,706 \cdot 10^{13}C&lt;/script&gt;
 </description>
         <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physiqueb/PhysB-serie1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physiqueb/PhysB-serie1.html</guid>
+        <link>https://roscas.github.io/math/math/physique-b/PhysB-serie1.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-b/PhysB-serie1.html</guid>
         
         <category>physique</category>
         
         <category>electrostatique</category>
         
         
-        <category>PhysiqueB</category>
+        <category>Physique-B</category>
         
       </item>
     
@@ -446,8 +593,8 @@ $q_{electron} = -e$&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/divers/Divers-de-tout.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-de-tout.html</guid>
+        <link>https://roscas.github.io/math/math/divers/Divers-de-tout.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/divers/Divers-de-tout.html</guid>
         
         
         <category>divers</category>
@@ -705,10 +852,15 @@ $\begin{align}
 &lt;h3 id=&quot;nombres-irrationnels&quot;&gt;Nombres irrationnels&lt;/h3&gt;
 &lt;p&gt;Certains nombres réels ne peuvent pas s’écrire comme quotient de deux entiers. Ces nombres sont dits &lt;strong&gt;irrationnels&lt;/strong&gt; et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.&lt;/p&gt;
 
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;notes-pour-plus-tard&quot;&gt;Notes pour plus tard&lt;/h1&gt;
+
+&lt;p&gt;$\Delta = delta = disciminant $&lt;/p&gt;
 </description>
         <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/algebre/Algebre-cours1-intro.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-cours1-intro.html</guid>
+        <link>https://roscas.github.io/math/math/algebre/Algebre-cours1-intro.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/algebre/Algebre-cours1-intro.html</guid>
         
         
         <category>Algebre</category>
@@ -797,8 +949,8 @@ x &amp; = \sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} \\
 &lt;p&gt;Bombelli se dit que si il étend le système numérique &lt;strong&gt;comme cela avait été fait plusieurs fois&lt;/strong&gt; auparavant (décimaux, entiers relatifs… A chaque nouvel ensemble de nombre vient d’une nécessité à résoudre a nouveau problème) il pourrait résoudre le problème des racines négatives.&lt;/p&gt;
 </description>
         <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/histoire/Histoire-Complexes.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/histoire/Histoire-Complexes.html</guid>
+        <link>https://roscas.github.io/math/math/histoire/Histoire-Complexes.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/histoire/Histoire-Complexes.html</guid>
         
         
         <category>Histoire</category>
