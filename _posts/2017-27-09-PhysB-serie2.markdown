@@ -19,7 +19,7 @@ Opérations sur les vecteurs:
 
 * Multiplication d'un vecteur $\vec{v}$ par un nombre réel $\lambda$: La fleche représentant $\lambda \vec{v}$ a la direction de $\vec{v}$; sa longueur vaut $\lambda$ fois celle de $\vec{v}$ et son sens est celui de $\vec{v}$ (contraire à $\vec{v}$) si $\lambda > 0$ ($\lambda < 0$).
 
-<img src="/01illustrations/03physB/02/vector.png" align="" height="300">
+<img src="/math/01illustrations/03physB/02/vector.png" align="" height="300">
 
 Dans le plan euclidien $\pmb{\mathbb{R}}^2$, considérons une base orthonormée (un ensemble de deux vecteurs $\vec{u}_x$, et $\vec{u}_y$ **unitaires** 9de longueur unité chacun) et perpendiculaires entre eux. Appelons $x$ et $y$ les axess que supportent $\vec{u}_x$, et $\vec{u}_y$ respectivement.
 
@@ -29,7 +29,7 @@ Où $v_x$ et $v_y$ sont des nombres réels appelés **composantes** $x$ et $y$, 
 
 $$\vec{v} = \begin{pmatrix} v_x \\ v_y \\ \end{pmatrix}$$
 
-<img src="/01illustrations/03physB/02/vector2.png" align="" height="300">
+<img src="/math/01illustrations/03physB/02/vector2.png" align="" height="300">
 
 Un vecteur $\vec{v}$ est complètement carctérisé par la donnée de ses composantes $v_x$ et $v_y$ par rapport à une base de $\pmb{\mathbb{R}}^2$. 
 
@@ -64,7 +64,7 @@ $$\lambda \vec{v} = \begin{pmatrix}
 
 $$||\vec{v}|| = v = \sqrt[]{v_x^2 + v_y^2}$$
 
-<img src="/01illustrations/03physB/02/vector3.png" align="" height="100">
+<img src="/math/01illustrations/03physB/02/vector3.png" align="" height="100">
 
 Si $\theta$ est l'angle entre $\vec{v}$ et l'axe $x$ alors:
 
@@ -91,7 +91,7 @@ Où
 $$F = \frac{1}{4 \pi \epsilon_0} \frac{|q_1\;q_2|}{d^2}$$
 et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$
 
-<img src="/01illustrations/03physB/02/vector4.png" align="" height="100">
+<img src="/math/01illustrations/03physB/02/vector4.png" align="" height="100">
 
 # Principe de superposition
 Soit $n$ charges (ponctuelles) $1_1,q_2,...q_n$. Pour trouver la force électrique totale que ces $n$ charges produisent sur une charge $Q$ donnée, on applique le principe suivant:
@@ -106,23 +106,23 @@ Où $\vec{F}_{0i}$ est la force exercée sur $q_0$ par la i-ème charge, $q_i$
 ----
 # Série associée
 
-<img src="/01illustrations/03physB/02/ex1.png">
+<img src="/math/01illustrations/03physB/02/ex1.png">
 
 
 
-<img src="/01illustrations/03physB/02/ex2.png">
-
-
-
-
-
-<img src="/01illustrations/03physB/02/ex3.png">
+<img src="/math/01illustrations/03physB/02/ex2.png">
 
 
 
 
 
-<img src="/01illustrations/03physB/02/ex4.png">
+<img src="/math/01illustrations/03physB/02/ex3.png">
+
+
+
+
+
+<img src="/math/01illustrations/03physB/02/ex4.png">
 
 
 

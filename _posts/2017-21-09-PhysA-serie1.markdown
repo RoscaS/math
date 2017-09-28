@@ -24,7 +24,7 @@ Ou non, comme par exemple les ondes électromagnetiques qui existent dans le vid
 C'est la partie de la physique qui a pour objet l'étude des phénomènes liés au rayonnement électromagnetique.
 **On désigne par _lumière visible_ toute onde électromagnétique perçue par l'oeil.**
 
-<img src="/01illustrations/02physA/spectre.png" align="" height="size">
+<img src="/math/01illustrations/02physA/spectre.png" align="" height="size">
 
 > Pour l'étude des effets des miroirs et des lentilles, on postule que la lumière se propoage sous forme de rayons et on fait appel aux lois fondamentales de la géometrie.
 
@@ -42,7 +42,7 @@ Dans un milieu **transparant, homogène** et **isotrope**, les ryons lumineux so
 
 * L'ensemble de ces rayons, issus d'un mêeme endroit ou allant vers le mêeme endroit, est appelé faisceau lumineux. Il peut être **divergent, convergent** ou **parallèle**.
 
-<img src="/01illustrations/02physA/02postulat2.png" align="" height="size">
+<img src="/math/01illustrations/02physA/02postulat2.png" align="" height="size">
 
 * **Faisceau parallèle**: le point associé se trouve à l’infini.
 * **Divergente**: représente le cas de rayons émis par une source ponctuelle.
@@ -60,7 +60,7 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
 * Les lois de Snell-Descartes décrivent les comportements tels que la direction de propagation de ces rayons.
 
 
-<img src="/01illustrations/02physA/03reflexion-refraction.png" align="" height="size">
+<img src="/math/01illustrations/02physA/03reflexion-refraction.png" align="" height="size">
 
 Une partie du **rayon incident** est réfléchi par la surface de l'eau (elle revient dans le premier milieu). L'autre partie est transmise dans le second milieu. L'onde transmise dans le second milieu est deviée à la surface sépratrice: elle est **refractée** (il subit une fracture).
 
