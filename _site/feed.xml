@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 01 Oct 2017 17:50:22 +0200</pubDate>
-    <lastBuildDate>Sun, 01 Oct 2017 17:50:22 +0200</lastBuildDate>
+    <pubDate>Sun, 01 Oct 2017 22:57:26 +0200</pubDate>
+    <lastBuildDate>Sun, 01 Oct 2017 22:57:26 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -192,6 +192,30 @@
     \text{si} \Delta \ge 0 &amp; \Rightarrow  x_{1,2} = \frac{-b  \color{blue}{\pm} \sqrt{\Delta}}{2a} \Rightarrow p(x) = \color{red}{a} (x - x_1)(x-x_2) \\
     \text{si} \Delta &lt; 0 &amp;\Rightarrow \text{pas de racines.}
 \end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;division-de-polynômes&quot;&gt;Division de polynômes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On appelle &lt;strong&gt;racine&lt;/strong&gt; d’un polynôme la valeur $x = r$ telle que $P(r) = 0$&lt;/li&gt;
+  &lt;li&gt;Si $r$ est une racine, $P(x)$ est alors divisible par $(x-r)$ et le reste est nul.&lt;/li&gt;
+  &lt;li&gt;Si $r$ n’est pas une racine, alors le reste n’est pas nul et la valeur numérique du reste est égale à $P(r)$.&lt;/li&gt;
+  &lt;li&gt;Un polynôme de degré $n$ peut avoir jusqu’à $n$ racines réelles. Un polynôme de degré &lt;strong&gt;impaire&lt;/strong&gt; a &lt;strong&gt;toujours au moins une&lt;/strong&gt; racine réelle.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Un polynôme de degré $n$ a $n$ racines, mais certaines peuvent être des nombres complexes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{array}{ccccc|ccc}
+    x^4 &amp; -2x^3 &amp; -7x^2 &amp; +8x &amp; +12 &amp;&amp; (x&amp;-&amp;3) \\ 
+    \hline
+    -x^4 &amp; -3x^3 &amp;&amp;&amp;&amp; x^3 \\
+    &amp; -x^3 \\
+    &amp; -x^3 &amp; +x^2 &amp;&amp;&amp;&amp; +x^2 \\
+    &amp;&amp; -8x^2 \\
+    &amp;&amp; -8x^2 &amp; +8x &amp;&amp;&amp;&amp; -8x \\
+\end{array} %]]&gt;&lt;/script&gt;
 
 </description>
         <pubDate>Sat, 30 Sep 2017 00:00:00 +0200</pubDate>

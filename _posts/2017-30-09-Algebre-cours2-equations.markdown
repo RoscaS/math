@@ -165,7 +165,22 @@ $$\begin{align}
     \text{si} \Delta < 0 &\Rightarrow \text{pas de racines.}
 \end{align}$$
 
+## Division de polynômes
 
+* On appelle **racine** d'un polynôme la valeur $x = r$ telle que $P(r) = 0$
+* Si $r$ est une racine, $P(x)$ est alors divisible par $(x-r)$ et le reste est nul. 
+* Si $r$ n'est pas une racine, alors le reste n'est pas nul et la valeur numérique du reste est égale à $P(r)$.
+* Un polynôme de degré $n$ peut avoir jusqu'à $n$ racines réelles. Un polynôme de degré **impaire** a **toujours au moins une** racine réelle.
 
+> Un polynôme de degré $n$ a $n$ racines, mais certaines peuvent être des nombres complexes.
 
+$$\begin{array}{ccccc|ccc}
+    x^4 & -2x^3 & -7x^2 & +8x & +12 && (x&-&3) \\ 
+    \hline
+    -x^4 & -3x^3 &&&& x^3 \\
+    & -x^3 \\
+    & -x^3 & +x^2 &&&& +x^2 \\
+    && -8x^2 \\
+    && -8x^2 & +8x &&&& -8x \\
+\end{array}$$
 
