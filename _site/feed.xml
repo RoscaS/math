@@ -6,9 +6,202 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Sep 2017 12:54:22 +0200</pubDate>
-    <lastBuildDate>Thu, 28 Sep 2017 12:54:22 +0200</lastBuildDate>
+    <pubDate>Sun, 01 Oct 2017 17:50:22 +0200</pubDate>
+    <lastBuildDate>Sun, 01 Oct 2017 17:50:22 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Algèbre(2): Calcule littéral, factorisation et équations</title>
+        <description>&lt;h1 id=&quot;calcule-littéral&quot;&gt;Calcule littéral&lt;/h1&gt;
+
+&lt;p&gt;L’utilisation des lettres comme notation puis comme objet de calculs, l’enchainement des opérations élémentaires sur des expressions littérales constituent le &lt;strong&gt;calcul littéral&lt;/strong&gt;. Calcul obéit à des règles analogues à celles du calcul numérique.&lt;/p&gt;
+
+&lt;h2 id=&quot;puissances&quot;&gt;Puissances&lt;/h2&gt;
+&lt;p&gt;La puissance $n^{ieme}$ d’un nombre réel $a$ est un produit de $n$ facteurs tous égaux à $a$: $a^2 = a \cdot a, \quad a^3 = a \cdot a \cdot a, \quad etc…$&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt; On dit que $a$ est la &lt;strong&gt;base&lt;/strong&gt; de la puissance et $n$ &lt;strong&gt;l’exposant&lt;/strong&gt;&lt;/span&gt;: $base^{exposant}$&lt;/p&gt;
+
+&lt;p&gt;Pour tous les réels $a$ et $b$ non nuls et tous les entiers $n$ et $m$ non nuls, on a les propriétés suivantes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$a^n \cdot a^m = a^{n+m}$&lt;/li&gt;
+  &lt;li&gt;$\frac{a^n}{a^m}=a^{n-m}$&lt;/li&gt;
+  &lt;li&gt;$(a^n)^m=a^{n \cdot m}$&lt;/li&gt;
+  &lt;li&gt;$a^n \cdot b^n = (ab)n$&lt;/li&gt;
+  &lt;li&gt;$\frac{a^n}{b^n}=(\frac{a}{b})^n$&lt;/li&gt;
+  &lt;li&gt;$a^{-n}=\frac{1}{a^n}$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;monômes&quot;&gt;Monômes&lt;/h2&gt;
+
+&lt;p&gt;Un &lt;strong&gt;monôme&lt;/strong&gt; est une expression obtenue par multiplication de nombres et de lettres.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemples:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{3}ab^2\;, \quad -3(xy)^2z\;, ...&lt;/script&gt;
+
+&lt;p&gt;Un monôme est sous &lt;strong&gt;forme réduite&lt;/strong&gt; si l’on effectue le produit des nombres et regroupe les puissances d’une même lettre. Par convention on écrit d’abord le signe, puis le nombre, puis les lettre que l’on place par ordre alphabétique:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;ab\cdot xay (-b) b=-4a^2b^3xy&lt;/script&gt;
+
+&lt;p&gt;Dans un monôme donné sous forme réduite:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le &lt;strong&gt;coefficient&lt;/strong&gt; du monôme est le nombre (avec le signe)&lt;/li&gt;
+  &lt;li&gt;La &lt;strong&gt;partie littérale&lt;/strong&gt; du monôme est le reste de l’expression et est formé d’une ou plusieurs variables élevées à des puissances &lt;strong&gt;entières positives&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deux monômes sont &lt;strong&gt;semblables&lt;/strong&gt; si après réduction, leur parites littérales sont égales.&lt;/p&gt;
+
+&lt;p&gt;Par exemple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{1}{3}ab^2 \text{ et } -71ab^2 \text{ sont semblables.}&lt;/script&gt;
+
+&lt;h3 id=&quot;opérations-sur-les-monômes&quot;&gt;Opérations sur les monômes&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Multiplication:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$(2ab^2)(3a^4c)=6a^5b^2c$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Élévation à une puissance:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$(2ab^2)^3=8a^3b^6$&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Division:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Le résultat n’est en général pas un monôme. Il se peut qu’une des variables du résultat réduit soit élevée à une puissance négative. &lt;strong&gt;Il faut préciser les conditions de validité de l’écriture en écartant toutes les valeurs des variables qui annulent le dénominateur (division par 0!)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\frac{3ab^2}{7a^2b} = \frac{3b}{7a}=\frac{3}{7}a^{-1}b\quad(a \neq 0,\; b\neq 0)&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;polynômes&quot;&gt;Polynômes&lt;/h2&gt;
+
+&lt;p&gt;Un polynôme est une somme ou une différence de monômes.&lt;/p&gt;
+
+&lt;p&gt;Le &lt;strong&gt;degré&lt;/strong&gt; d’un polynôme par rapport à une lettre est la plus grande puissance à laquelle cette lettre est élevée dans le polynôme.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt; &lt;script type=&quot;math/tex&quot;&gt;\text{le polynôme }\frac{1}{3}ax^4 - 3bx +2 \text{ est de degré 4 pour la lettre } x&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Un polynôme est sous &lt;strong&gt;forme réduite&lt;/strong&gt; si chaque monôme composant celui-ci est réduit et si l’on a regroupé tous les monômes semblables.&lt;/p&gt;
+
+&lt;h3 id=&quot;opérations-sur-les-polynômes&quot;&gt;Opérations sur les polynômes&lt;/h3&gt;
+&lt;p&gt;On regroupe, additionne ou soustrait tous les monôme semblables. Le résulatat est donné sous forme réduite.&lt;/p&gt;
+
+&lt;p&gt;On utilise les expressions suivantes de façon équivalentes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;effectuer le produit de polynômes&lt;/li&gt;
+  &lt;li&gt;distribuer et réduire&lt;/li&gt;
+  &lt;li&gt;développer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ces opérations consistent toutes à transformer une expression algébrique donnée sous la forme d’un produit de termes en une somme de termes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    (7x^2-3x+4)(x-3) &amp; = 21x^2-3x^2+9x+4x-12 \\ 
+    &amp; = 7x^3-24x^2+13x-12 \\ 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;Rappel:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;(x+3)(x^2-1)(2x+1)=(x^3-x+3x^2-3)(2x+1) = ...&lt;/script&gt;
+
+&lt;h2 id=&quot;factorisation&quot;&gt;Factorisation&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Factoriser&lt;/strong&gt; consiste à transformer une somme de termes en un produit de facteurs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/math/01illustrations\05Algebre\02calc-lit\facto.png&quot; align=&quot;&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Tout polynôme $P(x) \in \pmb{\mathbb{R}}[x]$ est un produit de polynômes du premier degré et du second degré à discriminant ($\Delta=b^2-4ac$) négatif (pas de racines).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Si $P(x) \in \pmb{\mathbb{Z}}[x]$ est un polynôme à coefficient entiers, alors ses seules racines entières possibles sont les diviseurs de $P(0)$, c’est à dire les diviseurs du terme constant.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Si $P(x) \in \pmb{\mathbb{R}[x]}$ admet $c$ comme racine, alors il est divisible par $d(x)=x-c$&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;produits-remarquables&quot;&gt;Produits remarquables&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a+b)^2 = a^2+2ab+b^2$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a-b)^2 = a^2-2ab+b^2$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a+b)(a-b) = a^2-b^2$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a+b)^3=a^3+3a^2b+3ab^2+b^3$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a-b)^3=a^3-3a^2b+3ab^2+b^3 $&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a+b)(a^2-ab+b^2)=a^3+b^3$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;$(a-b)(a^2-ab+b^2)=a^3-b^3 $&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Toutes ces formules se démontrent en développant le terme de gauche.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;mise-en-évidence&quot;&gt;Mise en évidence&lt;/h3&gt;
+&lt;p&gt;On met en évidence les symboles apparaissant dans plusieurs termes d’une expression.&lt;/p&gt;
+
+&lt;h3 id=&quot;factorisation-par-tatonnement&quot;&gt;Factorisation par tatonnement&lt;/h3&gt;
+
+&lt;p&gt;Pour factoriser un polynôme de second degré, il faut trouver (par tatonnement) deux nombres $a$ et $b$ dont la somme correspond au deuxième terme et le produit au troisième terme. Il est plus facile de commencer le tatonnement par le produit.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;$x^2 + 11x +28 = (x+4)(x+7)$&lt;/p&gt;
+
+&lt;p&gt;On tatonne ainsi:&lt;/p&gt;
+
+&lt;p&gt;$28 = 1 \cdot 28 \text{ mais }1+28 \neq 11$&lt;/p&gt;
+
+&lt;p&gt;$28 = 2 \cdot 14 \text{ mais }2+14 \neq 11$&lt;/p&gt;
+
+&lt;p&gt;$28 = 4 \cdot 7 \text{ et }4+7 = 11$&lt;/p&gt;
+
+&lt;h3 id=&quot;factorisation-par-groupement&quot;&gt;Factorisation par groupement&lt;/h3&gt;
+&lt;p&gt;Lorsque l’on a un nombre pari de termes, on peut essayer de factoriser par groupement:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    64x^3-16x^2-100x+25 &amp; = \bbox[5px,border:1px solid blue] {64x^3-16x^2} \bbox[5px,border:1px solid red] {-100x+25} \\ 
+    &amp; = \bbox[5px,border:1px solid blue] {16x^2(4x-1)} \bbox[5px,border:1px solid red] {-25(4x-1)} \\
+    &amp; = (16x^2 -25)(4x-1) \\
+    &amp; = (4x + 5)(4x-5)(4x-1)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;technique-de-viett-discriminant-delta&quot;&gt;Technique de Viett (discriminant ($\Delta$))&lt;/h3&gt;
+
+&lt;p&gt;$P(x) = ax^2 + bx + c $&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    \Delta &amp; = b^2 - 4ac \\ 
+    \text{si} \Delta \ge 0 &amp; \Rightarrow  x_{1,2} = \frac{-b  \color{blue}{\pm} \sqrt{\Delta}}{2a} \Rightarrow p(x) = \color{red}{a} (x - x_1)(x-x_2) \\
+    \text{si} \Delta &lt; 0 &amp;\Rightarrow \text{pas de racines.}
+\end{align} %]]&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Sat, 30 Sep 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/algebre/Algebre-cours2-equations.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-cours2-equations.html</guid>
+        
+        
+        <category>Algebre</category>
+        
+      </item>
     
       <item>
         <title>Physique B(2): Loi de Coulomb et principe de superposition</title>
@@ -647,18 +840,18 @@ $q_{electron} = -e$&lt;/p&gt;
 &lt;h2 id=&quot;autres-notations&quot;&gt;Autres notations&lt;/h2&gt;
 &lt;p&gt;On peut utiliser des points de suspension pour des ensembles de cardinalité infinie, ou finie mais non déterminée.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;Ensemble des entiers naturels peut se noter: $\pmb{\mathbb{N}}={0,1,2,3,…}$&lt;/li&gt;
+  &lt;li&gt;Ensemble des entiers naturels peut se noter: $\pmb{\mathbb{N}}=\{0,1,2,3,…\}$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Si il est clair que $n$ désigne un entier naturel, ${1,2,…,n}$, voir ${1,…,n}$ désigne en général l’ensemble des entiers supérieurs ou égaux à $1$ et inférieurs ou égaux à $n$.&lt;/p&gt;
+&lt;p&gt;Si il est clair que $n$ désigne un entier naturel, $\{1,2,…,n\}$, voir $\{1,…,n\}$ désigne en général l’ensemble des entiers supérieurs ou égaux à $1$ et inférieurs ou égaux à $n$.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;On peut écrire $\pmb{\mathbb{Z}}={…,-3,-2,-1,0,1,2,3,…}$ ou encore ${-n,-n+1,…,n-1,n}$&lt;/li&gt;
+  &lt;li&gt;On peut écrire $\pmb{\mathbb{Z}}=\{…,-3,-2,-1,0,1,2,3,…\}$ ou encore $\{-n,-n+1,…,n-1,n\}$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Quand il y a un procédé itératif simple pour engendrer les éléments de l’ensemble, on peut se risquer à des notations comme ${0,2,4,6,…}$ pour l’ensemble des entiers naturels paris, etc…&lt;/p&gt;
+&lt;p&gt;Quand il y a un procédé itératif simple pour engendrer les éléments de l’ensemble, on peut se risquer à des notations comme $\{0,2,4,6,…\}$ pour l’ensemble des entiers naturels paris, etc…&lt;/p&gt;
 
-&lt;p&gt;On peut aussi utiliser ces notations pour des ensembles ayants “beaucoup” d’éléments: ${1,2,…,1000}$ ou encore ${3,5,…,21}$ à la place de ${3,5,7,9,11,13,15,17,19,21}$.&lt;/p&gt;
+&lt;p&gt;On peut aussi utiliser ces notations pour des ensembles ayants “beaucoup” d’éléments: $\{1,2,…,1000\}$ ou encore $\{3,5,…,21\}$ à la place de $\{3,5,7,9,11,13,15,17,19,21\}$.&lt;/p&gt;
 
 &lt;h2 id=&quot;notations-spéciales&quot;&gt;Notations spéciales&lt;/h2&gt;
 
@@ -677,7 +870,7 @@ $q_{electron} = -e$&lt;/p&gt;
   &lt;p&gt;Les nombres les plus familiers sont les entiers naturels: $0,1,2,3,…$ éléments de l’ensembre $\pmb{\mathbb{N}}$, et utilisés pour le dénombrement.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}} = \{0,1,2,3,...\}&lt;/script&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}} = \\{0,1,2,3,...\\}&lt;/script&gt;
 &lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}}^* = \pmb{\mathbb{N} \setminus \{0\} = \{1,2,3,...\}}&lt;/script&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;entiers-relatifs-pmbmathbbz&quot;&gt;Entiers relatifs $\pmb{\mathbb{Z}}$&lt;/h3&gt;
@@ -685,8 +878,8 @@ $q_{electron} = -e$&lt;/p&gt;
   &lt;p&gt;Si les entiers négatifs sont inclus, on obtient l’ensemble des nombres entiers relatifs $\pmb{\mathbb{Z}}$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}} = \{...,-3,-2,-1,0,1,2,3,...\}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \{0\}&lt;/script&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}} = \\{...,-3,-2,-1,0,1,2,3,...\\}&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \\{0\\}&lt;/script&gt;
 Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d’une droite graduée toutes les unités.&lt;/p&gt;
 
 &lt;h3 id=&quot;rationnels-pmbmathbbq&quot;&gt;Rationnels $\pmb{\mathbb{Q}}$&lt;/h3&gt;
@@ -694,7 +887,7 @@ Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d’une droit
   &lt;p&gt;La division d’un entier relatif par un entier relatif non nul forme un nombre rationnel. L’ensemble de tous les nombres rationnels est noté $\pmb{\mathbb{Q}}$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Q}} = \{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\}&lt;/script&gt;
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Q}} = \\{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\\}&lt;/script&gt;
 Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entier naturel non nul $b$. Les nombres rationnels sont ceux qui ont une écriture décimale &lt;strong&gt;periodique&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;réels-pmbmathbbr&quot;&gt;Réels $\pmb{\mathbb{R}}$&lt;/h3&gt;
@@ -702,13 +895,13 @@ Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entie
   &lt;p&gt;Si, dans l’ensemble, outre les éléments de $\pmb{\mathbb{Q}}$, on inclut tous les développements décimaux infinis et non périodiques, on obtient l’ensenble des nombres réels, noté $\pmb{\mathbb{R}}$.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\{...,\pi,e,\sqrt[2]{2},...\}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\\{...,\pi,e,\sqrt[2]{2},...\\}&lt;/script&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Tous les nombres réels qui ne sont pas rationnels sont appelés nombres irrationnels.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;${…,\pi,e,\sqrt[]{2},…} =$ &lt;strong&gt;irrationnels&lt;/strong&gt;: Les nombres qui ne peuvent pas être mis sous forme de fraction&lt;/p&gt;
+&lt;p&gt;$\{…,\pi,e,\sqrt[]{2},…\} =$ &lt;strong&gt;irrationnels&lt;/strong&gt;: Les nombres qui ne peuvent pas être mis sous forme de fraction&lt;/p&gt;
 
 &lt;p&gt;C’est l’ensemble de tous les nombres usuels. Les réels correspondent aux abscisses possibles d’un point sur une droite graduée. Les nombres réels qui ne sont pas rationnels sont appelés &lt;strong&gt;irrationnels&lt;/strong&gt;. Parmi eux, on trouve $\pi$ ou $\sqrt{2}$.&lt;/p&gt;
 
@@ -736,19 +929,19 @@ Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entie
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Union ( $\cup$ )&lt;/strong&gt; correspond à “ou” (fille &lt;strong&gt;ou&lt;/strong&gt; avec lunettes): $ A \cup B = {e \in E | e \in A \text{ ou } e \in B} $&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Union ( $\cup$ )&lt;/strong&gt; correspond à “ou” (fille &lt;strong&gt;ou&lt;/strong&gt; avec lunettes): $ A \cup B = \{e \in E | e \in A \text{ ou } e \in B\} $&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations1.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;intersection ( $\cap$ )&lt;/strong&gt; correspond à “et” (pour remplire la condition, “ceci” doit être respecté &lt;strong&gt;et&lt;/strong&gt; “celà” aussi): $A\cap B={e\in E | e\in A \text{ et }e \in B}$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;intersection ( $\cap$ )&lt;/strong&gt; correspond à “et” (pour remplire la condition, “ceci” doit être respecté &lt;strong&gt;et&lt;/strong&gt; “celà” aussi): $A\cap B=\{e\in E | e\in A \text{ et }e \in B\}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations2.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;complémentaire ($C_{Ensemble}$)&lt;/strong&gt; correspond à “non” (&lt;strong&gt;non&lt;/strong&gt; fille): $C_E A = {e \in E | e \notin A}$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;complémentaire ($C_{Ensemble}$)&lt;/strong&gt; correspond à “non” (&lt;strong&gt;non&lt;/strong&gt; fille): $C_E A = \{e \in E | e \notin A\}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations3.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
@@ -758,19 +951,19 @@ Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entie
 &lt;/blockquote&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;différence ( $\setminus$ )&lt;/strong&gt; correspond à “moins” (filles &lt;strong&gt;moins&lt;/strong&gt; avec lunettes) $A \setminus B = {e \in E | e\in A \text{ et } e \notin B}$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;différence ( $\setminus$ )&lt;/strong&gt; correspond à “moins” (filles &lt;strong&gt;moins&lt;/strong&gt; avec lunettes) $A \setminus B = \{e \in E | e\in A \text{ et } e \notin B\}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations4.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;différencesymétrique&lt;/strong&gt; (correspond à &lt;strong&gt;ou exclusif&lt;/strong&gt;: ceci ou celà mais pas les deux) $A\Delta B={e\in E |  e\in A \text{ou (exclusif) } e\in B}$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;différencesymétrique&lt;/strong&gt; (correspond à &lt;strong&gt;ou exclusif&lt;/strong&gt;: ceci ou celà mais pas les deux) $A\Delta B=\{e\in E |  e\in A \text{ou (exclusif) } e\in B\}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations5.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;produit cartésien ( $\times$ )&lt;/strong&gt;: $A \times B = {(x;y) | x \in A \text{ et } y \in B} = {(x, y) | x \in A, y \in B }$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;produit cartésien ( $\times$ )&lt;/strong&gt;: $A \times B = \{(x;y) | x \in A \text{ et } y \in B\} = \{(x, y) | x \in A, y \in B \}$&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;C’est à dire l’ensemble de tous les &lt;strong&gt;couples&lt;/strong&gt; possible obtenu en prenant un élément dand $A$ suivi d’un élément dans $B$, &lt;strong&gt;dans cet ordre&lt;/strong&gt;.&lt;/p&gt;
@@ -779,9 +972,9 @@ Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entie
 &lt;/blockquote&gt;
 
 &lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;:
-Soit les ensembles $A = {1, 2}$ et $B = {a, b, c}$&lt;/p&gt;
+Soit les ensembles $A = \{1, 2\}$ et $B = \{a, b, c\}$&lt;/p&gt;
 
-&lt;p&gt;$C = A \times B = {1a, 1b, 1c, 2a, 2b, 2c}$&lt;/p&gt;
+&lt;p&gt;$C = A \times B = \{1a, 1b, 1c, 2a, 2b, 2c\}$&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Plan cartésien
