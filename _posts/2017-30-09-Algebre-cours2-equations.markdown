@@ -174,13 +174,52 @@ $$\begin{align}
 
 > Un polynôme de degré $n$ a $n$ racines, mais certaines peuvent être des nombres complexes.
 
+**Exemple:**
+Soit $P(x) = x^4 -2x^3 - 7x^2 +8x +12$. Ce polynome est de degré 4, il y a donc 4 racines réelles **au maximum**.
+Divisons $P(x)$ par $(x-3)$:
+
 $$\begin{array}{ccccc|ccc}
     x^4 & -2x^3 & -7x^2 & +8x & +12 && (x&-&3) \\ 
     \hline
     -x^4 & -3x^3 &&&& x^3 \\
     & -x^3 \\
-    & -x^3 & +x^2 &&&& +x^2 \\
+    & -x^3 & -3x^2 &&&& +x^2 \\
+    && -4x^2 \\
+    && -4x^2 & +12x &&&& -4x \\
+    &&& -4x \\
+    &&& -4x & +12 &&&& -4 \\
+    &&& 0 & 0 \\
+\end{array}$$
+
+$P(x)$ peut alors se factoriser: $(x-3)(x^3+x^2-4x-4)$
+Esseyons maintenant de diviser $P(x)$ par $(x-1)$
+
+$$\begin{array}{ccccc|ccc}
+    x^4 & -2x^3 & -7x^2 & +8x & +12 && (x&-&1) \\ 
+    \hline
+    x^4 & -x^3 &&&& x^3 \\
+    & -x^3 \\
+    & -x^3 & -x^2 &&&& -x^2 \\
     && -8x^2 \\
     && -8x^2 & +8x &&&& -8x \\
+    && 0 & 0 \\
+    &&&& \color{red}{R: 12}\\
 \end{array}$$
+
+On voit que $P(x)$ n'est pas divisible par $(x-1)$, car le reste vaut 12. 1 N'est donc pas une racine. D'autre part, on remarque que $P(1) = 12$
+
+## Valeur absolue
+
+$$|f(x)| = a \Rightarrow f(x) = -a \text{ ou } f(x)= a$$
+
+**Exemple1:**
+
+$$|5x+3|=-2$$
+
+1. $5x+3=2 \Rightarrow x = -\frac{1}{5}$
+2. $5x+3=-2 \Rightarrow x = -1$
+
+<img src="/math/01illustrations\05Algebre\02calc-lit\valabs1.png" align="" height="300">
+
+
 
