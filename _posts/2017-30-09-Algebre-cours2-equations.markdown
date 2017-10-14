@@ -223,3 +223,7 @@ $$|5x+3|=-2$$
 
 
 
+------------
+# POUR PLUS TARD
+
+<span style="color:red"> Ne jamais diviser par l'inconnue. $\Rightarrow$ perte de solutions. </span> 
