@@ -18,11 +18,15 @@ La prarité d'une fonction est une propriété qui requiert d'abord la **symétr
 
 En analyse réelle, les fonctions **paires** sont les fonctions dont la courbe représentative est symétrique par rapport à l'axe des ordonnées (fonctions constantes, fonction carré et plus généralement les fonctions puissance d'exposant pair, le **cosinus**, ...)
 
-<iframe src="https://www.desmos.com/calculator/znpelev7r9?embed" width="500px" height="500px" style="border: 0px solid #ccc" frameborder=0></iframe>
+<div>
+    <iframe src="https://www.desmos.com/calculator/znpelev7r9?embed" width="500px" height="500px" style="border: 0px solid #ccc" frameborder=0></iframe>
+</div>
 
 Les fonctions impaires sont celles dont la courbe représentative est symétrique par rapport à l'origine, telles les fonctions identité ($y=x$), cube et plus généralement les fonctions puissance d'exposant impaire, les fonctions inverse, **sinus**, **tangente** et leur réciproques.
 
-<iframe src="https://www.desmos.com/calculator/lh5gzbe9rm?embed" width="500px" height="500px" style="border: 0px solid #ccc" frameborder=0></iframe>
+<div>
+    <iframe src="https://www.desmos.com/calculator/lh5gzbe9rm?embed" width="500px" height="500px" style="border: 0px solid #ccc" frameborder=0></iframe>
+</div>
 
 Les seules fonctions à être à la fois paires et impaires sont les **fonctions nulles** sur un domaine symétrique ($f(x)=0$).
 
