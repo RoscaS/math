@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Oct 2017 12:41:09 +0200</pubDate>
-    <lastBuildDate>Sun, 15 Oct 2017 12:41:09 +0200</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2017 12:59:40 +0200</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2017 12:59:40 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -83,6 +83,17 @@
 &lt;blockquote&gt;
   &lt;p&gt;On constate que le fait de &lt;strong&gt;soustraire&lt;/strong&gt; $\phi$ à &lt;strong&gt;la variable $x$&lt;/strong&gt;  décale le graphe de la fonction vers la droite si $\phi&amp;gt;0$ et vers la gauche si $\phi &amp;lt; 0$.&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt; Soustraire $\phi$ à la variable signifie que:  &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;$sin(4x)$ devient $sin(4\left(x-\frac{\phi}{4}\right))$ qui est bien &lt;strong&gt;décalée de $\phi$&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{red}{\text{par contre}}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$sin(4x-\phi) = sin(4\left(x-\frac{\phi}{4}\right))$ et est &lt;strong&gt;décalée de $\frac{\phi}{4}$ seulement!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
         <link>http://localhost:4000/math/trigo/Trigo-Fonction-trig-generalisee.html</link>

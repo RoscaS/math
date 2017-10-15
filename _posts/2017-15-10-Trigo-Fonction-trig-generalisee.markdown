@@ -72,3 +72,10 @@ Nous savons déjà que $y=0$ si $x-\color{red}{\phi}=\pi$ par exemple, donc $x =
 
 
 >On constate que le fait de **soustraire** $\phi$ à **la variable $x$**  décale le graphe de la fonction vers la droite si $\phi>0$ et vers la gauche si $\phi < 0$.
+
+<span style="color:red"> Soustraire $\phi$ à la variable signifie que:  </span>
+* $sin(4x)$ devient $sin(4\left(x-\frac{\phi}{4}\right))$ qui est bien **décalée de $\phi$**
+
+$$\color{red}{\text{par contre}}$$
+
+* $sin(4x-\phi) = sin(4\left(x-\frac{\phi}{4}\right))$ et est **décalée de $\frac{\phi}{4}$ seulement!**
