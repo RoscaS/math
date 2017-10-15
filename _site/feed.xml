@@ -6,9 +6,129 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 09 Oct 2017 17:23:37 +0200</pubDate>
-    <lastBuildDate>Mon, 09 Oct 2017 17:23:37 +0200</lastBuildDate>
+    <pubDate>Sun, 15 Oct 2017 12:41:09 +0200</pubDate>
+    <lastBuildDate>Sun, 15 Oct 2017 12:41:09 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Trigo: Fonction trigonométriques généralisées</title>
+        <description>&lt;p&gt;Considérons la fonction $sinus$ et opérons 4 types de transformation:&lt;/p&gt;
+
+&lt;h2 id=&quot;définition-et-nomenclature&quot;&gt;Définition et nomenclature&lt;/h2&gt;
+&lt;p&gt;Soit la fonction:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y = \color{blue}{A} \cdot sin(\color{red}{\alpha} x- \color{green}{\phi}) + \color{orange}{b}&lt;/script&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;$ \color{blue}{A} \Rightarrow $ &lt;strong&gt;amplitude&lt;/strong&gt; : dilatation ou contraction verticale&lt;/li&gt;
+  &lt;li&gt;$ \color{red}{\alpha} $ &lt;strong&gt;vitesse angulaire&lt;/strong&gt; : dilatation ou contraction horizontale&lt;/li&gt;
+  &lt;li&gt;$ \color{orange}{b} \Rightarrow$ &lt;strong&gt;décalage vertical&lt;/strong&gt; : déplacement vertical&lt;/li&gt;
+  &lt;li&gt;$ \color{green}{\phi} \Rightarrow $ &lt;strong&gt;déphasage&lt;/strong&gt; : déplacement horizontal&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$\frac{2\pi}{\alpha} \Rightarrow$ &lt;strong&gt;période&lt;/strong&gt;, on la note $T=\frac{2\pi}{\alpha}$&lt;/li&gt;
+  &lt;li&gt;$\frac{\phi}{\alpha} \Rightarrow$ &lt;strong&gt;phase à l’origine&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;iframe scrolling=&quot;no&quot; title=&quot;Fonction trigonométrique généralisée&quot; src=&quot;https://www.geogebra.org/material/iframe/id/q8PwDnWn/width/1000/height/481/border/ffffff/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false&quot; width=&quot;800px&quot; height=&quot;481px&quot; style=&quot;border:0px;&quot;&gt; &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;colorbluea-rightarrow--amplitude--dilatation-ou-contraction-verticale&quot;&gt;$\color{blue}{A} \Rightarrow $ &lt;strong&gt;amplitude&lt;/strong&gt; : dilatation ou contraction verticale&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La multiplication de $sin(x)$ par un facteur $A$ change l’&lt;strong&gt;amplitude&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;La position de la courbe par rapport aux axes n’est pas modifiée.&lt;/li&gt;
+  &lt;li&gt;Les points d’intersection avec l’axe des x ne changent pas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Les valeurs de $y$ sont entièrement comprises dans une bande allant de $y = -A$ à $y=A$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red] { y \in [-A, A]}&lt;/script&gt;
+
+&lt;h2 id=&quot;-colorredalpha--vitesse-angulaire--dilatation-ou-contraction-horizontale&quot;&gt;$ \color{red}{\alpha} $ &lt;strong&gt;vitesse angulaire&lt;/strong&gt; : dilatation ou contraction horizontale&lt;/h2&gt;
+&lt;p&gt;Considérons la fonction $ y = sin(\color{red}{2}x)$ et déterminons les points d’intersection avec l’axe des $x$.&lt;/p&gt;
+
+&lt;p&gt;On sait que $sin(\color{red}{x})$ vaut $0$ quand $\color{red}{x}$ vaut $\pi$ par exemple. Donc $sin(\color{red}{2x})$ vaudra $0$ quand $\color{red}{2x}$ vaudra $\pi$.&lt;/p&gt;
+
+&lt;p&gt;La courbe $sin(\color{red}{2}x)$ coupera l’axe des x si $\color{red}{2}x = \pi$ donc si $x=\frac{\pi}{2}$.&lt;/p&gt;
+
+&lt;p&gt;On constate que la fonction $sin(2x)$ a une période réduite d’un facteur $2$. Notons $T$ cette période, nous avons:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    y &amp; = sin(x) &amp; \quad &amp; \Rightarrow \quad T =2\pi \\ 
+    y &amp; = sin(\color{red}{2}x) &amp; \quad &amp; \Rightarrow \quad T = \frac{2\pi}{\color{red}{2}} \\ 
+    y &amp; = sin(\color{red}{\alpha}x) &amp; \quad &amp; \Rightarrow \quad T = \frac{2\pi}{\color{\alpha}{2}} \\ 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;La multiplication de la variable par un facteur change &lt;strong&gt;la période&lt;/strong&gt;: $sin(\color{red}{\alpha}x)$ est  $\frac{2\pi}{\color{red}{\alpha}}$ périodique.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;-colororangeb-rightarrow-décalage-vertical--déplacement-vertical&quot;&gt;$ \color{orange}{b} \Rightarrow$ &lt;strong&gt;décalage vertical&lt;/strong&gt; : déplacement vertical&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;L’ajout d’une constante $\color{red}{b}$ déplace &lt;strong&gt;verticalement&lt;/strong&gt; le graph de la fonction.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;-colorgreenphi-rightarrow--déphasage--déplacement-horizontal&quot;&gt;$ \color{green}{\phi} \Rightarrow $ &lt;strong&gt;déphasage&lt;/strong&gt; : déplacement horizontal&lt;/h2&gt;
+&lt;p&gt;Considérons la fonction $y=sin(x-\color{red}{\phi})$ et cherchons ses intersections avec l’axe des $x$:&lt;/p&gt;
+
+&lt;p&gt;Nous savons déjà que $y=0$ si $x-\color{red}{\phi}=\pi$ par exemple, donc $x = \pi + \color{red}{\phi}$. Ceci etant valable pour toutes les autres intersections avec l’axe des $x$.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On constate que le fait de &lt;strong&gt;soustraire&lt;/strong&gt; $\phi$ à &lt;strong&gt;la variable $x$&lt;/strong&gt;  décale le graphe de la fonction vers la droite si $\phi&amp;gt;0$ et vers la gauche si $\phi &amp;lt; 0$.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/trigo/Trigo-Fonction-trig-generalisee.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-Fonction-trig-generalisee.html</guid>
+        
+        <category>Trigo</category>
+        
+        
+        <category>Trigo</category>
+        
+      </item>
+    
+      <item>
+        <title>Divers: concepts</title>
+        <description>&lt;h1 id=&quot;parité-dune-fonction&quot;&gt;Parité d’une fonction&lt;/h1&gt;
+&lt;p&gt;La prarité d’une fonction est une propriété qui requiert d’abord la &lt;strong&gt;symétrie&lt;/strong&gt; du domaine de définition par rapport à l’origine puis s’exprime par l’une ou l’autre des relations suivantes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Fonction paire: Pour tout $x$ du domaine de définition, $f(-x) = f(x)$&lt;/li&gt;
+  &lt;li&gt;Fonction impaire: Pour tout $x$ du domaine de définition, $f(-x) = -f(x)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En analyse réelle, les fonctions &lt;strong&gt;paires&lt;/strong&gt; sont les fonctions dont la courbe représentative est symétrique par rapport à l’axe des ordonnées (fonctions constantes, fonction carré et plus généralement les fonctions puissance d’exposant pair, le &lt;strong&gt;cosinus&lt;/strong&gt;, …)&lt;/p&gt;
+
+&lt;div&gt;
+    &amp;lt;iframe src=&quot;https://www.desmos.com/calculator/znpelev7r9?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid #ccc&quot; frameborder=0&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/div&gt;
+
+&lt;p&gt;Les fonctions impaires sont celles dont la courbe représentative est symétrique par rapport à l’origine, telles les fonctions identité ($y=x$), cube et plus généralement les fonctions puissance d’exposant impaire, les fonctions inverse, &lt;strong&gt;sinus&lt;/strong&gt;, &lt;strong&gt;tangente&lt;/strong&gt; et leur réciproques.&lt;/p&gt;
+
+&lt;div&gt;
+    &amp;lt;iframe src=&quot;https://www.desmos.com/calculator/lh5gzbe9rm?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid #ccc&quot; frameborder=0&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/div&gt;
+
+&lt;p&gt;Les seules fonctions à être à la fois paires et impaires sont les &lt;strong&gt;fonctions nulles&lt;/strong&gt; sur un domaine symétrique ($f(x)=0$).&lt;/p&gt;
+
+&lt;p&gt;Une fonction quelconque n’est en général ni paire ni impaire, même si son domaine de définition est symétrique par rapport à l’origine. Toute fonction définie sur un tel domaine s’écrit en revanche de manière unique comme une somme d’une fonction paire et d’une fonction impaire.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 14 Oct 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/divers/Divers-concepts.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-concepts.html</guid>
+        
+        
+        <category>Divers</category>
+        
+      </item>
     
       <item>
         <title>Algèbre(2): Calcule littéral, factorisation et équations</title>
@@ -859,362 +979,6 @@ $q_{electron} = -e$&lt;/p&gt;
         
         
         <category>divers</category>
-        
-      </item>
-    
-      <item>
-        <title>Algèbre(1): Introduction</title>
-        <description>&lt;h1 id=&quot;ensembles&quot;&gt;Ensembles&lt;/h1&gt;
-&lt;p&gt;On travail en mathématique avec différents ensembles de nombres.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Un ensemble est une collection d’éléments. Ces éléments peuvent être de n’importe quelle nature (nombres, points géométriques, droites, fonctions, autres ensembles, jours de la semaine…)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;appartenance&quot;&gt;Appartenance&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Un élément $x$ appartenant à un ensemble $A$ se note: $x \in A$&lt;/li&gt;
-  &lt;li&gt;La négation se note $x \notin A$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;sous-ensemble&quot;&gt;Sous-ensemble&lt;/h2&gt;
-&lt;p&gt;C’est un ensemble dont chaque élément est aussi contenu dans un autre ensemble. Si $A$ est un sous-ensemble de $B$, on note $A\subset B$&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;si jours = ${lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche}$ et week-end = ${samedi, dimanche}$, alors week–end $\subset$ jours . Par contre, le &lt;strong&gt;singleton&lt;/strong&gt; ${mardi}$ $\not\subset$ week – end .&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;ensemble-finis&quot;&gt;Ensemble finis&lt;/h2&gt;
-&lt;p&gt;Un ensemble est fini quand on peut compter ses éléments à l’aide d’entiers tous plus petits qu’un entier donné.&lt;/p&gt;
-
-&lt;p&gt;Ils peuvent être définis &lt;strong&gt;en extension&lt;/strong&gt;, par la liste de leurs éléments, et décrits comme tels; on place la liste des éléments d’un ensemble entre accolades, par exemple ${1,3,5}$.&lt;/p&gt;
-
-&lt;p&gt;La notation d’un ensemble n’est pas unique, un même ensemble peut être noté de en extension de façons différentes **car l’ordre des éléments est sans importance ${1,2} = {2,1}$.&lt;/p&gt;
-
-&lt;h2 id=&quot;définition-dun-ensemble-en-comprehension&quot;&gt;Définition d’un ensemble en comprehension&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Explication de la &lt;code class=&quot;highlighter-rouge&quot;&gt;list comprehension&lt;/code&gt; en Python !!!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Un ensemble peut être défini en &lt;strong&gt;comprehension&lt;/strong&gt;, c’est à dire qu’on définit par une propriété caractéristique parmi les éléments d’un ensemble donné.&lt;/p&gt;
-
-&lt;p&gt;L’ensemble des entiers naturels pairs est clairement défini par comprehension par la propriété “être pair” parmi les entiers naturels. On écrira:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\{x \in \pmb{\mathbb{N}}| x\;\text{pairs}\}\text{ ou } \{2x|x \in \pmb{\mathbb{N}}\}&lt;/script&gt;
-
-&lt;p&gt;Pour décrire l’ensemble des nombres entiers plus grands que 10, on écrira:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\{x \in \pmb{\mathbb{N}}|x&gt;10\}&lt;/script&gt;
-
-&lt;h2 id=&quot;autres-notations&quot;&gt;Autres notations&lt;/h2&gt;
-&lt;p&gt;On peut utiliser des points de suspension pour des ensembles de cardinalité infinie, ou finie mais non déterminée.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ensemble des entiers naturels peut se noter: $\pmb{\mathbb{N}}=\{0,1,2,3,…\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si il est clair que $n$ désigne un entier naturel, $\{1,2,…,n\}$, voir $\{1,…,n\}$ désigne en général l’ensemble des entiers supérieurs ou égaux à $1$ et inférieurs ou égaux à $n$.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;On peut écrire $\pmb{\mathbb{Z}}=\{…,-3,-2,-1,0,1,2,3,…\}$ ou encore $\{-n,-n+1,…,n-1,n\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Quand il y a un procédé itératif simple pour engendrer les éléments de l’ensemble, on peut se risquer à des notations comme $\{0,2,4,6,…\}$ pour l’ensemble des entiers naturels paris, etc…&lt;/p&gt;
-
-&lt;p&gt;On peut aussi utiliser ces notations pour des ensembles ayants “beaucoup” d’éléments: $\{1,2,…,1000\}$ ou encore $\{3,5,…,21\}$ à la place de $\{3,5,7,9,11,13,15,17,19,21\}$.&lt;/p&gt;
-
-&lt;h2 id=&quot;notations-spéciales&quot;&gt;Notations spéciales&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$ * $ signifie “sans $0$”, par exemple $\pmb{\mathbb{R}^*}$&lt;/li&gt;
-  &lt;li&gt;$+$ signifie “plus grand que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_+}$&lt;/li&gt;
-  &lt;li&gt;$-$ signifie “plus petit que$0$,($0$ compris)”, par exemple $\pmb{\mathbb{R}_-}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;On peut aussi combiner ces symboles: $\pmb{\mathbb{R}^*_+}$&lt;/p&gt;
-
-&lt;h2 id=&quot;types-de-nombres&quot;&gt;Types de nombres&lt;/h2&gt;
-
-&lt;h3 id=&quot;entiers-naturels-pmbmathbbn&quot;&gt;Entiers naturels $\pmb{\mathbb{N}}$&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Les nombres les plus familiers sont les entiers naturels: $0,1,2,3,…$ éléments de l’ensembre $\pmb{\mathbb{N}}$, et utilisés pour le dénombrement.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}} = \\{0,1,2,3,...\\}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{N}}^* = \pmb{\mathbb{N} \setminus \{0\} = \{1,2,3,...\}}&lt;/script&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;entiers-relatifs-pmbmathbbz&quot;&gt;Entiers relatifs $\pmb{\mathbb{Z}}$&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Si les entiers négatifs sont inclus, on obtient l’ensemble des nombres entiers relatifs $\pmb{\mathbb{Z}}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}} = \\{...,-3,-2,-1,0,1,2,3,...\\}&lt;/script&gt;
-&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Z}}^* = \pmb{\mathbb{Z}}\setminus \\{0\\}&lt;/script&gt;
-Les éléments de $\pmb{\mathbb{Z}}$ correspondent aux graduations d’une droite graduée toutes les unités.&lt;/p&gt;
-
-&lt;h3 id=&quot;rationnels-pmbmathbbq&quot;&gt;Rationnels $\pmb{\mathbb{Q}}$&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;La division d’un entier relatif par un entier relatif non nul forme un nombre rationnel. L’ensemble de tous les nombres rationnels est noté $\pmb{\mathbb{Q}}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\pmb{\mathbb{Q}} = \\{\frac{a}{b} | a \in \pmb{\mathbb{Z}}, b \in \pmb{\mathbb{Z}}^*\\}&lt;/script&gt;
-Un nombre rationnel est le quotient $a/b$ d’un entier relatif $a$ par un entier naturel non nul $b$. Les nombres rationnels sont ceux qui ont une écriture décimale &lt;strong&gt;periodique&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;réels-pmbmathbbr&quot;&gt;Réels $\pmb{\mathbb{R}}$&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Si, dans l’ensemble, outre les éléments de $\pmb{\mathbb{Q}}$, on inclut tous les développements décimaux infinis et non périodiques, on obtient l’ensenble des nombres réels, noté $\pmb{\mathbb{R}}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\pmb{\mathbb{R}}=\pmb{\mathbb{Q}}\cup\\{...,\pi,e,\sqrt[2]{2},...\\}&lt;/script&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Tous les nombres réels qui ne sont pas rationnels sont appelés nombres irrationnels.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;$\{…,\pi,e,\sqrt[]{2},…\} =$ &lt;strong&gt;irrationnels&lt;/strong&gt;: Les nombres qui ne peuvent pas être mis sous forme de fraction&lt;/p&gt;
-
-&lt;p&gt;C’est l’ensemble de tous les nombres usuels. Les réels correspondent aux abscisses possibles d’un point sur une droite graduée. Les nombres réels qui ne sont pas rationnels sont appelés &lt;strong&gt;irrationnels&lt;/strong&gt;. Parmi eux, on trouve $\pi$ ou $\sqrt{2}$.&lt;/p&gt;
-
-&lt;h3 id=&quot;ensemble-vide-emptyset&quot;&gt;Ensemble vide $\emptyset$&lt;/h3&gt;
-&lt;p&gt;Cet ensemble est inclus dans tous les autres ensembles&lt;/p&gt;
-
-&lt;h2 id=&quot;relations&quot;&gt;Relations&lt;/h2&gt;
-
-&lt;p&gt;Nous avons donc une hiérarchie d’ensembles:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\emptyset \subset \pmb{\mathbb{N}}\subset \pmb{\mathbb{Z}} \subset \pmb{\mathbb{Q}} \subset \pmb{\mathbb{R}}&lt;/script&gt;
-
-&lt;p&gt;Ces différents ensembles de nombres sont inclus les uns dans les autres suivant le schéma suivant :
-&lt;img src=&quot;http://www.bibmath.net/dico/e/images/ensemblesnombres1.png&quot; alt=&quot;alt&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;opérations-sur-les-ensembles&quot;&gt;Opérations sur les ensembles&lt;/h2&gt;
-
-&lt;p&gt;Soit $A$ et $B$ deux sous-ensembles d’un ensemble $E$.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;$E$ est une classe&lt;/li&gt;
-    &lt;li&gt;$A$ est l’ensemble des filles&lt;/li&gt;
-    &lt;li&gt;$B$ l’ensemble des élèves portant des lunettes&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Union ( $\cup$ )&lt;/strong&gt; correspond à “ou” (fille &lt;strong&gt;ou&lt;/strong&gt; avec lunettes): $ A \cup B = \{e \in E | e \in A \text{ ou } e \in B\} $&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations1.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;intersection ( $\cap$ )&lt;/strong&gt; correspond à “et” (pour remplire la condition, “ceci” doit être respecté &lt;strong&gt;et&lt;/strong&gt; “celà” aussi): $A\cap B=\{e\in E | e\in A \text{ et }e \in B\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations2.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;complémentaire ($C_{Ensemble}$)&lt;/strong&gt; correspond à “non” (&lt;strong&gt;non&lt;/strong&gt; fille): $C_E A = \{e \in E | e \notin A\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations3.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Quand il n’y a pas d’équivique possible, on écrit aussi $\bar{A}$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;différence ( $\setminus$ )&lt;/strong&gt; correspond à “moins” (filles &lt;strong&gt;moins&lt;/strong&gt; avec lunettes) $A \setminus B = \{e \in E | e\in A \text{ et } e \notin B\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations4.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;différencesymétrique&lt;/strong&gt; (correspond à &lt;strong&gt;ou exclusif&lt;/strong&gt;: ceci ou celà mais pas les deux) $A\Delta B=\{e\in E |  e\in A \text{ou (exclusif) } e\in B\}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/operations5.png&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;produit cartésien ( $\times$ )&lt;/strong&gt;: $A \times B = \{(x;y) | x \in A \text{ et } y \in B\} = \{(x, y) | x \in A, y \in B \}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;C’est à dire l’ensemble de tous les &lt;strong&gt;couples&lt;/strong&gt; possible obtenu en prenant un élément dand $A$ suivi d’un élément dans $B$, &lt;strong&gt;dans cet ordre&lt;/strong&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;$ \Rightarrow $ donc $ \color{red}{A \times B \neq B \times A} $ !&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;:
-Soit les ensembles $A = \{1, 2\}$ et $B = \{a, b, c\}$&lt;/p&gt;
-
-&lt;p&gt;$C = A \times B = \{1a, 1b, 1c, 2a, 2b, 2c\}$&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Plan cartésien
-Le produit cartésien de $\pmb{\mathbb{R}}$ par $\pmb{\mathbb{R}}$ est noté $\pmb{\mathbb{R}}^2 = \pmb{\mathbb{R}} \times \pmb{\mathbb{R}}$ (tous les couples de 2 nombres réels). Il est alors mis en relation avec un plan.
-&lt;img src=&quot;/math/01illustrations/00EnsemblesNb/plan.png&quot; alt=&quot;alt&quot; /&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;intervales&quot;&gt;Intervales&lt;/h2&gt;
-
-&lt;p&gt;Dans $\pmb{\mathbb{R}}$:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-    &amp; x \in [a,b] \color{blue}{\text{ si }} a \le x \le b \color{blue}{\text{ intervalle } \color{red}{ \text{fermé}}} \\ 
-    &amp; x \in [a,b[ \color{blue}{\text{ si }} a \le x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert à droite}}} \\ 
-    &amp; x \in ]a,b[ \color{blue}{\text{ si }} a &lt; x &lt; b \color{blue}{\text{ intervalle } \color{red}{ \text{ouvert}}} \\ 
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Comme $+ \infty $ et $-\infty$ n’appartiennent pas à $\pmb{\mathbb{R}}$ on notera $ \pmb{\mathbb{R}} = ]-\infty, +\infty[$&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;fractions&quot;&gt;Fractions&lt;/h1&gt;
-&lt;h2 id=&quot;notation-décimale-vers-la-notation-fractionnaire&quot;&gt;Notation décimale vers la notation fractionnaire&lt;/h2&gt;
-&lt;h3 id=&quot;nombres-rationnels&quot;&gt;Nombres rationnels&lt;/h3&gt;
-
-&lt;p&gt;Un nombre &lt;strong&gt;rationnel&lt;/strong&gt; est un nombre réel exprimable par le quotient de deux entiers relatifs (appartenant à $\pmb{\mathbb{Z}}$), avec le dénominateur non nul.&lt;/p&gt;
-
-&lt;p&gt;Le développement décimal des nombres rationnels a la particularité d’être &lt;strong&gt;périodique&lt;/strong&gt;,c’est à dire qu’il existe un suffixe constitué d’une séquence finie de chiffres se répétant continuellement. Cette séquence est appelée “période du développement décimal illimité”.&lt;/p&gt;
-
-&lt;p&gt;Par convention, on trace une barre horizontale au-dessus de la séquence périodique.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemples:&lt;/strong&gt;
-$\begin{align}
-    &amp;amp; \frac{1}{3} =0.333333…= 0.\overline{3}&lt;br /&gt;
-    &amp;amp; \frac{2}{37} =0.054054…= 0.\overline{054}&lt;br /&gt;
-    &amp;amp; \frac{115}{74} =1.5540540…= 0.5\overline{540}&lt;br /&gt;
-\end{align}$&lt;/p&gt;
-
-&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon a ce que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.222…=\frac{?}{?}$&lt;/p&gt;
-
-&lt;p&gt;Posons $n = 0.222…$&lt;/p&gt;
-
-&lt;p&gt;Prenons $10n=2.222…$&lt;/p&gt;
-
-&lt;p&gt;On a donc $10n-n=9n$, mais aussi, $2.222…-0.222…=2$.&lt;/p&gt;
-
-&lt;p&gt;Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$&lt;/p&gt;
-
-&lt;p&gt;$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$&lt;/p&gt;
-
-&lt;p&gt;$10\;000n-100n = 9900n = 17\;775$&lt;/p&gt;
-
-&lt;p&gt;$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple aha:&lt;/strong&gt; $0,\bar{9}=\frac{?}{?}$&lt;/p&gt;
-
-&lt;p&gt;$n=0,\bar{9} \Rightarrow 10n=9,\bar{9}$&lt;/p&gt;
-
-&lt;p&gt;$10n - n = 9n = 9,\bar{9}-0,\bar{9}=9$&lt;/p&gt;
-
-&lt;p&gt;$\Rightarrow 0,\bar{9} = \frac{9}{9}=1$&lt;/p&gt;
-
-&lt;h3 id=&quot;nombres-irrationnels&quot;&gt;Nombres irrationnels&lt;/h3&gt;
-&lt;p&gt;Certains nombres réels ne peuvent pas s’écrire comme quotient de deux entiers. Ces nombres sont dits &lt;strong&gt;irrationnels&lt;/strong&gt; et leur écriture décimale ne contient pas de période. Par exemple $\pi$ et $\sqrt{2}$.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;notes-pour-plus-tard&quot;&gt;Notes pour plus tard&lt;/h1&gt;
-
-&lt;p&gt;$\Delta = delta = disciminant $&lt;/p&gt;
-</description>
-        <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/algebre/Algebre-cours1-intro.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-cours1-intro.html</guid>
-        
-        
-        <category>Algebre</category>
-        
-      </item>
-    
-      <item>
-        <title>Histoire: Nombres complexes</title>
-        <description>&lt;h1 id=&quot;imaginary-numbers-are-real&quot;&gt;Imaginary numbers are real&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=T647CGsuOVU&amp;amp;list=PLiaHhY2iBX9g6KIvZ_703G3KJXapKkNaF&amp;amp;index=1&quot;&gt;playlist youtbe&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;problème-de-del-fierro&quot;&gt;Problème de Del Fierro&lt;/h2&gt;
-
-&lt;p&gt;Au 15e siecle, le mathématicien &lt;a href=&quot;https://fr.wikipedia.org/wiki/Scipione_del_Ferro&quot;&gt;Scipione del Fierro&lt;/a&gt; (1465 - 1526) recherche une formule pour résoudre les équations cubiques.
-Le cas général etant trop compliqué:
-&lt;script type=&quot;math/tex&quot;&gt;ax^3 + bx^2 + cx + d = 0&lt;/script&gt; il commence par chercher une solution à une version simplifiée: 
-&lt;script type=&quot;math/tex&quot;&gt;ax^3 +cx  -d = 0&lt;/script&gt; mais comme à cette époque les nombres négatifs sont encore évités l’équation ressemble plus à ça:
-&lt;script type=&quot;math/tex&quot;&gt;\require{cancel} \cancel{a}x^3 + cx \xcancel{-d} = 0 \text{ avec } a = 1&lt;/script&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid black] 
-    {x^3+cx=d}&lt;/script&gt;
-
-&lt;p&gt;avec: &lt;script type=&quot;math/tex&quot;&gt;c &gt; 0&lt;/script&gt; &lt;script type=&quot;math/tex&quot;&gt;d &gt; 0&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Il trouve la solution mais la garde pour lui. Il ne la dévoilera qu’à son diciple &lt;strong&gt;Antonio Foir&lt;/strong&gt; sur son lit de mort:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;x = \sqrt[3]{\frac{d}{2} + \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}} + \sqrt[3]{\frac{d}{2} - \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}}&lt;/script&gt;
-
-&lt;p&gt;A la même période &lt;strong&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Niccolo_Fontana_Tartaglia&quot;&gt;Niccolo Fontana Tartaglia&lt;/a&gt;&lt;/strong&gt;(1499, 1557), un autre mathématicien trouve lui aussi comment résoudre les équations cubiques et humilie Antonio Foir qui ne comprend pas l’essence de la résolution. Tartaglia ne dévoilera sa formule qu’à un autre grand mathématicien de l’époque nommé &lt;a href=&quot;https://fr.wikipedia.org/wiki/Girolamo_Cardano&quot;&gt;&lt;strong&gt;Girolamo Cardano&lt;/strong&gt;&lt;/a&gt;(1501 - 1576) qui lui jure de ne pas la dévoiler. Bien sur, Cardano dévoilera la formule dont l’equation de base est légèrement modifiée dans un livre qu’il écrit.&lt;/p&gt;
-
-&lt;p&gt;Le problème de cette solution est que pour certaines valeurs de $c$ et de $d$, la formule ne fonctionne pas.
-Et voici un exemple:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-x^3 &amp; = 15x + 4 \\
-x &amp; = \sqrt[3]{\frac{d}{2} + \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}} + \sqrt[3]{\frac{d}{2} - \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}}\\
-x &amp; = \sqrt[3]{\frac{4}{2} + \sqrt{\frac{4^2}{4}-\frac{15^3}{27}}} + \sqrt[3]{\frac{5}{2} - \sqrt{\frac{5^2}{4}-\frac{15^3}{27}}}\\ 
-x &amp; = \sqrt[3]{2+\sqrt{4-125}} + \sqrt[3]{2-\sqrt{4-125}}\\
-x &amp; = \sqrt[3]{2+\sqrt{-121}} + \sqrt[3]{2-\sqrt{-121}} \\ 
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;Cardano se retrouve coincé par &lt;strong&gt;la problematique des racines négatives&lt;/strong&gt;. Deux nombres positif multipliés entre eux ne seront jamais négatifs. Pareil pour deux nombres négatifs.&lt;/p&gt;
-
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\sqrt{9} = 3, -3&lt;/script&gt; &lt;script type=&quot;math/tex&quot;&gt;\sqrt{-9} = ?&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;Cette problematique n’est pas nouvelle par exemple pour trouver l’intersection de $x^2 +2$ et $x -1$ on pose:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-    x^2+2 &amp; = x-1 \\
-    x^2 -x + 3 &amp; = 0 \\
-    x &amp; = \frac{1\pm\sqrt{1^2-4\cdot1\cdot3}}{2\cdot1} \\
-    x &amp; = \frac{1\pm\sqrt{\color{red}{-11}}}{2}
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;À cette époque ce cas de figure voulait dire que les deux fonctions ne se coirsent jamais. Et effectivement dans notre cas, leselles ne se croisent pas:
-&amp;lt;iframe src=”https://www.desmos.com/calculator/f2g0w9gwfq?embed” width=”500px” height=”500px” style=”border: 0px” frameborder=0&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;Mais ce n’est pas toujours le cas…&lt;/p&gt;
-
-&lt;h2 id=&quot;problème-de-cardano&quot;&gt;Problème de Cardano&lt;/h2&gt;
-
-&lt;p&gt;Cardano et son disciple &lt;a href=&quot;https://fr.wikipedia.org/wiki/Rapha%C3%ABl_Bombelli&quot;&gt;Raphaël Bombelli&lt;/a&gt;(1526 - 1573) sont quoincés sur ce problème mais savent qu’il doit y avoir une solution &lt;span style=&quot;color:red&quot;&gt; (Pourquoi? L’explication de la forme du plot de $x^3$ donnée dans la vidéo n’est pas valable chronologiquement parlant)&lt;/span&gt; car le plot d’une fonction cubique passe toujours au moins une fois par l’axe des $x$:&lt;/p&gt;
-
-&lt;p&gt;&amp;lt;iframe src=”https://www.desmos.com/calculator/403qr0hwzi?embed” width=”500px” height=”500px” solid #ccc” frameborder=0&amp;gt;&amp;lt;/iframe&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;A ce stade, nous avons:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Une equation qui &lt;strong&gt;doit&lt;/strong&gt; avoir une solution: $x^3 = 15x +4 \Rightarrow$ doit avoir une solution.&lt;/li&gt;
-  &lt;li&gt;Une formule qui a prouvé qu’elle fonctionne: $x = \sqrt[3]{\frac{d}{2} + \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}} + \sqrt[3]{\frac{d}{2} - \sqrt{\frac{d^2}{4}-\frac{c^3}{27}}} \Rightarrow$ Sort une solution pour les equations cubiques&lt;/li&gt;
-  &lt;li&gt;Cependant quand nous y injectons notre fonction on se retrouve dans une impasse à base de racines négatives $x = \sqrt[3]{2+\sqrt{\color{red}{-121}}} + \sqrt[3]{\color{red}{-121}}$&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;raphaël-bombelli&quot;&gt;Raphaël Bombelli&lt;/h2&gt;
-&lt;p&gt;Il nous faudra une génération de plus pour commencer à faire de vrais progrès. Bombelli se dit que si ça ne fonctionne pas avec les positifs et que ça ne fonctionne pas avec les négatifs mais qu’il y a une solution, peut être qu’il y a un autre type de nombres qui nous amène à une solution.&lt;/p&gt;
-
-&lt;p&gt;Il adopte une approche pratique pour ne pas se compliquer à chercher un nom et un symbole pour cet éventuel nouveau type de nombres il décida simplement de laisser les racines négatives être des… racines négatives.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;L’innovation ici est que ses contemporains pensent que les racines négatives ne peuvent pas exister, qu’elles n’ont pas de sense (À l’exception de Cardano, son mentor).&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Bombelli se dit que si il étend le système numérique &lt;strong&gt;comme cela avait été fait plusieurs fois&lt;/strong&gt; auparavant (décimaux, entiers relatifs… A chaque nouvel ensemble de nombre vient d’une nécessité à résoudre a nouveau problème) il pourrait résoudre le problème des racines négatives.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 18 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/histoire/Histoire-Complexes.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/histoire/Histoire-Complexes.html</guid>
-        
-        
-        <category>Histoire</category>
         
       </item>
     
