@@ -6,9 +6,117 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Oct 2017 12:59:40 +0200</pubDate>
-    <lastBuildDate>Sun, 15 Oct 2017 12:59:40 +0200</lastBuildDate>
+    <pubDate>Wed, 18 Oct 2017 10:14:04 +0200</pubDate>
+    <lastBuildDate>Wed, 18 Oct 2017 10:14:04 +0200</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Algèbre(3): Décomposition en fractions simples</title>
+        <description>&lt;p&gt;C’est une technique utile, entre autres pour le calcul de certaines intégrales et dans le calcul des transformées de Laplace.&lt;/p&gt;
+
+&lt;p&gt;La décomposition en fractions simples concerne les &lt;strong&gt;fonctions rationelles irréductibles&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \frac{N(x)}{D(x)}&lt;/script&gt;
+
+&lt;p&gt;Où $N(x)$ et $D(x)$ sont des &lt;strong&gt;polynomes&lt;/strong&gt; tels que le degré de $N(x)$ &lt;span style=&quot;color:red&quot;&gt; est inférieur &lt;/span&gt; au degré de $D(x)$.&lt;/p&gt;
+
+&lt;p&gt;Si le degré du numérateur est &lt;strong&gt;supérieur ou égle&lt;/strong&gt; au degré du dénominateur, on peut effectuer une &lt;strong&gt;division polynomial&lt;/strong&gt; dont le résultat sera la &lt;strong&gt;somme d’un polynome et d’une fonction rationnelle&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    \frac{N(x)}{D(x)} &amp; = P(x)+\frac{R(x)}{D(x)}  \\ 
+    &amp; = \text{Polynome}+\frac{\text{Reste}}{\text{Fonction rationnelle irréductible}}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;La décomposition en fractions simples poura alors s’appliquer à la partie $\frac{R(x)}{D(x)}.&lt;/p&gt;
+
+&lt;p&gt;Les fonctions rationnelles irréductibles sont difficiles à traiter. Il est souvent utile de pouvoir les écrire comme &lt;strong&gt;une somme&lt;/strong&gt; de fractions simples(dites aussi fractions partielles). Pour cel on se base sur le théorème suivant:&lt;/p&gt;
+
+&lt;p&gt;Soit: la fonction rationnelle:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{N_\color{red}{k}(x)}{D_\color{red}{n}(x)}&lt;/script&gt;
+
+&lt;p&gt;irréductible avec $\color{red}{(k&amp;lt;n))}$,&lt;/p&gt;
+
+&lt;p&gt;Alors:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{N_k(x)}{D_n(x)} \equiv F_1(x) + F_2(x)+\cdots +F_r(x)&lt;/script&gt;
+
+&lt;p&gt;Donc:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_ \color{red}{i}(x) =
+\frac
+{
+    A_ \color{red}{i}
+}
+{
+    (
+        p_ \color{red}{i}x +
+        q_ \color{red}{i}
+    )^{\alpha}
+}
+\color{green}{\text{ ou bien }}
+
+\frac 
+{
+    A_ \color{red}{i} +
+    B_ \color{red}{i}
+} 
+{
+    (
+        a_ \color{red}{i} x^2 +
+        b_ \color{red}{i} x +
+        c_ \color{red}{i}
+    )^{\beta}
+}&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ce théorème nous assure l’existence d’une telle décomposition.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;marche-à-suivre&quot;&gt;Marche à suivre&lt;/h2&gt;
+&lt;p&gt;… pour obtenir la décomposition en fractions simples d’une fraction rationnelle irréductible:&lt;/p&gt;
+
+&lt;h3 id=&quot;1&quot;&gt;1&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Si nécéssaire&lt;/strong&gt;, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\frac { N_k (x) } { D_n (x) } \color{gray}{\text{ (on doit avoir} k &lt; n)} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;2&quot;&gt;2&lt;/h3&gt;
+&lt;p&gt;Factoriser le dénominateur $D_n (x)$ de façon à le transformer ** en produit**:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;de facteurs linéaires&lt;/strong&gt;: $(px + q)^n$
+    &lt;blockquote&gt;
+      &lt;p&gt;et ou&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;de &lt;strong&gt;facteurs quadratiques irréductibles&lt;/strong&gt; &lt;span style=&quot;color:gray&quot;&gt;(pas de racines réelles, donc pas factorisables)&lt;/span&gt;: $(ax^2+bx+c)^m$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;3&quot;&gt;3&lt;/h3&gt;
+&lt;p&gt;Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{A_1}{px+q}+\frac{A_2}{(px+q)^2}+\cdots + \frac{A_n}{(px+q)^n}&lt;/script&gt;
+
+&lt;h3 id=&quot;4&quot;&gt;4&lt;/h3&gt;
+&lt;p&gt;Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac { A_1 }{ px+q }+ \frac{ A_2 }{ (px+q)^2 }+ \cdots + \frac{B_m x + c_m}{(ax^2+bx+c)^m}&lt;/script&gt;
+
+&lt;h3 id=&quot;5&quot;&gt;5&lt;/h3&gt;
+&lt;p&gt;Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ &lt;span style=&quot;color:red&quot;&gt; doit être &lt;strong&gt;identique&lt;/strong&gt; &lt;/span&gt; à sa décomposition en fractions simples.&lt;/p&gt;
+
+&lt;h2 id=&quot;exemple&quot;&gt;Exemple&lt;/h2&gt;
+</description>
+        <pubDate>Wed, 18 Oct 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/algebre/Algebre-decomposition-fractions.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-decomposition-fractions.html</guid>
+        
+        
+        <category>Algebre</category>
+        
+      </item>
     
       <item>
         <title>Trigo: Fonction trigonométriques généralisées</title>
@@ -961,35 +1069,6 @@ $q_{electron} = -e$&lt;/p&gt;
         
         
         <category>Physique-B</category>
-        
-      </item>
-    
-      <item>
-        <title>Divers: De tout</title>
-        <description>&lt;h1 id=&quot;nombres-premiers-et-nombres-composés&quot;&gt;Nombres premiers et nombres composés&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Un nombre premier est un entier naturel ($\pmb{\mathbb{N}}$) qui admed exactement deux diviseurs distincts entiers et positifs qui sont $1$ et lui même.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;$1$ n’est pas premier car il n’a qu’un seul diviseur entier positif; $0$ no plus car il est divisible par tous les entiers positifs.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Par opposition, un nombre non nul produit de deux nombres entiers différents de $1$ est dit &lt;strong&gt;composé&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;$0$ et $1$ ne sont ni premiers ni composés.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Tue, 19 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/divers/Divers-de-tout.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-de-tout.html</guid>
-        
-        
-        <category>divers</category>
         
       </item>
     
