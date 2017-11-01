@@ -6,9 +6,43 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Oct 2017 10:14:04 +0200</pubDate>
-    <lastBuildDate>Wed, 18 Oct 2017 10:14:04 +0200</lastBuildDate>
+    <pubDate>Sun, 29 Oct 2017 12:03:08 +0100</pubDate>
+    <lastBuildDate>Sun, 29 Oct 2017 12:03:08 +0100</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Analyse(1): Suites de nombres et séries numériques</title>
+        <description>&lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A finir&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;2-suites-arithmétiques&quot;&gt;2. Suites arithmétiques&lt;/h1&gt;
+
+&lt;p&gt;On appelle &lt;strong&gt;suite arithmétique&lt;/strong&gt; toute suite de nombres réels satisfaisant la relation de récurrence:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;u_{n+1} = u_n + r, \quad \forall n \in \pmb{\mathbb{N}}&lt;/script&gt;
+
+&lt;p&gt;où le nombre réel $r = u_{n+1} - u_{n}$ est indépendant de $n$ et est appelé &lt;strong&gt;raison&lt;/strong&gt; de la suite arithmétique.&lt;/p&gt;
+
+&lt;p&gt;De la précédente formule de récurrence, on tire:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;u_n = u_{n-1} + r = u_{n-2} + \underbrace{r+r}_{2r} = u_{n-3} + \underbrace{r+r+r}_{3r} = \cdots&lt;/script&gt;
+
+&lt;p&gt;d’où, le &lt;strong&gt;terme général&lt;/strong&gt; de la suite:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;u_n = u_0 +nr&lt;/script&gt;
+
+</description>
+        <pubDate>Mon, 23 Oct 2017 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/math/analyse/Analyse-suites.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/analyse/Analyse-suites.html</guid>
+        
+        
+        <category>Analyse</category>
+        
+      </item>
     
       <item>
         <title>Algèbre(3): Décomposition en fractions simples</title>
@@ -77,16 +111,14 @@
 &lt;h2 id=&quot;marche-à-suivre&quot;&gt;Marche à suivre&lt;/h2&gt;
 &lt;p&gt;… pour obtenir la décomposition en fractions simples d’une fraction rationnelle irréductible:&lt;/p&gt;
 
-&lt;h3 id=&quot;1&quot;&gt;1&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Si nécéssaire&lt;/strong&gt;, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:&lt;/p&gt;
+&lt;p&gt;1. &lt;strong&gt;Si nécéssaire&lt;/strong&gt;, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
 \frac { N_k (x) } { D_n (x) } \color{gray}{\text{ (on doit avoir} k &lt; n)} %]]&gt;&lt;/script&gt;
 
-&lt;h3 id=&quot;2&quot;&gt;2&lt;/h3&gt;
-&lt;p&gt;Factoriser le dénominateur $D_n (x)$ de façon à le transformer ** en produit**:&lt;/p&gt;
+&lt;p&gt;2. Factoriser le dénominateur $D_n (x)$ de façon à le transformer &lt;strong&gt;en produit&lt;/strong&gt; de soit:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;de facteurs linéaires&lt;/strong&gt;: $(px + q)^n$
+  &lt;li&gt;&lt;strong&gt;facteurs linéaires&lt;/strong&gt; $(px + q)^n$
     &lt;blockquote&gt;
       &lt;p&gt;et ou&lt;/p&gt;
     &lt;/blockquote&gt;
@@ -94,18 +126,15 @@
   &lt;li&gt;de &lt;strong&gt;facteurs quadratiques irréductibles&lt;/strong&gt; &lt;span style=&quot;color:gray&quot;&gt;(pas de racines réelles, donc pas factorisables)&lt;/span&gt;: $(ax^2+bx+c)^m$&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;3&quot;&gt;3&lt;/h3&gt;
-&lt;p&gt;Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:&lt;/p&gt;
+&lt;p&gt;3. Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{A_1}{px+q}+\frac{A_2}{(px+q)^2}+\cdots + \frac{A_n}{(px+q)^n}&lt;/script&gt;
 
-&lt;h3 id=&quot;4&quot;&gt;4&lt;/h3&gt;
-&lt;p&gt;Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:&lt;/p&gt;
+&lt;p&gt;4. Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac { A_1 }{ px+q }+ \frac{ A_2 }{ (px+q)^2 }+ \cdots + \frac{B_m x + c_m}{(ax^2+bx+c)^m}&lt;/script&gt;
 
-&lt;h3 id=&quot;5&quot;&gt;5&lt;/h3&gt;
-&lt;p&gt;Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ &lt;span style=&quot;color:red&quot;&gt; doit être &lt;strong&gt;identique&lt;/strong&gt; &lt;/span&gt; à sa décomposition en fractions simples.&lt;/p&gt;
+&lt;p&gt;5. Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ &lt;span style=&quot;color:red&quot;&gt; doit être &lt;strong&gt;identique&lt;/strong&gt; &lt;/span&gt; à sa décomposition en fractions simples.&lt;/p&gt;
 
 &lt;h2 id=&quot;exemple&quot;&gt;Exemple&lt;/h2&gt;
 </description>
@@ -911,164 +940,6 @@ est très petite par rapport à sa distance au point d’observation. Elle émet
         
         
         <category>Physique-A</category>
-        
-      </item>
-    
-      <item>
-        <title>Physique B(1): Electrostatique: notion de charge et loi de Coulomb</title>
-        <description>&lt;h1 id=&quot;notion-charge&quot;&gt;Notion Charge&lt;/h1&gt;
-
-&lt;p&gt;Il existe une caractéristique appelée &lt;strong&gt;charge&lt;/strong&gt; qui sont de deux types:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Positives&lt;/li&gt;
-  &lt;li&gt;Negatives&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Deux charges de &lt;strong&gt;même signe se repoussent&lt;/strong&gt;, deux charges de &lt;strong&gt;signe opposé s’attirent&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;provenance&quot;&gt;Provenance&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Atome&lt;/strong&gt;: Noyau central contenant:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Protons: Chargé positivement&lt;/li&gt;
-  &lt;li&gt;Neutrons: Non-chargés&lt;/li&gt;
-  &lt;li&gt;Electrons: Charge positive&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Un atome est dit &lt;strong&gt;neutre&lt;/strong&gt; si il possède autant de protons que d’électrons&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;On Appelle &lt;strong&gt;ion&lt;/strong&gt; tout atome (ou molécule) qui a plus (ou moins) d’électrons que de protons.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Par frottement, des électrons passent d’un corp à l’autre produisant ainsi des ions.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Un corp chargé positivement a un déficite d’électrons&lt;/li&gt;
-  &lt;li&gt;Un corp chargé négativement a un excédent d’électrons&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;charge-élémentaire-et-quantification&quot;&gt;Charge élémentaire et Quantification&lt;/h2&gt;
-&lt;p&gt;La charge élémentaire qui permet la quantification d’une charge se note $\pmb{e}$&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red]
-    {e = 1,602\cdot10^{-19}C}&lt;/script&gt;
-
-&lt;p&gt;Où $C$ est l’abréviation de &lt;em&gt;coulomb&lt;/em&gt;, l’unité SI de la charge électrique.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Charge du proton: $\bbox[5px,border:1px solid red] {q_p = +e}$&lt;/li&gt;
-  &lt;li&gt;Charge de l’électron: $\bbox[5px,border:1px solid red] {q_e = -e}$&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;conservation-de-la-charge&quot;&gt;Conservation de la charge&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;La charge électrique n’est ni créée, ni détruite, elle se transmet simplement d’un corp à l’autre.
-Benjamin Franklin&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Autrement dit, la charge totale d’un système isolé reste constante.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple&lt;/strong&gt;: Les réactions chimiques; dans le cas suivant, deux molécules d’eau se transforment en un ion positif et un ion négatif:$\quad 2H_2 O \Rightarrow H_3 O^+ + HO^-$&lt;/p&gt;
-
-&lt;h2 id=&quot;loi-de-coulomb&quot;&gt;Loi de Coulomb&lt;/h2&gt;
-
-&lt;p&gt;Soit deux charges bonctuelles $q_1 \text{ et } q_2$ séparées par une distance $d$.&lt;/p&gt;
-
-&lt;p&gt;L’intensité de la force électrique s’exerçant entre ces deux charges est donnée par:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red]
-    {F = \frac{1}{4\pi\epsilon_0} \frac{|q_1\;q_2|}{d^2}}&lt;/script&gt;
-
-&lt;p&gt;Où $\epsilon_0 = 8,8542\cdot10^{-12}C^2 N^{-1} m^{-2}$ qui est la &lt;strong&gt;constante de permitivité du vide&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Loi établie en 1785 par le physicien français Charles de Coulomb&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Cette formule peut être remplacée par:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red] {F = k_C \frac{|q_1\;q_2|}{d^2}}&lt;/script&gt;
-
-&lt;p&gt;Où $K_c$ est la constante de Coulomb et vaut approximtivement $ 9\cdot10^{9}$&lt;/p&gt;
-
-&lt;h3 id=&quot;remarques&quot;&gt;Remarques&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Les deux charges subissent des forces de même intensité (3e loi de Newton: Action-réaction)&lt;/li&gt;
-  &lt;li&gt;La direction des forces est donnée par la droite reliant les (&lt;strong&gt;centre des&lt;/strong&gt;) deux charges ponctuelles (forces &lt;strong&gt;radiales&lt;/strong&gt;, de symetrie &lt;strong&gt;sphérique&lt;/strong&gt;).&lt;/li&gt;
-  &lt;li&gt;Les forces sont attractives (répulsives) si les deux charges sont de signe opposé (ont le même signe).&lt;/li&gt;
-  &lt;li&gt;La loi de Coulomb reste valable pour des objets dont la charge est répartie uniformément sur une surface sphérique ($d$ est la distance entre les centres des sphères).&lt;/li&gt;
-  &lt;li&gt;Si la taille des deux charges est petite par rapport à la distance qui les séparem la loi de Coulonb est une bonne approximation de la force entre ces charges.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Si la taille des deux charges est petite par rapport à la distance qui les sépare, la loi de Coulomb est une bonne approximation de la force entre ces charges, sinon intégration nécessaire, donc division de l’objet en segments ponctuels, puis addition des forces que ces segments produisent individuellement&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;série-associée&quot;&gt;Série associée&lt;/h1&gt;
-
-&lt;h2 id=&quot;11&quot;&gt;1.1&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Lors d’un orage, la foudre peut transporter une charge de $20C$ d’un nuage à la terre. À combien d’électrons environ correspond cette charge?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n_e = \frac{Q}{e} \approx 1,248 \cdot10^{20}&lt;/script&gt;
-
-&lt;h2 id=&quot;12&quot;&gt;1.2&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;À l’extérieur du noyau atomique, le neutron n est une particule instable et se désintègre en un proton p, un électron e− et un antineutrino:$\quad n \rightarrow p + e^- + \overline{v}$
-Déterminer la charge électrique de l’antineutrino.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Comme la particule est maintenant dans un état d’équilibre et que nous savons que le proton possède une charge positive, l’electron une charge négative et que le neutron a une charge nulle, l’antineutrino possède forcément une &lt;strong&gt;charge nulle&lt;/strong&gt; également.&lt;/p&gt;
-
-&lt;h2 id=&quot;13&quot;&gt;1.3&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Dans un cumulonimbus se trouvent deux charges, l’une de +40 C et l’autre de −40 C, distantes de 5 km environ. En supposant que ces charges sont ponctuelles, calculer l’intensité de la force électrique FE qu’elles exercent l’une sur l’autre.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;F_e = k \frac{|Q_1 Q_2|}{d^2} \approx 5,76 \cdot 10^5 N&lt;/script&gt;
-
-&lt;h2 id=&quot;14&quot;&gt;1.4&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Dans un atome d’hydrogène, l’électron et le proton sont distants de $d = 0,53 \cdot 10^{−10}$ m. Déterminer le rapport de $F_G$ sur $F_E$, où $F_G$ et $F_E$ sont respectivement la force graviﬁque et la force électrique agissant entre les deux particules. Les masses du proton et de l’électron sont respectivement $m_p = 1,6726 \cdot 10^{−27} \text{kg}$ et $m_e = 9,1095·10^{−31} kg$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;$q_{proton} = e$
-$q_{electron} = -e$&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{F_G}{F_E} = \frac{G\;m_1\;m_2}{d^2} \cdot \frac{d^2}{k\;e^2} = \frac{G\;m_1\;m_2}{k\;e^2} \approx 4,401 \cdot 10^{-40}&lt;/script&gt;
-
-&lt;h2 id=&quot;15&quot;&gt;1.5&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Supposons que l’on donne une charge Q à la Terre et une même charge Q à la Lune. Quelle devrait être la valeur de Q pour que la force de répulsion électrique entre la Terre et la Lune soit égale à la force d’attraction gravitationnelle qui s’exerce entre les deux astres? Les masses de la Terre et de la Lune sont respectivement $mT = 5,9742 \cdot 10^{24} kg$ et   $mL = 7,350 \cdot 10^{22} kg$.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;$Q_T = Q_L = Q$&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-    \frac{kQ^2}{d^2} &amp;= \frac{Gm_1m_2}{d^2} \\ 
-    kQ^2 &amp; = G m_1 m_2\\
-    Q &amp;= \sqrt{\frac{G m_T, m_L}{k}}{} \\
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Rightarrow Q \approx 5,706 \cdot 10^{13}C&lt;/script&gt;
-</description>
-        <pubDate>Wed, 20 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physique-b/PhysB-serie1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physique-b/PhysB-serie1.html</guid>
-        
-        <category>physique</category>
-        
-        <category>electrostatique</category>
-        
-        
-        <category>Physique-B</category>
         
       </item>
     

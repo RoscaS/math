@@ -72,28 +72,23 @@ F_ \color{red}{i}(x) =
 ## Marche à suivre
 ... pour obtenir la décomposition en fractions simples d'une fraction rationnelle irréductible:
 
-### 1
-**Si nécéssaire**, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:
+1\. **Si nécéssaire**, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:
 
 $$ \frac { N_k (x) } { D_n (x) } \color{gray}{\text{ (on doit avoir} k < n)}$$
 
-### 2
-Factoriser le dénominateur $D_n (x)$ de façon à le transformer ** en produit**:
-* **de facteurs linéaires**: $(px + q)^n$
+2\. Factoriser le dénominateur $D_n (x)$ de façon à le transformer **en produit** de soit:
+* **facteurs linéaires** $(px + q)^n$
 > et ou
 * de **facteurs quadratiques irréductibles** <span style="color:gray">(pas de racines réelles, donc pas factorisables)</span>: $(ax^2+bx+c)^m$
 
-### 3
-Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:
+3\. Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:
 
 $$ \frac{A_1}{px+q}+\frac{A_2}{(px+q)^2}+\cdots + \frac{A_n}{(px+q)^n}$$
 
-### 4
-Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:
+4\. Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:
 
 $$ \frac { A_1 }{ px+q }+ \frac{ A_2 }{ (px+q)^2 }+ \cdots + \frac{B_m x + c_m}{(ax^2+bx+c)^m}$$
 
-### 5
-Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ <span style="color:red"> doit être **identique** </span> à sa décomposition en fractions simples.
+5\. Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ <span style="color:red"> doit être **identique** </span> à sa décomposition en fractions simples.
 
 ## Exemple
