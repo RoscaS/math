@@ -6,9 +6,82 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Oct 2017 12:03:08 +0100</pubDate>
-    <lastBuildDate>Sun, 29 Oct 2017 12:03:08 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Nov 2017 18:40:02 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Nov 2017 18:40:02 +0100</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
+    
+      <item>
+        <title>Analyse: Décomposition de fonction</title>
+        <description>&lt;h2 id=&quot;exemple&quot;&gt;Exemple&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    f: \quad &amp; \pmb{\mathbb{R}} \longrightarrow \pmb{\mathbb{R}} \\ 
+    &amp; x \longmapsto y =f(x) = \frac{2x+3}{1-4x}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Rightarrow f(x) = -\frac{1}{4x+1}\cdot \frac{7}{2}-\frac{1}{2}&lt;/script&gt;
+
+&lt;h3 id=&quot;décomposition-en-fonctions-simples&quot;&gt;Décomposition en fonctions simples:&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{blue}{g_1(x)}=\frac{1}{x}&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/0i0gqfcpyo?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{red}{g_2(x)} = g_1(-4x) = -\frac{1}{4x}&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/fvisrnwveb?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{green}{g_3(x)} = g_2 \left( x+\frac{1}{4} \right) = - \frac{1}{4\cdot(x+\frac{1}{4})}= - \frac{1}{4x+1}&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/tzd549vscm?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{orange}{g_4(x)} = g_3(x)\cdot \frac{7}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2}&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/fqtnzi0rsc?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{purple}{g_5(x)} = g_4(x) - \frac{1}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2} = f(x)&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/j0y89eoiqq?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{red}{f(x)} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2}&lt;/script&gt;
+
+&lt;div&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/o8bwyog114?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 15 Nov 2017 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html</link>
+        <guid isPermaLink="true">http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html</guid>
+        
+        
+        <category>Analyse</category>
+        
+      </item>
     
       <item>
         <title>Analyse(1): Suites de nombres et séries numériques</title>
@@ -669,39 +742,6 @@ et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$&lt;/p&gt;
         
         
         <category>Physique-B</category>
-        
-      </item>
-    
-      <item>
-        <title>lala</title>
-        <description>&lt;p&gt;Pour trouver la fraction correspondant à un nombre rationnel, il faut &lt;strong&gt;soustraire deux multiples de ce nombre de telle façon à ce que la période disparaisse&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple 1:&lt;/strong&gt; $0.22\bar{2}=\frac{?}{?}$&lt;/p&gt;
-
-&lt;p&gt;Posons $n = 0.22\bar{2}$&lt;/p&gt;
-
-&lt;p&gt;Prenons $10n=2.22\bar{2}$&lt;/p&gt;
-
-&lt;p&gt;On a donc $10n-n=9n$ mais aussi, $2.22\bar{2}-0.22\bar{2}=2$.&lt;/p&gt;
-
-&lt;p&gt;Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple 2:&lt;/strong&gt; $1.7954\overline{54} = \frac{?}{?}$&lt;/p&gt;
-
-&lt;p&gt;$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$&lt;/p&gt;
-
-&lt;p&gt;$10\;000n-100n = 9900n = 17\;775$&lt;/p&gt;
-
-&lt;p&gt;$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/prive/prive.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/prive/prive.html</guid>
-        
-        <category>none</category>
-        
-        
-        <category>prive</category>
         
       </item>
     
