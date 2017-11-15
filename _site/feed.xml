@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/math/</link>
     <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 15 Nov 2017 18:40:02 +0100</pubDate>
-    <lastBuildDate>Wed, 15 Nov 2017 18:40:02 +0100</lastBuildDate>
+    <pubDate>Wed, 15 Nov 2017 19:32:56 +0100</pubDate>
+    <lastBuildDate>Wed, 15 Nov 2017 19:32:56 +0100</lastBuildDate>
     <generator>Jekyll v3.5.0</generator>
     
       <item>
@@ -28,21 +28,27 @@
 
 &lt;hr /&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{blue}{g_1(x)}=\frac{1}{x}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{blue}{g_1(x)}=-\frac{1}{x}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\small{\color{gray}{(\text{Symétrie d'axe }0y \text{ par rapport à la fonction de référence } \frac{1}{x})}}&lt;/script&gt;
 
 &lt;div&gt;
-    &lt;iframe src=&quot;https://www.desmos.com/calculator/0i0gqfcpyo?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/qzd1xpdk9n?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;hr /&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{red}{g_2(x)} = g_1(-4x) = -\frac{1}{4x}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Compression horizontale de facteur 4}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{red}{g_2(x)} = g_1(4x) = -\frac{1}{4x}&lt;/script&gt;
 
 &lt;div&gt;
-    &lt;iframe src=&quot;https://www.desmos.com/calculator/fvisrnwveb?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
+    &lt;iframe src=&quot;https://www.desmos.com/calculator/k84dk3lmcm?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Shift horizontal de } - \frac{1}{4}&lt;/script&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{green}{g_3(x)} = g_2 \left( x+\frac{1}{4} \right) = - \frac{1}{4\cdot(x+\frac{1}{4})}= - \frac{1}{4x+1}&lt;/script&gt;
 
@@ -52,6 +58,8 @@
 
 &lt;hr /&gt;
 
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Compression verticale de facteur } -\frac{7}{2} \quad (\; = \; \text{Décompression verticale de facteur } \frac{7}{2})&lt;/script&gt;
+
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{orange}{g_4(x)} = g_3(x)\cdot \frac{7}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2}&lt;/script&gt;
 
 &lt;div&gt;
@@ -59,6 +67,8 @@
 &lt;/div&gt;
 
 &lt;hr /&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\text{Shift vertical de } -\frac{1}{2}&lt;/script&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{purple}{g_5(x)} = g_4(x) - \frac{1}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2} = f(x)&lt;/script&gt;
 
@@ -73,6 +83,21 @@
 &lt;div&gt;
     &lt;iframe src=&quot;https://www.desmos.com/calculator/o8bwyog114?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;La forme généralisée de cette fonction est:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;A \cdot (\omega x - \varphi) + b&lt;/script&gt;
+
+&lt;p&gt;Avec:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$A$: Compression verticale ($\equiv$ Amplitude)&lt;/li&gt;
+  &lt;li&gt;$\omega$: Compression horizontale&lt;/li&gt;
+  &lt;li&gt;$\varphi$: Shift horizontal ($\equiv$ Déphasage)&lt;/li&gt;
+  &lt;li&gt;$b$: Shift vertical&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Wed, 15 Nov 2017 00:00:00 +0100</pubDate>
         <link>http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html</link>
