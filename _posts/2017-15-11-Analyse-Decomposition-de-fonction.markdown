@@ -84,7 +84,7 @@ $$ \color{red}{f(x)} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2} $$
 </div>
 
 
-### Conclusion
+### Observations
 
 La forme généralisée de cette fonction est:
 
@@ -96,3 +96,9 @@ Avec:
 * $\omega$: Compression horizontale
 * $\varphi$: Shift horizontal ($\equiv$ Déphasage)
 * $b$: Shift vertical
+
+<div>
+    <iframe scrolling="no" title="1/x généralisée" src="https://www.geogebra.org/material/iframe/id/p7sF8hfs/width/900/height/500/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="900px" height="500px" style="border:0px;"> </iframe>
+</div>
+
+
