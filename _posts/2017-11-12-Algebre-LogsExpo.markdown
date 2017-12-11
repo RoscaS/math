@@ -215,14 +215,17 @@ On peut changer de base de tout logarithme grace à cette formule:
 $$ log_b(a) = \frac{log_x(a)}{log_x(b)} $$
 
 * Cette formule est valable quelle que soit la base $x$
-* Les arguments sont positifs et les bses sont positives et différentes de 1
+* Les arguments sont positifs et les bases sont positives et différentes de 1
 
 ### Exemple
 
 $$\begin{align}
     log_2(50) & = \frac{log_{10}(50)}{log_{10}(2)} \quad\quad &\small{\color{gray}{\text{formule du changement de base}}} \\ 
     & \\
-    &= \frac{log(50)}{log(2)} \quad\quad &\small{\color{gray}{\text{car}log_10(x) = log(x)}}\\
+    &= \frac{log(50)}{log(2)} \quad\quad &\small{\color{gray}{\text{car }log_10(x) = log(x)}}\\
     & \\
     &\approx 5,644
 \end{align}$$
+
+
+
