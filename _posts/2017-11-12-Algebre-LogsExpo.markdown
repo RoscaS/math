@@ -103,12 +103,32 @@ $$ e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182$$
 ## Propriétés du logarithme
 
 
-|        |          |
-|--------|----------|
-|**Produit**   |$$log_b(u\cdot v)=log_b(u)+lob_b(v)$$|
-|**Quotient**  |$$log_b\left(\frac{u}{v}\right) = log_b(u)-log_b(v)$$|
-|**Puissance** |$$log_b(u^v)=v\cdot log_b(u)$$ |
+|        | Logarithme | Exponentielle |
+|--------|----------|-----------------|
+|**Produit**   |$$log_b(M\cdot N)=log_b(M)+lob_b(N)$$| $$b^M\cdot b^N=b^{M+N}$$
+|**Quotient**  |$$log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)$$|
+|**Puissance** |$$log_b\left(M^N\right)=N\cdot log_b(M)$$ |
 
 Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c'est à dire pour tout $u$ et $v >0$ et tout $b<b \neq 1$
 
 >La fonction logarithme de base $b$ est définie si $b$ est strictement positif et différend de 1, et l'ensembe de définition d'une fonction logarithme est $\pmb{\mathbb{R}_+}$
+
+### Logarithme d'un produit
+
+$$log_b(M\cdot N)=log_b(M)+lob_b(N)\; \Leftrightarrow b^M\cdot b^N=b^{M+N}$$
+
+Le logarithme d'un produit est la somme des logarithmes de ses facteurs.
+
+Si $M=4$, $N=8$ et $b=2$, alors d'après la propriété du logarithme d'un produit, $log_2(4\cdot 8) = log_2(4) + log_2(8)$.
+
+Le calcul qui suit permet de vérifier la propriété dans ce cas précis:
+
+$$\begin{align}
+    log_2(4\cdot8)&=log_2(4)+log_2(8) \\ 
+    log_2(32)&=log_2(4)+log_2(8) \\
+    5&=2+3 \\
+    5&=5
+\end{align}$$
+
+> On utilise cette propriété pour manipuler les expression logarithmiques
+
