@@ -105,9 +105,9 @@ $$ e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182$$
 
 |        | Logarithme | Exponentielle |
 |--------|----------|-----------------|
-|**Produit**   |$$log_b(M\cdot N)=log_b(M)+lob_b(N)$$| $$b^M\cdot b^N=b^{M+N}$$
-|**Quotient**  |$$log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)$$|
-|**Puissance** |$$log_b\left(M^N\right)=N\cdot log_b(M)$$ |
+|**Produit**   |$$log_b(M\cdot N)=log_b(M)+lob_b(N)$$| $$b^M\cdot b^N=b^{M+N}$$|
+|**Quotient**  |$$log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)$$| $$\frac{b^x}{b^y} = b^{x-y}$$
+|**Puissance** |$$log_b\left(M^N\right)=N\cdot log_b(M)$$| 
 
 Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c'est à dire pour tout $u$ et $v >0$ et tout $b<b \neq 1$
 
@@ -130,5 +130,44 @@ $$\begin{align}
     5&=5
 \end{align}$$
 
-> On utilise cette propriété pour manipuler les expression logarithmiques
+> On utilise cette propriété pour manipuler les expression logarithmiques.
 
+#### Exemple 1: Développer
+_Développer_ un logarithme en l'écrivant sous forme de somme.
+
+$$ log_6(5y) = log_6(5)+log_6(y) $$
+
+#### Exemple 2: Réduire
+_Réduire_ une somme de logarithmes en l'écrivant sous la forme d'un seul logarithme.
+
+$$ log_3(10)+log_3(x) = log_3(10x) $$
+
+### Logarithme d'un quotient
+
+$$ log_b\left(\frac{M}{N}\right)= log_b(M)-log_b(N)\; \Leftrightarrow \; \frac{b^x}{b^y} = b^{x-y}$$
+
+Le logarithme d'un quotient est la différence des logarithmes de ses deux termes.
+
+#### Exemple 1: Développer
+
+$$ log_7\left(\frac{a}{2}\right) = log_7(a)-log_7(2) $$
+
+#### Exemple 2: Réduire 
+
+$$log_4(x^3)-log_4(y) = log_4\left(\frac{x^3}{y}\right) $$
+
+### Logarithme d'une puissance
+
+$$ log_b(M^p) = p\cdot log_b(M)$$
+
+Le logarithme d'une puissance est le produitde l'exposant par le logarithme de la base
+
+#### Exemple 1: Développer
+
+$$ log_2(x^3) = 3log_2(x) $$
+
+#### Exemple 2: Réduire
+
+$$ 4log_5(2) = log_5(2^5) $$
+
+<span style="color:red"> Pour réduire ou développer une expression logarithmique il est indispensable que **tous** les logarithmes aient la **même base** </span> 
