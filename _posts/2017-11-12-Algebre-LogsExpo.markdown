@@ -143,11 +143,45 @@ _Réduire_ une somme de logarithmes en l'écrivant sous la forme d'un seul logar
 
 $$ log_3(10)+log_3(x) = log_3(10x) $$
 
+#### Démonstration
+On commence par raisonner sur un cas particulier. On prend le cas où $M=4$, $N=8$ et $b=2$
+
+$$\begin{align}
+    log_2(4\cdot8) & = log_2(2^2\cdot2^3) \quad\quad &\small{\color{gray}{2^2=4 \text{ et }2^3=8}}\\
+    &= log_2(2^{2+3}) \quad\quad \quad\quad &\small{\color{gray}{a^m\cdot a^n=a^{a+m}}}\\
+    &=2+3 \quad\quad &\small{\color{gray}{log_b(b^c)=c}}\\
+    &=log_2(4)+log_2(8) &\quad\quad \small{\color{gray}{\text{car }log_2(4)\text{ et }3=log_2(8)}}
+\end{align}$$
+
+Le raisonnement précédent repose sur le fait que $4$ et $8$ sont des puissances de $2$. Mais dans le cas général, quels que soient $M>N$ et $b>0$, il existe un réel $x$ tel que $b^x=M$ et quels que soient $M>N$ et $b>0$, il existe un réel $y$ tel que $b^y$=N.
+
+On obtient:
+
+$$\begin{align}
+    log_b(MN) & = log_b(b^x \cdot b^y) \\ 
+    & = log_b(b^{x+y})\\
+    & = x + y\\
+    &= log_b(M)+log_b(N)
+\end{align}$$
+
 ### Logarithme d'un quotient
 
 $$ log_b\left(\frac{M}{N}\right)= log_b(M)-log_b(N)\; \Leftrightarrow \; \frac{b^x}{b^y} = b^{x-y}$$
 
 Le logarithme d'un quotient est la différence des logarithmes de ses deux termes.
+
+#### Démonstration
+La démonstration est analogue à la démonstration précédente.
+
+Si $x$ et $y$ sont les réels tels que $M=B^x$ et $N=b^y$, alors $log_b(M)=x$ et $log_b(N)=y$
+
+$$\begin{align}
+    log_b\left(\frac{M}{N}\right) & = log_b\left(\frac{b^x}{b^y}\right) \\ 
+    &= log_b(b^{x-y})\\
+    &= x-y\\
+    &= log_b(M)-log_b(N)
+\end{align}$$
+
 
 #### Exemple 1: Développer
 
@@ -161,7 +195,7 @@ $$log_4(x^3)-log_4(y) = log_4\left(\frac{x^3}{y}\right) $$
 
 $$ log_b(M^p) = p\cdot log_b(M)$$
 
-Le logarithme d'une puissance est le produitde l'exposant par le logarithme de la base
+Le logarithme d'une puissance est le produitde l'exposant par le logarithme de la base.
 
 #### Exemple 1: Développer
 
