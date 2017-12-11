@@ -10,7 +10,7 @@
 <!-- CSS -->
 
   <link rel="stylesheet" href="/math/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/math/prive/prive.html">
+  <link rel="canonical" href="http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html">
   <link rel="alternate" type="application/rss+xml" title="RoscaS" href="http://localhost:4000/math/feed.xml">
 
 <!-- JS -->
@@ -44,8 +44,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>lala</title>
-  <meta name="description" content="Pour trouver la fraction correspondant à un nombre rationnel, il faut soustraire deux multiples de ce nombre de telle façon à ce que la période disparaisse.">
+  <title>Analyse: Décomposition de fonction</title>
+  <meta name="description" content="Exemple">
 </head>
 
 
@@ -75,9 +75,9 @@
 
 
     <center>
-		<div class="post-title" itemprop="name headline">lala</div>
+		<div class="post-title" itemprop="name headline">Analyse: Décomposition de fonction</div>
 
-		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="26 Sep 2017" itemprop="datePublished">Sep 26 2017</time>
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="15 Nov 2017" itemprop="datePublished">Nov 15 2017</time>
 
 			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
         	
@@ -87,8 +87,6 @@
 
         	
         <div class="post-tags">
-        	
-			<a class="post-tags-item" href="http://localhost:4000/math/tags/">none</a>
         	
 			
 		</div>
@@ -123,25 +121,97 @@
 <div id="category"></div>
 
 <div class="post-content" itemprop="articleBody">
-    <p>Pour trouver la fraction correspondant à un nombre rationnel, il faut <strong>soustraire deux multiples de ce nombre de telle façon à ce que la période disparaisse</strong>.</p>
+    <h2 id="exemple">Exemple</h2>
 
-<p><strong>Exemple 1:</strong> $0.22\bar{2}=\frac{?}{?}$</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    f: \quad & \pmb{\mathbb{R}} \longrightarrow \pmb{\mathbb{R}} \\ 
+    & x \longmapsto y =f(x) = \frac{2x+3}{1-4x}
+\end{align} %]]></script>
 
-<p>Posons $n = 0.22\bar{2}$</p>
+<p><br /></p>
 
-<p>Prenons $10n=2.22\bar{2}$</p>
+<script type="math/tex; mode=display">\Rightarrow f(x) = -\frac{1}{4x+1}\cdot \frac{7}{2}-\frac{1}{2}</script>
 
-<p>On a donc $10n-n=9n$ mais aussi, $2.22\bar{2}-0.22\bar{2}=2$.</p>
+<h3 id="décomposition-en-fonctions-simples">Décomposition en fonctions simples:</h3>
 
-<p>Donc $9n=2$, ce qui veut dire que $n=\frac{2}{9}$</p>
+<hr />
 
-<p><strong>Exemple 2:</strong> $1.7954\overline{54} = \frac{?}{?}$</p>
+<script type="math/tex; mode=display">\color{blue}{g_1(x)}=-\frac{1}{x}</script>
 
-<p>$n = 1.7954\overline{54} \Rightarrow 10\;000n=17\;954.\overline{54}$ et $100n = 179,\overline{54}$</p>
+<script type="math/tex; mode=display">\small{\color{gray}{(\text{Symétrie d'axe }0y \text{ par rapport à la fonction de référence } \frac{1}{x})}}</script>
 
-<p>$10\;000n-100n = 9900n = 17\;775$</p>
+<div>
+    <iframe src="https://www.desmos.com/calculator/qzd1xpdk9n?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
 
-<p>$\Rightarrow n = \frac{17\;775}{9900}=\frac{79}{44}$</p>
+<hr />
+
+<script type="math/tex; mode=display">\text{Compression horizontale de facteur 4}</script>
+
+<script type="math/tex; mode=display">\color{red}{g_2(x)} = g_1(4x) = -\frac{1}{4x}</script>
+
+<div>
+    <iframe src="https://www.desmos.com/calculator/k84dk3lmcm?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
+
+<hr />
+
+<script type="math/tex; mode=display">\text{Shift horizontal de } - \frac{1}{4}</script>
+
+<script type="math/tex; mode=display">\color{green}{g_3(x)} = g_2 \left( x+\frac{1}{4} \right) = - \frac{1}{4\cdot(x+\frac{1}{4})}= - \frac{1}{4x+1}</script>
+
+<div>
+    <iframe src="https://www.desmos.com/calculator/tzd549vscm?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
+
+<hr />
+
+<script type="math/tex; mode=display">\text{Compression verticale de facteur } -\frac{7}{2} \quad (\; = \; \text{Décompression verticale de facteur } \frac{7}{2})</script>
+
+<script type="math/tex; mode=display">\color{orange}{g_4(x)} = g_3(x)\cdot \frac{7}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2}</script>
+
+<div>
+    <iframe src="https://www.desmos.com/calculator/fqtnzi0rsc?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
+
+<hr />
+
+<script type="math/tex; mode=display">\text{Shift vertical de } -\frac{1}{2}</script>
+
+<script type="math/tex; mode=display">\color{purple}{g_5(x)} = g_4(x) - \frac{1}{2} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2} = f(x)</script>
+
+<div>
+    <iframe src="https://www.desmos.com/calculator/j0y89eoiqq?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
+
+<hr />
+
+<script type="math/tex; mode=display">\color{red}{f(x)} = - \frac{1}{4x+1} \cdot \frac{7}{2} - \frac{1}{2}</script>
+
+<div>
+    <iframe src="https://www.desmos.com/calculator/o8bwyog114?embed" width="500px" height="500px" style="border: 0px solid"></iframe>
+</div>
+
+<h3 id="observations">Observations</h3>
+
+<p>La forme généralisée de cette fonction est:</p>
+
+<script type="math/tex; mode=display">A \cdot (\omega x - \varphi) + b</script>
+
+<p>Avec:</p>
+
+<ul>
+  <li>$A$: Compression verticale ($\equiv$ Amplitude)</li>
+  <li>$\omega$: Compression horizontale</li>
+  <li>$\varphi$: Shift horizontal ($\equiv$ Déphasage)</li>
+  <li>$b$: Shift vertical</li>
+</ul>
+
+<div>
+    <iframe scrolling="no" title="1/x généralisée" src="https://www.geogebra.org/material/iframe/id/p7sF8hfs/width/900/height/500/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="900px" height="500px" style="border:0px;"> </iframe>
+</div>
+
 
 </div>
 
@@ -153,21 +223,21 @@
 
 <!--<div class="share">
     <p>Share this post with: </p>
-	<a href="https://twitter.com/intent/tweet?text=lala@&amp;url=http://localhost:4000/math/prive/prive.html" class="twitter-share">
+	<a href="https://twitter.com/intent/tweet?text=Analyse: Décomposition de fonction@&amp;url=http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html" class="twitter-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/math/prive/prive.html" class="facebook-share">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html" class="facebook-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://plus.google.com/share?url=http://localhost:4000/math/prive/prive.html" class="googleplus-share">
+	<a href="https://plus.google.com/share?url=http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html" class="googleplus-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
