@@ -44,9 +44,13 @@ Par définition si $\color{red}{a>0}$ et $\color{red}{b>0}$,
 <br>
 $$ \Large{log_{\color{teal}{b}}(\color{orange}{a})=\color{green}{c} \; \Leftrightarrow \; \color{teal}{b}^{\color{green}{c}}=\color{orange}{a}}$$
 
-* $\color{teal}{b}$ est la <span style="color:teal">base</span> de la puissance et c'est aussi la base du logarithme
-* $\color{green}{c}$ est <span style="color:green"> l'exposant </span> 
-* $\color{orange}{a}$ est la <span style="color:orange"> puissance </span> mais c'est aussi <span style="color:orange"> l'argument </span> du logarithme
+$\color{teal}{b}$ est la <span style="color:teal">base</span> de la puissance et c'est aussi la base du logarithme
+
+
+$\color{green}{c}$ est <span style="color:green"> l'exposant </span> 
+
+
+$\color{orange}{a}$ est la <span style="color:orange"> puissance </span> mais c'est aussi <span style="color:orange"> l'argument </span> du logarithme
 
 >Quand on passe de la forme exponentielle à la forme logarithmique ou vice-vera, la base du logarithme et la base de l'exponentielle sont les mêmes.
 
@@ -60,11 +64,16 @@ Logarithme | Exponentielle
  $log_b(u^p)=p\cdot log_b(u)$ | $(b^u)^p=b^{u\cdot p}$
 
 ## Ensemble de définition
+
 $log_b(a)$ est défini pour toute la base $b > 0$ et $b \neq 1$ ainsi que pour tout argument $a > 0$. Ces conditions sont la conséquence directe des propriétés des puissances.
 
-* $b>a$: Les fonctions exponentielles de base $b$ ne sont définies que si $b$ est strictement positif.
-* $a>0$: $log_b(a)=c$ équivaut à $b^c-a$. Or toute puissance d'un nombre positif est positive. Donc $b^c>0$ et par conséquent $a>0$.
-* $b \neq 1$: Si $b$ _était_ égal à $1$ alors, par exemple, il existerait un nombre $x$ tel que $log_1(3)=x$ qui serait équivalent à $1^x=3$. Or toute puissance de $1$ est égale à $1$, donc un tel nombre $x$ n'existe pas, et donc $b\neq1$.
+$b>a$: Les fonctions exponentielles de base $b$ ne sont définies que si $b$ est strictement positif.
+
+
+$a>0$: $log_b(a)=c$ équivaut à $b^c-a$. Or toute puissance d'un nombre positif est positive. Donc $b^c>0$ et par conséquent $a>0$.
+
+
+$b \neq 1$: Si $b$ _était_ égal à $1$ alors, par exemple, il existerait un nombre $x$ tel que $log_1(3)=x$ qui serait équivalent à $1^x=3$. Or toute puissance de $1$ est égale à $1$, donc un tel nombre $x$ n'existe pas, et donc $b\neq1$.
 
 ## Exemples tricky
 
