@@ -109,6 +109,8 @@ $$ e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182$$
 |**Quotient**  |$$log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)$$| $$\frac{b^x}{b^y} = b^{x-y}$$
 |**Puissance** |$$log_b\left(M^N\right)=N\cdot log_b(M)$$| 
 
+> On utilise ces propriété pour manipuler les expression logarithmiques.
+
 Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c'est à dire pour tout $u$ et $v >0$ et tout $b<b \neq 1$
 
 >La fonction logarithme de base $b$ est définie si $b$ est strictement positif et différend de 1, et l'ensembe de définition d'une fonction logarithme est $\pmb{\mathbb{R}_+}$
@@ -130,7 +132,6 @@ $$\begin{align}
     5&=5
 \end{align}$$
 
-> On utilise cette propriété pour manipuler les expression logarithmiques.
 
 #### Exemple 1: Développer
 _Développer_ un logarithme en l'écrivant sous forme de somme.
