@@ -43,7 +43,6 @@ Par définition si $\color{red}{a>0}$ et $\color{red}{b>0}$,
 
 <br>
 $$ \Large{log_{\color{teal}{b}}(\color{orange}{a})=\color{green}{c} \; \Leftrightarrow \; \color{teal}{b}^{\color{green}{c}}=\color{orange}{a}}$$
-<br>
 
 * $\color{teal}{b}$ est la <span style="color:teal">base</span> de la puissance et c'est aussi la base du logarithme
 * $\color{green}{c}$ est <span style="color:green"> l'exposant </span> 
@@ -86,3 +85,16 @@ $$ log_e(x) = ln(x) $$
 >$e$ est une constante. C'est un nombre irrationnel dont la valeur approchée au millième est $2,718$.
 
 $$ e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182$$
+
+## Propriétés du logarithme
+
+
+|        |          |
+|--------|----------|
+|**Produit**   |$$log_b(u\cdot v)=log_b(u)+lob_b(v)$$|
+|**Quotient**  |$$log_b\left(\frac{u}{v}\right) = log_b(u)-log_b(v)$$|
+|**Puissance** |$$log_b(u^v)=v\cdot log_b(u)$$ |
+
+Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c'est à dire pour tout $u$ et $v >0$ et tout $b<b \neq 1$
+
+>La fonction logarithme de base $b$ est définie si $b$ est strictement positif et différend de 1, et l'ensembe de définition d'une fonction logarithme est $\pmb{\mathbb{R}_+}$
