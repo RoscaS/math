@@ -63,17 +63,22 @@ Logarithme | Exponentielle
 $log_b(a)$ est défini pour toute la base $b > 0$ et $b \neq 1$ ainsi que pour tout argument $a > 0$. Ces conditions sont la conséquence directe des propriétés des puissances.
 
 * $b>a$: Les fonctions exponentielles de base $b$ ne sont définies que si $b$ est strictement positif.
-<br>
 * $a>0$: $log_b(a)=c$ équivaut à $b^c-a$. Or toute puissance d'un nombre positif est positive. Donc $b^c>0$ et par conséquent $a>0$.
-<br>
 * $b \neq 1$: Si $b$ _était_ égal à $1$ alors, par exemple, il existerait un nombre $x$ tel que $log_1(3)=x$ qui serait équivalent à $1^x=3$. Or toute puissance de $1$ est égale à $1$, donc un tel nombre $x$ n'existe pas, et donc $b\neq1$.
 
 ## Exemples tricky
+
   $$\bbox[5px,border:1px solid red] {log_{b^y}(a^x)=\frac{x}{y}}$$
 
 $$ 1)\quad log_{64}\left(\frac{1}{4}\right) = log_{2^6}(2^{-2})  =-\frac{1}{3} $$
+
+
 $$ 2)\quad log_{49}(7) = log_{7^7}(7) =\frac{1}{7} $$
+
+
 $$ 3)\quad log_{4}\left(\frac{1}{2}\right) = log_{2^2}(2^{-1})=-\frac{1}{2} $$
+
+
 $$ 4)\quad log_{4}(8) = log_{2^2}(2^3)=\frac{3}{2} $$
 
 ## Logarithme népérien
