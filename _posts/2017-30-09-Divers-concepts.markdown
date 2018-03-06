@@ -4,7 +4,7 @@ title: "Divers: concepts"
 subtitle: "Concepts en vraque pour le moment"
 date: 2017-10-14
 author: Sol
-category: Divers
+category: divers
 tags: ""
 finished: false
 mathjax: true
