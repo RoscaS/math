@@ -4,11 +4,226 @@
     <title>RoscaS</title>
     <description>Just some notes. # this means to ignore newlines until &quot;baseurl:&quot;
 </description>
-    <link>http://localhost:4000/math/</link>
-    <atom:link href="http://localhost:4000/math/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 16 Nov 2017 14:22:12 +0100</pubDate>
-    <lastBuildDate>Thu, 16 Nov 2017 14:22:12 +0100</lastBuildDate>
-    <generator>Jekyll v3.5.0</generator>
+    <link>https://roscas.github.io/math/math/</link>
+    <atom:link href="https://roscas.github.io/math/math/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 06 Mar 2018 19:31:07 +0100</pubDate>
+    <lastBuildDate>Tue, 06 Mar 2018 19:31:07 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Physique-Labo: Notations</title>
+        <description>&lt;h1 id=&quot;grandeurs-physique-et-unités&quot;&gt;Grandeurs physique et unités&lt;/h1&gt;
+
+&lt;h2 id=&quot;notation&quot;&gt;Notation&lt;/h2&gt;
+&lt;p&gt;L’unité s’écrit après la valeur de la grandeur, &lt;strong&gt;sans utiliser de crochets&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Les crochets désignent une application qui à toute grandeur physique fait correspondre son unité de mesure. Par exemple:
+&lt;script type=&quot;math/tex&quot;&gt;[l]=m \; (mètre), \quad [m]=kg \; (kilogramme), \quad [t]=s \; (seconde)&lt;/script&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mauvais notation: $m=75[kg]$&lt;/li&gt;
+  &lt;li&gt;Bonne notation: $m=75kg$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;On distingue deux types de grandeurs physiques:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Grandeurs &lt;strong&gt;scalaires&lt;/strong&gt;: valeur accompangé d’une unité.&lt;/li&gt;
+  &lt;li&gt;Grandeurs &lt;strong&gt;vectorielles&lt;/strong&gt;: valeur (intensité, norme) + unité, direction et sens.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;unités-si&quot;&gt;Unités SI&lt;/h2&gt;
+
+&lt;p&gt;Sept grandeurs de base sont à la base du système international d’unités:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Grandeur&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Symboles de la grandeur&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;Unité&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Symbole de l’unité&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;distance&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;d, l, h, \Delta x&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;mètre&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;m&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;masse&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;temps&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;intensité du courant&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;température&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;intensité lumineuse&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;quantité de matière&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Tue, 06 Mar 2018 00:00:00 +0100</pubDate>
+        <link>https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html</guid>
+        
+        
+        <category>Physique-Labo</category>
+        
+      </item>
+    
+      <item>
+        <title>Analyse: Caractéristiques d&#39;une fonction</title>
+        <description>&lt;h1 id=&quot;définition-dune-fonction&quot;&gt;Définition d’une fonction&lt;/h1&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    f: \quad &amp; \pmb{\mathbb{A}} \longrightarrow \pmb{\mathbb{B}} \\ 
+    &amp; x \longmapsto y =f(x) 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$A$: Ensemble de départ ($=$ domaine de définition)&lt;/li&gt;
+  &lt;li&gt;$B$: Ensemble d’arrivée ($\neq$ ensemble Image)&lt;/li&gt;
+  &lt;li&gt;$f$: Nom de la fonction&lt;/li&gt;
+  &lt;li&gt;$x$: Un élément quelconque de l’ensemble $A$&lt;/li&gt;
+  &lt;li&gt;$y = f(x)$: Un élément de $B$. Désigne la valeur numérique associée à $x$ (dont $x$ est l’antécédent)
+&lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;La ligne du haut décrit la fonction au &lt;strong&gt;niveau des ensembles&lt;/strong&gt;. Une flèche simple relie l’ensemble de départ à l’ensemble d’arrivée.&lt;/li&gt;
+  &lt;li&gt;La ligne du bas décrit la fonction au &lt;strong&gt;niveau des éléments&lt;/strong&gt;. La flèche du bas remplace le verbe “associer”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;domaine-de-définition-d--ensemble-de-départ&quot;&gt;Domaine de définition $D$ (= ensemble de départ)&lt;/h1&gt;
+
+&lt;p&gt;Le domaine de définition $D$ d’une fonction $f$ est l’ensemble des vleurs $x$ de $\pmb{\mathbb{R}}$ pour lesquelles $f(x)$ est définie.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;D = \{x \in \pmb{\mathbb{R}}|f(x)\in \pmb{\mathbb{R}}\}&lt;/script&gt;
+
+&lt;h2 id=&quot;exemples&quot;&gt;Exemples&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le domaine de définition de la fonction &lt;strong&gt;polynomiale&lt;/strong&gt; $y=f(x)=2x-3$ est $D = \pmb{\mathbb{R}} $&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le domaine de définition de la fonction &lt;strong&gt;rationnelle&lt;/strong&gt; $y=f(x)=\frac{2}{x-3}$ est $D = \pmb{\mathbb{R}} \setminus {-3} $&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le domaine de définition de la fonction &lt;strong&gt;irrationnelle&lt;/strong&gt; $\sqrt[2]{x^2-9}$ est $D = \pmb{\mathbb{R}} \; \setminus \;]-3;\;3[ $&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le domaine de définition des fonctions &lt;strong&gt;exponentielles&lt;/strong&gt; est $D=\pmb{\mathbb{R}}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Le domaine de définition des fonctions &lt;strong&gt;logarithmiques&lt;/strong&gt; est $D=\pmb{\mathbb{R^*_+}}$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Le domaine de définition des fonctions trig $sin$ et $cos$ est $D = \pmb{\mathbb{R}}$&lt;/li&gt;
+  &lt;li&gt;Le domaine de définition des fonctions trig $tan$ et $cot$ est restreint à certaines valeurs de $x$&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;ensemble-image-i&quot;&gt;Ensemble image $I$&lt;/h1&gt;
+
+&lt;p&gt;L’ensemble image $I$ de la fonction $f$ est le sous ensemble de $B$ constitué de toutes les valeurs possibles de $f(x)$ lorsque $x$ est dans $A$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;I = f(A) \text{ et } I \subseteq B&lt;/script&gt;
+
+&lt;h2 id=&quot;exemples-1&quot;&gt;Exemples&lt;/h2&gt;
+
+&lt;p&gt;Soit:&lt;/p&gt;
+
+&lt;p&gt;$\begin{align}
+    f: \quad &amp;amp; \pmb{\mathbb{R}} \longrightarrow \pmb{\mathbb{R}}  \color{gray}{\quad E_{arr}}\ 
+    &amp;amp; x \longmapsto y =f(x) = x^2 
+\end{align}$&lt;/p&gt;
+
+&lt;p&gt;L’ensemble image $I$ est $\pmb{\mathbb{R_+}}$&lt;/p&gt;
+
+&lt;p&gt;Beaucoup de formules que l’on rencontre en math et en science ne sont rien d’autre que des fonctions. Ainsi la formule $A=\pi\cdot r^2$ de l’aire d’un cercle de rayon $r$ fait correspondre à chaque nombre réel positif $r$ exactement une valeur $A$. La lettre $r$, qui représente une nombre quelconque du domaine de définition, est la &lt;strong&gt;variable indépendante&lt;/strong&gt;. La lettre $A$, qui représente un nombre de l’ensemble image, est une &lt;strong&gt;variable dépendante&lt;/strong&gt;, puisque sa valeur dépend de la valeur attribuée à $r$. Lorsque deux variables sont liées de cette façon, on dit que &lt;strong&gt;$A$ est une fonctionde $r$&lt;/strong&gt;. De même lorsqu’une voiture roule à la vitesse de $60km/h$ la distance en $km$ qu’elle parcourt en $t$ heures est donnée par $d = 60 \cdot t$, la distance $d$ apparait ainsi comme une fonction du temps $t$.&lt;/p&gt;
+
+&lt;h1 id=&quot;interprétation-graphique&quot;&gt;Interprétation graphique&lt;/h1&gt;
+
+&lt;p&gt;Un graphique permet d’examiner le comportement des valeurs de $f(x)$ pendant que $x$ varie dans le domaine de définition de la fonction $f$. Par définition &lt;strong&gt;le graphique d’une fonction $f$&lt;/strong&gt;(ou &lt;strong&gt;la courbe représentative $C$&lt;/strong&gt;) est le graphique de l’équation $ y=f(x)$ pour $x$ dans le domaine de définition $f$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(x,y) \in C \quad \Leftrightarrow \quad x \in D \text{ et } y=f(x)&lt;/script&gt;
+
+&lt;!-- &lt;div&gt;
+    &lt;iframe scrolling=&quot;no&quot; title=&quot;Domain and Range of a Function&quot; src=&quot;https://www.geogebra.org/material/iframe/id/fxsjcrzX/width/540/height/380/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false&quot; width=&quot;540px&quot; height=&quot;380px&quot; style=&quot;border:0px;&quot;&gt; &lt;/iframe&gt;
+&lt;div&gt; --&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Range = Ensemble Image $I$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;$y=f(x)$ est l’&lt;strong&gt;image&lt;/strong&gt; de $x$ et $x$ est l’&lt;strong&gt;antécédent&lt;/strong&gt; de $y=f(x)$&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;courbe-fonction-application--injectivité-surjectivité-bijectivité&quot;&gt;Courbe, fonction, application / injectivité, surjectivité, bijectivité&lt;/h1&gt;
+
+&lt;p&gt;Pour être qualifié de:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fonction&lt;/strong&gt;: Pas plus d’une image par élément de l’ensemble de départ ($E_{dep}$) aussi non il s’agit d’une &lt;strong&gt;Courbe&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Application&lt;/strong&gt; Tous les éléments de l’ensemble de départ ont une image (deux éléments de l’ensemble de départ peuvent avoir la même image).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Pour transformer une &lt;strong&gt;fonction&lt;/strong&gt; en &lt;strong&gt;application&lt;/strong&gt; on réduit son ensemble de départ.&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Application &lt;strong&gt;injective&lt;/strong&gt;: Les éléments de l’ensemble de départ ont des images différentes.
+&lt;script type=&quot;math/tex&quot;&gt;f(x_1) = f(x_2) \Leftrightarrow x_1 = x_2 \quad \text{ ou } \quad x_1 \neq x_2 \Leftrightarrow f(x_1) \neq f(x_2)&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Pour transformer une &lt;strong&gt;application&lt;/strong&gt; en &lt;strong&gt;application injective&lt;/strong&gt;, on modifie l’ensemble de départ.&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Application &lt;strong&gt;surjective&lt;/strong&gt;: Tous les éléments de l’ensemble d’arrivée ont des antécédents.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:green&quot;&gt; Pour transformer une &lt;strong&gt;application&lt;/strong&gt; en &lt;strong&gt;application surjective&lt;/strong&gt;, on modifie l’ensemble d’arrivée.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;On parle d’application &lt;strong&gt;bijective&lt;/strong&gt; quand une application est à la fois injective &lt;strong&gt;et&lt;/strong&gt; surjective. Cela veut dire que chaque élément de l’ensemble de départ a une unique image différente des autres éléments de l’ensemble de départ et que chaque élément de l’ensembe d’arrivée a un antécédent.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 19 Nov 2017 00:00:00 +0100</pubDate>
+        <link>https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html</guid>
+        
+        
+        <category>Analyse</category>
+        
+      </item>
     
       <item>
         <title>Analyse: Décomposition de fonction</title>
@@ -30,7 +245,7 @@
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{blue}{g_1(x)}=-\frac{1}{x}&lt;/script&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\small{\color{gray}{(\text{Symétrie d'axe }0y \text{ par rapport à la fonction de référence } \frac{1}{x})}}&lt;/script&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\small{\color{gray}{(\text{Symétrie d&#39;axe }0y \text{ par rapport à la fonction de référence } \frac{1}{x})}}&lt;/script&gt;
 
 &lt;div&gt;
     &lt;iframe src=&quot;https://www.desmos.com/calculator/qzd1xpdk9n?embed&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;border: 0px solid&quot;&gt;&lt;/iframe&gt;
@@ -105,8 +320,8 @@
 
 </description>
         <pubDate>Wed, 15 Nov 2017 00:00:00 +0100</pubDate>
-        <link>http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/analyse/Analyse-Decomposition-de-fonction.html</guid>
+        <link>https://roscas.github.io/math/math/analyse/Analyse-Decomposition-de-fonction.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/analyse/Analyse-Decomposition-de-fonction.html</guid>
         
         
         <category>Analyse</category>
@@ -139,8 +354,8 @@
 
 </description>
         <pubDate>Mon, 23 Oct 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/analyse/Analyse-suites.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/analyse/Analyse-suites.html</guid>
+        <link>https://roscas.github.io/math/math/analyse/Analyse-suites.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/analyse/Analyse-suites.html</guid>
         
         
         <category>Analyse</category>
@@ -242,8 +457,8 @@
 &lt;h2 id=&quot;exemple&quot;&gt;Exemple&lt;/h2&gt;
 </description>
         <pubDate>Wed, 18 Oct 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/algebre/Algebre-decomposition-fractions.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-decomposition-fractions.html</guid>
+        <link>https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html</guid>
         
         
         <category>Algebre</category>
@@ -336,8 +551,8 @@
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/trigo/Trigo-Fonction-trig-generalisee.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-Fonction-trig-generalisee.html</guid>
+        <link>https://roscas.github.io/math/math/trigo/Trigo-Fonction-trig-generalisee.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/trigo/Trigo-Fonction-trig-generalisee.html</guid>
         
         <category>Trigo</category>
         
@@ -373,11 +588,11 @@
 &lt;p&gt;Une fonction quelconque n’est en général ni paire ni impaire, même si son domaine de définition est symétrique par rapport à l’origine. Toute fonction définie sur un tel domaine s’écrit en revanche de manière unique comme une somme d’une fonction paire et d’une fonction impaire.&lt;/p&gt;
 </description>
         <pubDate>Sat, 14 Oct 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/divers/Divers-concepts.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/divers/Divers-concepts.html</guid>
+        <link>https://roscas.github.io/math/math/divers/Divers-concepts.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/divers/Divers-concepts.html</guid>
         
         
-        <category>Divers</category>
+        <category>divers</category>
         
       </item>
     
@@ -634,8 +849,299 @@ Esseyons maintenant de diviser $P(x)$ par $(x-1)$&lt;/p&gt;
 &lt;p&gt;&lt;span style=&quot;color:red&quot;&gt; Ne jamais diviser par l’inconnue. $\Rightarrow$ perte de solutions. &lt;/span&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 30 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/algebre/Algebre-cours2-equations.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/algebre/Algebre-cours2-equations.html</guid>
+        <link>https://roscas.github.io/math/math/algebre/Algebre-cours2-equations.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/algebre/Algebre-cours2-equations.html</guid>
+        
+        
+        <category>Algebre</category>
+        
+      </item>
+    
+      <item>
+        <title>Algèbre: Logarithmes et exponentielles</title>
+        <description>&lt;h1 id=&quot;les-logarithmes&quot;&gt;Les Logarithmes&lt;/h1&gt;
+
+&lt;p&gt;La fonction logarithme est la fonction réciproque de la fonction exponentielle. Elle est donc utile pour résoudre les équations comportant des puissances.&lt;/p&gt;
+
+&lt;p&gt;Par exemple, la solution de l’équation $2^x=5\;$ est $\; log_2(5)$.&lt;/p&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Les logarithmes sont une autre façon de penser aux exposants.
+On peut aussi dire que les logarithmes n’existeraient pas si les exposants n’existaient pas.&lt;/p&gt;
+
+&lt;p&gt;$\color{teal}{2}$ puissance $\color{green}{4}$ est égal à $\color{orange}{16}$.  Ce qui s’écrit: $\color{teal}{2}^{\color{green}{4}}=\color{orange}{16}$&lt;/p&gt;
+
+&lt;p&gt;Si on pose la question: &lt;em&gt;À quelle puissance faut-il élever $\color{teal}{2}$ pour obtenir $\color{orange}{16}$&lt;/em&gt; ? La résponse est $\color{green}{4}$. Si on utilise un &lt;strong&gt;logarithme&lt;/strong&gt;, la relation qui lie 2, 4 et 16 est: $log_{\color{teal}{2}}(\color{orange}{16})=\color{green}{4}$ et se lit: &lt;em&gt;Le logartithme en base deux de seize est quatre&lt;/em&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\color{teal}{2}^{\color{green}{4}}=\color{orange}{16} \quad \Leftrightarrow \quad log_{\color{teal}{2}}(\color{orange}{16})=\color{green}{4}&lt;/script&gt;
+
+&lt;p&gt;Les deux égalités traduisent la même relation entre $\color{teal}{2}$ (&lt;strong&gt;base&lt;/strong&gt;), $\color{green}{4}$ (&lt;strong&gt;exposant&lt;/strong&gt;) et $\color{orange}{16}$ (&lt;strong&gt;puissance&lt;/strong&gt;).&lt;/p&gt;
+
+&lt;p&gt;La différence entre ces deux égalités est que dans la forme exponentielle on isole la puissance de $\color{orange}{16}$, tandis que dans la forme logarithmique, on isole l’exposant $\color{green}{4}$.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Logarithmes&lt;/th&gt;
+      &lt;th&gt;Puissances&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_{\color{teal}{2}}(\color{orange}{8})=\color{green}{3}$&lt;/td&gt;
+      &lt;td&gt;$\color{teal}{2}^{\color{green}{3}}=\color{orange}{8}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_{\color{teal}{3}}(\color{orange}{81})=\color{green}{4}$&lt;/td&gt;
+      &lt;td&gt;$\color{teal}{3}^{\color{green}{4}}=\color{orange}{81}$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_{\color{teal}{5}}(\color{orange}{25})=\color{green}{2}$&lt;/td&gt;
+      &lt;td&gt;$\color{teal}{5}^{\color{green}{2}}=\color{orange}{25}$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;définition-du-logarithme-de-base-b&quot;&gt;Définition du logarithme de base $b$&lt;/h2&gt;
+
+&lt;p&gt;Par définition si $\color{red}{a&amp;gt;0}$ et $\color{red}{b&amp;gt;0}$,&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\Large{log_{\color{teal}{b}}(\color{orange}{a})=\color{green}{c} \; \Leftrightarrow \; \color{teal}{b}^{\color{green}{c}}=\color{orange}{a}}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;$\color{teal}{b}$ est la &lt;span style=&quot;color:teal&quot;&gt;base&lt;/span&gt; de la puissance et c’est aussi la base du logarithme&lt;/p&gt;
+
+&lt;p&gt;$\color{green}{c}$ est &lt;span style=&quot;color:green&quot;&gt; l’exposant &lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;$\color{orange}{a}$ est la &lt;span style=&quot;color:orange&quot;&gt; puissance &lt;/span&gt; mais c’est aussi &lt;span style=&quot;color:orange&quot;&gt; l’argument &lt;/span&gt; du logarithme&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Quand on passe de la forme exponentielle à la forme logarithmique ou vice-vera, la base du logarithme et la base de l’exponentielle sont les mêmes.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;propriétés-de-base&quot;&gt;Propriétés de base&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Logarithme&lt;/th&gt;
+      &lt;th&gt;Exponentielle&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_b(1)=0$&lt;/td&gt;
+      &lt;td&gt;$b^0=1$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_b(b)=1$&lt;/td&gt;
+      &lt;td&gt;$b^1=b$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_b(b^x)=x$&lt;/td&gt;
+      &lt;td&gt;$b^{log_b(x)}=x$&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;$log_b(u^p)=p\cdot log_b(u)$&lt;/td&gt;
+      &lt;td&gt;$(b^u)^p=b^{u\cdot p}$&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;ensemble-de-définition&quot;&gt;Ensemble de définition&lt;/h2&gt;
+
+&lt;p&gt;$log_b(a)$ est défini pour toute la base $b &amp;gt; 0$ et $b \neq 1$ ainsi que pour tout argument $a &amp;gt; 0$. Ces conditions sont la conséquence directe des propriétés des puissances.&lt;/p&gt;
+
+&lt;p&gt;$b&amp;gt;a$: Les fonctions exponentielles de base $b$ ne sont définies que si $b$ est strictement positif.&lt;/p&gt;
+
+&lt;p&gt;$a&amp;gt;0$: $log_b(a)=c$ équivaut à $b^c-a$. Or toute puissance d’un nombre positif est positive. Donc $b^c&amp;gt;0$ et par conséquent $a&amp;gt;0$.&lt;/p&gt;
+
+&lt;p&gt;$b \neq 1$: Si $b$ &lt;em&gt;était&lt;/em&gt; égal à $1$ alors, par exemple, il existerait un nombre $x$ tel que $log_1(3)=x$ qui serait équivalent à $1^x=3$. Or toute puissance de $1$ est égale à $1$, donc un tel nombre $x$ n’existe pas, et donc $b\neq1$.&lt;/p&gt;
+
+&lt;h2 id=&quot;exemples-tricky&quot;&gt;Exemples tricky&lt;/h2&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bbox[5px,border:1px solid red] {log_{b^y}(a^x)=\frac{x}{y}}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;1)\quad log_{64}\left(\frac{1}{4}\right) = log_{2^6}(2^{-2})  =-\frac{1}{3}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;2)\quad log_{49}(7) = log_{7^7}(7) =\frac{1}{7}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;3)\quad log_{4}\left(\frac{1}{2}\right) = log_{2^2}(2^{-1})=-\frac{1}{2}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;4)\quad log_{4}(8) = log_{2^2}(2^3)=\frac{3}{2}&lt;/script&gt;
+
+&lt;h2 id=&quot;logarithme-népérien&quot;&gt;Logarithme népérien&lt;/h2&gt;
+
+&lt;p&gt;Noté $ln(x)$ le &lt;strong&gt;logarithme népérien&lt;/strong&gt; est le logarithme de base $e$.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_e(x) = ln(x)&lt;/script&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$e$ est une constante. C’est un nombre irrationnel dont la valeur approchée au millième est $2,718$.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182&lt;/script&gt;
+
+&lt;h2 id=&quot;propriétés-du-logarithme&quot;&gt;Propriétés du logarithme&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;Logarithme&lt;/th&gt;
+      &lt;th&gt;Exponentielle&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Produit&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;log_b(M\cdot N)=log_b(M)+lob_b(N)&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;b^M\cdot b^N=b^{M+N}&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Quotient&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac{b^x}{b^y} = b^{x-y}&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;Puissance&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;script type=&quot;math/tex&quot;&gt;log_b\left(M^N\right)=N\cdot log_b(M)&lt;/script&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On utilise ces propriété pour manipuler les expression logarithmiques.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c’est à dire pour tout $u$ et $v &amp;gt;0$ et tout $b&amp;lt;b \neq 1$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;La fonction logarithme de base $b$ est définie si $b$ est strictement positif et différend de 1, et l’ensembe de définition d’une fonction logarithme est $\pmb{\mathbb{R}_+}$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;logarithme-dun-produit&quot;&gt;Logarithme d’un produit&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_b(M\cdot N)=log_b(M)+lob_b(N)\; \Leftrightarrow b^M\cdot b^N=b^{M+N}&lt;/script&gt;
+
+&lt;p&gt;Le logarithme d’un produit est la somme des logarithmes de ses facteurs.&lt;/p&gt;
+
+&lt;p&gt;Si $M=4$, $N=8$ et $b=2$, alors d’après la propriété du logarithme d’un produit, $log_2(4\cdot 8) = log_2(4) + log_2(8)$.&lt;/p&gt;
+
+&lt;p&gt;Le calcul qui suit permet de vérifier la propriété dans ce cas précis:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    log_2(4\cdot8)&amp;=log_2(4)+log_2(8) \\ 
+    log_2(32)&amp;=log_2(4)+log_2(8) \\
+    5&amp;=2+3 \\
+    5&amp;=5
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;exemple-1-développer&quot;&gt;Exemple 1: Développer&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Développer&lt;/em&gt; un logarithme en l’écrivant sous forme de somme.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_6(5y) = log_6(5)+log_6(y)&lt;/script&gt;
+
+&lt;h4 id=&quot;exemple-2-réduire&quot;&gt;Exemple 2: Réduire&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;Réduire&lt;/em&gt; une somme de logarithmes en l’écrivant sous la forme d’un seul logarithme.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_3(10)+log_3(x) = log_3(10x)&lt;/script&gt;
+
+&lt;h4 id=&quot;démonstration&quot;&gt;Démonstration&lt;/h4&gt;
+&lt;p&gt;On commence par raisonner sur un cas particulier. On prend le cas où $M=4$, $N=8$ et $b=2$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    log_2(4\cdot8) &amp; = log_2(2^2\cdot2^3) \quad\quad &amp;\small{\color{gray}{2^2=4 \text{ et }2^3=8}}\\
+    &amp;= log_2(2^{2+3}) \quad\quad \quad\quad &amp;\small{\color{gray}{a^m\cdot a^n=a^{a+m}}}\\
+    &amp;=2+3 \quad\quad &amp;\small{\color{gray}{log_b(b^c)=c}}\\
+    &amp;=log_2(4)+log_2(8) &amp;\quad\quad \small{\color{gray}{\text{car }log_2(4)\text{ et }3=log_2(8)}}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Le raisonnement précédent repose sur le fait que $4$ et $8$ sont des puissances de $2$. Mais dans le cas général, quels que soient $M&amp;gt;N$ et $b&amp;gt;0$, il existe un réel $x$ tel que $b^x=M$ et quels que soient $M&amp;gt;N$ et $b&amp;gt;0$, il existe un réel $y$ tel que $b^y$=N.&lt;/p&gt;
+
+&lt;p&gt;On obtient:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    log_b(MN) &amp; = log_b(b^x \cdot b^y) \\ 
+    &amp; = log_b(b^{x+y})\\
+    &amp; = x + y\\
+    &amp;= log_b(M)+log_b(N)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h3 id=&quot;logarithme-dun-quotient&quot;&gt;Logarithme d’un quotient&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_b\left(\frac{M}{N}\right)= log_b(M)-log_b(N)\; \Leftrightarrow \; \frac{b^x}{b^y} = b^{x-y}&lt;/script&gt;
+
+&lt;p&gt;Le logarithme d’un quotient est la différence des logarithmes de ses deux termes.&lt;/p&gt;
+
+&lt;h4 id=&quot;démonstration-1&quot;&gt;Démonstration&lt;/h4&gt;
+&lt;p&gt;La démonstration est analogue à la démonstration précédente.&lt;/p&gt;
+
+&lt;p&gt;Si $x$ et $y$ sont les réels tels que $M=B^x$ et $N=b^y$, alors $log_b(M)=x$ et $log_b(N)=y$&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    log_b\left(\frac{M}{N}\right) &amp; = log_b\left(\frac{b^x}{b^y}\right) \\ 
+    &amp;= log_b(b^{x-y})\\
+    &amp;= x-y\\
+    &amp;= log_b(M)-log_b(N)
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;h4 id=&quot;exemple-1-développer-1&quot;&gt;Exemple 1: Développer&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_7\left(\frac{a}{2}\right) = log_7(a)-log_7(2)&lt;/script&gt;
+
+&lt;h4 id=&quot;exemple-2-réduire-1&quot;&gt;Exemple 2: Réduire&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_4(x^3)-log_4(y) = log_4\left(\frac{x^3}{y}\right)&lt;/script&gt;
+
+&lt;h3 id=&quot;logarithme-dune-puissance&quot;&gt;Logarithme d’une puissance&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_b(M^p) = p\cdot log_b(M)&lt;/script&gt;
+
+&lt;p&gt;Le logarithme d’une puissance est le produitde l’exposant par le logarithme de la base.&lt;/p&gt;
+
+&lt;h4 id=&quot;exemple-1-développer-2&quot;&gt;Exemple 1: Développer&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_2(x^3) = 3log_2(x)&lt;/script&gt;
+
+&lt;h4 id=&quot;exemple-2-réduire-2&quot;&gt;Exemple 2: Réduire&lt;/h4&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;4log_5(2) = log_5(2^5)&lt;/script&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:red&quot;&gt; Pour réduire ou développer une expression logarithmique il est indispensable que &lt;strong&gt;tous&lt;/strong&gt; les logarithmes aient la &lt;strong&gt;même base&lt;/strong&gt; &lt;/span&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;formule-du-changement-de-base&quot;&gt;Formule du changement de base&lt;/h2&gt;
+&lt;p&gt;On cherche la valeur de $log_2(50)$ Or 50 n’est pas une puissance de $2$, donc c’est difficile à calculer sans l’aide de la calculatrice.&lt;/p&gt;
+
+&lt;p&gt;On peut changer de base de tout logarithme grace à cette formule:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;log_b(a) = \frac{log_x(a)}{log_x(b)}&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Cette formule est valable quelle que soit la base $x$&lt;/li&gt;
+  &lt;li&gt;Les arguments sont positifs et les bases sont positives et différentes de 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;exemple&quot;&gt;Exemple&lt;/h3&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+    log_2(50) &amp; = \frac{log_{10}(50)}{log_{10}(2)} \quad\quad &amp;\small{\color{gray}{\text{formule du changement de base}}} \\ 
+    &amp; \\
+    &amp;= \frac{log(50)}{log(2)} \quad\quad &amp;\small{\color{gray}{\text{car }log_10(x) = log(x)}}\\
+    &amp; \\
+    &amp;\approx 5,644
+\end{align} %]]&gt;&lt;/script&gt;
+
+</description>
+        <pubDate>Sat, 30 Sep 2017 00:00:00 +0200</pubDate>
+        <link>https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html</guid>
         
         
         <category>Algebre</category>
@@ -763,8 +1269,8 @@ et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 27 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physique-b/PhysB-serie2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physique-b/PhysB-serie2.html</guid>
+        <link>https://roscas.github.io/math/math/physique-b/PhysB-serie2.html</link>
+        <guid isPermaLink="true">https://roscas.github.io/math/math/physique-b/PhysB-serie2.html</guid>
         
         <category>physique</category>
         
@@ -772,244 +1278,6 @@ et $\vec{u}_{12}$ un vecteur unitaire selon le segment $q_1\; q_2$&lt;/p&gt;
         
         
         <category>Physique-B</category>
-        
-      </item>
-    
-      <item>
-        <title>Trigo: Introduction</title>
-        <description>&lt;h2 id=&quot;conventions&quot;&gt;Conventions&lt;/h2&gt;
-
-&lt;h3 id=&quot;notations&quot;&gt;Notations&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/01illustrations/01-trigo/01-intro/fig1.png&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;$A,B,C:$ &lt;strong&gt;sommets&lt;/strong&gt; du triangle
-$a,b,c: $ &lt;strong&gt;longueurs&lt;/strong&gt; des cotés ($a$ opposé $A$)
-$\alpha,\beta,\delta:$ &lt;strong&gt;amplitude&lt;/strong&gt; des angles ($\alpha$, angle de somment $A$)&lt;/p&gt;
-
-&lt;h3 id=&quot;sens-dun-angle&quot;&gt;Sens d’un angle&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Une rotation dans les &lt;strong&gt;sens inverse&lt;/strong&gt; des aiguilles d’une montre sera liée à un &lt;strong&gt;angle positif&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Une rotation dans le &lt;strong&gt;sens des aiguilles&lt;/strong&gt; d’une montre sera liée à un &lt;strong&gt;angle négatif&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;mesure-dun-angle&quot;&gt;Mesure d’un angle&lt;/h2&gt;
-&lt;p&gt;La mesure d’un angle consiste à &lt;em&gt;préciser&lt;/em&gt; de &lt;strong&gt;combien&lt;/strong&gt; on &lt;em&gt;tourne&lt;/em&gt; pour amener le coté initial sur le coté final:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/01illustrations/01-trigo/01-intro/fig2.png&quot; align=&quot;&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\LARGE \theta = ?&lt;/script&gt;
-
-&lt;p&gt;On décrète que:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Un &lt;strong&gt;tour complet&lt;/strong&gt; (qui ramène le segment $OA$ sur lui-même) vaut $360$ unités d’angle.&lt;/li&gt;
-  &lt;li&gt;Une unité d’angle est appelée &lt;strong&gt;degré&lt;/strong&gt; et est notée ($^\circ$)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;minute-darc&quot;&gt;Minute d’arc&lt;/h2&gt;
-
-&lt;p&gt;Quand on mesure les ngles en degrés, on peut augmenter la précision de 2 façons:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;En exprimant les drés à l’ide de &lt;strong&gt;nombres réels&lt;/strong&gt;: $\theta = 1.635 ^\circ, \theta = 1.33 ^\circ, \theta = \frac{1}{7}^\circ, \theta = \sqrt[]{2}^\circ,$ …&lt;/li&gt;
-  &lt;li&gt;En subdivisant chque degré en &lt;strong&gt;60 minutes&lt;/strong&gt; et en subdivisant chaque minute en &lt;strong&gt;60 secondes&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;degré-rightarrow-dms&quot;&gt;Degré $\rightarrow$ DMS&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Un degré équivaut à 60 minutes qui sont égales à 3600 secondes:
-$1 ^\circ = 60’ = 360’’$&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-dd &amp; = \text{angle initial} \\
-D &amp; = int(dd) \\
-M &amp; = int((dd - D) * 60) \\
-S &amp; = (dd-D-M/60) \cdot 3600 \\
-     &amp; \Rightarrow angle\;initial = DMS  \\ 
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;strong&gt;Exemple:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\begin{align}
-    dd &amp; = 36,25 ^\circ \\ 
-    D &amp; = int(dd) &amp; = 36 ^\circ \\
-    M &amp; = int((36,25-36)\cdot60) &amp; = 15' \\
-    S &amp; = (36,25-36-15/60)\cdot 3600 &amp; = 0
-\end{align} %]]&gt;&lt;/script&gt;
-
-&lt;h3 id=&quot;dms--rightarrow--degré&quot;&gt;DMS $ \rightarrow $ Degré&lt;/h3&gt;
-</description>
-        <pubDate>Fri, 22 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/trigo/Trigo-introduction.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/trigo/Trigo-introduction.html</guid>
-        
-        <category>Trigo</category>
-        
-        
-        <category>Trigo</category>
-        
-      </item>
-    
-      <item>
-        <title>Physique A: Phénomènes ondulatoires: Optique géométrique (1)</title>
-        <description>
-</description>
-        <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physique-a/PhysA-serie2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physique-a/PhysA-serie2.html</guid>
-        
-        <category>physique</category>
-        
-        <category>optique</category>
-        
-        
-        <category>Physique-A</category>
-        
-      </item>
-    
-      <item>
-        <title>Physique A: Phénomènes ondulatoires: Optique géométrique (1)</title>
-        <description>&lt;h1 id=&quot;notion-donde&quot;&gt;Notion d’onde&lt;/h1&gt;
-
-&lt;p&gt;On appelle &lt;strong&gt;onde&lt;/strong&gt; toute propagation d’une perturbation &lt;strong&gt;sans transport de matière&lt;/strong&gt;. Elle peut avoir un support, par exemple:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;La surface de l’eau (les vagues)&lt;/li&gt;
-  &lt;li&gt;Une corde (les ondes dans une corde)
-*L’air (ondes sonores)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ou non, comme par exemple les ondes électromagnetiques qui existent dans le vide.&lt;/p&gt;
-
-&lt;h1 id=&quot;optique&quot;&gt;Optique&lt;/h1&gt;
-&lt;p&gt;C’est la partie de la physique qui a pour objet l’étude des phénomènes liés au rayonnement électromagnetique.
-&lt;strong&gt;On désigne par &lt;em&gt;lumière visible&lt;/em&gt; toute onde électromagnétique perçue par l’oeil.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/02physA/spectre.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Pour l’étude des effets des miroirs et des lentilles, on postule que la lumière se propoage sous forme de rayons et on fait appel aux lois fondamentales de la géometrie.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;postulats&quot;&gt;Postulats&lt;/h1&gt;
-
-&lt;h2 id=&quot;premier-postulat&quot;&gt;Premier postulat&lt;/h2&gt;
-&lt;p&gt;La lumière se propage selon des rayons lumineux. Ces rayons lumineux n’interagissent pas entre eux (Un rayon lumineux ne peut pas être dvié par un autre ryon lumineux).&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;On appelle rayon lumineux toute courble suivant laquelle se propage la lumière&lt;/li&gt;
-  &lt;li&gt;Un rayon lumineux n’a pas d’existance réelle&lt;/li&gt;
-  &lt;li&gt;En Optique géométrique, la notion de rayon lumineux ne peut être concidérée que lorsque la longueur d’onde $ \lambda $ de la lumière est beaucoup plus petite que les dimensions $d$ des objets qu’elle éclaire: $\lambda « d$&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;deuxième-postulat&quot;&gt;Deuxième postulat&lt;/h2&gt;
-&lt;p&gt;Dans un milieu &lt;strong&gt;transparant, homogène&lt;/strong&gt; et &lt;strong&gt;isotrope&lt;/strong&gt;, les ryons lumineux sont des lignes droites. Ces lignes sont perpendiculaires aux fronts d’onde.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;L’ensemble de ces rayons, issus d’un mêeme endroit ou allant vers le mêeme endroit, est appelé faisceau lumineux. Il peut être &lt;strong&gt;divergent, convergent&lt;/strong&gt; ou &lt;strong&gt;parallèle&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/02physA/02postulat2.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Faisceau parallèle&lt;/strong&gt;: le point associé se trouve à l’infini.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Divergente&lt;/strong&gt;: représente le cas de rayons émis par une source ponctuelle.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Source ponctuelle&lt;/strong&gt;: lorsque son étendue
-est très petite par rapport à sa distance au point d’observation. Elle émet de la lumière également dans toutes les directions. C’est le cas, par exemple, d’une étoile.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;isotrope&lt;/strong&gt;: C’est un milieu dont les propriétés sont identiques quelle que soit la direction d’boservation. Par exemple les liquides ou les solides amorphes sont (statistiquement) isotropes alors que les cristaux, dont la structure est ordonnée et dépend donc de la direction, sont anistropes.
-&lt;strong&gt;anistropes&lt;/strong&gt;:&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;troisième-postulat&quot;&gt;Troisième postulat&lt;/h2&gt;
-&lt;p&gt;À la surface de séparation de deux millieux, les rayons lumineux obéissent aux lois de &lt;strong&gt;Snell Descartes&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Lorsqu’un rayon lumineux change de milieu, il en résulte la plupart du temps un rayon dit &lt;strong&gt;réfléchi&lt;/strong&gt; et un ryon dit &lt;strong&gt;réfracté&lt;/strong&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Les lois de Snell-Descartes décrivent les comportements tels que la direction de propagation de ces rayons.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;/math/01illustrations/02physA/03reflexion-refraction.png&quot; align=&quot;&quot; height=&quot;size&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Une partie du &lt;strong&gt;rayon incident&lt;/strong&gt; est réfléchi par la surface de l’eau (elle revient dans le premier milieu). L’autre partie est transmise dans le second milieu. L’onde transmise dans le second milieu est deviée à la surface sépratrice: elle est &lt;strong&gt;refractée&lt;/strong&gt; (il subit une fracture).&lt;/p&gt;
-
-&lt;h1 id=&quot;réflexion&quot;&gt;Réflexion&lt;/h1&gt;
-
-&lt;h2 id=&quot;spéculaire&quot;&gt;Spéculaire&lt;/h2&gt;
-&lt;p&gt;Réflexion de la lumière sur les objets lisses. Les rayons réfléchis sont parallèles.&lt;/p&gt;
-
-&lt;h2 id=&quot;diffuse&quot;&gt;Diffuse&lt;/h2&gt;
-&lt;p&gt;Si la surface réfléchissante est rugeuse, chaque rayon réfléchi peut avoir une autre direction.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Le caractère spéculaire ou diffus dépend de la longueur d’onde de la lumière incidente par rapport  la rugosité de la surface.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Tout corps se comporte comme une surface lisse pourvu que les variations de sa surface soient petites en comparaison de la longueur d’onde de la lumière incidente.&lt;/p&gt;
-
-&lt;p&gt;Une même surface peut donc être source de reflexion diffuse &lt;strong&gt;et&lt;/strong&gt; spéculaire pour une partie du spectre lumineux différente.&lt;/p&gt;
-
-&lt;h1 id=&quot;première-loi-de-snell-descartes&quot;&gt;Première loi de Snell-Descartes&lt;/h1&gt;
-
-&lt;p&gt;Considérons un rayon lumineux tombant sur un miroir.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Loi de la réflexion&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Le rayon &lt;strong&gt;réfléchi&lt;/strong&gt; est dans le plan d’incidence (le plan défini par le rayon incident et la normale $n$)&lt;/li&gt;
-      &lt;li&gt;L’angle d’incidence est égal  l’angle de réflexion
-  &lt;script type=&quot;math/tex&quot;&gt;\bbox[5px,border:1px solid red] {\alpha_1 = \alpha_2}&lt;/script&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;ul&gt;
-    &lt;li&gt;point d’incidence $I$: point du miroir sur lequel arrive le rayon lumineux&lt;/li&gt;
-    &lt;li&gt;normal $n$ au miroir: perpendiculaire au plan du miroir passant par $I$&lt;/li&gt;
-    &lt;li&gt;angle d’incidence $\alpha_1$: angle déterminé par le rayon incident et la normale $n$ au miroir&lt;/li&gt;
-    &lt;li&gt;angle de réflexion $\alpha_2$: angle déterminé par le rayon réfléchi et la normale $n$ au miroir&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;réfraction&quot;&gt;Réfraction&lt;/h1&gt;
-&lt;p&gt;Considérons un rayon lumineux se propageant d’abord dans l’air puis dans l’eau. Si le rayon n’est pas perpendiculaire à l’interface des deux milieux, il subit un &lt;strong&gt;brusque changement de direction à cette interface&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;La réfraction résulte du fait que **la lumière ne se propage pas à la même vitesse dans tous les milieux transparents.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;indice-de-réfraction&quot;&gt;Indice de réfraction&lt;/h1&gt;
-
-&lt;p&gt;On appelle indice de refraction $n$ d’un milieu matériel le rapport:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;n=\frac{c}{v}=\frac{\text{vitesse de la lumière dans le vide}}{\text{vitesse de la lumière dans le milieu}}&lt;/script&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;$n$ est un nombre sans unité&lt;/li&gt;
-  &lt;li&gt;$n \gt 1$ (car $v \le c$)&lt;/li&gt;
-  &lt;li&gt;$n$ dépend (légérement) de la longueur d’onde de la lumière ($n = n(\lambda)$; phénomène de dispertion)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 21 Sep 2017 00:00:00 +0200</pubDate>
-        <link>http://localhost:4000/math/physique-a/PhysA-serie1.html</link>
-        <guid isPermaLink="true">http://localhost:4000/math/physique-a/PhysA-serie1.html</guid>
-        
-        <category>physique</category>
-        
-        <category>optique</category>
-        
-        
-        <category>Physique-A</category>
         
       </item>
     

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/math/css/main.css">
+  <link rel="canonical" href="https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="https://roscas.github.io/math/math/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/math/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Analyse: Caractéristiques d&#39;une fonction</title>
+  <meta name="description" content="Définition d’une fonction">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Analyse: Caractéristiques d'une fonction</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="19 Nov 2017" itemprop="datePublished">Nov 19 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="https://roscas.github.io">IT</a> /
+			<a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+			<a class="link" href="https://roscas.github.io/category/">Category</a> / 
+			<a class="link" href="https://roscas.github.io/tags/">Tags</a> / 
+			<a class="link" href="https://roscas.github.io/about/">About</a> /
+			<a class="link" href="https://roscas.github.io/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h1 id="définition-dune-fonction">Définition d’une fonction</h1>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    f: \quad & \pmb{\mathbb{A}} \longrightarrow \pmb{\mathbb{B}} \\ 
+    & x \longmapsto y =f(x) 
+\end{align} %]]></script>
+
+<ul>
+  <li>$A$: Ensemble de départ ($=$ domaine de définition)</li>
+  <li>$B$: Ensemble d’arrivée ($\neq$ ensemble Image)</li>
+  <li>$f$: Nom de la fonction</li>
+  <li>$x$: Un élément quelconque de l’ensemble $A$</li>
+  <li>$y = f(x)$: Un élément de $B$. Désigne la valeur numérique associée à $x$ (dont $x$ est l’antécédent)
+<br /></li>
+  <li>La ligne du haut décrit la fonction au <strong>niveau des ensembles</strong>. Une flèche simple relie l’ensemble de départ à l’ensemble d’arrivée.</li>
+  <li>La ligne du bas décrit la fonction au <strong>niveau des éléments</strong>. La flèche du bas remplace le verbe “associer”.</li>
+</ul>
+
+<h1 id="domaine-de-définition-d--ensemble-de-départ">Domaine de définition $D$ (= ensemble de départ)</h1>
+
+<p>Le domaine de définition $D$ d’une fonction $f$ est l’ensemble des vleurs $x$ de $\pmb{\mathbb{R}}$ pour lesquelles $f(x)$ est définie.</p>
+
+<script type="math/tex; mode=display">D = \{x \in \pmb{\mathbb{R}}|f(x)\in \pmb{\mathbb{R}}\}</script>
+
+<h2 id="exemples">Exemples</h2>
+
+<ol>
+  <li>
+    <p>Le domaine de définition de la fonction <strong>polynomiale</strong> $y=f(x)=2x-3$ est $D = \pmb{\mathbb{R}} $</p>
+  </li>
+  <li>
+    <p>Le domaine de définition de la fonction <strong>rationnelle</strong> $y=f(x)=\frac{2}{x-3}$ est $D = \pmb{\mathbb{R}} \setminus {-3} $</p>
+  </li>
+  <li>
+    <p>Le domaine de définition de la fonction <strong>irrationnelle</strong> $\sqrt[2]{x^2-9}$ est $D = \pmb{\mathbb{R}} \; \setminus \;]-3;\;3[ $</p>
+  </li>
+  <li>
+    <p>Le domaine de définition des fonctions <strong>exponentielles</strong> est $D=\pmb{\mathbb{R}}$</p>
+  </li>
+  <li>
+    <p>Le domaine de définition des fonctions <strong>logarithmiques</strong> est $D=\pmb{\mathbb{R^*_+}}$</p>
+  </li>
+  <li>Le domaine de définition des fonctions trig $sin$ et $cos$ est $D = \pmb{\mathbb{R}}$</li>
+  <li>Le domaine de définition des fonctions trig $tan$ et $cot$ est restreint à certaines valeurs de $x$</li>
+</ol>
+
+<h1 id="ensemble-image-i">Ensemble image $I$</h1>
+
+<p>L’ensemble image $I$ de la fonction $f$ est le sous ensemble de $B$ constitué de toutes les valeurs possibles de $f(x)$ lorsque $x$ est dans $A$.</p>
+
+<script type="math/tex; mode=display">I = f(A) \text{ et } I \subseteq B</script>
+
+<h2 id="exemples-1">Exemples</h2>
+
+<p>Soit:</p>
+
+<p>$\begin{align}
+    f: \quad &amp; \pmb{\mathbb{R}} \longrightarrow \pmb{\mathbb{R}}  \color{gray}{\quad E_{arr}}\ 
+    &amp; x \longmapsto y =f(x) = x^2 
+\end{align}$</p>
+
+<p>L’ensemble image $I$ est $\pmb{\mathbb{R_+}}$</p>
+
+<p>Beaucoup de formules que l’on rencontre en math et en science ne sont rien d’autre que des fonctions. Ainsi la formule $A=\pi\cdot r^2$ de l’aire d’un cercle de rayon $r$ fait correspondre à chaque nombre réel positif $r$ exactement une valeur $A$. La lettre $r$, qui représente une nombre quelconque du domaine de définition, est la <strong>variable indépendante</strong>. La lettre $A$, qui représente un nombre de l’ensemble image, est une <strong>variable dépendante</strong>, puisque sa valeur dépend de la valeur attribuée à $r$. Lorsque deux variables sont liées de cette façon, on dit que <strong>$A$ est une fonctionde $r$</strong>. De même lorsqu’une voiture roule à la vitesse de $60km/h$ la distance en $km$ qu’elle parcourt en $t$ heures est donnée par $d = 60 \cdot t$, la distance $d$ apparait ainsi comme une fonction du temps $t$.</p>
+
+<h1 id="interprétation-graphique">Interprétation graphique</h1>
+
+<p>Un graphique permet d’examiner le comportement des valeurs de $f(x)$ pendant que $x$ varie dans le domaine de définition de la fonction $f$. Par définition <strong>le graphique d’une fonction $f$</strong>(ou <strong>la courbe représentative $C$</strong>) est le graphique de l’équation $ y=f(x)$ pour $x$ dans le domaine de définition $f$.</p>
+
+<script type="math/tex; mode=display">P(x,y) \in C \quad \Leftrightarrow \quad x \in D \text{ et } y=f(x)</script>
+
+<!-- <div>
+    <iframe scrolling="no" title="Domain and Range of a Function" src="https://www.geogebra.org/material/iframe/id/fxsjcrzX/width/540/height/380/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="540px" height="380px" style="border:0px;"> </iframe>
+<div> -->
+
+<blockquote>
+  <p>Range = Ensemble Image $I$</p>
+</blockquote>
+
+<ul>
+  <li>$y=f(x)$ est l’<strong>image</strong> de $x$ et $x$ est l’<strong>antécédent</strong> de $y=f(x)$</li>
+</ul>
+
+<h1 id="courbe-fonction-application--injectivité-surjectivité-bijectivité">Courbe, fonction, application / injectivité, surjectivité, bijectivité</h1>
+
+<p>Pour être qualifié de:</p>
+
+<ul>
+  <li>
+    <p><strong>Fonction</strong>: Pas plus d’une image par élément de l’ensemble de départ ($E_{dep}$) aussi non il s’agit d’une <strong>Courbe</strong></p>
+  </li>
+  <li>
+    <p><strong>Application</strong> Tous les éléments de l’ensemble de départ ont une image (deux éléments de l’ensemble de départ peuvent avoir la même image).</p>
+  </li>
+</ul>
+
+<p><span style="color:green"> Pour transformer une <strong>fonction</strong> en <strong>application</strong> on réduit son ensemble de départ.</span></p>
+
+<ul>
+  <li>Application <strong>injective</strong>: Les éléments de l’ensemble de départ ont des images différentes.
+<script type="math/tex">f(x_1) = f(x_2) \Leftrightarrow x_1 = x_2 \quad \text{ ou } \quad x_1 \neq x_2 \Leftrightarrow f(x_1) \neq f(x_2)</script></li>
+</ul>
+
+<p><span style="color:green"> Pour transformer une <strong>application</strong> en <strong>application injective</strong>, on modifie l’ensemble de départ.</span></p>
+
+<ul>
+  <li>Application <strong>surjective</strong>: Tous les éléments de l’ensemble d’arrivée ont des antécédents.</li>
+</ul>
+
+<p><span style="color:green"> Pour transformer une <strong>application</strong> en <strong>application surjective</strong>, on modifie l’ensemble d’arrivée.</span></p>
+
+<p>On parle d’application <strong>bijective</strong> quand une application est à la fois injective <strong>et</strong> surjective. Cela veut dire que chaque élément de l’ensemble de départ a une unique image différente des autres éléments de l’ensemble de départ et que chaque élément de l’ensembe d’arrivée a un antécédent.</p>
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Analyse: Caractéristiques d'une fonction@&amp;url=https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=https://roscas.github.io/math/math/analyse/Analyse-caracteristique-fx-Copy.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="https://roscas.github.io">IT</a> /
+                <a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+                <a class="link" href="https://roscas.github.io/archive/">Archive</a> /
+                <a class="link" href="https://roscas.github.io/category/">Category</a> /
+                <a class="link" href="https://roscas.github.io/tags/">Tags</a> /
+                <a class="link" href="https://roscas.github.io/about/">About</a> /
+                <a class="link" href="https://roscas.github.io/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/math/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

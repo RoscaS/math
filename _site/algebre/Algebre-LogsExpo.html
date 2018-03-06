@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+
+  <link rel="stylesheet" href="/math/css/main.css">
+  <link rel="canonical" href="https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html">
+  <link rel="alternate" type="application/rss+xml" title="RoscaS" href="https://roscas.github.io/math/math/feed.xml">
+
+<!-- JS -->
+  <!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+  <script src="/math/js/mermaid.min.js"></script>
+
+</head>
+
+
+        
+          <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+  ga('create', 'UA-99742998-1', 'auto');
+  ga('send', 'pageview');
+    
+	</script>
+
+
+        
+
+        
+    </head>
+
+    <body>
+        <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Algèbre: Logarithmes et exponentielles</title>
+  <meta name="description" content="Les Logarithmes">
+</head>
+
+
+        <div class="wrapper">
+            <header class="post-header">
+	
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+>
+</script>
+<script
+  type="text/javascript"
+  charset="utf-8"
+  src="https://vincenttam.github.io/javascripts/MathJaxLocal.js"
+>
+</script>
+
+
+    <center>
+		<div class="post-title" itemprop="name headline">Algèbre: Logarithmes et exponentielles</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="30 Sep 2017" itemprop="datePublished">Sep 30 2017</time>
+
+			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
+        	
+			<br>
+			<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>clicks</span>
+		</div>
+
+        	
+        <div class="post-tags">
+        	
+			
+		</div>
+    </center>
+
+<div class="wrapper">
+
+    <center>      
+		<p>
+			<a class="link" href="https://roscas.github.io">IT</a> /
+			<a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+			<a class="link" href="https://roscas.github.io/category/">Category</a> / 
+			<a class="link" href="https://roscas.github.io/tags/">Tags</a> / 
+			<a class="link" href="https://roscas.github.io/about/">About</a> /
+			<a class="link" href="https://roscas.github.io/contact/">Contact</a>
+    	</p>
+    </center>
+</div>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h1 id="les-logarithmes">Les Logarithmes</h1>
+
+<p>La fonction logarithme est la fonction réciproque de la fonction exponentielle. Elle est donc utile pour résoudre les équations comportant des puissances.</p>
+
+<p>Par exemple, la solution de l’équation $2^x=5\;$ est $\; log_2(5)$.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Les logarithmes sont une autre façon de penser aux exposants.
+On peut aussi dire que les logarithmes n’existeraient pas si les exposants n’existaient pas.</p>
+
+<p>$\color{teal}{2}$ puissance $\color{green}{4}$ est égal à $\color{orange}{16}$.  Ce qui s’écrit: $\color{teal}{2}^{\color{green}{4}}=\color{orange}{16}$</p>
+
+<p>Si on pose la question: <em>À quelle puissance faut-il élever $\color{teal}{2}$ pour obtenir $\color{orange}{16}$</em> ? La résponse est $\color{green}{4}$. Si on utilise un <strong>logarithme</strong>, la relation qui lie 2, 4 et 16 est: $log_{\color{teal}{2}}(\color{orange}{16})=\color{green}{4}$ et se lit: <em>Le logartithme en base deux de seize est quatre</em>.</p>
+
+<script type="math/tex; mode=display">\color{teal}{2}^{\color{green}{4}}=\color{orange}{16} \quad \Leftrightarrow \quad log_{\color{teal}{2}}(\color{orange}{16})=\color{green}{4}</script>
+
+<p>Les deux égalités traduisent la même relation entre $\color{teal}{2}$ (<strong>base</strong>), $\color{green}{4}$ (<strong>exposant</strong>) et $\color{orange}{16}$ (<strong>puissance</strong>).</p>
+
+<p>La différence entre ces deux égalités est que dans la forme exponentielle on isole la puissance de $\color{orange}{16}$, tandis que dans la forme logarithmique, on isole l’exposant $\color{green}{4}$.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logarithmes</th>
+      <th>Puissances</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$log_{\color{teal}{2}}(\color{orange}{8})=\color{green}{3}$</td>
+      <td>$\color{teal}{2}^{\color{green}{3}}=\color{orange}{8}$</td>
+    </tr>
+    <tr>
+      <td>$log_{\color{teal}{3}}(\color{orange}{81})=\color{green}{4}$</td>
+      <td>$\color{teal}{3}^{\color{green}{4}}=\color{orange}{81}$</td>
+    </tr>
+    <tr>
+      <td>$log_{\color{teal}{5}}(\color{orange}{25})=\color{green}{2}$</td>
+      <td>$\color{teal}{5}^{\color{green}{2}}=\color{orange}{25}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="définition-du-logarithme-de-base-b">Définition du logarithme de base $b$</h2>
+
+<p>Par définition si $\color{red}{a&gt;0}$ et $\color{red}{b&gt;0}$,</p>
+
+<p><br />
+<script type="math/tex">\Large{log_{\color{teal}{b}}(\color{orange}{a})=\color{green}{c} \; \Leftrightarrow \; \color{teal}{b}^{\color{green}{c}}=\color{orange}{a}}</script></p>
+
+<p>$\color{teal}{b}$ est la <span style="color:teal">base</span> de la puissance et c’est aussi la base du logarithme</p>
+
+<p>$\color{green}{c}$ est <span style="color:green"> l’exposant </span></p>
+
+<p>$\color{orange}{a}$ est la <span style="color:orange"> puissance </span> mais c’est aussi <span style="color:orange"> l’argument </span> du logarithme</p>
+
+<blockquote>
+  <p>Quand on passe de la forme exponentielle à la forme logarithmique ou vice-vera, la base du logarithme et la base de l’exponentielle sont les mêmes.</p>
+</blockquote>
+
+<h2 id="propriétés-de-base">Propriétés de base</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Logarithme</th>
+      <th>Exponentielle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>$log_b(1)=0$</td>
+      <td>$b^0=1$</td>
+    </tr>
+    <tr>
+      <td>$log_b(b)=1$</td>
+      <td>$b^1=b$</td>
+    </tr>
+    <tr>
+      <td>$log_b(b^x)=x$</td>
+      <td>$b^{log_b(x)}=x$</td>
+    </tr>
+    <tr>
+      <td>$log_b(u^p)=p\cdot log_b(u)$</td>
+      <td>$(b^u)^p=b^{u\cdot p}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ensemble-de-définition">Ensemble de définition</h2>
+
+<p>$log_b(a)$ est défini pour toute la base $b &gt; 0$ et $b \neq 1$ ainsi que pour tout argument $a &gt; 0$. Ces conditions sont la conséquence directe des propriétés des puissances.</p>
+
+<p>$b&gt;a$: Les fonctions exponentielles de base $b$ ne sont définies que si $b$ est strictement positif.</p>
+
+<p>$a&gt;0$: $log_b(a)=c$ équivaut à $b^c-a$. Or toute puissance d’un nombre positif est positive. Donc $b^c&gt;0$ et par conséquent $a&gt;0$.</p>
+
+<p>$b \neq 1$: Si $b$ <em>était</em> égal à $1$ alors, par exemple, il existerait un nombre $x$ tel que $log_1(3)=x$ qui serait équivalent à $1^x=3$. Or toute puissance de $1$ est égale à $1$, donc un tel nombre $x$ n’existe pas, et donc $b\neq1$.</p>
+
+<h2 id="exemples-tricky">Exemples tricky</h2>
+
+<script type="math/tex; mode=display">\bbox[5px,border:1px solid red] {log_{b^y}(a^x)=\frac{x}{y}}</script>
+
+<script type="math/tex; mode=display">1)\quad log_{64}\left(\frac{1}{4}\right) = log_{2^6}(2^{-2})  =-\frac{1}{3}</script>
+
+<script type="math/tex; mode=display">2)\quad log_{49}(7) = log_{7^7}(7) =\frac{1}{7}</script>
+
+<script type="math/tex; mode=display">3)\quad log_{4}\left(\frac{1}{2}\right) = log_{2^2}(2^{-1})=-\frac{1}{2}</script>
+
+<script type="math/tex; mode=display">4)\quad log_{4}(8) = log_{2^2}(2^3)=\frac{3}{2}</script>
+
+<h2 id="logarithme-népérien">Logarithme népérien</h2>
+
+<p>Noté $ln(x)$ le <strong>logarithme népérien</strong> est le logarithme de base $e$.</p>
+
+<script type="math/tex; mode=display">log_e(x) = ln(x)</script>
+
+<blockquote>
+  <p>$e$ est une constante. C’est un nombre irrationnel dont la valeur approchée au millième est $2,718$.</p>
+</blockquote>
+
+<script type="math/tex; mode=display">e= \lim\limits_{n \to \infty}\left(1+\frac{1}{n}\right)^n\approx 2,7182</script>
+
+<h2 id="propriétés-du-logarithme">Propriétés du logarithme</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Logarithme</th>
+      <th>Exponentielle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Produit</strong></td>
+      <td><script type="math/tex">log_b(M\cdot N)=log_b(M)+lob_b(N)</script></td>
+      <td><script type="math/tex">b^M\cdot b^N=b^{M+N}</script></td>
+    </tr>
+    <tr>
+      <td><strong>Quotient</strong></td>
+      <td><script type="math/tex">log_b\left(\frac{M}{N}\right) = log_b(M)-log_b(N)</script></td>
+      <td><script type="math/tex">\frac{b^x}{b^y} = b^{x-y}</script></td>
+    </tr>
+    <tr>
+      <td><strong>Puissance</strong></td>
+      <td><script type="math/tex">log_b\left(M^N\right)=N\cdot log_b(M)</script></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>On utilise ces propriété pour manipuler les expression logarithmiques.</p>
+</blockquote>
+
+<p>Ces égalités sont vraies pour tout $u$, $v$ et $b$ pour lesquels le logarithme est défini, c’est à dire pour tout $u$ et $v &gt;0$ et tout $b&lt;b \neq 1$</p>
+
+<blockquote>
+  <p>La fonction logarithme de base $b$ est définie si $b$ est strictement positif et différend de 1, et l’ensembe de définition d’une fonction logarithme est $\pmb{\mathbb{R}_+}$</p>
+</blockquote>
+
+<h3 id="logarithme-dun-produit">Logarithme d’un produit</h3>
+
+<script type="math/tex; mode=display">log_b(M\cdot N)=log_b(M)+lob_b(N)\; \Leftrightarrow b^M\cdot b^N=b^{M+N}</script>
+
+<p>Le logarithme d’un produit est la somme des logarithmes de ses facteurs.</p>
+
+<p>Si $M=4$, $N=8$ et $b=2$, alors d’après la propriété du logarithme d’un produit, $log_2(4\cdot 8) = log_2(4) + log_2(8)$.</p>
+
+<p>Le calcul qui suit permet de vérifier la propriété dans ce cas précis:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    log_2(4\cdot8)&=log_2(4)+log_2(8) \\ 
+    log_2(32)&=log_2(4)+log_2(8) \\
+    5&=2+3 \\
+    5&=5
+\end{align} %]]></script>
+
+<h4 id="exemple-1-développer">Exemple 1: Développer</h4>
+<p><em>Développer</em> un logarithme en l’écrivant sous forme de somme.</p>
+
+<script type="math/tex; mode=display">log_6(5y) = log_6(5)+log_6(y)</script>
+
+<h4 id="exemple-2-réduire">Exemple 2: Réduire</h4>
+<p><em>Réduire</em> une somme de logarithmes en l’écrivant sous la forme d’un seul logarithme.</p>
+
+<script type="math/tex; mode=display">log_3(10)+log_3(x) = log_3(10x)</script>
+
+<h4 id="démonstration">Démonstration</h4>
+<p>On commence par raisonner sur un cas particulier. On prend le cas où $M=4$, $N=8$ et $b=2$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    log_2(4\cdot8) & = log_2(2^2\cdot2^3) \quad\quad &\small{\color{gray}{2^2=4 \text{ et }2^3=8}}\\
+    &= log_2(2^{2+3}) \quad\quad \quad\quad &\small{\color{gray}{a^m\cdot a^n=a^{a+m}}}\\
+    &=2+3 \quad\quad &\small{\color{gray}{log_b(b^c)=c}}\\
+    &=log_2(4)+log_2(8) &\quad\quad \small{\color{gray}{\text{car }log_2(4)\text{ et }3=log_2(8)}}
+\end{align} %]]></script>
+
+<p>Le raisonnement précédent repose sur le fait que $4$ et $8$ sont des puissances de $2$. Mais dans le cas général, quels que soient $M&gt;N$ et $b&gt;0$, il existe un réel $x$ tel que $b^x=M$ et quels que soient $M&gt;N$ et $b&gt;0$, il existe un réel $y$ tel que $b^y$=N.</p>
+
+<p>On obtient:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    log_b(MN) & = log_b(b^x \cdot b^y) \\ 
+    & = log_b(b^{x+y})\\
+    & = x + y\\
+    &= log_b(M)+log_b(N)
+\end{align} %]]></script>
+
+<h3 id="logarithme-dun-quotient">Logarithme d’un quotient</h3>
+
+<script type="math/tex; mode=display">log_b\left(\frac{M}{N}\right)= log_b(M)-log_b(N)\; \Leftrightarrow \; \frac{b^x}{b^y} = b^{x-y}</script>
+
+<p>Le logarithme d’un quotient est la différence des logarithmes de ses deux termes.</p>
+
+<h4 id="démonstration-1">Démonstration</h4>
+<p>La démonstration est analogue à la démonstration précédente.</p>
+
+<p>Si $x$ et $y$ sont les réels tels que $M=B^x$ et $N=b^y$, alors $log_b(M)=x$ et $log_b(N)=y$</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    log_b\left(\frac{M}{N}\right) & = log_b\left(\frac{b^x}{b^y}\right) \\ 
+    &= log_b(b^{x-y})\\
+    &= x-y\\
+    &= log_b(M)-log_b(N)
+\end{align} %]]></script>
+
+<h4 id="exemple-1-développer-1">Exemple 1: Développer</h4>
+
+<script type="math/tex; mode=display">log_7\left(\frac{a}{2}\right) = log_7(a)-log_7(2)</script>
+
+<h4 id="exemple-2-réduire-1">Exemple 2: Réduire</h4>
+
+<script type="math/tex; mode=display">log_4(x^3)-log_4(y) = log_4\left(\frac{x^3}{y}\right)</script>
+
+<h3 id="logarithme-dune-puissance">Logarithme d’une puissance</h3>
+
+<script type="math/tex; mode=display">log_b(M^p) = p\cdot log_b(M)</script>
+
+<p>Le logarithme d’une puissance est le produitde l’exposant par le logarithme de la base.</p>
+
+<h4 id="exemple-1-développer-2">Exemple 1: Développer</h4>
+
+<script type="math/tex; mode=display">log_2(x^3) = 3log_2(x)</script>
+
+<h4 id="exemple-2-réduire-2">Exemple 2: Réduire</h4>
+
+<script type="math/tex; mode=display">4log_5(2) = log_5(2^5)</script>
+
+<p><span style="color:red"> Pour réduire ou développer une expression logarithmique il est indispensable que <strong>tous</strong> les logarithmes aient la <strong>même base</strong> </span></p>
+
+<h2 id="formule-du-changement-de-base">Formule du changement de base</h2>
+<p>On cherche la valeur de $log_2(50)$ Or 50 n’est pas une puissance de $2$, donc c’est difficile à calculer sans l’aide de la calculatrice.</p>
+
+<p>On peut changer de base de tout logarithme grace à cette formule:</p>
+
+<script type="math/tex; mode=display">log_b(a) = \frac{log_x(a)}{log_x(b)}</script>
+
+<ul>
+  <li>Cette formule est valable quelle que soit la base $x$</li>
+  <li>Les arguments sont positifs et les bases sont positives et différentes de 1</li>
+</ul>
+
+<h3 id="exemple">Exemple</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+    log_2(50) & = \frac{log_{10}(50)}{log_{10}(2)} \quad\quad &\small{\color{gray}{\text{formule du changement de base}}} \\ 
+    & \\
+    &= \frac{log(50)}{log(2)} \quad\quad &\small{\color{gray}{\text{car }log_10(x) = log(x)}}\\
+    & \\
+    &\approx 5,644
+\end{align} %]]></script>
+
+
+</div>
+
+<div>
+	
+	<div class="tbc"></div>
+	
+</div>
+
+<!--<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=Algèbre: Logarithmes et exponentielles@&amp;url=https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=https://roscas.github.io/math/math/algebre/Algebre-LogsExpo.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+-->
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+        </div>
+
+    </body>
+
+<footer class="site-footer">
+    <div class="wrapper">
+        <center>
+            <p>
+                <a class="link" href="https://roscas.github.io">IT</a> /
+                <a class="link" href="https://roscas.github.io/math/">Math & Physics</a> /
+                <a class="link" href="https://roscas.github.io/archive/">Archive</a> /
+                <a class="link" href="https://roscas.github.io/category/">Category</a> /
+                <a class="link" href="https://roscas.github.io/tags/">Tags</a> /
+                <a class="link" href="https://roscas.github.io/about/">About</a> /
+                <a class="link" href="https://roscas.github.io/contact/">Contact</a>
+            </p>
+            <span><script>document.write(new Date().getFullYear());</script></span>
+            <span>&copy;</span>
+
+            <a href="mailto:sol.rosca@gmail.com?subject=Hello&nbsp;RoscaS"> RoscaS</a>
+            <br>
+        </center>
+    </div>
+</footer>
+
+<foot>
+    <foot>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Derictory -->
+
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+<!-- Hit analytics -->
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- Directory -->
+
+<script src="/math/js/main.js"></script>
+
+</foot>
+
+</foot>
+
+</html>

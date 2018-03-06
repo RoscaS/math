@@ -10,7 +10,7 @@
 <!-- CSS -->
 
   <link rel="stylesheet" href="/math/css/main.css">
-  <link rel="canonical" href="https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html">
+  <link rel="canonical" href="https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html">
   <link rel="alternate" type="application/rss+xml" title="RoscaS" href="https://roscas.github.io/math/math/feed.xml">
 
 <!-- JS -->
@@ -44,8 +44,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Algèbre(3): Décomposition en fractions simples</title>
-  <meta name="description" content="C’est une technique utile, entre autres pour le calcul de certaines intégrales et dans le calcul des transformées de Laplace.">
+  <title>Physique-Labo: Notations</title>
+  <meta name="description" content="Grandeurs physique et unités">
 </head>
 
 
@@ -75,9 +75,9 @@
 
 
     <center>
-		<div class="post-title" itemprop="name headline">Algèbre(3): Décomposition en fractions simples</div>
+		<div class="post-title" itemprop="name headline">Physique-Labo: Notations</div>
 
-		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="18 Oct 2017" itemprop="datePublished">Oct 18 2017</time>
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="06 Mar 2018" itemprop="datePublished">Mar 6 2018</time>
 
 			&nbsp;&nbsp;•&nbsp;&nbsp;<i class="fa fa-user-secret"></i> <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Sol</span>
         	
@@ -112,7 +112,7 @@
 <div class="post-content">
     <center>
 	
-	<p></p>
+	<p>Introduction au Labo</p>
 	
     </center>
 	<h2>Directory</h2>
@@ -121,97 +121,84 @@
 <div id="category"></div>
 
 <div class="post-content" itemprop="articleBody">
-    <p>C’est une technique utile, entre autres pour le calcul de certaines intégrales et dans le calcul des transformées de Laplace.</p>
+    <h1 id="grandeurs-physique-et-unités">Grandeurs physique et unités</h1>
 
-<p>La décomposition en fractions simples concerne les <strong>fonctions rationelles irréductibles</strong>:</p>
-
-<script type="math/tex; mode=display">f(x) = \frac{N(x)}{D(x)}</script>
-
-<p>Où $N(x)$ et $D(x)$ sont des <strong>polynomes</strong> tels que le degré de $N(x)$ <span style="color:red"> est inférieur </span> au degré de $D(x)$.</p>
-
-<p>Si le degré du numérateur est <strong>supérieur ou égle</strong> au degré du dénominateur, on peut effectuer une <strong>division polynomial</strong> dont le résultat sera la <strong>somme d’un polynome et d’une fonction rationnelle</strong>:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-    \frac{N(x)}{D(x)} & = P(x)+\frac{R(x)}{D(x)}  \\ 
-    & = \text{Polynome}+\frac{\text{Reste}}{\text{Fonction rationnelle irréductible}}
-\end{align} %]]></script>
-
-<p>La décomposition en fractions simples poura alors s’appliquer à la partie $\frac{R(x)}{D(x)}.</p>
-
-<p>Les fonctions rationnelles irréductibles sont difficiles à traiter. Il est souvent utile de pouvoir les écrire comme <strong>une somme</strong> de fractions simples(dites aussi fractions partielles). Pour cel on se base sur le théorème suivant:</p>
-
-<p>Soit: la fonction rationnelle:</p>
-
-<script type="math/tex; mode=display">\frac{N_\color{red}{k}(x)}{D_\color{red}{n}(x)}</script>
-
-<p>irréductible avec $\color{red}{(k&lt;n))}$,</p>
-
-<p>Alors:</p>
-
-<script type="math/tex; mode=display">\frac{N_k(x)}{D_n(x)} \equiv F_1(x) + F_2(x)+\cdots +F_r(x)</script>
-
-<p>Donc:</p>
-
-<script type="math/tex; mode=display">F_ \color{red}{i}(x) =
-\frac
-{
-    A_ \color{red}{i}
-}
-{
-    (
-        p_ \color{red}{i}x +
-        q_ \color{red}{i}
-    )^{\alpha}
-}
-\color{green}{\text{ ou bien }}
-
-\frac 
-{
-    A_ \color{red}{i} +
-    B_ \color{red}{i}
-} 
-{
-    (
-        a_ \color{red}{i} x^2 +
-        b_ \color{red}{i} x +
-        c_ \color{red}{i}
-    )^{\beta}
-}</script>
-
+<h2 id="notation">Notation</h2>
+<p>L’unité s’écrit après la valeur de la grandeur, <strong>sans utiliser de crochets</strong>.</p>
 <blockquote>
-  <p>Ce théorème nous assure l’existence d’une telle décomposition.</p>
+  <p>Les crochets désignent une application qui à toute grandeur physique fait correspondre son unité de mesure. Par exemple:
+<script type="math/tex">[l]=m \; (mètre), \quad [m]=kg \; (kilogramme), \quad [t]=s \; (seconde)</script></p>
 </blockquote>
 
-<h2 id="marche-à-suivre">Marche à suivre</h2>
-<p>… pour obtenir la décomposition en fractions simples d’une fraction rationnelle irréductible:</p>
-
-<p>1. <strong>Si nécéssaire</strong>, effectuer la division euclidienne et considérer, pour ce qui suit uniquement la partie irréductible:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\frac { N_k (x) } { D_n (x) } \color{gray}{\text{ (on doit avoir} k < n)} %]]></script>
-
-<p>2. Factoriser le dénominateur $D_n (x)$ de façon à le transformer <strong>en produit</strong> de soit:</p>
 <ul>
-  <li><strong>facteurs linéaires</strong> $(px + q)^n$
-    <blockquote>
-      <p>et ou</p>
-    </blockquote>
-  </li>
-  <li>de <strong>facteurs quadratiques irréductibles</strong> <span style="color:gray">(pas de racines réelles, donc pas factorisables)</span>: $(ax^2+bx+c)^m$</li>
+  <li>Mauvais notation: $m=75[kg]$</li>
+  <li>Bonne notation: $m=75kg$</li>
 </ul>
 
-<p>3. Pour chaque facteur $(px+q)^n$, écrire la somme des fractions simples:</p>
+<p>On distingue deux types de grandeurs physiques:</p>
+<ul>
+  <li>Grandeurs <strong>scalaires</strong>: valeur accompangé d’une unité.</li>
+  <li>Grandeurs <strong>vectorielles</strong>: valeur (intensité, norme) + unité, direction et sens.</li>
+</ul>
 
-<script type="math/tex; mode=display">\frac{A_1}{px+q}+\frac{A_2}{(px+q)^2}+\cdots + \frac{A_n}{(px+q)^n}</script>
+<h2 id="unités-si">Unités SI</h2>
 
-<p>4. Pour chaque facteur $(ax^2+bx+c)^m$, écrire la somme des fractions simples:</p>
+<p>Sept grandeurs de base sont à la base du système international d’unités:</p>
 
-<script type="math/tex; mode=display">\frac { A_1 }{ px+q }+ \frac{ A_2 }{ (px+q)^2 }+ \cdots + \frac{B_m x + c_m}{(ax^2+bx+c)^m}</script>
-
-<p>5. Calculer les constantes $A_i, B_i, C_i$ en posant que la fraction rationnelle $\frac{N_k(x)}{D_n(x)}$ <span style="color:red"> doit être <strong>identique</strong> </span> à sa décomposition en fractions simples.</p>
-
-<h2 id="exemple">Exemple</h2>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Grandeur</th>
+      <th style="text-align: center">Symboles de la grandeur</th>
+      <th style="text-align: left">Unité</th>
+      <th style="text-align: center">Symbole de l’unité</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">distance</td>
+      <td style="text-align: center"><script type="math/tex">d, l, h, \Delta x</script></td>
+      <td style="text-align: left">mètre</td>
+      <td style="text-align: center"><script type="math/tex">m</script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">masse</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">temps</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">intensité du courant</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">température</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">intensité lumineuse</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">quantité de matière</td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: center"><script type="math/tex"></script></td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
@@ -223,21 +210,21 @@
 
 <!--<div class="share">
     <p>Share this post with: </p>
-	<a href="https://twitter.com/intent/tweet?text=Algèbre(3): Décomposition en fractions simples@&amp;url=https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html" class="twitter-share">
+	<a href="https://twitter.com/intent/tweet?text=Physique-Labo: Notations@&amp;url=https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html" class="twitter-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://www.facebook.com/sharer/sharer.php?u=https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html" class="facebook-share">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html" class="facebook-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://plus.google.com/share?url=https://roscas.github.io/math/math/algebre/Algebre-decomposition-fractions.html" class="googleplus-share">
+	<a href="https://plus.google.com/share?url=https://roscas.github.io/math/math/physique-labo/PhysiqueLab-Notations.html" class="googleplus-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
