@@ -74,6 +74,9 @@ Une fonction est dérivable en un point si elle est continue en ce point. **La r
 C'est un point où la fonction change de concavité. Graphyquement, en un point d'inflexion, la tangente coupe la courbe $\Rightarrow$ En ce point la dérivée seconde (si elle existe) s'annule et change de signe.
 
 ## Théorèmes
+
+### Théorème de Rolle
+
 Soit $f:[a;\;b] \rightarrow \mathbb{R}$ telle que:
 * $f$ est continue sur $[a;\;b]$
 * $f$ est dérivable sur $]a;\;b[$
@@ -82,3 +85,18 @@ Alors il existe $c \in \; ]a;b[\;|\;f'(c)=0$
 
 > * Ce théorème ne nous dit pas comment trouver $c$, il affirme uniquement l'existance de ce dernier. 
 > * Rien ne nous dit que $c$ est unique.
+
+## théorème des accroissements finis
+Soit $f:[a;\;b]\rightarrow \mathbb{R}$ une fonction continue sur $[a,\;b]$ et dérivable sur $]a,\;b[$, alors il existe $c \in\;]a,\;b[\;|\; f(b)-f(a) = f'(c)(b-a)$.
+
+Autrement dit, il existe au moins une valeur $c\;\in\;]a,\;b[$ de pente moyenne, c'est à dire: $f'(c)=\frac{f(b)-f(a)}{b-a}$
+
+<img src="/01illustrations/acc_finis.png" align="" height="300px">
+<br>
+
+> La corollaire de ce théorème nous permet d'étudier la monotonie de la fonction (voir plus haut).
+
+
+
+
+<div style="margin-bottom:500px"> </div>
