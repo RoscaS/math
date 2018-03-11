@@ -87,13 +87,16 @@ figcaption {
  */
 ul, ol {
     margin-left: $spacing-unit;
-    // color: #666;
-    color: #0000;
+    color: lightslategray;
     letter-spacing: 1px;
 }
 
 ul {
     list-style-type: square;
+}
+
+li {
+    color: black;
 }
 
 
